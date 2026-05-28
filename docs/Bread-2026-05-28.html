@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-05-28 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-05-28</h1>
+  <div class="meta">30 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">AI 编程公司 Cognition 单轮融资 10 亿美元，估值飙至 260 亿美元</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-05-27/ai-coding-startup-cognition-raises-1-billion-at-26-billion-value">https://www.bloomberg.com/news/articles/2026-05-27/ai-coding-startup-cognition-raises-1-billion-at-26-billion-value</a></span>
+    </li>
+    
+    <li>
+      <span class="title">黄仁勋宣布英伟达每年向台湾投资 1500 亿美元，押注台积电做 AI 中心</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/tech-policy/2026/05/nvidia-ceo-wants-taiwan-to-be-center-of-ai-revolution-not-us/">https://arstechnica.com/tech-policy/2026/05/nvidia-ceo-wants-taiwan-to-be-center-of-ai-revolution-not-us/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Marvell 上调全年指引，AI 数据中心芯片需求强劲</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-05-27/marvell-gains-after-ai-fueled-data-center-demand-boosts-forecast">https://www.bloomberg.com/news/articles/2026-05-27/marvell-gains-after-ai-fueled-data-center-demand-boosts-forecast</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Meta 首次面向消费者推出 Meta AI 付费订阅，对冲千亿美金级 AI 投入</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-05-27/meta-to-sell-ai-chatbot-subscriptions-in-bid-to-offset-spending">https://www.bloomberg.com/news/articles/2026-05-27/meta-to-sell-ai-chatbot-subscriptions-in-bid-to-offset-spending</a></span>
+    </li>
+    
+    <li>
+      <span class="title">美国太空军确认由 SpaceX 承建&#34;传感器到射手&#34;目标定位网络</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/space/2026/05/us-space-force-confirms-spacex-will-build-sensor-to-shooter-targeting-network/">https://arstechnica.com/space/2026/05/us-space-force-confirms-spacex-will-build-sensor-to-shooter-targeting-network/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Orbbec 联创：机器人视觉的瓶颈不是 AI 模型，而是传感器标定</span>
+      <div class="why">机器人感知/sim2real 核心议题，深度相机厂商视角直接对应 LeapsCora 数据生成栈里 sensor 模型的标定假设</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/why-robots-still-struggle-to-see-real-world-orbbec/">https://www.therobotreport.com/why-robots-still-struggle-to-see-real-world-orbbec/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">2026 Robotics Summit &amp; Expo 第一天议程：现场 demo + 演讲</span>
+      <div class="why">机器人产业年度风向标，关注 roster 厂商与具身仿真同行的最新公开演示</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/a-guide-to-day-1-of-the-2026-robotics-summit-expo/">https://www.therobotreport.com/a-guide-to-day-1-of-the-2026-robotics-summit-expo/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">可灵 AI 3 月 ARR 接近 5 亿美元、同比 4×增长（程一笑）</span>
+      <div class="why">视频生成的商业体量验证，video→3D / scene 生成链路上游的数据/模型生态被快速做大</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3827497128465287?f=rss">https://36kr.com/p/3827497128465287?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">英伟达每年 1500 亿美元押注台湾做 AI 中心</span>
+      <div class="why">上游 GPU/算力供应链格局变化，影响 Isaac Sim/Cosmos 训练栈的成本与可用性</div>
+      <div class="source">Ars Technica · <a href="https://arstechnica.com/tech-policy/2026/05/nvidia-ceo-wants-taiwan-to-be-center-of-ai-revolution-not-us/">https://arstechnica.com/tech-policy/2026/05/nvidia-ceo-wants-taiwan-to-be-center-of-ai-revolution-not-us/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Marvell AI 数据中心芯片需求拉高全年指引</span>
+      <div class="why">互连/定制 ASIC 景气度指标，关系到训练集群扩张节奏</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-05-27/marvell-gains-after-ai-fueled-data-center-demand-boosts-forecast">https://www.bloomberg.com/news/articles/2026-05-27/marvell-gains-after-ai-fueled-data-center-demand-boosts-forecast</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">AI 编程公司 Cognition 10 亿融资 / 260 亿估值</span>
+      <div class="why">vibe coding/agent 生态资本水位拉高，对应卢博 LeapsCora_urban_generator 等内部实验方向的外部参照</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-05-27/ai-coding-startup-cognition-raises-1-billion-at-26-billion-value">https://www.bloomberg.com/news/articles/2026-05-27/ai-coding-startup-cognition-raises-1-billion-at-26-billion-value</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">金仕达 × 华为发布金融 AI 风控一体机</span>
+      <div class="why">国产软硬件一体机商业模式样本，可参考 HKCRC 系产品的对企客户出货形态</div>
+      <div class="source">36氪 · <a href="https://36kr.com/newsflashes/3827488691212934?f=rss">https://36kr.com/newsflashes/3827488691212934?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM</div>
+    
+    <ul class="article-points">
+      
+      <li>Artificial Analysis 与 IBM 联合推出 ITBench-AA，针对企业级 IT 运维场景的 agentic 任务做评测，目前最强前沿模型整体得分不到 50%。</li>
+      
+      <li>这是首个聚焦&#34;企业 IT agent&#34;工作流的公开基准，暴露出当前模型在多步操作、工具使用与排障上的能力上限。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Hugging Face Blog</span>
+      <span class="sep">·</span>
+      <a href="https://huggingface.co/blog/ibm-research/itbench-aa">https://huggingface.co/blog/ibm-research/itbench-aa</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 17:20 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Quoting Kyle Ferrana</div>
+    
+    <ul class="article-points">
+      
+      <li>一段戏仿 Star Trek 的对话讽刺 coding agent 把&#34;提升 shields&#34;误解为&#34;现在不该用 shields&#34;，借此点出当前 agent 在指令服从与解释偏差上的失误模式。</li>
+      
+      <li>标签命中 ai-misuse 与 coding-agents，是对今天 Anthropic/OpenAI PMF 讨论的反向注脚。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/May/27/kyle-ferrana/#atom-everything">https://simonwillison.net/2026/May/27/kyle-ferrana/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 06:41 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">A guide to Day 1 of the 2026 Robotics Summit &amp; Expo</div>
+    
+    <ul class="article-points">
+      
+      <li>2026 Robotics Summit &amp; Expo 第一天聚焦演讲、现场机器人 demo 和行业交流，是当天行业最重要的产业活动节点。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/a-guide-to-day-1-of-the-2026-robotics-summit-expo/">https://www.therobotreport.com/a-guide-to-day-1-of-the-2026-robotics-summit-expo/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 12:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Why robots still struggle to see the real world</div>
+    
+    <ul class="article-points">
+      
+      <li>Orbbec 联合创始人指出，机器人感知要真正可部署，瓶颈不在更强的 AI，而在传感器标定是否到位。</li>
+      
+      <li>强调 sensor-side 工程化对 perception 可靠性的决定性影响，是对纯 model-centric 视角的纠偏。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/why-robots-still-struggle-to-see-real-world-orbbec/">https://www.therobotreport.com/why-robots-still-struggle-to-see-real-world-orbbec/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 11:43 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">6 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">US Space Force confirms SpaceX will build sensor-to-shooter targeting network</div>
+    
+    <ul class="article-points">
+      
+      <li>美国太空军确认由 SpaceX 承建&#34;sensor-to-shooter&#34;目标定位网络，项目经理称要兼顾速度与规模、不做取舍。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/space/2026/05/us-space-force-confirms-spacex-will-build-sensor-to-shooter-targeting-network/">https://arstechnica.com/space/2026/05/us-space-force-confirms-spacex-will-build-sensor-to-shooter-targeting-network/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 18:19 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Former Ukraine official calls for stricter restrictions on Russian use of Starlink</div>
+    
+    <ul class="article-points">
+      
+      <li>乌克兰前国防高级官员 Kateryna 在阿姆斯特丹呼吁 SpaceX 收紧 Starlink 终端管控，指出俄方仍可通过第三国和中间人获取设备。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/former-ukraine-official-calls-for-stricter-restrictions-on-russian-use-of-starlink/">https://spacenews.com/former-ukraine-official-calls-for-stricter-restrictions-on-russian-use-of-starlink/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 15:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Starcloud&#39;s path to 88,000 computing satellites</div>
+    
+    <ul class="article-points">
+      
+      <li>Starcloud 去年 11 月通过 SpaceX 把 60 公斤的 Starcloud-1 入轨，是首个搭载 NVIDIA H100 的在轨算力卫星；公司目标 88,000 颗计算卫星组网。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/starclouds-path-to-88000-computing-satellites/">https://spacenews.com/starclouds-path-to-88000-computing-satellites/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 15:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Europe&#39;s satellite spectrum proposal clouds SpaceX and Viasat plans</div>
+    
+    <ul class="article-points">
+      
+      <li>欧洲拟将 2 GHz 移动卫星频段中三分之二保留给欧洲运营商，将影响 SpaceX 的 direct-to-device 计划和 Viasat 的欧洲航空网络业务前景。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/europes-satellite-spectrum-proposal-clouds-spacex-and-viasat-plans/">https://spacenews.com/europes-satellite-spectrum-proposal-clouds-spacex-and-viasat-plans/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 13:04 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">European space industry watching SpaceX IPO plans</div>
+    
+    <ul class="article-points">
+      
+      <li>欧洲航天公司与投资者密切关注 SpaceX 上市计划，认为其将释放新一轮针对其他航天公司的投资动能。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/european-space-industry-watching-spacex-ipo-plans/">https://spacenews.com/european-space-industry-watching-spacex-ipo-plans/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 11:33 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX Investor Powerlaw Debuts on Nasdaq as IPO Race Heats Up</div>
+    
+    <ul class="article-points">
+      
+      <li>持有 SpaceX 与 OpenAI 股权的封闭式基金 Powerlaw 在纳斯达克挂牌首日溢价交易，反映散户对热门私募科技公司的强烈敞口需求。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-27/spacex-investor-powerlaw-to-debut-on-nasdaq-as-ipo-race-heats-up">https://www.bloomberg.com/news/articles/2026-05-27/spacex-investor-powerlaw-to-debut-on-nasdaq-as-ipo-race-heats-up</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 09:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">20 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Marvell Boosts Annual Forecast, Citing AI-Fueled Demand</div>
+    
+    <ul class="article-points">
+      
+      <li>Marvell 公布的季度指引超出分析师预期，并上调全年展望，理由是 AI 数据中心用芯片需求强劲。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-27/marvell-gains-after-ai-fueled-data-center-demand-boosts-forecast">https://www.bloomberg.com/news/articles/2026-05-27/marvell-gains-after-ai-fueled-data-center-demand-boosts-forecast</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 20:45 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Nvidia bets $150B on Taiwan as Trump&#39;s plan to make US an AI hub backfires</div>
+    
+    <ul class="article-points">
+      
+      <li>英伟达 CEO 黄仁勋宣布将每年向台湾投入 1500 亿美元，把台湾建设成 AI&#34;震中&#34;，与特朗普政府&#34;美国成为 AI 中心&#34;的政策方向相悖。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/tech-policy/2026/05/nvidia-ceo-wants-taiwan-to-be-center-of-ai-revolution-not-us/">https://arstechnica.com/tech-policy/2026/05/nvidia-ceo-wants-taiwan-to-be-center-of-ai-revolution-not-us/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 19:59 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Real Estate Investment Committee: AI, Rates, Supply &amp; Demand</div>
+    
+    <ul class="article-points">
+      
+      <li>Brown Harris Stevens CEO Bess Freedman、PIMCO 欧洲 CEO Annette Kroeger 与 Newmark 北美租赁总裁 Liz Hart 在 Bloomberg Deals 节目讨论 AI、利率与房地产供需的交叉影响。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-05-27/investment-committee-ai-rates-supply-demand-video">https://www.bloomberg.com/news/videos/2026-05-27/investment-committee-ai-rates-supply-demand-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 19:07 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Meta to Sell AI Chatbot Subscriptions to Offset Spending</div>
+    
+    <ul class="article-points">
+      
+      <li>Meta 首次面向消费者开卖 Meta AI 聊天机器人订阅，将其作为对冲未来几千亿美元 AI 投入的关键变现路径。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-27/meta-to-sell-ai-chatbot-subscriptions-in-bid-to-offset-spending">https://www.bloomberg.com/news/articles/2026-05-27/meta-to-sell-ai-chatbot-subscriptions-in-bid-to-offset-spending</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 18:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">YouTube to begin automatically labeling AI videos</div>
+    
+    <ul class="article-points">
+      
+      <li>YouTube 将开始自动给 AI 生成视频打标签，但对动画化、非写实或仅含少量 AI 元素的视频仍可能不打标。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/google/2026/05/youtube-to-begin-automatically-labeling-ai-videos/">https://arstechnica.com/google/2026/05/youtube-to-begin-automatically-labeling-ai-videos/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 17:36 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Startup Cognition Raises $1 Billion at $26 Billion Value</div>
+    
+    <ul class="article-points">
+      
+      <li>Cognition 完成超过 10 亿美元新一轮融资，估值达到 260 亿美元，CEO Scott Wu 在 Bloomberg Tech 节目谈最新进展。</li>
+      
+      <li>反映企业对 AI 编程工具的强需求仍在加速。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-05-27/ai-startup-cognition-raises-1b-at-26b-valuation-video">https://www.bloomberg.com/news/videos/2026-05-27/ai-startup-cognition-raises-1b-at-26b-valuation-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 17:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">I think Anthropic and OpenAI have found product-market fit</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison 指出 Anthropic 据传即将录得首个盈利季度，企业客户开始为高昂的 API 账单买单。</li>
+      
+      <li>他判断 OpenAI 与 Anthropic 均已找到 PMF，企业 API 付费成为新的拐点，AI 失败案例的叙事相对稀薄。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything">https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 16:38 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How AI Is Supercharging Small Business</div>
+    
+    <ul class="article-points">
+      
+      <li>Payoneer CEO John Caplan 在 Bloomberg Open Interest 解释为何中小企业在关税、经济波动与 AI 冲击下反而活得更好，AI 让他们能与大公司竞争。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-05-27/how-ai-is-supercharging-small-business-video">https://www.bloomberg.com/news/videos/2026-05-27/how-ai-is-supercharging-small-business-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 15:46 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Hunstad: Staying Risk-On in the AI Boom</div>
+    
+    <ul class="article-points">
+      
+      <li>Northern Trust Asset Management 总裁 Michael Hunstad 认为华尔街仍低估 AI 的经济影响，看多 margin 扩张与 AI 投资主线，并预期 Fed 因生产率提升而保持限制性政策。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-05-27/hunstad-staying-risk-on-in-the-ai-boom-video">https://www.bloomberg.com/news/videos/2026-05-27/hunstad-staying-risk-on-in-the-ai-boom-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 15:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">New CLOs at Blackstone, Guggenheim Boast Key Perk: Less Software</div>
+    
+    <ul class="article-points">
+      
+      <li>Blackstone 与 Guggenheim 等机构在近期 CLO 中刻意降低软件类敞口，原因是对 AI 颠覆软件行业的担忧上升。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-27/new-clos-at-blackstone-guggenheim-boast-key-perk-less-software">https://www.bloomberg.com/news/articles/2026-05-27/new-clos-at-blackstone-guggenheim-boast-key-perk-less-software</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 15:33 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Coding Startup Cognition Raises $1 Billion at $26 Billion Value</div>
+    
+    <ul class="article-points">
+      
+      <li>Cognition AI 完成超过 10 亿美元融资，估值 260 亿美元，是 AI 软件开发赛道资本热度的又一标志。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-27/ai-coding-startup-cognition-raises-1-billion-at-26-billion-value">https://www.bloomberg.com/news/articles/2026-05-27/ai-coding-startup-cognition-raises-1-billion-at-26-billion-value</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 15:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">South Africa Has AI Leverage. Its Draft Policy Leaves It Unused</div>
+    
+    <ul class="article-points">
+      
+      <li>文章指出南非掌握全球约 88% 铂族金属储量，是半导体和数据中心供应链关键输入，同时拥有非洲最大的数据中心市场和与超大规模云厂商的既有关系。</li>
+      
+      <li>作者认为南非有真正的谈判筹码，但其 AI 草案政策没有用上这一杠杆，行动窗口正在关闭。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">IEEE Spectrum</span>
+      <span class="sep">·</span>
+      <a href="https://spectrum.ieee.org/south-africa-ai-policy">https://spectrum.ieee.org/south-africa-ai-policy</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 13:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Download: keeping up with AI, and the future of IVF</div>
+    
+    <ul class="article-points">
+      
+      <li>MIT Technology Review 的日常 newsletter，介绍夏季 AI 跟进专题以及 IVF 技术的未来方向。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/05/27/1138048/the-download-ai-future-ivf-technology/">https://www.technologyreview.com/2026/05/27/1138048/the-download-ai-future-ivf-technology/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 12:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">US law enforcement warns of &#34;anti-tech extremism&#34; as AI hatred grows</div>
+    
+    <ul class="article-points">
+      
+      <li>美国联邦执法部门发出预警，称随着民众对 AI 的不满上升，&#34;反科技极端主义&#34;正成为一类新威胁。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/05/us-law-enforcement-warns-of-anti-tech-extremism-as-ai-hatred-grows/">https://arstechnica.com/ai/2026/05/us-law-enforcement-warns-of-anti-tech-extremism-as-ai-hatred-grows/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 10:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Salesforce Earnings Can Put AI Fears to Bed, Give Stock a Lift</div>
+    
+    <ul class="article-points">
+      
+      <li>软件股普遍从年初 AI 引发的抛售中反弹，但 Salesforce 未跟上，周三盘后财报被视作其股价能否走出低迷的关键节点。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-27/salesforce-earnings-can-put-ai-fears-to-bed-give-stock-a-lift">https://www.bloomberg.com/news/articles/2026-05-27/salesforce-earnings-can-put-ai-fears-to-bed-give-stock-a-lift</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 09:24 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Triomics nabs $22M to bring oncology-specific AI to cancer centers</div>
+    
+    <ul class="article-points">
+      
+      <li>肿瘤垂直 AI 公司 Triomics 完成 2200 万美元 B 轮融资，由 Battery Ventures 领投。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/05/27/triomics-nabs-22m-to-bring-oncology-specific-ai-to-cancer-centers/">https://techcrunch.com/2026/05/27/triomics-nabs-22m-to-bring-oncology-specific-ai-to-cancer-centers/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 21:11 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Facebook launches a &#39;Plus&#39; subscription that gives you extra features</div>
+    
+    <ul class="article-points">
+      
+      <li>Meta 启动 Facebook / Instagram / WhatsApp 高级订阅的全球分阶段推广，并开始测试 Meta AI 订阅。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/tech/938500/facebook-whatsapp-instagram-meta-ai-subscriptions">https://www.theverge.com/tech/938500/facebook-whatsapp-instagram-meta-ai-subscriptions</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 20:03 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">氪星晚报 ｜高盛策略师将标普500指数目标点位上调至8000点，受AI和盈利所推动；阿里员工十三薪并入年终奖</div>
+    
+    <ul class="article-points">
+      
+      <li>程一笑披露：可灵 AI 2026 年 3 月 ARR 接近 5 亿美元，同比 2025 年 3 月的 1 亿美元增长 4 倍，B 端 API 与 P 端订阅双轮驱动。</li>
+      
+      <li>台积电总裁魏哲家表示今年全员平均分红奖金涨幅将超过 30%；九号公司董事长高禄峰提议回购 1.5 亿–3 亿元 CDR，回购价不超 60 元/份。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3827497128465287?f=rss">https://36kr.com/p/3827497128465287?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 12:17 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">金仕达与华为联合发布AI风控一体机</div>
+    
+    <ul class="article-points">
+      
+      <li>金仕达与华为联合发布面向金融业的高性能 AI 风控一体机，主打自主可控的软硬一体方案，背后是金仕达自研的春晓大模型与因果 AI。</li>
+      
+      <li>同期金仕达与玻色量子完成战略合作，探索量子计算在投资组合优化、复杂风险模拟等场景的应用。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3827488691212934?f=rss">https://36kr.com/newsflashes/3827488691212934?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 12:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">高盛策略师将标普500指数目标点位上调至8000点，受AI和盈利所推动</div>
+    
+    <ul class="article-points">
+      
+      <li>高盛 Ben Snider 团队预计标普 500 今年回报 17%，将年底目标点位由 7600 上调至 8000，看好 AI 驱动的盈利增长。</li>
+      
+      <li>摩根士丹利与德意志银行的策略师持类似立场。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3827467208413825?f=rss">https://36kr.com/newsflashes/3827467208413825?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-27 11:57 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（3）</h3>
+  <ul>
+    
+    <li><strong>Stratechery</strong>: <code>parse error: &lt;urlopen error [WinError 10053] 你的主机中的软件中止了一个已建立的连接。&gt;</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>fetch error: Remote end closed connection without response</code></li>
+    
+    <li><strong>钛媒体</strong>: <code>parse error: &lt;urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)&gt;</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-05-28.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-05-27T21:32:17+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
