@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-05-28</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-05-28</h1>
+  <div class="meta">60 篇候选 · 精读 3 · 速览 15 · 窗口 48h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    <div class="group-label">🔥 直接相关精读 (3 篇)</div>
+    <ul>
+      
+      <li><strong>Joint 2D-3D Segmentation and Association in Street-level Imaging</strong> — 街景多视图建筑级 3D 关联管线，直接对位 Paper E 视频→BIM GT 与 Paper A 街景感知前端 — <a href="http://arxiv.org/abs/2605.26725">arXiv</a></li>
+      
+      <li><strong>POINav: Benchmarking and Enhancing Final-Meters Arrival in Real-World Vision-Language Navigation</strong> — 11 个真实商业街区 3DGS 重建做闭环 sim，Paper A 户外四足 nav 与 Paper C LeapsCora-PZ benchmark 的直接 sim2real 对照 — <a href="http://arxiv.org/abs/2605.28237">arXiv</a></li>
+      
+      <li><strong>Uni-LaViRA: Language-Vision-Robot Actions Translation for Unified Embodied Navigation</strong> — 给 Paper A roster 提供跨形态零样本 baseline，可在 Paper C 上验证 BIM 训练对 robot-specific 数据需求的削减 — <a href="http://arxiv.org/abs/2605.27582">arXiv</a></li>
+      
+    </ul>
+    
+    
+    <div class="group-label">📚 值得扫一眼 (4 篇)</div>
+    <ul>
+      
+      <li><strong>Which Pretraining Paradigm Better Serves Spatial Intelligence? An Empirical Comparison of Vision-Language and Video Generation Models</strong> — VLM 强语义、VGM 强几何/相机运动，简单融合即互补，给 framework §backbone 选型提供证据 — <a href="http://arxiv.org/abs/2605.28132">arXiv</a></li>
+      
+      <li><strong>Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players</strong> — NVIDIA Sanja Fidler 团队多 agent 世界模型，cross-agent 注意力线性化，2→4 agent 零训练泛化 24 FPS — <a href="http://arxiv.org/abs/2605.28816">arXiv</a></li>
+      
+      <li><strong>CLEAR-NeRF: Collinearity and Local-region Enhanced Accurate 3D Reconstruction in Unbounded Scenes</strong> — 显式追求 digital-twin metric accuracy 的 unbounded NeRF，对 Paper E 几何质量评测有方法参考 — <a href="http://arxiv.org/abs/2605.28125">arXiv</a></li>
+      
+      <li><strong>DriveWAM: Video Generative Priors Enable Scalable World-Action Modeling for Autonomous Driving</strong> — video diffusion → autoregressive driving world-action，4k→100k clips 的 scaling study，城市 sim 邻域信号 — <a href="http://arxiv.org/abs/2605.28544">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🔥</span>
+    <h2>强相关精读 (3 篇)</h2>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2605.26725">Joint 2D-3D Segmentation and Association in Street-level Imaging</a></div>
+    <div class="meta">
+      arXiv cs.CV · 2026-05-26 · Amir Melnikov, Masayuki Tanaka, Yusuke Monno, Masatoshi Okutomi
+      <span class="score">12 (8+4)</span>
+    </div>
+    <div class="reason">Street-level 2D-3D segmentation for Spatial Digital Twin urban mapping</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">提出面向 Spatial Digital Twin 的统一 2D-3D 联合分割与跨视图关联框架，目标是大规模街景城市建模。用 zero-shot detection/segmentation + COLMAP 重建建立跨视图稳定对应，用 3D 一致性替代传统 2D 多目标跟踪，并用 3D Jaccard 把 mask 聚成 facade-level 建筑组。在挑战性城市场景下相比 SOTA 2D-only 跟踪方法实现 22% 提升，覆盖率与跨视角 ID 保持都更鲁棒。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">直接对位 Paper E（视频重建 + BIM GT）：他们用 COLMAP + zero-shot SAM 做 street view 建筑级 3D 关联，Paper E 可借鉴这条 building-level association pipeline，并用 BIM 提供绝对几何 ground truth 校验 SDT 几何精度。同时是 Paper A 街景级感知数据自动标注的候选前端，可填充 framework §街景 → BIM 实例对齐 子项。</div></div>
+    <div class="field"><span class="field-label">Method 摘要</span><div class="field-body">五阶段管线 — (1) zero-shot detection + segmentation；(2) mask 与 COLMAP keypoints 关联；(3) keypoints 经 COLMAP tracks 映射到 3D 点；(4) 用 3D Jaccard 把 mask 聚成 facade-level group；(5) 基于 3D 点重叠合并相邻 building group。</div></div>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2605.27582">Uni-LaViRA: Language-Vision-Robot Actions Translation for Unified Embodied Navigation</a></div>
+    <div class="meta">
+      arXiv cs.RO · 2026-05-26 · Hongyu Ding, Sizhuo Zhang, Ziming Xu, Jinwen Guo, Hongxiu Liu et al.
+      <span class="score">9 (5+4)</span>
+    </div>
+    <div class="reason">Unified embodied navigation across wheeled, quadruped, humanoid, UAV zero-shot</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">提出 Uni-LaViRA 统一 agentic 架构，把 embodied navigation 抽象为 Language→Vision→Robot Actions 三步翻译：语言动作输出语义指令，视觉动作输出像素级目标，二者都落在预训练 MLLM 原生输出流形上，因此整个任务可由 agent 推理完成而无需 robot 训练数据。配合 TODO List Memory（动态 checklist 反复送回注意力窗口）与 Second Chance Backtrack（错误时回滚到错前状态再规划）。零训练零样本下覆盖 VLN-CE/ObjectNav/EQA/Aerial-VLN 四大任务族与 wheeled/quadruped/humanoid/UAV 四种真实机器人，VLN-CE R2R 60.7%、HM3D-v2 77.7%、OpenUAV 40.0%，匹配甚至超过吃百万样本/千 GPU 小时训练的 VLN 基础模型。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对位 Paper A（BIM 立体四足户外 nav）和 Paper C（LeapsCora-PZ benchmark）：提供了跨 wheeled/quadruped/humanoid/UAV 的零训练 nav baseline，可以在 LeapsCora-PZ 上做&#39;零训练 vs BIM 训练&#39;对照，量化 BIM 城市环境对 robot-specific 数据需求的削减量。Aerial-VLN 部分也是 Paper A 后续无人机扩展的对照点。</div></div>
+    <div class="field"><span class="field-label">Method 摘要</span><div class="field-body">把 VLN-CE / ObjectNav / EQA / Aerial-VLN 的共同决策结构还原为 Language-Vision-Robot Actions Translation，且语义级指令与像素级目标都属于预训练 MLLM 的自然输出，因此无需 robot 数据训练。agent loop 上加 TDM 在每一步重写未完成子目标 checklist 把它送回注意力窗口；SCB 在失败时回滚状态并把失败子轨迹作为下一次规划的条件。</div></div>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2605.28237">POINav: Benchmarking and Enhancing Final-Meters Arrival in Real-World Vision-Language Navigation</a></div>
+    <div class="meta">
+      arXiv cs.RO · 2026-05-27 · Ruiyan Gong, Meisheng Zhang, Yuxiang Zhao, Mingchao Sun, Yanfen Shen et al.
+      <span class="score">8 (4+4)</span>
+    </div>
+    <div class="reason">Real-world POI navigation in 3DGS commercial areas, outdoor urban robot benchmark</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">提出 POINav-Bench，第一个面向真实世界 POI 导航&#39;最后几米&#39;的闭环基准。从 11 个真实商业街区采集出发用 3DGS 重建，覆盖 12.6 万 m²、163 个 POI，带 traversability 标注与参考轨迹。配套提出 Brain-Action Framework：Brain 模块做 POI grounded reasoning，Action 模块在 3DGS 中预测连续 waypoints 给真实机器人执行。还整理了 7 万真实 signage-entrance 配对的 POINav-Dataset。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">直接对位 Paper A（户外四足 nav）+ Paper C（LeapsCora-PZ benchmark）—— 他们走 3DGS 重建路线、聚焦 last-mile，我们走 BIM 路线、提供完整城市几何与立体路网；可以做&#39;3DGS 视觉保真 + 弱几何&#39; vs &#39;BIM 弱视觉 + 强几何与语义&#39;的 sim2real 对照实验。POINav-Bench 的 traversability 标注 schema 也可作为 Paper C benchmark 任务定义的参考。</div></div>
+    <div class="field"><span class="field-label">Method 摘要</span><div class="field-body">POINav-Bench 把 11 个真实商业街区用 3DGS 重建为高保真闭环 sim，附 traversability-aware 标注与参考轨迹解决 sim-to-real gap。Brain-Action 框架把 POI 推理与轨迹生成解耦：Brain 用 VLM 做 POI grounding 与候选筛选，Action 在 3DGS 中生成连续 waypoints，并通过真实机器人执行验证。</div></div>
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (15 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.28132">Which Pretraining Paradigm Better Serves Spatial Intelligence? An Empirical Comparison of Vision-Language and Video Generation Models</a></div>
+    <div class="meta">arXiv cs.CV · Haozhan Shen et al. <span class="score">11</span></div>
+    <div class="field"><div class="field-body">首次系统比较 VLM 与视频生成模型作为空间智能 backbone 的 frozen-feature probing — VLM 强语义标注/实例分组，VGM 强稠密几何/相机运动，二者朴素融合即在几何+语义同时占优，为空间智能 backbone 选型提供实证。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.28816">Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players</a></div>
+    <div class="meta">arXiv cs.CV · Fangfu Liu et al. <span class="score">10</span></div>
+    <div class="field"><div class="field-body">NVIDIA Sanja Fidler 团队的多 agent 世界模型；Simplex Rotary Agent Encoding 让 agent 在 RoPE 中分相位且置换对称，Sparse Hub Attention 把 cross-agent 注意力降到线性，蒸馏出 24 FPS 因果 student，2→4 agent 零额外训练。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.26629">DelowlightSplat: Feed-Forward Gaussian Splatting for Lowlight 3D Scene Reconstruction</a></div>
+    <div class="meta">arXiv cs.CV · Fuzhen Jiang et al. <span class="score">9</span></div>
+    <div class="field"><div class="field-body">在 feed-forward 3DGS 上加 Lowlight Adapter 残差增强 + cost-volume 多视图推理，从低光多视图直接预测干净 3D Gaussians；对夜景街景或低照度户外重建有潜在用处。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.28544">DriveWAM: Video Generative Priors Enable Scalable World-Action Modeling for Autonomous Driving</a></div>
+    <div class="meta">arXiv cs.CV · Chen Shi et al. <span class="score">8</span></div>
+    <div class="field"><div class="field-body">把预训练 video diffusion transformer 改造为 autoregressive video-action policy，引入 scene-evolving driving guidance 与 selective KV memory，在 NAVSIM + PhysicalAI-AV 上展示 4k→100k clips 的稳定 scaling — 驾驶 sim 的 world-action backbone 路径。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.28125">CLEAR-NeRF: Collinearity and Local-region Enhanced Accurate 3D Reconstruction in Unbounded Scenes</a></div>
+    <div class="meta">arXiv cs.CV · Vladislav Polianskii et al. <span class="score">8</span></div>
+    <div class="field"><div class="field-body">面向 unbounded multi-ROI 场景的 NeRF 重建，显式追求 digital-twin 级度量精度 — 自动 local region 检测、共线性 ray sampling、深度局部邻域提取、几何相关颜色聚合；优于 NeRF baseline 与传统 SfM-MVS。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.27589">What-If World: A Causal Benchmark for General World Models in Embodied Scenarios</a></div>
+    <div class="meta">arXiv cs.CV · Kunlin Cai et al. <span class="score">8</span></div>
+    <div class="field"><div class="field-body">在 nuScenes/DROID 真实帧上做 319 组成对 prompt（仅改一个物理变量），用 APEO 四指标评 9 个 SOTA 视频世界模型在物理介入下能否给出对应不同视频；最强系统也只到 52%，开源系统平均 28% — 给世界模型可信度划了一条新线。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.28549">SPRINT: Efficient Spectral Priors for Humanoid Athletic Sprints</a></div>
+    <div class="meta">arXiv cs.RO · Yantong Wei et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">用频域光谱先验（5 段参考运动）做人形 sprint 控制，Unitree G1 上零样本 sim-to-real 跑到 6 m/s 峰速并保持步态平滑切换。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.27046">Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy</a></div>
+    <div class="meta">arXiv cs.RO · Yuhang Wan et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">把全身电机热模型嵌入 RL pipeline，先训 nominal 移动策略再叠 residual 策略做热管理；Unitree A1 带 3 kg 负载多地形稳定行走 &gt;13 分钟（无热补偿的 nominal 5 分钟就过热）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.26861">REVERSE: Reinforcing Evidence Verification and Search for Agentic Image geo-localization</a></div>
+    <div class="meta">arXiv cs.CV · Yong Li et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">多轮 agentic 图像 geo-localization — 强化&#39;看哪里 / 查什么 / 信什么证据&#39;三步决策的过程奖励，离线 search cache 让检索观测稳定可复用；4B 模型在 Im2GPS3k/YFCC4k 对标更大检索增强模型。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.28490">SSR3D-LLM: Structured Spatial Reasoning via Latent Steps for Fine-Grained Grounding in Unified 3D-LLMs</a></div>
+    <div class="meta">arXiv cs.CV · Jiawei Li et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">在统一 3D-LLM 内部加结构化空间推理 latent steps + memory token，几何感知 scorer 逐步细化候选排序；在 ReferIt3D/ScanRefer/Multi3DRef 上 SOTA — fine-grained 3D 指代分割的新范式。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.27948">VLM-Based Advanced Rider Assistance System for Motorcycle Safety</a></div>
+    <div class="meta">arXiv cs.RO · Mohamed Elnoor et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">用 VLM 做摩托车风险地图（语义 + 物理属性，例如坑深 / 水洼滑度），sampling-based planner 在 CARLA 输出油门/转向；ADAS 走向 ARAS 的早期尝试。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.28186">Visualizing Latent Phase Structures in Locomotion Policies</a></div>
+    <div class="meta">arXiv cs.RO · Daisuke Yasui et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">用聚类挖掘 MuJoCo Ant/HalfCheetah/Walker2D 移动策略内部的运动相结构，扩展到 action/next-state 特征 — 偏分析工具，没新策略但揭示了&#39;自动 phase 抽取&#39;的可行性。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.27038">TPS-Drive: Task-Guided Representation Purification for VLM-based Autonomous Driving</a></div>
+    <div class="meta">arXiv cs.RO · Jiaxiang Li et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">用 task-guided VQ tokenizer 把 codebook 容量从背景重分配到动态 agent，号称解决 VLM 驾驶规划的&#39;空间幻觉&#39;与&#39;表征干扰&#39;；nuScenes/NAVSIM 上刷新闭环安全指标。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.28144">Deconstructing Spatial Complexity: Hierarchical Decomposition for LLM Spatial Reasoning</a></div>
+    <div class="meta">arXiv cs.AI · Yi Wang et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">把 LLM 空间推理做分层任务分解 + MCTS-guided GRPO（UCT 公式融入预测概率与认知不确定性），在导航/规划/策略游戏上 SOTA — 纯 LLM 层面无物理 grounding。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.28583">SARAD: LLM-Based Safety-Aware Hybrid Reinforcement Learning with Collision Prediction for Autonomous Driving</a></div>
+    <div class="meta">arXiv cs.RO · Kangyu Wu et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">用 RAG 增强的 LLM 替代 DRL 随机探索，注意力 discriminator 把 LLM 先验融入策略优化，再加碰撞预测模块；Highway-Env 上验证 — LLM × DRL hybrid 的另一种工程化样本。</div></div>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-05-28T05:30:44.890200+00:00
+</footer>
+
+</div>
+</body>
+</html>
