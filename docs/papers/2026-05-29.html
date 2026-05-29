@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-05-29</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-05-29</h1>
+  <div class="meta">25 篇候选 · 精读 1 · 速览 8 · 窗口 48h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    <div class="group-label">🔥 直接相关精读 (1 篇)</div>
+    <ul>
+      
+      <li><strong>Efficient and Adaptive Autonomous Guidance and Control of Planetary Rover With Improved Traction Controller and Dynamic Cost Map</strong> — 命中月球/火星地表机器人线 (Tier 1)，牵引控制 + 动态代价地图可作 framework 月面 nav 参考 — <a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70171?af=R">arXiv</a></li>
+      
+    </ul>
+    
+    
+    <div class="group-label">📚 值得扫一眼 (3 篇)</div>
+    <ul>
+      
+      <li><strong>Survey on AI‐Enabled Computer Vision Technologies and Applications for Space Robotic Missions</strong> — 太空机器人任务的视觉技术全景综述，与行星地表感知线擦边。 — <a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70150?af=R">arXiv</a></li>
+      
+      <li><strong>Autonomous Navigation in Large‐Scale Underground Environments Based on a Purely Topological Understanding of Tunnel Networks</strong> — 无需度量地图的隧道网络纯拓扑自主导航，户外/非结构化导航思路。 — <a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70157?af=R">arXiv</a></li>
+      
+      <li><strong>DealMaTe: Multi-Dimensional Material Transfer via Diffusion Transformer</strong> — 深度/法线/光照驱动的扩散材质迁移，可参考的资产纹理生成。 — <a href="https://doi.org/10.1145/3817061">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🔥</span>
+    <h2>强相关精读 (1 篇)</h2>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70171?af=R">Efficient and Adaptive Autonomous Guidance and Control of Planetary Rover With Improved Traction Controller and Dynamic Cost Map</a></div>
+    <div class="meta">
+      Journal of Field Robotics · 2026-05-27 · Alessio De Luca et al.
+      <span class="score">8 (4+4)</span>
+    </div>
+    <div class="reason">Planetary rover autonomous nav with traction control and dynamic cost map; matches lunar/Mars surface robot interest</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">面向行星车（月球/火星地表）的自主导引与控制框架，核心是改进的牵引力控制器（traction controller）加动态代价地图（dynamic cost map）。系统根据地形实时更新代价地图来规划路径并抑制松软/不规则地表上的打滑，从而提升行驶效率与地形适应性。文中强调高效与自适应，即在保证安全裕度的前提下减少绕行与能耗。期刊正文（JFR 43(4)）暂无开放摘要，要点据标题与评分理由提炼。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">命中 lens Tier 1「月球/火星地表机器人 + 数字孪生 + ISRU 建造」线。其牵引控制 + 动态代价地图的组合可作为 framework 中月面/火星地表 nav 子模块的参考；暂未直接对位 Paper A–E 某一篇，但行星地表导航与建造方向值得持续跟踪。</div></div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (8 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70150?af=R">Survey on AI‐Enabled Computer Vision Technologies and Applications for Space Robotic Missions</a></div>
+    <div class="meta">Journal of Field Robotics · Maciej Quoos et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">综述太空机器人任务中 AI 视觉技术的现状与应用，与行星地表感知/导航线擦边，可作背景参考。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70151?af=R">Deep Learning‐Driven Steering Angle Prediction and Scene Understanding via Harmonic Carpet Weaver Optimization</a></div>
+    <div class="meta">Journal of Field Robotics · Jayashree Pradip Tamkhade et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">用一种小众优化算法做转向角预测与场景理解，纯感知，无城市/仿真/3D 落点。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70166?af=R">Kalman Filter–Based Sensor Fusion for Navigation of Holonomic Unmanned Ground Vehicles</a></div>
+    <div class="meta">Journal of Field Robotics · Hassan Ul Haq et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">全向无人地面车的卡尔曼传感器融合导航，方法通用，无城市尺度或仿真角度。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70173?af=R">Optimized Object Detection in Road‐Vehicle Images Using Approximate Tree Multiplier‐Based Daubechies Wavelet Transform and YOLO Variant</a></div>
+    <div class="meta">Journal of Field Robotics · Venkatnarayanan Chinnaraj et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">道路车辆图像的 YOLO 变体目标检测，纯感知 benchmark，无仿真/3D 关联。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70175?af=R">Nested Actors and Critics With Uncertainty Parameter in Robot Path Planning</a></div>
+    <div class="meta">Journal of Field Robotics · Yuwan Gu et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">带不确定性参数的嵌套 actor-critic 强化学习路径规划，通用方法，无城市/户外仿真接口。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70157?af=R">Autonomous Navigation in Large‐Scale Underground Environments Based on a Purely Topological Understanding of Tunnel Networks</a></div>
+    <div class="meta">Journal of Field Robotics · Lorenzo Cano et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">基于隧道网络纯拓扑理解的大规模地下自主导航，户外/非结构化导航思路，但非城市或仿真。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70159?af=R">A Season‐Robust Long‐Term Localization Method Using Trunk Semantic Features in Dynamic Orchard Environments</a></div>
+    <div class="meta">Journal of Field Robotics · Enbo Liu et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">利用树干语义特征实现果园动态环境的季节鲁棒长期定位，户外但偏农业，无城市/仿真角度。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://doi.org/10.1145/3817061">DealMaTe: Multi-Dimensional Material Transfer via Diffusion Transformer</a></div>
+    <div class="meta">ACM Transactions on Graphics · Nisha Huang et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">用深度/法线/光照驱动的扩散框架做材质迁移（轻量 3D LoRA + KV 缓存提速），属图形纹理生成，与 3D 资产线弱相关。</div></div>
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📖</span>
+    <h2>期刊新刊</h2>
+  </div>
+  
+  <div class="journal-group">
+    <h3>Journal of Field Robotics</h3>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70171?af=R">Efficient and Adaptive Autonomous Guidance and Control of Planetary Rover With Improved Traction Controller and Dynamic Cost Map</a></div>
+      <div class="meta">Alessio De Luca et al. <span class="score">8</span></div>
+      <div class="field"><div class="field-body">行星车自主导引：改进牵引控制 + 动态代价地图，提升松软地表行驶效率与适应性。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70150?af=R">Survey on AI‐Enabled Computer Vision Technologies and Applications for Space Robotic Missions</a></div>
+      <div class="meta">Maciej Quoos et al. <span class="score">3</span></div>
+      <div class="field"><div class="field-body">太空机器人任务 AI 视觉技术综述。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70151?af=R">Deep Learning‐Driven Steering Angle Prediction and Scene Understanding via Harmonic Carpet Weaver Optimization</a></div>
+      <div class="meta">Jayashree Pradip Tamkhade et al. <span class="score">2</span></div>
+      <div class="field"><div class="field-body">转向角预测 + 场景理解，小众优化算法驱动。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70166?af=R">Kalman Filter–Based Sensor Fusion for Navigation of Holonomic Unmanned Ground Vehicles</a></div>
+      <div class="meta">Hassan Ul Haq et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">全向 UGV 的卡尔曼传感器融合导航。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70157?af=R">Autonomous Navigation in Large‐Scale Underground Environments Based on a Purely Topological Understanding of Tunnel Networks</a></div>
+      <div class="meta">Lorenzo Cano et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">隧道网络纯拓扑理解的大规模地下导航。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70159?af=R">A Season‐Robust Long‐Term Localization Method Using Trunk Semantic Features in Dynamic Orchard Environments</a></div>
+      <div class="meta">Enbo Liu et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">树干语义特征实现果园季节鲁棒长期定位。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70175?af=R">Nested Actors and Critics With Uncertainty Parameter in Robot Path Planning</a></div>
+      <div class="meta">Yuwan Gu et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">带不确定性参数的嵌套 actor-critic 路径规划。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70173?af=R">Optimized Object Detection in Road‐Vehicle Images Using Approximate Tree Multiplier‐Based Daubechies Wavelet Transform and YOLO Variant</a></div>
+      <div class="meta">Venkatnarayanan Chinnaraj et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">道路车辆图像 YOLO 变体目标检测。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70162?af=R">Innovative Soft Material‐Assisted Robot Grasping Devices: From Design Concept to Fabrication and Application Scenarios</a></div>
+      <div class="meta">Huijie Guo et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">软材料辅助抓取装置的设计到制造综述。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70174?af=R">Ergonomically Designed Assistive Robots: Where and How to Bring Comfort, Safety, and Independence to Elderly Care</a></div>
+      <div class="meta">Ata Jahangir Moshayedi et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">面向养老照护的人因辅助机器人。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70156?af=R">D2GNet: Efficient 6‐DoF Grasp Detection in Cluttered Scenes via Density‐Aware Dual‐Dimensional Graph Networks</a></div>
+      <div class="meta">Mingxuan Quan et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">杂乱场景下的高效 6-DoF 抓取检测。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70160?af=R">A Novel High‐Voltage‐Wire Stripping Robot and Adaptive Fuzzy RBF Neural Network PID Controller Optimized by PSO‐GA Algorithm</a></div>
+      <div class="meta">Jun Zhong et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">高压剥线机器人 + 自适应模糊 PID 控制。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70161?af=R">Precision Error Compensation Algorithm for Automated Drill Pipe Gripping in Underground Coal Mine Drilling Robots</a></div>
+      <div class="meta">Lu Qianhai et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">煤矿钻杆抓取的精度误差补偿算法。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70164?af=R">Design of a Multi‐Sensor Integrated Control System for Vehicle‐Mounted Tunnel Lining Inspection With Real‐Time Velocity and Posture Tracking</a></div>
+      <div class="meta">Yang Lei et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">车载隧道衬砌检测的多传感器集成控制系统。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70169?af=R">Formation Control of UAVs Based on Dynamic Vector Velocity Obstacle Method</a></div>
+      <div class="meta">Yimei Chen et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">基于动态矢量速度障碍法的无人机编队控制。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70170?af=R">A Novel Crawling Robot Based on the Hexagonal Mesh Structure and Enhanced PID Control Strategy</a></div>
+      <div class="meta">Meng Hongjun et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">六边形网格结构爬行机器人 + 增强 PID 控制。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70176?af=R">Real‐Time Detection of Undesired Human Interventions in Robotic Work Cells Using a Convolutional Neural Network‐Based Novel Architecture and Reliability Analysis With Explainable Artificial Intelligence</a></div>
+      <div class="meta">Merdan Ozkahraman <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">工作单元中非预期人工干预的实时 CNN 检测 + 可解释 AI。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70168?af=R">Design, Development, and Field Test Analysis of a Multiarm Tomato Harvesting Robot</a></div>
+      <div class="meta">Dong Tiantian et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">多臂番茄采摘机器人的设计与田间测试。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70177?af=R">Biomimetic Design and Performance Analysis of a Magnetic H‐Shaped Microrobot</a></div>
+      <div class="meta">Sanxiu Wang et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">磁驱 H 形微型机器人的仿生设计与性能分析。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70165?af=R">Guidance and Flocking Algorithm for a Distributed FW‐UAV Swarm System Under Coordinated Surveillance Missions in an Occluded Environment</a></div>
+      <div class="meta">Muhammad Imran Baig et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">遮挡环境下分布式固定翼无人机集群的协同监视与编队。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70167?af=R">Autonomous Grading Maneuver Determination Algorithm for Electric Dozers</a></div>
+      <div class="meta">Önder Halis Bettemir <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">电动推土机自主平整作业的机动决策算法。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70172?af=R">Variable Structure Adaptive Soft Robot for Complex Pipeline Environments</a></div>
+      <div class="meta">Wenkai Huang et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">面向复杂管道环境的变结构自适应软体机器人。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70244?af=R">Issue Information</a></div>
+      <div class="meta"> <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">期刊本期前置信息，非论文。</div></div>
+    </div>
+    
+  </div>
+  
+  <div class="journal-group">
+    <h3>ACM Transactions on Graphics</h3>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://doi.org/10.1145/3817061">DealMaTe: Multi-Dimensional Material Transfer via Diffusion Transformer</a></div>
+      <div class="meta">Nisha Huang et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">深度/法线/光照驱动的扩散材质迁移，轻量 3D LoRA + KV 缓存提速，去除文本与参考网络。</div></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>航天 / 星际建造</h2>
+  </div>
+  
+  <div class="paper space">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70171?af=R">Efficient and Adaptive Autonomous Guidance and Control of Planetary Rover With Improved Traction Controller and Dynamic Cost Map</a></div>
+    <div class="meta">Journal of Field Robotics</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">行星车（月球/火星地表）自主导引与控制：改进牵引力控制器 + 动态代价地图，根据地形实时更新代价地图以抑制打滑、提升松软地表的行驶效率与适应性。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">命中 lens Tier 1「月球/火星地表机器人 + 数字孪生 + ISRU 建造」线；牵引控制 + 动态代价地图可作 framework 月面 nav 子模块参考。</div></div>
+  </div>
+  
+  <div class="paper space">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70150?af=R">Survey on AI‐Enabled Computer Vision Technologies and Applications for Space Robotic Missions</a></div>
+    <div class="meta">Journal of Field Robotics</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">综述太空机器人任务中 AI 视觉技术的现状与应用，覆盖感知、导航与目标识别等方向，适合作为行星地表感知线的背景索引。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">暂未直接对位 Paper A–E，但作为空间机器人视觉综述可作 framework 月面/火星地表感知子项的文献入口。</div></div>
+  </div>
+  
+</section>
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-05-29T01:41:07.615917+00:00
+</footer>
+
+</div>
+</body>
+</html>
