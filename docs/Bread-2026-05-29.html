@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-05-29 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-05-29</h1>
+  <div class="meta">41 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">Anthropic 募资 650 亿美元、投后估值 9650 亿首次反超 OpenAI</span>
+      <span class="source">Bloomberg · <a href="https://www.bloomberg.com/news/articles/2026-05-28/anthropic-raises-at-965-billion-valuation-eclipsing-openai">https://www.bloomberg.com/news/articles/2026-05-28/anthropic-raises-at-965-billion-valuation-eclipsing-openai</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Claude Opus 4.8 发布，被坦承为&#34;小幅但可感知改进&#34;，支持数百子智能体并行</span>
+      <span class="source">Simon Willison · <a href="https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything">https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Dell 盘后股价飙升 40%，AI 服务器年销售展望达 600 亿美元</span>
+      <span class="source">Bloomberg · <a href="https://www.bloomberg.com/news/articles/2026-05-28/dell-boosts-outlook-to-60-billion-in-ai-server-sales-this-year">https://www.bloomberg.com/news/articles/2026-05-28/dell-boosts-outlook-to-60-billion-in-ai-server-sales-this-year</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Waymo 第 6 代 Driver 上线 Ojai robotaxi，累计完成超 2000 万次全自动出行</span>
+      <span class="source">Electrek · <a href="https://electrek.co/2026/05/28/waymo-ojai-robotaxi-rides-6th-gen-driver/">https://electrek.co/2026/05/28/waymo-ojai-robotaxi-rides-6th-gen-driver/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SpaceX 以约 2 万亿美元估值冲刺 IPO</span>
+      <span class="source">Bloomberg · <a href="https://www.bloomberg.com/news/videos/2026-05-28/why-the-spacex-ipo-is-unlike-any-other">https://www.bloomberg.com/news/videos/2026-05-28/why-the-spacex-ipo-is-unlike-any-other</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">世界模型接棒语言模型，物理 AGI&#34;双金字塔&#34;体系，剑指通用机器人&#34;家庭时代&#34;</span>
+      <div class="why">空间智能 / 世界模型 + 通用机器人，正是 LeapsCora 强关注的 World Model 与城市具身方向</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/05/426237.html">https://www.qbitai.com/2026/05/426237.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">智象未来押注世界模型，用低成本视频/图像/3D 合成数据对抗数据稀缺</span>
+      <div class="why">图/视频转 3D + sim-generated 具身训练数据，与 LeapsCora 合成数据路线直接对标</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3820602297208966?f=rss">https://36kr.com/p/3820602297208966?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Samsung 率先出货最先进 AI 内存样品</span>
+      <div class="why">上游 HBM/AI 存储供应链信号，影响训练算力成本</div>
+      <div class="source">Bloomberg · <a href="https://www.bloomberg.com/news/articles/2026-05-28/samsung-claims-lead-in-shipping-top-end-ai-memory-chip-samples">https://www.bloomberg.com/news/articles/2026-05-28/samsung-claims-lead-in-shipping-top-end-ai-memory-chip-samples</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">DeepSeek V4 芯模协同，国产算力生态飞轮加速</span>
+      <div class="why">国产训练算力栈动态，关系到训练成本与可用性</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/05/426293.html">https://www.qbitai.com/2026/05/426293.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">2026 Robotics Summit &amp; Expo 收官（波士顿）</span>
+      <div class="why">机器人产业 pulse，竞品/生态动向集中地</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/your-guide-to-the-last-day-of-the-2026-robotics-summit-expo/">https://www.therobotreport.com/your-guide-to-the-last-day-of-the-2026-robotics-summit-expo/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">9 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Claude Opus 4.8: &#34;a modest but tangible improvement&#34;</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic shipped Claude Opus 4.8 and unusually described it as a &#34;modest but tangible improvement&#34; over its predecessor.</li>
+      
+      <li>The announcement says the lab is also working on releasing models that provide many of the same capabilities as Opus at a lower cost, with &#34;honesty&#34; a recurring theme.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything">https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 23:59 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Claude 4.8炸场！部分能力超过Mythos，支持数百子智能体并行</div>
+    
+    <ul class="article-points">
+      
+      <li>Claude 4.8 部分能力超过 Mythos，并支持数百个子智能体并行运行。</li>
+      
+      <li>模型可长时间自主执行任务，人类无需经常回来检查其工作进度。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/05/426314.html">https://www.qbitai.com/2026/05/426314.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 23:57 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">llm-anthropic 0.25.1</div>
+    
+    <ul class="article-points">
+      
+      <li>New release adds Claude Opus 4.8 (claude-opus-4.8) and a `-o fast 1` option for fast mode, for organizations with that feature enabled.</li>
+      
+      <li>Default max_tokens for each model now defaults to that model&#39;s maximum output rather than 8,192.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/May/28/llm-anthropic/#atom-everything">https://simonwillison.net/2026/May/28/llm-anthropic/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 23:54 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Billion-Dollar Quest to Build AI That Improves Itself</div>
+    
+    <ul class="article-points">
+      
+      <li>A growing number of AI companies are focusing on recursive self-improvement, an unproven approach in which AI iteratively improves itself.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/newsletters/2026-05-28/the-billion-dollar-quest-to-build-ai-that-improves-itself">https://www.bloomberg.com/news/newsletters/2026-05-28/the-billion-dollar-quest-to-build-ai-that-improves-itself</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 21:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple working to cram massive Gemini model into iPhone to power new Siri</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple is reportedly trying to distill Google&#39;s multi-trillion-parameter Gemini to run on the iPhone for the new Siri.</li>
+      
+      <li>A cloud component is probably still inevitable given the model&#39;s size.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/05/apple-reportedly-trying-to-distill-googles-multi-trillion-parameter-gemini-ai-to-run-on-iphone/">https://arstechnica.com/ai/2026/05/apple-reportedly-trying-to-distill-googles-multi-trillion-parameter-gemini-ai-to-run-on-iphone/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 18:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">7B打败o3、GPT-5！医学AI智能体让模型学会&#34;看哪里、怎么看&#34;</div>
+    
+    <ul class="article-points">
+      
+      <li>一个 7B 医学 AI 智能体通过学会&#34;看哪里、怎么看&#34;，在医学任务上击败了 o3 和 GPT-5。</li>
+      
+      <li>文章认为医学 AI Agent 已到关键拐点。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/05/426150.html">https://www.qbitai.com/2026/05/426150.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 08:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Claude&#39;s new model is more &#39;honest&#39; when it messes up</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic released Claude Opus 4.8 and is touting the model&#39;s &#34;honesty,&#34; training it to avoid making claims it can&#39;t support.</li>
+      
+      <li>It notes a general problem where models sometimes jump to conclusions, which the new model is meant to reduce.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/939094/anthropic-claude-4-8-opus-honesty-effort">https://www.theverge.com/ai-artificial-intelligence/939094/anthropic-claude-4-8-opus-honesty-effort</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 17:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">阶跃发布Step 3.7 Flash</div>
+    
+    <ul class="article-points">
+      
+      <li>阶跃星辰正式发布并开源 Step 3.7 Flash，面向 Agent 生产化阶段的新一代 Flash 模型。</li>
+      
+      <li>围绕 Agent、Coding、Search 与多模态工作流进行系统优化。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3829634070209672?f=rss">https://36kr.com/newsflashes/3829634070209672?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-29 00:36 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">智象未来CEO梅涛：多模态模型Token的毛利率，远高于语言模型</div>
+    
+    <ul class="article-points">
+      
+      <li>智象未来 CEO 梅涛称多模态 Token 毛利率远高于语言模型，公司终极目标是打造世界模型。</li>
+      
+      <li>路线上不走李飞飞&#34;生成 3D 世界&#34;或 LeCun&#34;自监督预测&#34;两派，而是从最稀缺、最贵的多模态数据入手，用低成本合成的视频、图像、3D 交互数据对抗数据稀缺瓶颈。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3820602297208966?f=rss">https://36kr.com/p/3820602297208966?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 08:20 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">世界模型接棒语言模型，这家公司全球首创物理AGI&#34;双金字塔&#34;体系，通用机器人进入&#34;家庭时代&#34;</div>
+    
+    <ul class="article-points">
+      
+      <li>该公司提出物理 AGI&#34;双金字塔&#34;体系，称世界模型正接棒语言模型。</li>
+      
+      <li>目标 12 个月冲击物理 AGI 的&#34;GPT-3 时刻&#34;，推动通用机器人进入&#34;家庭时代&#34;。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/05/426237.html">https://www.qbitai.com/2026/05/426237.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 13:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The evolution of cobots in metal fabrication and construction</div>
+    
+    <ul class="article-points">
+      
+      <li>Hirebotics co-founder and CEO Matt Bush argues cobots are becoming a necessity for manufacturers and welders.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/hirebotics-talks-evolution-cobots-metal-fabrication-construction/">https://www.therobotreport.com/hirebotics-talks-evolution-cobots-metal-fabrication-construction/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 14:12 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Your guide to the last day of the 2026 Robotics Summit &amp; Expo</div>
+    
+    <ul class="article-points">
+      
+      <li>Coverage of the final day of the 2026 Robotics Summit &amp; Expo in Boston, including the Women in Robotics breakfast.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/your-guide-to-the-last-day-of-the-2026-robotics-summit-expo/">https://www.therobotreport.com/your-guide-to-the-last-day-of-the-2026-robotics-summit-expo/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 12:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Waymo starts offering rides in new Ojai robotaxi with 6th-gen Driver</div>
+    
+    <ul class="article-points">
+      
+      <li>Waymo is offering select riders trips in its purpose-built Ojai robotaxi, debuting 6th-generation Driver hardware across San Francisco, Los Angeles, and Phoenix, with trips free for a limited time.</li>
+      
+      <li>The company has now surpassed 20 million fully autonomous trips across 11 cities, a scale no competitor matches.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/05/28/waymo-ojai-robotaxi-rides-6th-gen-driver/">https://electrek.co/2026/05/28/waymo-ojai-robotaxi-rides-6th-gen-driver/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 15:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">BYD reveals China&#39;s first in-house 4nm smart driving chip with massive computing power</div>
+    
+    <ul class="article-points">
+      
+      <li>BYD revealed China&#39;s first in-house 4nm smart-driving chip, which it says unlocks &#34;the highest level of vehicle intelligence&#34; with L3 and L4 autonomous capability.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/05/28/byd-reveals-chinas-first-in-house-4nm-smart-driving-chip/">https://electrek.co/2026/05/28/byd-reveals-chinas-first-in-house-4nm-smart-driving-chip/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 14:24 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla&#39;s own AI trainers don&#39;t trust &#39;Full Self-Driving&#39; or its safety stats, Reuters finds</div>
+    
+    <ul class="article-points">
+      
+      <li>A Reuters investigation, based on interviews with nine former Tesla data labelers, a former self-driving engineer, and 11 traffic-safety researchers, finds Tesla&#39;s &#34;Full Self-Driving&#34; safety stats rest on deeply flawed methodology.</li>
+      
+      <li>The workers who train the AI system reportedly don&#39;t trust the technology to drive them.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/05/28/tesla-fsd-safety-stats-misleading-reuters-investigation/">https://electrek.co/2026/05/28/tesla-fsd-safety-stats-misleading-reuters-investigation/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 13:33 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Why The SpaceX IPO Is Unlike Any Other</div>
+    
+    <ul class="article-points">
+      
+      <li>Once a rocket startup, SpaceX is now a big bet on satellites, AI, and Mars, heading toward an IPO at a projected valuation near $2 trillion.</li>
+      
+      <li>The piece questions whether Wall Street is rushing in too fast.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-05-28/why-the-spacex-ipo-is-unlike-any-other">https://www.bloomberg.com/news/videos/2026-05-28/why-the-spacex-ipo-is-unlike-any-other</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 21:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">FAA requires mishap investigation into latest Starship launch</div>
+    
+    <ul class="article-points">
+      
+      <li>The FAA will require SpaceX to complete an investigation into its latest Starship test flight before allowing the vehicle to fly again.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/faa-requires-mishap-investigation-into-latest-starship-launch/">https://spacenews.com/faa-requires-mishap-investigation-into-latest-starship-launch/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 04:06 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">21 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Anthropic&#39;s run-rate revenue hits $47 billion</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic&#39;s $65B Series H announcement disclosed that run-rate revenue crossed $47 billion earlier this month, an annualized figure (most recent month × 12).</li>
+      
+      <li>The lab has made a habit of sharing run-rate revenue in such announcements, signaling rapid growth versus earlier in the year.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/May/29/anthropic/#atom-everything">https://simonwillison.net/2026/May/29/anthropic/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-29 01:23 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Samsung Takes Lead in Shipping Top-End AI Memory Chip Samples</div>
+    
+    <ul class="article-points">
+      
+      <li>Samsung Electronics has begun shipping samples of the industry&#39;s most advanced memory to customers.</li>
+      
+      <li>The move gives it an early lead in supplying essential components for AI accelerators made by the likes of Nvidia.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-28/samsung-claims-lead-in-shipping-top-end-ai-memory-chip-samples">https://www.bloomberg.com/news/articles/2026-05-28/samsung-claims-lead-in-shipping-top-end-ai-memory-chip-samples</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 23:55 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Dell CFO Kennedy Sees AI Server Demand Driving Sales Growth</div>
+    
+    <ul class="article-points">
+      
+      <li>Dell CFO David Kennedy says rising AI server demand is why the company boosted its annual sales forecast.</li>
+      
+      <li>He also commented on Dell&#39;s $9.7 billion Pentagon software deal.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-05-28/dell-cfo-kennedy-sees-ai-demand-driving-sales-growth-video">https://www.bloomberg.com/news/videos/2026-05-28/dell-cfo-kennedy-sees-ai-demand-driving-sales-growth-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 22:04 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Dell Boosts Outlook to $60B in AI Server Sales This Year</div>
+    
+    <ul class="article-points">
+      
+      <li>Dell guided to about $167 billion revenue for the fiscal year ending January 2027, including $60 billion from AI server sales.</li>
+      
+      <li>The outlook far surpassed analysts&#39; estimates, driven by demand for AI servers.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-05-28/dell-boosts-outlook-to-60b-in-ai-server-sales-this-year-video">https://www.bloomberg.com/news/videos/2026-05-28/dell-boosts-outlook-to-60b-in-ai-server-sales-this-year-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 21:25 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apollo Shops $36 Billion Debt Deal to Buy Google Chips for Anthropic</div>
+    
+    <ul class="article-points">
+      
+      <li>Apollo Global Management and Blackstone are working to bring more investors into a roughly $36 billion debt financing deal.</li>
+      
+      <li>The proceeds would help Anthropic build out its AI infrastructure.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-28/apollo-shops-36-billion-debt-deal-to-buy-google-chips-for-anthropic">https://www.bloomberg.com/news/articles/2026-05-28/apollo-shops-36-billion-debt-deal-to-buy-google-chips-for-anthropic</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 20:48 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Fed up with vibe coders, dev sneaks data-nuking prompt injection into their code</div>
+    
+    <ul class="article-points">
+      
+      <li>A developer fed up with &#34;vibe coders&#34; secretly added a prompt injection to the jqwik library instructing AI coding agents to delete app output.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/security/2026/05/fed-up-with-vibe-coders-dev-sneaks-data-nuking-prompt-injection-into-their-code/">https://arstechnica.com/security/2026/05/fed-up-with-vibe-coders-dev-sneaks-data-nuking-prompt-injection-into-their-code/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 20:29 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Dell Shares Soar 40% After Outlook Tops Estimates on AI Boom</div>
+    
+    <ul class="article-points">
+      
+      <li>Dell shares gained almost 40% in extended trading after its outlook far surpassed analysts&#39; estimates.</li>
+      
+      <li>The jump was fueled by demand for servers that power AI work.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-28/dell-boosts-outlook-to-60-billion-in-ai-server-sales-this-year">https://www.bloomberg.com/news/articles/2026-05-28/dell-boosts-outlook-to-60-billion-in-ai-server-sales-this-year</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 20:07 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Anthropic Raises $65 Billion in Funding Round, Eclipses OpenAI</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic raised $65 billion in a funding round valuing it at $965 billion including the new investment.</li>
+      
+      <li>The valuation eclipses rival OpenAI&#39;s value for the first time.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-05-28/anthropic-raises-65b-in-funding-round-eclipses-openai-video">https://www.bloomberg.com/news/videos/2026-05-28/anthropic-raises-65b-in-funding-round-eclipses-openai-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 20:06 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Solar Firm Nextpower Eyes AI&#39;s Power Needs With Battery Deal</div>
+    
+    <ul class="article-points">
+      
+      <li>Nextpower agreed to buy battery company Prevalon Energy for as much as $365 million.</li>
+      
+      <li>The deal marks the solar-tracking provider&#39;s move into energy storage and the fast-growing AI data-center market.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-28/solar-company-nextpower-eyes-ai-s-power-needs-with-battery-deal">https://www.bloomberg.com/news/articles/2026-05-28/solar-company-nextpower-eyes-ai-s-power-needs-with-battery-deal</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 20:05 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Salesforce Is Facing a True Test, Ives Says</div>
+    
+    <ul class="article-points">
+      
+      <li>Wedbush&#39;s Dan Ives discusses the AI space and earnings from Salesforce and Snowflake.</li>
+      
+      <li>He also weighs in on whether Tesla and SpaceX should merge.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-05-28/salesforce-is-facing-a-true-test-ives-says-video">https://www.bloomberg.com/news/videos/2026-05-28/salesforce-is-facing-a-true-test-ives-says-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 19:48 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">US Investors Back Brazil&#39;s Pax in Bet on AI-Powered Policing</div>
+    
+    <ul class="article-points">
+      
+      <li>Brazilian AI startup Pax, which helps police investigate violent crime, plans rapid domestic expansion.</li>
+      
+      <li>US investors are betting its technology is ready for wider use as Brazil confronts mounting public-security concerns.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-28/us-investors-back-brazil-s-pax-in-bet-on-ai-powered-policing">https://www.bloomberg.com/news/articles/2026-05-28/us-investors-back-brazil-s-pax-in-bet-on-ai-powered-policing</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 18:43 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Anthropic Valued at $965 Billion After Latest Funding Round, Eclipsing OpenAI</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic raised $65 billion at a $965 billion valuation including the new investment.</li>
+      
+      <li>It eclipses OpenAI&#39;s value for the first time.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-28/anthropic-raises-at-965-billion-valuation-eclipsing-openai">https://www.bloomberg.com/news/articles/2026-05-28/anthropic-raises-at-965-billion-valuation-eclipsing-openai</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 18:22 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Trump loses more control over AI regulation as Illinois passes landmark law</div>
+    
+    <ul class="article-points">
+      
+      <li>Illinois passed a landmark AI law that includes safety testing, eroding Trump&#39;s control over AI regulation.</li>
+      
+      <li>Anthropic and OpenAI are reportedly on board with the Illinois safety-testing approach.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/tech-policy/2026/05/trump-loses-more-control-over-ai-regulation-as-illinois-passes-landmark-law/">https://arstechnica.com/tech-policy/2026/05/trump-loses-more-control-over-ai-regulation-as-illinois-passes-landmark-law/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 17:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">DeepSeek V4芯模协同背后，国产算力生态开始飞轮加速</div>
+    
+    <ul class="article-points">
+      
+      <li>DeepSeek V4 通过芯模协同设计，带动国产算力生态飞轮加速。</li>
+      
+      <li>文章主张国产算力是趋势，应尽早用起来。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/05/426293.html">https://www.qbitai.com/2026/05/426293.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 13:32 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The AI Hype Index: AI gets booed in graduation season</div>
+    
+    <ul class="article-points">
+      
+      <li>MIT Technology Review&#39;s AI Hype Index returns, charting sentiment toward AI.</li>
+      
+      <li>Former Google CEO Eric Schmidt was met with boos when he told University of Arizona graduates their task is to help shape AI.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/05/28/1138053/the-ai-hype-index-ai-gets-booed-in-graduation-season/">https://www.technologyreview.com/2026/05/28/1138053/the-ai-hype-index-ai-gets-booed-in-graduation-season/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 09:51 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">投入变收入，互联网大厂AI战略商业兑现尝到甜头</div>
+    
+    <ul class="article-points">
+      
+      <li>2026 财报季，联想、阿里、百度等纷纷将 AI 业务作为独立营收口径公开披露，使其拥有可核算、可对比、可验证的量化标准。</li>
+      
+      <li>AI 业务成为驱动公司增长的核心引擎，科技公司正从&#34;AI 投入&#34;转向&#34;AI 收入&#34;。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3829648616924553?f=rss">https://36kr.com/newsflashes/3829648616924553?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-29 00:53 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI保险平台Corgi融资1.06亿美元，估值26亿美元</div>
+    
+    <ul class="article-points">
+      
+      <li>AI 保险平台 Corgi 完成由 TCV 领投的 1.06 亿美元融资，估值达 26 亿美元。</li>
+      
+      <li>CEO Nico Laqua 称公司上月已实现盈利，新一轮融资将帮助拓展至货运、小型企业和体育行业。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3829640355194241?f=rss">https://36kr.com/newsflashes/3829640355194241?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-29 00:50 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apollo寻求投资者参与360亿美元债务交易，为Anthropic采购AI芯片</div>
+    
+    <ul class="article-points">
+      
+      <li>阿波罗与黑石正寻求引入更多投资者参与约 360 亿美元债务融资，帮助 Anthropic 构建 AI 基础设施。</li>
+      
+      <li>资金将用于购买谷歌定制芯片 TPU 供 Anthropic 租用，博通为交易中最大一笔付款提供支持。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3829638235628679?f=rss">https://36kr.com/newsflashes/3829638235628679?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-29 00:39 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">8点1氪丨Anthropic完成650亿融资，估值9650亿首次反超OpenAI；售卖不合格足银手镯，周六福被罚；黄仁勋加入清华大学，任经管学院顾问</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic 新一轮融资募资 650 亿美元、投后估值达 9650 亿美元，首次超越 OpenAI，由 Altimeter、Dragoneer、Greenoaks 和红杉资本领投，每家领投方出资均超 20 亿美元。</li>
+      
+      <li>另据报道，黄仁勋加入清华大学任经管学院顾问；周六福因售卖不合格足银手镯被深圳监管部门罚没近千元。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3829622140593288?f=rss">https://36kr.com/p/3829622140593288?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-29 00:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">A $2,000 AI-generated film will make its debut at Tribeca</div>
+    
+    <ul class="article-points">
+      
+      <li>A $2,000, 75-minute fully AI-generated film, &#34;Dreams of Violets,&#34; will premiere at next month&#39;s Tribeca Festival.</li>
+      
+      <li>It is a fictional dramatization of the Iranian government&#39;s mass killing of protestors in January, with people and images fully created by AI.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/entertainment/939067/ai-film-dreams-of-violets-tribeca">https://www.theverge.com/entertainment/939067/ai-film-dreams-of-violets-tribeca</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 16:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">科氪 | 雷神联合AMD发布覆盖三大形态AI工作站产品矩阵</div>
+    
+    <ul class="article-points">
+      
+      <li>雷神联合 AMD 发布覆盖塔式、迷你 PC 和移动三大类别的 AI 工作站全场景产品矩阵，称为业内首批完成三大形态全覆盖。</li>
+      
+      <li>主打 Agent 时代多智能体并行所需的 GPU+CPU 端到端协同算力。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3828898785858185?f=rss">https://36kr.com/p/3828898785858185?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 11:57 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Battle Is On to Win Attention and Money as Linear TV Declines</div>
+    
+    <ul class="article-points">
+      
+      <li>With traditional TV audiences diminishing, players from Piers Morgan to OpenAI are trying to capitalize on the shift in attention and ad money.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/newsletters/2026-05-28/the-battle-is-on-to-win-attention-and-money-as-linear-tv-declines">https://www.bloomberg.com/news/newsletters/2026-05-28/the-battle-is-on-to-win-attention-and-money-as-linear-tv-declines</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 20:17 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Download: climate tech goes public and the AI Hype Index returns</div>
+    
+    <ul class="article-points">
+      
+      <li>Climate tech companies are going public: solar and battery firm Solv Energy IPO&#39;d in February at a $6 billion valuation, and small-modular-reactor maker X-energy followed.</li>
+      
+      <li>The edition also brings back MIT TR&#39;s AI Hype Index.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/05/28/1138085/the-download-climate-tech-ipos-ai-hype-index/">https://www.technologyreview.com/2026/05/28/1138085/the-download-climate-tech-ipos-ai-hype-index/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 12:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">科氪 | 雷鸟创新双品齐发：GT 系列、V4 同台亮相，次世代 AI 眼镜雷鸟 iO 提前预告</div>
+    
+    <ul class="article-points">
+      
+      <li>雷鸟创新发布行业首款专业影视级 AR 眼镜 GT 系列（1899 元起）和新一代 AI 拍摄眼镜 V4（2199 元起），并预告次世代 AI 眼镜雷鸟 iO。</li>
+      
+      <li>演员蒋奇明成为品牌代言人；雷鸟全链路自研，布局 AR 观影、AI 拍摄与 AI+AR 空间计算三大品类。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3828851140350592?f=rss">https://36kr.com/p/3828851140350592?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-28 11:08 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（1）</h3>
+  <ul>
+    
+    <li><strong>虎嗅</strong>: <code>fetch error: Remote end closed connection without response</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-05-29.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-05-29T01:41:07.608023+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
