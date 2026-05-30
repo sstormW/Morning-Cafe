@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>晨报 · 2026-05-30 · Morning Cafe</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="晨报 · 2026-05-30｜LeapsCora 视角">
+<meta property="og:description" content="Top 5 首条：Anthropic 完成 650 亿美元融资、估值 9650 亿美元，首超 OpenAI ｜ LeapsCora 直接相关：全球首个“事件级预测”具身智能世界模型发布，从按帧学动作转向按事件理解世界">
+<meta property="og:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-05-30.png">
+<meta property="og:url" content="https://sstormw.github.io/Morning-Cafe/2026-05-30.html">
+<meta property="og:site_name" content="Morning Cafe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="晨报 · 2026-05-30｜LeapsCora 视角">
+<meta name="twitter:description" content="Top 5 首条：Anthropic 完成 650 亿美元融资、估值 9650 亿美元，首超 OpenAI ｜ LeapsCora 直接相关：全球首个“事件级预测”具身智能世界模型发布，从按帧学动作转向按事件理解世界">
+<meta name="twitter:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-05-30.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 14px; }
+
+.section { margin-top: 40px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+.top5 .source a:hover { text-decoration: underline; }
+
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title {
+  font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink);
+}
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .nav { margin-bottom: 8px; }
+.footer .nav a { margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 28px 18px 50px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">☕ Morning Cafe</div>
+  <h1>晨报 · 2026-05-30</h1>
+  <div class="meta">36 条来源 · 抓取窗口 24h · LeapsCora 视角</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">Anthropic 完成 650 亿美元融资、估值 9650 亿美元，首超 OpenAI</span>
+      <span class="source">Bloomberg · <a href="https://www.bloomberg.com/news/videos/2026-05-29/anthropic-valuation-of-965-billion-passes-openai-video">https://www.bloomberg.com/news/videos/2026-05-29/anthropic-valuation-of-965-billion-passes-openai-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Blue Origin New Glenn 在卡纳维拉尔角点火测试中于发射台爆炸，火箭损毁、发射台严重受损</span>
+      <span class="source">SpaceNews · <a href="https://spacenews.com/new-glenn-rocket-explodes-on-cape-canaveral-pad/">https://spacenews.com/new-glenn-rocket-explodes-on-cape-canaveral-pad/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">NIST 提出人形机器人基线性能基准与测试规程</span>
+      <span class="source">The Robot Report · <a href="https://www.therobotreport.com/nist-proposes-a-baseline-performance-benchmark-for-humanoid-robots/">https://www.therobotreport.com/nist-proposes-a-baseline-performance-benchmark-for-humanoid-robots/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">面壁智能「开源周」系统性押注端侧 AI</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/05/426542.html">https://www.qbitai.com/2026/05/426542.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">吉利或将研究院数百人辅助驾驶团队整合入千里科技</span>
+      <span class="source">36氪 · <a href="https://36kr.com/p/3830580716365449?f=rss">https://36kr.com/p/3830580716365449?f=rss</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">全球首个“事件级预测”具身智能世界模型发布，从按帧学动作转向按事件理解世界</span>
+      <div class="why">World Model / 空间智能强关注项，事件级世界模型直接对标城市具身训练环境的预测能力</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/05/426366.html">https://www.qbitai.com/2026/05/426366.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">AI 训练公司 Shift 用免费保洁换取家务视频作机器人训练数据</span>
+      <div class="why">具身训练数据来源，real-world 采集 vs LeapsCora 的 sim-generated data 路线对比</div>
+      <div class="source">The Verge · <a href="https://www.theverge.com/ai-artificial-intelligence/940007/ai-companies-will-pay-for-robot-training-data">https://www.theverge.com/ai-artificial-intelligence/940007/ai-companies-will-pay-for-robot-training-data</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">乘物机器人完成天使轮，自研工业垂类 VLA，服务富士康、2025 营收超 2000 万</span>
+      <div class="why">大湾区（深圳）机器人融资 + 工业具身 sim/数据采集/模型训练一体化，潜在客户/竞品</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3831135917107075?f=rss">https://36kr.com/p/3831135917107075?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">NIST 提出人形机器人基线性能基准与测试规程</span>
+      <div class="why">人形 benchmark/eval 标准化，影响仿真训练→真机迁移的评测口径</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/nist-proposes-a-baseline-performance-benchmark-for-humanoid-robots/">https://www.therobotreport.com/nist-proposes-a-baseline-performance-benchmark-for-humanoid-robots/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">特斯拉 Optimus 专属工厂动工、规划年产能 1000 万台；智元、诺仕机器人均有新动作</span>
+      <div class="why">人形量产产业节奏，roster/竞品上游本体供给信号</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3830194503526277?f=rss">https://36kr.com/p/3830194503526277?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">QNX 调研：软件与安全正成为 physical AI 创新最大瓶颈</span>
+      <div class="why">相邻仿真/机器人软件栈动态，印证训练环境平台的软件价值主张</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/software-becoming-biggest-bottleneck-physical-ai-innovation-finds-qnx/">https://www.therobotreport.com/software-becoming-biggest-bottleneck-physical-ai-innovation-finds-qnx/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">IEEE Spectrum Video Friday：全向腿足机器人 Argus，ICRA/RSS 2026 临近</span>
+      <div class="why">机器人本体一般动态 + ICRA 2026（6 月维也纳）会议节点</div>
+      <div class="source">IEEE Spectrum Robotics · <a href="https://spectrum.ieee.org/video-friday-rabona-soccer">https://spectrum.ieee.org/video-friday-rabona-soccer</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Dell 因 AI 服务器需求强劲股价大涨，年度营收指引远超预期</span>
+      <div class="why">上游算力/服务器供应链景气信号，影响训练成本</div>
+      <div class="source">Bloomberg · <a href="https://www.bloomberg.com/news/videos/2026-05-29/gap-lowers-sales-outlook-dell-soars-on-ai-demand-video">https://www.bloomberg.com/news/videos/2026-05-29/gap-lowers-sales-outlook-dell-soars-on-ai-demand-video</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">吉利或将数百人辅助驾驶团队整合入千里科技</span>
+      <div class="why">自驾 sim 相邻赛道（CARLA 生态）团队整合，行业资源走向</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3830580716365449?f=rss">https://36kr.com/p/3830580716365449?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+  <div class="nav">
+    <a href="./index.html">← 归档</a>
+  </div>
+  <div>Morning Cafe · 个人非商业晨报 · 2026-05-30T03:24:19.511230+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
