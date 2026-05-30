@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-05-31 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-05-31</h1>
+  <div class="meta">30 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">SoftBank 计划向法国 AI 数据中心投资高达 750 亿欧元（870 亿美元），打造 5 吉瓦算力容量</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-05-30/softbank-to-invest-some-75-billion-in-ai-in-france-reports-say">https://www.bloomberg.com/news/articles/2026-05-30/softbank-to-invest-some-75-billion-in-ai-in-france-reports-say</a></span>
+    </li>
+    
+    <li>
+      <span class="title">英伟达 + 清华 Gamma-World 世界模型支持多智能体交互仿真，FVD 指标较最强对手 Solaris 平均降幅超 40%，已用于真实双臂机器人协同</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/05/426662.html">https://www.qbitai.com/2026/05/426662.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Nokia、Dell、Lenovo 等「恐龙」科技股借 AI 基础设施浪潮合计反弹 1.7 万亿美元</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-05-30/-dinosaur-tech-stocks-reborn-as-ai-fuels-1-7-trillion-rally">https://www.bloomberg.com/news/articles/2026-05-30/-dinosaur-tech-stocks-reborn-as-ai-fuels-1-7-trillion-rally</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Blue Origin 在 New Glenn 火箭爆炸前数小时获美军国家安全发射订单，Space Force 和 NRO 表明持续支持</span>
+      <span class="source">SpaceNews · <a href="https://spacenews.com/blue-origin-gets-national-security-launch-task-order-hours-before-new-glenn-explosion/">https://spacenews.com/blue-origin-gets-national-security-launch-task-order-hours-before-new-glenn-explosion/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Anthropic 因投资者恐慌将二级市场「未授权平台」警告名单缩减一半，被点名公司曾公开反驳</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-05-30/anthropic-cuts-unauthorized-platform-list-by-half-after-pushback">https://www.bloomberg.com/news/articles/2026-05-30/anthropic-cuts-unauthorized-platform-list-by-half-after-pushback</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">英伟达 + 清华 Gamma-World：多智能体世界模型，FVD -40%，已应用于真实双臂机器人协同任务</span>
+      <div class="why">世界模型 / 多智能体交互仿真强关注主题；Nvidia 主导生态（Isaac Lab 上游），架构升级对城市多 agent 仿真栈有直接参考价值</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/05/426662.html">https://www.qbitai.com/2026/05/426662.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">乘物机器人完成天使轮融资，工业具身智能 + VLA，半年营收超 2000 万，服务富士康</span>
+      <div class="why">机器人公司融资强关注主题；工业垂类 VLA 训练数据方向，与 LeapsCora 训练数据 / sim2real 策略相关</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3831135917107075?f=rss">https://36kr.com/p/3831135917107075?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">MISUMI Group 向美洲投资 10 亿美元，整合精密零件与数字制造平台</span>
+      <div class="why">机器人上游精密零件供应链信号，AI 工厂自动化基础设施投资趋势</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/misumi-group-invests-1b-americas-global-ai-digital-manufacturing/">https://www.therobotreport.com/misumi-group-invests-1b-americas-global-ai-digital-manufacturing/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Nvidia x Microsoft 下周 Computex 发布首批 Nvidia 主芯片 Windows PC</span>
+      <div class="why">Nvidia 生态扩张信号，间接影响 Isaac Sim / Isaac Lab 平台战略方向</div>
+      <div class="source">Axios · <a href="https://www.axios.com/2026/05/30/nvidia-microsoft-pcs-ai-surface-dell">https://www.axios.com/2026/05/30/nvidia-microsoft-pcs-ai-surface-dell</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How we contain Claude across products</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic published a detailed breakdown of its sandboxing architecture for Claude agents across Claude.ai, Claude Code, and Cowork, covering process sandboxes, VMs, filesystem boundaries, and egress controls.</li>
+      
+      <li>The core design principle: credentials never enter the sandbox, setting a hard boundary on what an agent can reach — addressing a long-standing gap in AI safety documentation.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything">https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 21:36 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Running Python ASGI apps in the browser via Pyodide + a service worker</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison tasked Claude Opus 4.8 (via Claude Code for web) with redesigning Datasette Lite&#39;s browser architecture, solving a 4-year limitation where script tags in fetched HTML went unexecuted, breaking plugins.</li>
+      
+      <li>The new service worker approach intercepts requests and runs the ASGI app inline, restoring full Datasette plugin compatibility without leaving the browser.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/May/30/pyodide-asgi-browser/#atom-everything">https://simonwillison.net/2026/May/30/pyodide-asgi-browser/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 21:02 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">帮Gemini拿下IMO金牌的关键先生，差点成了职业钢琴家</div>
+    
+    <ul class="article-points">
+      
+      <li>量子位对幕后帮助 Gemini 拿下国际数学奥林匹克（IMO）金牌的关键研究者进行了人物专访，揭示其差点走上职业钢琴家道路的经历。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/05/426706.html">https://www.qbitai.com/2026/05/426706.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 06:43 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">英伟达清华团队提出Gamma-World：世界模型从「一个人玩」到「多人共处」</div>
+    
+    <ul class="article-points">
+      
+      <li>英伟达、清华大学、多伦多大学和 Vector Institute 联合发布 Gamma-World，专为多智能体世界建模设计：「单纯形旋转智能体编码」保证所有玩家地位对称，「稀疏枢纽注意力」将计算复杂度从平方降至线性，并实现 24 FPS 实时推演。</li>
+      
+      <li>在 Minecraft 五类场景测试中，FVD 指标较最强方案 Solaris 平均降幅超 40%；仅用双人数据训练，推理时直接生成四路同步视角，无需修改参数，已成功应用于真实双臂机器人协同任务。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/05/426662.html">https://www.qbitai.com/2026/05/426662.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 06:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">I put Google&#39;s 24/7 AI assistant Gemini Spark to work, and it&#39;s actually pretty useful</div>
+    
+    <ul class="article-points">
+      
+      <li>Google&#39;s Gemini Spark handles persistent background tasks — inbox summarization, local event planning — without requiring direct prompting each session.</li>
+      
+      <li>Reviewers find it genuinely useful but question why Google launched it as a standalone product rather than integrating it into the existing Gemini family.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/05/30/i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful/">https://techcrunch.com/2026/05/30/i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 15:30 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">MISUMI Group invests $1B in Americas, global AI and digital manufacturing</div>
+    
+    <ul class="article-points">
+      
+      <li>MISUMI Group is investing $1 billion in the Americas, combining its precision components catalog with Fictiv&#39;s digital manufacturing platform to cover the full bill of materials for AI-driven factory automation.</li>
+      
+      <li>The deal targets workflows where on-demand digital sourcing replaces traditional procurement, positioning MISUMI as an infrastructure play for AI manufacturing buildout.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/misumi-group-invests-1b-americas-global-ai-digital-manufacturing/">https://www.therobotreport.com/misumi-group-invests-1b-americas-global-ai-digital-manufacturing/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 13:22 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">36氪首发 | 服务富士康，半年营收超两千万的机器人解决方案商完成天使轮融资</div>
+    
+    <ul class="article-points">
+      
+      <li>乘物机器人（深圳）完成天使轮融资，由台湾工业自动化龙头和椿科技战略投资；公司 2025 年累计营收超 2000 万元，完成逾十个工业场景落地，服务包括富士康在内的头部制造商，并获 8 家主流本体品牌最高权限授权。</li>
+      
+      <li>乘物机器人具备软硬件研发→数据采集→模型训练→部署维护一体化能力，正在布局工业垂类 VLA 模型，与数十家主流机器人本体厂商建立深度合作。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3831135917107075?f=rss">https://36kr.com/p/3831135917107075?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 01:54 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla&#39;s &#39;Full Self-Driving&#39; fraud lawsuit gets first hearing in China — 10 owners seek $583K</div>
+    
+    <ul class="article-points">
+      
+      <li>A Beijing court held its first hearing in a consumer fraud case against Tesla over FSD promises; 10 plaintiffs collectively seek 3.95 million yuan ($583,000), up from 7 plaintiffs when filed last September.</li>
+      
+      <li>This marks China&#39;s first collective legal challenge targeting Tesla&#39;s FSD marketing claims.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/05/30/tesla-fsd-china-lawsuit-first-hearing-10-owners/">https://electrek.co/2026/05/30/tesla-fsd-china-lawsuit-first-hearing-10-owners/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 16:20 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">This Tesla owner won $10k in court for Tesla&#39;s FSD lies (Updated)</div>
+    
+    <ul class="article-points">
+      
+      <li>Ben Gawiser was awarded a $10,600 judgment after Tesla failed to deliver on self-driving promises, but Tesla repeatedly delayed payment before finally settling (updated 5/29/2026).</li>
+      
+      <li>The case highlights Tesla&#39;s pattern of litigation delay even after losing FSD-related judgments.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/05/29/this-tesla-owner-won-10k-in-court-for-teslas-fsd-lies-tesla-is-still-fighting-him/">https://electrek.co/2026/05/29/this-tesla-owner-won-10k-in-court-for-teslas-fsd-lies-tesla-is-still-fighting-him/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-29 23:40 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Blue Origin gets national security launch task order hours before New Glenn explosion</div>
+    
+    <ul class="article-points">
+      
+      <li>U.S. Space Force and the National Reconnaissance Office (NRO) awarded Blue Origin a national security launch task order — just hours before a New Glenn rocket explosion.</li>
+      
+      <li>Both agencies stated they remain committed partners with Blue Origin, signaling sustained government confidence despite the incident.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/blue-origin-gets-national-security-launch-task-order-hours-before-new-glenn-explosion/">https://spacenews.com/blue-origin-gets-national-security-launch-task-order-hours-before-new-glenn-explosion/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 21:07 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">最前线｜中科创星第十二期「好望角科学沙龙」聚焦「太空智驾」，卫星将从被动响应走向自主决策</div>
+    
+    <ul class="article-points">
+      
+      <li>中科院西安光机所副所长邵晓鹏在上海「好望角科学沙龙」上提出「太空智驾时代」判断：卫星和星座将具备 L4 级自主感知、任务规划与机动决策能力，以「AI+光学」计算成像范式推动硬件简化和算法补偿。</li>
+      
+      <li>传统依赖地面站逐一管控的在轨管理模式已难为继，该路径将推动航天光学载荷从「精密机械」向「智能信息终端」转型。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3831071878358659?f=rss">https://36kr.com/p/3831071878358659?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 00:49 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">13 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SoftBank Plans Up to €75 Billion Investment in French AI Centers</div>
+    
+    <ul class="article-points">
+      
+      <li>SoftBank Group plans to invest up to €75 billion ($87 billion) to build 5 gigawatts of AI data center capacity in France, positioning the country as Europe&#39;s leading AI infrastructure hub.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-30/softbank-to-invest-some-75-billion-in-ai-in-france-reports-say">https://www.bloomberg.com/news/articles/2026-05-30/softbank-to-invest-some-75-billion-in-ai-in-france-reports-say</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 18:56 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tech Stars From the 90s Reborn: Nokia, Dell, Cisco Surge on AI</div>
+    
+    <ul class="article-points">
+      
+      <li>Dell Technologies, Nokia, and Lenovo have collectively driven a $1.7 trillion rally as the AI spending boom creates new demand for the hardware, networking, and server infrastructure they supply.</li>
+      
+      <li>Bloomberg Intelligence&#39;s Mandeep Singh notes legacy tech benefits from AI capex without the valuation risk of pure-play AI names.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-30/-dinosaur-tech-stocks-reborn-as-ai-fuels-1-7-trillion-rally">https://www.bloomberg.com/news/articles/2026-05-30/-dinosaur-tech-stocks-reborn-as-ai-fuels-1-7-trillion-rally</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 13:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Fed&#39;s Williams Quips Economist Jobs Are Safe as AI Shift Unfolds</div>
+    
+    <ul class="article-points">
+      
+      <li>Federal Reserve&#39;s John Williams joked at a central banker summit in Iceland that AI won&#39;t put economists out of business, amid broader discussions about AI&#39;s macroeconomic implications among global policymakers.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-30/fed-s-williams-quips-economist-jobs-are-safe-as-ai-shift-unfolds">https://www.bloomberg.com/news/articles/2026-05-30/fed-s-williams-quips-economist-jobs-are-safe-as-ai-shift-unfolds</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 13:03 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Dangers Eclipse Nuclear Weapons at Singapore Defense Forum</div>
+    
+    <ul class="article-points">
+      
+      <li>Panelists at a Singapore strategic stability forum warned that AI could compress military reaction times to the point of rash decision-making, with AI risks now eclipsing nuclear concerns in defense discussions.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-30/ai-dangers-eclipse-nuclear-weapons-at-singapore-defense-forum">https://www.bloomberg.com/news/articles/2026-05-30/ai-dangers-eclipse-nuclear-weapons-at-singapore-defense-forum</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 11:59 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Anthropic Cuts Unauthorized Platform List by Half After Pushback</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic updated its secondary market share warning, cutting the listed unauthorized trading platforms by half after the original notice triggered investor panic and a public rebuttal from at least one named company.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-30/anthropic-cuts-unauthorized-platform-list-by-half-after-pushback">https://www.bloomberg.com/news/articles/2026-05-30/anthropic-cuts-unauthorized-platform-list-by-half-after-pushback</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 10:18 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">MiniMax Eyes China Listing, Takes on AI Rivals Like DeepSeek</div>
+    
+    <ul class="article-points">
+      
+      <li>China&#39;s MiniMax Group has filed regulatory paperwork to prepare for a domestic stock listing, entering the race with local AI rivals including DeepSeek for capital market access.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-30/minimax-plans-china-ipo-as-it-eyes-local-rivals-like-deepseek">https://www.bloomberg.com/news/articles/2026-05-30/minimax-plans-china-ipo-as-it-eyes-local-rivals-like-deepseek</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 04:48 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Meta is reportedly developing an AI pendant</div>
+    
+    <ul class="article-points">
+      
+      <li>Meta is reportedly building an AI-powered wearable pendant, extending its hardware AI bets beyond the Ray-Ban smart glasses line.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/05/30/meta-is-reportedly-developing-an-ai-pendant/">https://techcrunch.com/2026/05/30/meta-is-reportedly-developing-an-ai-pendant/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 16:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The groupthink boom: what three top VCs really think about the AI frenzy</div>
+    
+    <ul class="article-points">
+      
+      <li>Three top VCs describe a frothy seed/Series A market where being 19 in San Francisco building AI can yield a Series A offer; all three note a dangerous dynamic where everyone feels AI investment is mandatory.</li>
+      
+      <li>The consensus worry: groupthink is creating valuation risk despite genuine technology progress.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/05/30/the-groupthink-boom-what-three-top-vcs-really-think-about-the-ai-frenzy/">https://techcrunch.com/2026/05/30/the-groupthink-boom-what-three-top-vcs-really-think-about-the-ai-frenzy/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 14:49 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI grifters are creating fake Black people to sell Shein junk</div>
+    
+    <ul class="article-points">
+      
+      <li>Scammers are using AI to generate fake Black personas on TikTok Shop to exploit sympathy-driven algorithmic bias, selling cheap Shein dropshipping products.</li>
+      
+      <li>The Verge investigation identifies this as an emerging pattern of racially targeted AI manipulation for e-commerce fraud.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/938844/ai-tiktok-shop-blackface-shein-dropshipping">https://www.theverge.com/ai-artificial-intelligence/938844/ai-tiktok-shop-blackface-shein-dropshipping</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 13:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Scoop: First Windows PCs powered by Nvidia chips to debut next week</div>
+    
+    <ul class="article-points">
+      
+      <li>Nvidia and Microsoft will unveil the first Windows PCs running Nvidia chips as the primary processor at Computex and Microsoft Build next week.</li>
+      
+      <li>Microsoft&#39;s Copilot+ AI PC push struggled with Intel/AMD silicon; Nvidia&#39;s entry gives it a second chance with the world&#39;s hottest chipmaker.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Axios</span>
+      <span class="sep">·</span>
+      <a href="https://www.axios.com/2026/05/30/nvidia-microsoft-pcs-ai-surface-dell">https://www.axios.com/2026/05/30/nvidia-microsoft-pcs-ai-surface-dell</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 12:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Classrooms lean into analog learning in the AI era</div>
+    
+    <ul class="article-points">
+      
+      <li>At least 16 U.S. states have introduced bills to limit classroom technology, expanding phone bans into broader screen restrictions and AI guardrails; Schools Beyond Screens grew from under a dozen LA parents to thousands nationwide.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Axios</span>
+      <span class="sep">·</span>
+      <a href="https://www.axios.com/2026/05/30/no-screen-school-technology-parents-ai">https://www.axios.com/2026/05/30/no-screen-school-technology-parents-ai</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 11:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">海光信息完成阶跃星辰Step 3.7 Flash适配</div>
+    
+    <ul class="article-points">
+      
+      <li>阶跃星辰 5 月 29 日发布 Step 3.7 Flash，海光团队依托 DTK 异构计算平台，于发布当天完成全流程适配与深度调优，实现「发布即适配、适配即高效」。</li>
+      
+      <li>开发者即日起可在海光平台高效运行该模型，快速构建多模态 Agent、智能代码助手及复杂工作流应用，降低接入成本。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3831356538529409?f=rss">https://36kr.com/newsflashes/3831356538529409?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 05:37 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">天津发布2025年度人工智能十大应用标杆场景，总投资超6亿元</div>
+    
+    <ul class="article-points">
+      
+      <li>2026 世界智能产业博览会期间，天津正式发布 2025 年度 AI 十大应用标杆场景，涵盖科研、制造、医疗、康养、教育、农业、治理、交通、文旅九大领域，总投资额超 6 亿元。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3831325232670338?f=rss">https://36kr.com/newsflashes/3831325232670338?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 05:27 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How one founder&#39;s bet on &#39;the old school web&#39; is paying off</div>
+    
+    <ul class="article-points">
+      
+      <li>Craig Campbell, a former Meta engineer who sold his last startup in 2022, walked away from AI investor money to build Past Maps — a historical map browsing website — betting on organic niche traffic as AI erodes traditional search.</li>
+      
+      <li>The bet is paying off as Google&#39;s AI Overviews reduce traffic to AI-focused sites, while nostalgia-driven niche content finds renewed audiences.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/tech/938245/past-maps-website-google-zero-ai">https://www.theverge.com/tech/938245/past-maps-website-google-zero-ai</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-30 13:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-05-31.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-05-30T22:30:11.012921+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
