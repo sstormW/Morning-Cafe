@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-01 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-01</h1>
+  <div class="meta">17 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">软银承诺最高750亿欧元在法国建设欧洲最大AI数据中心，首期450亿欧元，2031年前建成3.1吉瓦算力</span>
+      <span class="source">36氪 · <a href="https://36kr.com/newsflashes/3832585694193541?f=rss">https://36kr.com/newsflashes/3832585694193541?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">τ0-WM开源具身世界模型发布：5B参数、30,000小时预训练数据（含17,800小时真机遥操作），未见长程操作任务成功率60%</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/05/426832.html">https://www.qbitai.com/2026/05/426832.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">STI-WM眸深智能机器人原生时空一体架构，Pre-A融资3亿元、5倍超募</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/05/426984.html">https://www.qbitai.com/2026/05/426984.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SpaceX Starfall再入飞行器计划曝光：FAA文件披露用于在轨制造商业场景</span>
+      <span class="source">SpaceNews · <a href="https://spacenews.com/faa-documents-outline-spacex-plans-for-starfall-reentry-vehicles/">https://spacenews.com/faa-documents-outline-spacex-plans-for-starfall-reentry-vehicles/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Anthropic run-rate算法曝光：消费制最近28天×13加订阅收入×12，计算公式源自知情人士</span>
+      <span class="source">Simon Willison · <a href="https://simonwillison.net/2026/May/31/anthropic-run-rate/#atom-everything">https://simonwillison.net/2026/May/31/anthropic-run-rate/#atom-everything</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">τ0-WM：5B参数开源具身世界模型，17,800小时真机遥操作数据主导预训练</span>
+      <div class="why">具身智能训练数据（teleop数据集/real2sim2real），目前开源最大规模的具身world model，可直接对标LeapsCora训练栈的数据来源策略</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/05/426832.html">https://www.qbitai.com/2026/05/426832.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">STI-WM眸深智能：机器人原生时空一体架构，CVPR/IJCAI背书，融资3亿元</span>
+      <div class="why">世界模型（World Model）领域直接竞品，城市具身智能训练范式，融资节奏也是市场信号</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/05/426984.html">https://www.qbitai.com/2026/05/426984.html</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">软银750亿欧元法国AI算力：欧洲最大数据中心工程，2031年前3.1吉瓦</span>
+      <div class="why">上游GPU/算力供应链信号，大规模算力基建投入加速</div>
+      <div class="source">36氪 · <a href="https://36kr.com/newsflashes/3832585694193541?f=rss">https://36kr.com/newsflashes/3832585694193541?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">AI is turning energy into the hottest business in America</span>
+      <div class="why">上游算力基础设施趋势，电力成本影响GPU集群运营</div>
+      <div class="source">Axios · <a href="https://www.axios.com/2026/05/31/ai-energy-business-companies-storage-supplies">https://www.axios.com/2026/05/31/ai-energy-business-companies-storage-supplies</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Token贵只因你喂给模型的垃圾太多了丨@亚马逊王晓野AIGC2026</div>
+    
+    <ul class="article-points">
+      
+      <li>亚马逊云技术产品技术总监王晓野在AIGC2026峰会指出：87%企业声称大规模部署AI，仅10%真正产生业务价值，核心症结是数据输入质量而非Token单价。</li>
+      
+      <li>他提出五层落地框架（算力→模型→数据/知识→Harness→应用），并以Amazon Bedrock AgentCore为例演示生产级agent管控层的必要性。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/05/426970.html">https://www.qbitai.com/2026/05/426970.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 10:03 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">机器人原生世界动作模型问世！首创时空一体架构，复旦系团队出品</div>
+    
+    <ul class="article-points">
+      
+      <li>眸深智能发布STI-WM，首创「四维一体」架构（时空集成+原生3D感知+物理一致性引擎+百秒级长程规划），绕开VLA模块拼接路线。</li>
+      
+      <li>核心团队含复旦教授陈涛、前英特尔中国首席科学家张一鸣及英伟达工程师；曾获CVPR 2024三维语义推理赛冠军和IJCAI 2025杰出论文奖。</li>
+      
+      <li>Pre-A轮融资3亿元、5倍超募，半年内完成5轮融资；已与10余家A股上市公司达成合作。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/05/426984.html">https://www.qbitai.com/2026/05/426984.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 10:13 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">τ0-WM：最大规模预训练的开源具身世界模型来了</div>
+    
+    <ul class="article-points">
+      
+      <li>上海人工智能实验室罗建兰团队发布τ0-WM（5B参数），预训练数据约30,000小时，其中17,800小时来自真机遥操作——首次以真机数据为预训练主体而非微调补丁。</li>
+      
+      <li>架构由视频动作模型（VAM）与动作条件视频仿真器双骨干构成，推理时通过RCS评分和LAR修正机制筛选、纠正候选动作。</li>
+      
+      <li>在未见长程操作任务上成功率达60%，超越π0.5和Fast-WAM；代码和权重已开源。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/05/426832.html">https://www.qbitai.com/2026/05/426832.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 07:38 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">This DIY Bipedal Robot Used Pneumatic &#34;Air-Muscles&#34; Instead of Motors</div>
+    
+    <ul class="article-points">
+      
+      <li>In 1987, British photographer Richard Greenhill began building a life-size humanoid at startup Intergalactic Robots using pneumatic air-muscles instead of electric motors, decades before soft robotics became a recognized field.</li>
+      
+      <li>The attic project eventually grew into Shadow Robot Company, whose Shadow Dexterous Hand remains among the most capable commercial robot hands today.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">IEEE Spectrum</span>
+      <span class="sep">·</span>
+      <a href="https://spectrum.ieee.org/shadow-walker-biped-humanoid-robot">https://spectrum.ieee.org/shadow-walker-biped-humanoid-robot</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 13:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Why robotic arms are now being integrated with CNC machines</div>
+    
+    <ul class="article-points">
+      
+      <li>Leading automation suppliers are rolling out new software and integration layers that let robotic arms handle CNC machine tending — loading, unloading, and part inspection — with greater flexibility than traditional fixed-cell automation.</li>
+      
+      <li>The shift reduces idle machine time and enables unattended overnight production runs, pushing flexible arm-based automation from discrete assembly into heavy-duty machining cells.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/why-robotic-arms-are-now-being-integrated-cnc-machines/">https://www.therobotreport.com/why-robotic-arms-are-now-being-integrated-cnc-machines/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 12:30 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">FAA documents outline SpaceX plans for Starfall reentry vehicles</div>
+    
+    <ul class="article-points">
+      
+      <li>FAA regulatory filings reveal SpaceX is developing Starfall reentry vehicles designed to support in-space manufacturing missions, extending the Starship ecosystem beyond crew and cargo transport.</li>
+      
+      <li>The documents outline development and test timelines, suggesting SpaceX treats in-space manufacturing as a near-term commercial vertical rather than a distant research goal.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/faa-documents-outline-spacex-plans-for-starfall-reentry-vehicles/">https://spacenews.com/faa-documents-outline-spacex-plans-for-starfall-reentry-vehicles/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 09:26 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">10 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Major Companies Reconsider AI Costs</div>
+    
+    <ul class="article-points">
+      
+      <li>Chipmakers are the market&#39;s hottest stocks, but their surge is intensifying debate over whether investors are chasing an AI bubble. Harvard Kennedy School research fellow Gautam Mukunda discussed on Bloomberg This Weekend whether enthusiasm is decoupled from sustainable fundamentals.</li>
+      
+      <li>The conversation frames the core tension: real deployment demand versus financial overshoot, with neither fundamental metrics nor market behavior providing resolution yet.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-05-31/major-companies-reconsider-ai-costs-video">https://www.bloomberg.com/news/videos/2026-05-31/major-companies-reconsider-ai-costs-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 16:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The solution might be cancelling my AI subscription</div>
+    
+    <ul class="article-points">
+      
+      <li>Developer David Wilson catalogued 16+ side projects spun up with AI tooling, concluding that none of the original problems got solved — each session that started with a quick script ended an hour later with a new unfinished project.</li>
+      
+      <li>Simon Willison frames this as AI being a thermonuclear ADHD amplifier: the bottleneck has shifted from implementation speed to attention and task completion, a dynamic affecting many developers.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/May/31/the-solution-might-be-cancelling-my-ai-subscription/#atom-everything">https://simonwillison.net/2026/May/31/the-solution-might-be-cancelling-my-ai-subscription/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 16:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Quoting Karen Kwok for Reuters Breakingviews</div>
+    
+    <ul class="article-points">
+      
+      <li>Reuters Breakingviews reporter Karen Kwok reveals, citing a person familiar with the matter, Anthropic&#39;s run-rate revenue formula: last 28 days of consumption-based sales × 13, plus monthly subscription revenue × 12.</li>
+      
+      <li>The methodology blends two billing models into one headline figure, meaning the run-rate can shift materially based on billing-mix changes rather than underlying demand growth alone.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/May/31/anthropic-run-rate/#atom-everything">https://simonwillison.net/2026/May/31/anthropic-run-rate/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 01:48 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX, OpenAI Windfall Fuels Bets on Next-Wave Asian AI Winners</div>
+    
+    <ul class="article-points">
+      
+      <li>Investors who profited from SpaceX and OpenAI&#39;s US offerings are now hunting Asian AI supply-chain companies for the next wave, focusing on hardware and infrastructure suppliers rather than model developers.</li>
+      
+      <li>This marks a geographic capital shift: as the US-centric model layer saturates, venture money is flowing toward Asian semiconductor and systems integrators positioned to supply the broader AI buildout.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-05-31/spacex-openai-windfall-fuels-bets-on-next-wave-asian-ai-winners">https://www.bloomberg.com/news/articles/2026-05-31/spacex-openai-windfall-fuels-bets-on-next-wave-asian-ai-winners</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 00:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI is turning energy into the hottest business in America</div>
+    
+    <ul class="article-points">
+      
+      <li>The AI boom is pulling companies across industries — from tech giants to automakers — into the energy business as electricity transforms from cheap commodity to strategic asset. Microsoft&#39;s former energy VP Brian Janous: everyone is either dependent on energy as a core input or they see energy as a huge opportunity.</li>
+      
+      <li>Data center power demand is the central driver, creating enormous financial upside alongside systemic risk if AI demand forecasts fall short.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Axios</span>
+      <span class="sep">·</span>
+      <a href="https://www.axios.com/2026/05/31/ai-energy-business-companies-storage-supplies">https://www.axios.com/2026/05/31/ai-energy-business-companies-storage-supplies</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 11:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">软银承诺斥资750亿欧元在法国建设人工智能设施</div>
+    
+    <ul class="article-points">
+      
+      <li>软银承诺向法国投入最高750亿欧元，首期450亿欧元在上法兰西大区打造欧洲规模最大数据中心，计划2031年前建成3.1吉瓦算力，后续再追加2吉瓦。</li>
+      
+      <li>合作源于今年4月初法国总统马克龙与孙正义东京私宴后迅速敲定，是软银在美国以外规模最大的单笔AI投资。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3832585694193541?f=rss">https://36kr.com/newsflashes/3832585694193541?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 04:32 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">&#39;This is fine&#39; artist KC Green reaches agreement with AI startup Artisan</div>
+    
+    <ul class="article-points">
+      
+      <li>AI startup Artisan used KC Green&#39;s iconic 「This is fine」 meme in ad campaigns without authorization; following public backlash the two reached an agreement and the ads were taken down.</li>
+      
+      <li>The case spotlights IP friction in AI marketing: startups borrowing cultural touchstones face copyright liability even when the source material feels like public domain due to its meme status.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/05/31/this-is-fine-artist-kc-green-reaches-agreement-with-ai-startup-artisan/">https://techcrunch.com/2026/05/31/this-is-fine-artist-kc-green-reaches-agreement-with-ai-startup-artisan/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 18:28 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Making sense of the debate over AI psychosis</div>
+    
+    <ul class="article-points">
+      
+      <li>TechCrunch Equity podcast debates whether tech CEOs are uniquely prone to AI psychosis — an outsized tendency to make product bets based on hype over evidence.</li>
+      
+      <li>The episode adds to a growing media narrative questioning the judgment calibration of AI-first company founders and executives.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/05/31/making-sense-of-the-debate-over-ai-psychosis/">https://techcrunch.com/2026/05/31/making-sense-of-the-debate-over-ai-psychosis/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 15:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">小米AI的「免费获客-黑箱锁死」闭环：从100T Token到Credits陷阱</div>
+    
+    <ul class="article-points">
+      
+      <li>小米以100T Token免费额度为钩大批引入用户，但后续Credits定价体系让高频用户的实际成本远超宣传，被批评者指为「降价普惠假象」。</li>
+      
+      <li>批评者指其策略本质是免费流量获客叠加工作流沉淀，一旦用户数据沉淀后切换成本即成护城河，Credits体系提供了后期灵活锁客的定价工具。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8008759.html">https://www.tmtpost.com/8008759.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 02:11 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">I went looking for the AI weed vape that gives you Bitcoin for smoking</div>
+    
+    <ul class="article-points">
+      
+      <li>Gudtrip advertises itself as AI-powered and delivers Bitcoin rewards per cannabis vapor hit — discovered by a Verge reporter via a Slack ad on 4/20.</li>
+      
+      <li>The story illustrates how AI and crypto branding have become low-friction marketing overlays on consumer products with unclear actual technology substance.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/933916/ai-powered-crypto-cannabis-vape">https://www.theverge.com/ai-artificial-intelligence/933916/ai-powered-crypto-cannabis-vape</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 13:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">TechCrunch Mobility: It doesn&#39;t matter that people hate the Ferrari Luce</div>
+    
+    <ul class="article-points">
+      
+      <li>Ferrari&#39;s new Luce EV has attracted strong negative public reaction, but TechCrunch Mobility argues the criticism is irrelevant — the people who hate it aren&#39;t Ferrari&#39;s buyers.</li>
+      
+      <li>The piece frames Ferrari&#39;s approach as exclusivity positioning: betting that luxury EV resistance doesn&#39;t overlap with its actual customer base.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/05/31/techcrunch-mobility-it-doesnt-matter-that-people-hate-the-ferrari-luce/">https://techcrunch.com/2026/05/31/techcrunch-mobility-it-doesnt-matter-that-people-hate-the-ferrari-luce/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-05-31 16:05 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-01.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-05-31T22:31:18.241421+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
