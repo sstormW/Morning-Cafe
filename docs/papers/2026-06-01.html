@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-01</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-01</h1>
+  <div class="meta">43 篇候选 · 精读 0 · 速览 12 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    
+    <div class="group-label">📚 值得扫一眼 (5 篇)</div>
+    <ul>
+      
+      <li><strong>DSD-GS: Dynamic-Static Decomposition of Gaussian Splatting for Efficient and High-Fidelity Dynamic Scene Reconstruction</strong> — 动静分解 3DGS 重建，对「视频→3D 场景重建」研究点有参考价值，10 分钟训练即可达到 700+ FPS — <a href="http://arxiv.org/abs/2605.30863">arXiv</a></li>
+      
+      <li><strong>Can Aerial VLA Models Cooperate? Evaluating Closed-Loop Air-Ground Coordination with CARLA-Air</strong> — CARLA+AirSim UE 空地协作评测生态，模拟器集成方式对城市多智能体仿真参考价值较高 — <a href="http://arxiv.org/abs/2605.31066">arXiv</a></li>
+      
+      <li><strong>SSR: Scaling Surefooted and Symmetric Humanoid Traversal to the Open World</strong> — 人形机器人户外地形稳健行走，对「outdoor robot locomotion」研究点有直接参考价值 — <a href="http://arxiv.org/abs/2605.30770">arXiv</a></li>
+      
+      <li><strong>SpatialAct: Probing Spatial Reasoning-to-Action Capabilities of VLM Agents in 3D Scenes</strong> — 3D 场景 embodied benchmark 设计方法，可借鉴多轮交互诊断框架 — <a href="http://arxiv.org/abs/2605.31148">arXiv</a></li>
+      
+      <li><strong>Don&#39;t Fool Me Twice: Adapting to Adversity in the Wild with Experience-Driven Reasoning</strong> — 非结构化户外环境扰动感知与持续在线学习，对 outdoor sim-to-real 有方法参考 — <a href="http://arxiv.org/abs/2605.31119">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (12 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.31066">Can Aerial VLA Models Cooperate? Evaluating Closed-Loop Air-Ground Coordination with CARLA-Air</a></div>
+    <div class="meta">arXiv cs.RO · Tianle Zeng et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">CARLA+AirSim 融合于单进程 UE 构建空地协作评测环境，当前 VLA 零样本多智能体协同弱，需要显式伙伴状态感知、低延迟动作协调与团队目标对齐</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.30770">SSR: Scaling Surefooted and Symmetric Humanoid Traversal to the Open World</a></div>
+    <div class="meta">arXiv cs.RO · Ruiqi Yu et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">端到端框架引入想象落脚点引导与等变潜空间对称增强，实现人形机器人在楼梯、宽缝、高台等多样化真实户外地形的稳健稳定行走</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.30863">DSD-GS: Dynamic-Static Decomposition of Gaussian Splatting for Efficient and High-Fidelity Dynamic Scene Reconstruction</a></div>
+    <div class="meta">arXiv cs.GR · Youngtae Han et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">前馈编码器与光流模型实现动静区域分离，Neural 3D 数据集上 10 分钟训练达 700+ FPS，消除 COLMAP 预处理依赖，对城市数字孪生场景重建有参考价值</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.31148">SpatialAct: Probing Spatial Reasoning-to-Action Capabilities of VLM Agents in 3D Scenes</a></div>
+    <div class="meta">arXiv cs.AI · Tianhui Liu et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">模拟器 grounded 的 3D 空间推理-动作 benchmark，揭示 VLM 多轮交互反馈时无法维持连贯空间信念与可靠动作，推理-动作差距显著</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.30957">RDGen: Demonstration Generation for High-Quality Robot Learning via Reinforcement Learning</a></div>
+    <div class="meta">arXiv cs.RO · Zijian Zhu et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">Sim-to-real RL 框架用训练好的 RL 策略替代人工遥操作生成更平滑演示轨迹，提升下游 VLA 模型质量且可大规模扩展仿真轨迹采集</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.30877">Wall-OSS-0.5 Technical Report</a></div>
+    <div class="meta">arXiv cs.RO · Ryan Yu et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">4B 开源 VLA 跨 20+ 具身平台预训练超百万轨迹/epoch，零样本即有非零真机表现，微调后 15 任务平均超越 π₀.₅ 达 17.5%</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.31119">Don&#39;t Fool Me Twice: Adapting to Adversity in the Wild with Experience-Driven Reasoning</a></div>
+    <div class="meta">arXiv cs.RO · Navin Sriram Ravie et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">移动机器人在非结构化户外环境通过 VLM 语义扰动溯因与核回归局部异常建模实现持续在线学习，减少因相同障碍被重复阻断</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.31210">Simulation of collision avoidance behavior in crowd movement by data-driven approach</a></div>
+    <div class="meta">arXiv cs.RO · Xuanwen Liang et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">碰撞惩罚 GAN（CPGAN）融入横向加速度 collision loss 与 Voronoi 运动特征，有效降低双向人流碰撞率并重现车道形成现象</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.31041">Does Visual Information Play a Decisive Role in Vision-Language-Action Model Driving Behavior?</a></div>
+    <div class="meta">arXiv cs.AI · Jingtao He et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">结构化多层次视觉扰动框架揭示 VLA 驾驶模型视觉 grounding 不均匀，强调需要更系统的视觉依赖性分析与更健壮的系统设计</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.31067">Seeing Fast and Slow: Bimodal 3D Scene Graphs for Open-set Tasks</a></div>
+    <div class="meta">arXiv cs.RO · Marcel Bartholomeus Prasetyo et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">双模式 3D 场景图生成按任务需要动态切换粗粒度「快」模式与细粒度开放词汇「慢」模式，显著提升实时部署效率</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.30849">High-Load-Density Electro-Permanent Magnetic Foot with Controllable Adhesion for Quadruped Wall-Climbing Robots</a></div>
+    <div class="meta">arXiv cs.RO · An Li et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">高负载密度电永磁足（负载自重比超 200:1）配合双阶段脉冲控制与柔性力传感，使四足机器人在铁磁竖墙和天花板上稳定爬行</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2605.31251">ERGeoBench: A Comprehensive Benchmark for Embodied Reasoning and Geo-localization in Multimodal Large Language Models</a></div>
+    <div class="meta">arXiv cs.AI · Kaiwen Xue et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">含 2207 个全球街景全景图的 embodied geo-localization benchmark，评测 VLM 在单视角、全景、embodied 三种设置下空间感知与精细定位能力</div></div>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-01T02:03:29.680727+00:00
+</footer>
+
+</div>
+</body>
+</html>
