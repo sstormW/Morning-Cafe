@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>晨报 · 2026-06-02 · Morning Cafe</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="晨报 · 2026-06-02｜LeapsCora 视角">
+<meta property="og:description" content="Top 5 首条：Alphabet 拟通过股权融资筹集 800 亿美元（含伯克希尔哈撒韦投资协议），用于 AI 支出 ｜ LeapsCora 直接相关：NVIDIA 发布 Isaac GR00T 人形参考机器人 + 开源物理 AI agent 工具包">
+<meta property="og:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-02.png">
+<meta property="og:url" content="https://sstormw.github.io/Morning-Cafe/2026-06-02.html">
+<meta property="og:site_name" content="Morning Cafe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="晨报 · 2026-06-02｜LeapsCora 视角">
+<meta name="twitter:description" content="Top 5 首条：Alphabet 拟通过股权融资筹集 800 亿美元（含伯克希尔哈撒韦投资协议），用于 AI 支出 ｜ LeapsCora 直接相关：NVIDIA 发布 Isaac GR00T 人形参考机器人 + 开源物理 AI agent 工具包">
+<meta name="twitter:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-02.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 14px; }
+
+.section { margin-top: 40px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+.top5 .source a:hover { text-decoration: underline; }
+
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title {
+  font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink);
+}
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .nav { margin-bottom: 8px; }
+.footer .nav a { margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 28px 18px 50px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">☕ Morning Cafe</div>
+  <h1>晨报 · 2026-06-02</h1>
+  <div class="meta">44 条来源 · 抓取窗口 24h · LeapsCora 视角</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">Alphabet 拟通过股权融资筹集 800 亿美元（含伯克希尔哈撒韦投资协议），用于 AI 支出</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-01/alphabet-to-raise-80-billion-in-equity-capital-for-ai-spending">https://www.bloomberg.com/news/articles/2026-06-01/alphabet-to-raise-80-billion-in-equity-capital-for-ai-spending</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Anthropic 向 SEC 秘密提交 IPO 文件，或将最早今秋赴美上市，先于 OpenAI</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-01/anthropic-s-first-mover-ipo-edge-set-to-widen-lead-over-openai">https://www.bloomberg.com/news/articles/2026-06-01/anthropic-s-first-mover-ipo-edge-set-to-widen-lead-over-openai</a></span>
+    </li>
+    
+    <li>
+      <span class="title">OpenAI 模型解决困扰人类 80 年的数学难题</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/ai/2026/06/openais-math-breakthrough-played-to-ais-strengths/">https://arstechnica.com/ai/2026/06/openais-math-breakthrough-played-to-ais-strengths/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">黑客仅靠对话即让 Meta AI 支持机器人完成账号接管，大量知名 Instagram 账号遭盗售，Meta 已修补</span>
+      <span class="source">Simon Willison · <a href="https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/#atom-everything">https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/#atom-everything</a></span>
+    </li>
+    
+    <li>
+      <span class="title">NVIDIA 在 Computex 发布 Cosmos 3 及 Isaac GR00T 人形机器人参考设计，开源物理 AI 工具包</span>
+      <span class="source">The Robot Report · <a href="https://www.therobotreport.com/nvidia-releases-new-updated-tools-physical-ai-gtc-taipei-computex/">https://www.therobotreport.com/nvidia-releases-new-updated-tools-physical-ai-gtc-taipei-computex/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">NVIDIA 发布 Isaac GR00T 人形参考机器人 + 开源物理 AI agent 工具包</span>
+      <div class="why">Isaac Lab / Cosmos 生态直接更新，Isaac GR00T 是 NVIDIA 官方人形机器人参考设计，影响训练栈</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/nvidia-releases-new-updated-tools-physical-ai-gtc-taipei-computex/">https://www.therobotreport.com/nvidia-releases-new-updated-tools-physical-ai-gtc-taipei-computex/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">NVIDIA Cosmos 3 发布：首个面向物理 AI 推理与动作的开放 omni-model</span>
+      <div class="why">Cosmos 版本更新（lens 强关注项），物理 AI 推理/行动能力升级直接影响 Isaac Lab 生态</div>
+      <div class="source">Hugging Face Blog · <a href="https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai">https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">VAST 完成近 2 亿美元融资，正式披露世界模型路线</span>
+      <div class="why">空间智能 / 世界模型（World Model）lens 强关注主题，VAST 产品主打多人实时同屏场景</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/427516.html">https://www.qbitai.com/2026/06/427516.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Luma AI 宣布成立 Physical AI Lab，开放任何人用其软件训练机器人</span>
+      <div class="why">具身智能训练环境赛道（lens 强关注），Luma AI 进入机器人训练平台市场</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-01/luma-ai-launches-physical-ai-lab-video">https://www.bloomberg.com/news/videos/2026-06-01/luma-ai-launches-physical-ai-lab-video</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">OpenAI 官宣进军机器人，世界仿真研究演变为 OpenAI Robotics，Aditya Ramesh 领导</span>
+      <div class="why">机器人赛道重量级新竞争者入场，OpenAI world simulation → robotics 路径与 LeapsCora 训练环境赛道高度重叠</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3834354415347337?f=rss">https://36kr.com/p/3834354415347337?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">至少 7 所中国军工背景高校寻求采购 NVIDIA H200，出口管制与算力供应链持续紧张</span>
+      <div class="why">上游 H200/算力供应链信号</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-01/nvidia-s-ai-chips-sought-by-chinese-labs-with-ties-to-military">https://www.bloomberg.com/news/articles/2026-06-01/nvidia-s-ai-chips-sought-by-chinese-labs-with-ties-to-military</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">HPE 因 AI 服务器需求激增超预期，股价盘后飙升</span>
+      <div class="why">算力需求侧信号，AI 服务器供应链上游热度持续</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-01/hpe-sees-strong-growth-over-next-18-months-on-server-demand">https://www.bloomberg.com/news/articles/2026-06-01/hpe-sees-strong-growth-over-next-18-months-on-server-demand</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Intel 即将推出 Crescent Island AI 芯片，主打比 NVIDIA/AMD 更省电更便宜</span>
+      <div class="why">GPU/AI 芯片竞争格局变化，上游算力供应链</div>
+      <div class="source">Ars Technica · <a href="https://arstechnica.com/ai/2026/06/intel-our-upcoming-ai-chip-will-be-cheaper-run-cooler-than-nvidia-amd-options/">https://arstechnica.com/ai/2026/06/intel-our-upcoming-ai-chip-will-be-cheaper-run-cooler-than-nvidia-amd-options/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+  <div class="nav">
+    <a href="./index.html">← 归档</a>
+  </div>
+  <div>Morning Cafe · 个人非商业晨报 · 2026-06-01T23:13:16.839797+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
