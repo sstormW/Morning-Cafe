@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-02</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-02</h1>
+  <div class="meta">31 篇候选 · 精读 1 · 速览 8 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    <div class="group-label">🔥 直接相关精读 (1 篇)</div>
+    <ul>
+      
+      <li><strong>BEVIO：月球车昼夜 VIO 导航</strong> — 对 lunar/mars 户外机器人 photorealistic 仿真→真实部署的 sim-to-real 这一研究点有填充价值，half-scale rover 昼夜长程验证的评测设计值得借鉴 — <a href="http://arxiv.org/abs/2606.00709">arXiv</a></li>
+      
+    </ul>
+    
+    
+    <div class="group-label">📚 值得扫一眼 (4 篇)</div>
+    <ul>
+      
+      <li><strong>SkyShield</strong> — CARLA 上首个城市低空 UAV 单目语义 occupancy benchmark（&lt;20m），36K 样本 — <a href="http://arxiv.org/abs/2606.00747">arXiv</a></li>
+      
+      <li><strong>Reasmory</strong> — 把 3D 重建当 VLM 的显式空间记忆，用 DSL 约束查询，空间推理 +6–18% — <a href="http://arxiv.org/abs/2606.00963">arXiv</a></li>
+      
+      <li><strong>GLAD</strong> — 人形感知运动的全局/局部注意力分解地形编码，Unitree G1 LiDAR 零样本 sim-to-real — <a href="http://arxiv.org/abs/2606.00637">arXiv</a></li>
+      
+      <li><strong>Directed Distance Fields for 3DGS</strong> — 把训练好的 3DGS 蒸馏成 ray oracle，常数时间二次光线查询，比 SDF sphere tracing 快 26–72× — <a href="http://arxiv.org/abs/2606.00817">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🔥</span>
+    <h2>强相关精读 (1 篇)</h2>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.00709">BEVIO: Efficient Bird&#39;s-Eye-View based Sparse-Update Visual-Inertial Odometry for Lunar Day-Night Navigation</a></div>
+    <div class="meta">
+      arXiv cs.RO · 2026-05-30 · Mohit Singh, Shehryar Khattak, Ashish Goel, Michael Paton, Kostas Alexis et al.
+      <span class="score">12 (8+4)</span>
+    </div>
+    <div class="reason">Lunar rover day-night VIO navigation with photorealistic sim and real deployment; planetary robotics fit</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">针对月球车在极端算力/能耗约束、低帧率、昼夜自照明条件下的 VIO 问题，提出基于鸟瞰图（BEV）的图像匹配方案，对大帧间运动和外观变化更鲁棒。高保真月面仿真 + 半比例月球车实机昼夜长程部署（Plaster City, CA），视觉更新率低至 0.25 Hz 仍可靠，适配功耗/算力受限月球车。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对 lunar/mars 户外机器人 photorealistic 仿真→真实部署的 sim-to-real 这一研究点有直接填充价值；half-scale rover 昼夜 self-illuminated 长程验证的评测设计值得借鉴。</div></div>
+    <div class="field"><span class="field-label">Method 摘要</span><div class="field-body">背景对标 JPL Endurance 任务（月球南极-艾特肯盆地四年 2000+ km、昼夜可行驶）。用半比例月球车 ERNEST 研究状态估计，融合视觉与惯性，核心是场景自适应 BEV 视角做特征匹配，使 VIO 能在比基线更低的图像帧率下运行以降低算力。</div></div>
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (8 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.00747">SkyShield: Occupancy as a Safety Interface for Low-Altitude UAV Autonomy</a></div>
+    <div class="meta">arXiv cs.CV · Jie Gao et al. <span class="score">9</span></div>
+    <div class="field"><div class="field-body">基于 CARLA 构建的首个城市低空（&lt;20m）UAV 前视单目语义 occupancy benchmark，36K 样本 + 逐帧 6-DoF 位姿，提出动力学感知 KAR-mIoU 指标与几何先行 SkyOcc 基线。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.00963">Reasmory: 3D Reconstruction as Explicit Memory for VLMs Spatial Reasoning</a></div>
+    <div class="meta">arXiv cs.CV · Jixuan He et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">把 3D 重建结果当 VLM 的显式空间记忆，用轻量 DSL 约束查询与视角变换、程序先校验再执行，多视图/视频空间推理比 GPT-5-mini、Gemini-3-flash 等提升 6–18%。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.00499">OptiWorld: Optimal Control for Video World Generation under Physical Constraints</a></div>
+    <div class="meta">arXiv cs.CV · Yu Yuan et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">推理时把经典最优控制引入视频世界生成——抽取世界状态、连续流形上规划满足物理约束的最优轨迹再渲染，使生成动态更安全平滑。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.00637">Global-Local Attention Decomposition for Terrain Encoding in Humanoid Perceptive Locomotion</a></div>
+    <div class="meta">arXiv cs.RO · Shengcheng Fu et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">GLAD 地形编码：全局注意力概括周边地形、状态条件局部注意力编码精确落脚几何，Unitree G1 板载 LiDAR 实现稀疏落脚/障碍密集地形零样本 sim-to-real。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.00817">Directed Distance Fields for Constant-Time Ray Queries on Gaussian Splatting</a></div>
+    <div class="meta">arXiv cs.CV · Subhankar MIshra <span class="score">5</span></div>
+    <div class="field"><div class="field-body">把训练好的 3DGS 蒸馏成 52MB 有向距离场神经网络当 ray oracle，单次前向回答二次光线（阴影/AO/GI），比等价 SDF sphere tracing 快 26–72× 且开销不随高斯数增长。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.00793">MBench: A Comprehensive Benchmark on Memory Capability for Video World Models</a></div>
+    <div class="meta">arXiv cs.CV · Shengjun Zhang et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">评测视频世界模型记忆能力的 benchmark，把长时一致性拆成实体/环境/因果三维 12 子项，基于真实长视频用规则指标 + VLM 评估，揭示主流方法长时状态保持的系统性缺陷。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.00519">DriveAnchor: Progressive Anchor-based Flow Learning for Autonomous Driving Planning</a></div>
+    <div class="meta">arXiv cs.RO · Limin Yan et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">自动驾驶规划三阶段框架：2398 轨迹形状词表替代高斯先验 + 能量场可控引导 + 零阶 RL 微调，约 200 万场景近距碰撞率降 89%，Drive Orin 2.06ms 推理并通过实车验证。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.00828">RoboStressBench: Benchmarking VLM Robustness to Physical Visual Stress in Embodied Scenes</a></div>
+    <div class="meta">arXiv cs.CV · Leyi Wu et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">从逆图形视角把视觉应力拆成材质/视角/光照/几何四维评测 VLM 具身鲁棒性，发现不同物理因素拖累不同具身能力，并给出 stress-aware agentic solver。</div></div>
+  </div>
+  
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>航天 / 星际建造</h2>
+  </div>
+  
+  <div class="paper space">
+    <div class="title"><a href="http://arxiv.org/abs/2606.00709">BEVIO: Efficient Bird&#39;s-Eye-View based Sparse-Update Visual-Inertial Odometry for Lunar Day-Night Navigation</a></div>
+    <div class="meta">arXiv cs.RO</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">月球车在极低帧率、昼夜自照明下的鲁棒 VIO：BEV 图像匹配抗大帧间运动与外观变化，半比例月球车昼夜长程实机验证，0.25 Hz 视觉更新率仍可靠，面向功耗/算力受限的月面巡视器。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">月面户外机器人 photorealistic 仿真→真实部署的 sim-to-real，以及极端约束下的状态估计评测设计，可作为 lunar/mars surface robot + digital twin 方向的对位参考。</div></div>
+  </div>
+  
+</section>
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-02T02:08:39.830343+00:00
+</footer>
+
+</div>
+</body>
+</html>
