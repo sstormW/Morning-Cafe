@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-05 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-05</h1>
+  <div class="meta">36 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">SpaceX plans $75B IPO at $1.75T valuation; Wall Street models 100x AI revenue growth to 2030</span>
+      <span class="source">SpaceNews · <a href="https://spacenews.com/spacex-to-raise-at-least-75-billion-in-ipo/">https://spacenews.com/spacex-to-raise-at-least-75-billion-in-ipo/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">戴盟机器人完成亿元A轮融资，视触觉传感器+物理世界模型成具身落地关键</span>
+      <span class="source">36氪 · <a href="https://36kr.com/p/3837269482091656?f=rss">https://36kr.com/p/3837269482091656?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">字节2026 AI四命题：年底冲世界模型全球SOTA (Genie 3水平)，豆包DAU达2亿</span>
+      <span class="source">36氪 · <a href="https://36kr.com/p/3838454229027072?f=rss">https://36kr.com/p/3838454229027072?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Broadcom AI chip outlook disappoints; Nasdaq 100 drops while emerging markets post worst session in 3 weeks</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-04/broadcom-sinks-after-disappointing-ai-chip-outlook-video">https://www.bloomberg.com/news/videos/2026-06-04/broadcom-sinks-after-disappointing-ai-chip-outlook-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Anthropic President Daniela Amodei: high compute costs are the key driver pushing AI firms toward IPO</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-04/anthropic-president-cites-high-computing-costs-as-driver-for-ipo">https://www.bloomberg.com/news/articles/2026-06-04/anthropic-president-cites-high-computing-costs-as-driver-for-ipo</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">戴盟机器人亿元A轮：视触觉传感器行业第一出货量 + 物理世界模型数据飞轮</span>
+      <div class="why">具身智能训练数据 — 触觉+视觉融合的物理交互数据集，正是 LeapsCora sim-generated data 的核心竞争点；阿里通义多模态人才加入攻关物理世界模型，竞品动态</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3837269482091656?f=rss">https://36kr.com/p/3837269482091656?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">一个GPT Plus会员的钱够机器人跑一月世界模型（约150元/月）</span>
+      <div class="why">世界模型成本曲线 — 训练环境 inference 成本正进入普及区间，对 LeapsCora 商业模型有参考意义</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/428791.html">https://www.qbitai.com/2026/06/428791.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">LeCun 10亿押注隐空间世界模型：「很难，但一定要做」</span>
+      <div class="why">空间智能 / 世界模型技术路线 — 与 LeapsCora 城市仿真环境的 representation 方向直接相关</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/428790.html">https://www.qbitai.com/2026/06/428790.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">字节2026 AI：世界模型年底冲 Genie 3 SOTA，投入 VLA 研究</span>
+      <div class="why">竞品生态 — 字节加大对世界模型+VLA投入，与 LeapsCora 所在的 urban embodied AI 训练环境赛道高度重叠</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3838454229027072?f=rss">https://36kr.com/p/3838454229027072?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">TSMC: Customer demand is so high, we can only support so much</span>
+      <div class="why">上游 GPU/芯片供应链压力信号，影响 LeapsCora 训练栈扩容节奏</div>
+      <div class="source">The Verge · <a href="https://www.theverge.com/tech/943066/tsmc-ai-demand-struggles">https://www.theverge.com/tech/943066/tsmc-ai-demand-struggles</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Broadcom AI chip outlook disappoints; Nasdaq AI stocks sink</span>
+      <div class="why">算力/芯片供应链 — Broadcom 定制芯片前景不确定，影响 AI training 基础设施规划</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-04/broadcom-sinks-after-disappointing-ai-chip-outlook-video">https://www.bloomberg.com/news/videos/2026-06-04/broadcom-sinks-after-disappointing-ai-chip-outlook-video</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">LeCun 10亿押注的方向，全球领先视觉大模型团队早已布局</div>
+    
+    <ul class="article-points">
+      
+      <li>LeCun 多次公开表示「隐空间世界模型很难，但我们一定要做」，押注 latent space world model 方向为 AI 下一阶段核心。</li>
+      
+      <li>量子位报道，全球领先视觉大模型团队已在这一赛道布局，以「超大规模感知+预测」为核心路线，而非单纯视觉内卷。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/428790.html">https://www.qbitai.com/2026/06/428790.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 03:43 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI</div>
+    
+    <ul class="article-points">
+      
+      <li>NVIDIA releases Nemotron 3.5 Content Safety, a customizable multimodal safety model targeting enterprise AI deployments with global compliance needs.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Hugging Face Blog</span>
+      <span class="sep">·</span>
+      <a href="https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety">https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 18:57 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">36氪独家｜2026 年字节 AI 的四个关键命题</div>
+    
+    <ul class="article-points">
+      
+      <li>字节2026年AI四大重点：①世界模型年底冲 Google Genie 3 全球SOTA；②视频模型探索「动态生成」新方向；③夯实 Coding 飞轮提升 Agent 能力；④豆包深化「办公」商业化，春节后 DAU 已达 2 亿。</li>
+      
+      <li>字节在世界模型赛道入场较晚（2025年小范围成立研究组），由前阿里周畅主导，聚焦 VLA（视觉-语言-动作）方向；内部判断是视频模型打好后才全力投入世界模型。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3838454229027072?f=rss">https://36kr.com/p/3838454229027072?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 06:06 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Designing the hf CLI as an agent-optimized way to work with the Hub</div>
+    
+    <ul class="article-points">
+      
+      <li>Hugging Face introduces a redesigned CLI built to integrate natively into agentic workflows, offering Hub-native operations optimized for LLM agents.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Hugging Face Blog</span>
+      <span class="sep">·</span>
+      <a href="https://huggingface.co/blog/hf-cli-for-agents">https://huggingface.co/blog/hf-cli-for-agents</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 00:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">6 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">一个GPT Plus会员的钱，够机器人跑一个月世界模型了</div>
+    
+    <ul class="article-points">
+      
+      <li>量子位报道，机器人部署世界模型的推理成本已降至约150元/月，与 GPT Plus 会员价持平。</li>
+      
+      <li>成本大幅下降意味着世界模型在真机侧的规模化落地门槛正加速降低，从实验室走向量产部署。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/428791.html">https://www.qbitai.com/2026/06/428791.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 03:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">戴盟机器人完成亿元融资，阿里通义多模态大牛加盟攻关物理世界模型</div>
+    
+    <ul class="article-points">
+      
+      <li>戴盟机器人宣布完成亿元融资，首席AI科学家原玮浩（前阿里通义实验室多模态研究专家）加入，主攻「将世界模型迁移至机器人物理操作」。</li>
+      
+      <li>核心团队来自港科大机器人研究院，具备10年操作智能积累，「具身技能」与「技能克隆」是核心技术路线。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/428778.html">https://www.qbitai.com/2026/06/428778.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 03:06 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Can surgical robots fly? SS Innovations discusses challenges, solutions</div>
+    
+    <ul class="article-points">
+      
+      <li>SS Innovations is developing surgical robots designed for deployment in active war zones and emergency remote locations, addressing challenges of remote operation in extreme environments.</li>
+      
+      <li>The company is focused on enabling emergency care where conventional surgical infrastructure is unavailable.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/can-surgical-robots-fly-ss-innovations-discusses-challenges-solutions/">https://www.therobotreport.com/can-surgical-robots-fly-ss-innovations-discusses-challenges-solutions/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 20:21 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Proteus gets natural-language ability as Amazon expands European robot deployments</div>
+    
+    <ul class="article-points">
+      
+      <li>Amazon&#39;s Proteus warehouse robot gains natural-language command capability requiring no special programming, as Amazon scales deployments across Europe alongside STARK and Vulcan robots.</li>
+      
+      <li>The rollout marks Amazon&#39;s most significant European expansion of its warehouse robotics fleet to date.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/proteus-gets-natural-language-ability-amazon-expands-europe-robot-deployments/">https://www.therobotreport.com/proteus-gets-natural-language-ability-amazon-expands-europe-robot-deployments/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 19:50 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">00后创业者站上C位，「go big or go home」｜36氪离线聚会第二期</div>
+    
+    <ul class="article-points">
+      
+      <li>36氪 TokenAge 聚会嘉宾包括：萝博派对RoboParty（全开源双足人形机器人）创始人黄一、Eup Robotics（离岸能源水下巡检机器人）创始人郑嘉熙。</li>
+      
+      <li>两家机器人公司均以开源/特种应用为差异化，聚焦真实场景落地而非通用人形竞争路线。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3838702884604421?f=rss">https://36kr.com/p/3838702884604421?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 10:12 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">深圳具身公司获得汇川、中国电信亿元融资，「视触觉」传感器出货量行业第一｜硬氪首发</div>
+    
+    <ul class="article-points">
+      
+      <li>戴盟机器人完成亿元A轮融资，汇川技术产业基金与中国电信联合投资；「视触觉」传感器出货量行业第一，融合触觉+视觉的物理交互数据（记录瞬时受力、材料属性等）是核心壁垒。</li>
+      
+      <li>资金将用于构建超大规模含物理交互信息数据集，加速物理世界模型研发，驱动真实物理场景数据飞轮与商业闭环。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3837269482091656?f=rss">https://36kr.com/p/3837269482091656?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 01:30 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Waymo&#39;s retired robotaxi batteries are heading back to work</div>
+    
+    <ul class="article-points">
+      
+      <li>Waymo is repurposing retired EV batteries from its robotaxi fleet for grid storage in California and Texas, rather than sending them to recycling.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/06/04/waymo-retired-robotaxi-batteries-are-heading-back-to-work-b2u/">https://electrek.co/2026/06/04/waymo-retired-robotaxi-batteries-are-heading-back-to-work-b2u/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 11:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Wall Street Sees SpaceX&#39;s AI Revenue 100 Times Higher by 2030</div>
+    
+    <ul class="article-points">
+      
+      <li>Wall Street analysts are projecting SpaceX&#39;s AI division to achieve 100x revenue growth by 2030, serving as a key justification for the company&#39;s targeted $1.8 trillion IPO valuation.</li>
+      
+      <li>The projections reflect growing confidence in SpaceX&#39;s ability to monetize AI capabilities, particularly through Starlink&#39;s data infrastructure.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-04/wall-street-sees-spacex-s-ai-revenue-100-times-higher-by-2030">https://www.bloomberg.com/news/articles/2026-06-04/wall-street-sees-spacex-s-ai-revenue-100-times-higher-by-2030</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 22:28 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX to raise at least $75 billion in IPO</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX has announced plans to raise a minimum of $75 billion in its IPO, implying a valuation of more than $1.75 trillion.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/spacex-to-raise-at-least-75-billion-in-ipo/">https://spacenews.com/spacex-to-raise-at-least-75-billion-in-ipo/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 02:54 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Voyager Technologies acquires Astrobotic to advance lunar initiatives</div>
+    
+    <ul class="article-points">
+      
+      <li>Voyager Technologies has acquired Astrobotic, committing to accelerate investment in Astrobotic&#39;s lunar lander programs and reusable rocket development.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/voyager-technologies-acquires-astrobotic-advance-lunar-initiatives/">https://www.therobotreport.com/voyager-technologies-acquires-astrobotic-advance-lunar-initiatives/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 12:30 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">21 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Scientist Bengio: Building Systems We Don&#39;t Know How to Control</div>
+    
+    <ul class="article-points">
+      
+      <li>Yoshua Bengio (Mila, LawZero) warns at Bloomberg Tech 2026 that we currently lack complete control of AI agents, citing agent risks and the urgent need for governance frameworks.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-04/ai-scientist-warns-of-dangers-of-new-systems-video">https://www.bloomberg.com/news/videos/2026-06-04/ai-scientist-warns-of-dangers-of-new-systems-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 20:58 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Verizon CEO Sees AI Coming for Customer Service Jobs</div>
+    
+    <ul class="article-points">
+      
+      <li>Verizon CEO Daniel Schulman stated at Bloomberg Tech 2026 that AI could replace 「a large percentage」 of customer service staff, while AI agents will still need to collaborate with humans for complex requests.</li>
+      
+      <li>He noted AI already improves customer satisfaction for routine tasks like billing, but complex issues still require human-AI collaboration.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-04/verizon-ceo-sees-ai-coming-for-customer-service-jobs-video">https://www.bloomberg.com/news/videos/2026-06-04/verizon-ceo-sees-ai-coming-for-customer-service-jobs-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 19:45 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Verizon CEO Sees AI Replacing Large Share of Customer Service</div>
+    
+    <ul class="article-points">
+      
+      <li>Verizon CEO Dan Schulman expects AI to replace 「a large percentage」 of customer service representative work as the carrier targets improved financial performance and customer satisfaction.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-04/verizon-ceo-sees-ai-replacing-large-share-of-customer-service">https://www.bloomberg.com/news/articles/2026-06-04/verizon-ceo-sees-ai-replacing-large-share-of-customer-service</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 19:43 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Android&#39;s Samat on Integrating AI into the Ecosystem</div>
+    
+    <ul class="article-points">
+      
+      <li>Google Android President Sameer Samat discussed platform evolution and AI integration strategy at Bloomberg Tech 2026, outlining how AI is being woven across the Android ecosystem.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-04/android-s-samat-on-integrating-ai-into-the-ecosystem-video">https://www.bloomberg.com/news/videos/2026-06-04/android-s-samat-on-integrating-ai-into-the-ecosystem-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 19:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Ciena CEO Rejects Dot-Com Bubble Comparisons</div>
+    
+    <ul class="article-points">
+      
+      <li>Ciena CEO Gary Smith argues AI networking demand is accelerating in a way fundamentally different from the dot-com bubble, pointing to enterprise AI adoption as the next phase of growth.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-04/ciena-ceo-rejects-dot-com-bubble-comparisons-video">https://www.bloomberg.com/news/videos/2026-06-04/ciena-ceo-rejects-dot-com-bubble-comparisons-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 19:25 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Verizon CEO on Using Tech to Transform Telecom</div>
+    
+    <ul class="article-points">
+      
+      <li>Verizon CEO Dan Schulman discussed AI-led transformation and customer growth strategy at Bloomberg Tech 2026, emphasizing operational efficiency gains from AI deployment across Verizon&#39;s business.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-04/verizon-ceo-on-using-tech-to-transform-telecom-video">https://www.bloomberg.com/news/videos/2026-06-04/verizon-ceo-on-using-tech-to-transform-telecom-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 19:21 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Airbnb CEO Brian Chesky Plans to Start a New AI Company</div>
+    
+    <ul class="article-points">
+      
+      <li>Airbnb CEO Brian Chesky is starting a new AI lab, marking his first direct entry into the global AI race beyond Airbnb&#39;s product integrations, according to several people familiar with the matter.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-04/airbnb-ceo-brian-chesky-plans-to-start-a-new-ai-company">https://www.bloomberg.com/news/articles/2026-06-04/airbnb-ceo-brian-chesky-plans-to-start-a-new-ai-company</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 19:12 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Broadcom Sinks After Disappointing AI Chip Outlook</div>
+    
+    <ul class="article-points">
+      
+      <li>Broadcom shares fell in their biggest single-day drop since January 2025 after the company&#39;s forward AI chip guidance underwhelmed investors relative to sector AI demand expectations.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-04/broadcom-sinks-after-disappointing-ai-chip-outlook-video">https://www.bloomberg.com/news/videos/2026-06-04/broadcom-sinks-after-disappointing-ai-chip-outlook-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 19:09 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Power Boom Revives Natural Gas as Infrastructure Bet</div>
+    
+    <ul class="article-points">
+      
+      <li>AI and data center electricity demand is creating a 「renaissance」 for natural gas in North America, according to KKR partner Brandon Freiman, after decades of limited new development.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-04/ai-power-boom-revives-natural-gas-as-infrastructure-bet">https://www.bloomberg.com/news/articles/2026-06-04/ai-power-boom-revives-natural-gas-as-infrastructure-bet</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 19:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Scientist Bengio on Engineering Safer Agents</div>
+    
+    <ul class="article-points">
+      
+      <li>Yoshua Bengio discussed AI safety and agent governance at Bloomberg Tech 2026, focusing on engineering approaches to make agentic systems safer and more controllable.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-04/ai-scientist-bengio-on-engineering-safer-agents-video">https://www.bloomberg.com/news/videos/2026-06-04/ai-scientist-bengio-on-engineering-safer-agents-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 19:06 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Anthropic President Sees High Computing Costs as Driver for IPOs</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic co-founder and President Daniela Amodei stated that the high cost of developing AI models is pushing firms like Anthropic toward public markets, days after Anthropic confidentially filed IPO paperwork.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-04/anthropic-president-cites-high-computing-costs-as-driver-for-ipo">https://www.bloomberg.com/news/articles/2026-06-04/anthropic-president-cites-high-computing-costs-as-driver-for-ipo</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 17:58 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Generalist raises $400M to scale its general-purpose AI models</div>
+    
+    <ul class="article-points">
+      
+      <li>Generalist has raised $400M to scale general-purpose AI models, claiming its system improves average task success rates to 99%, up from 64% achieved by prior models.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/generalist-raises-400m-to-scale-its-general-purpose-ai-models/">https://www.therobotreport.com/generalist-raises-400m-to-scale-its-general-purpose-ai-models/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 17:53 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Quoting Emanuel Maiberg, 404 Media</div>
+    
+    <ul class="article-points">
+      
+      <li>Google&#39;s spokesperson retroactively asked 404 Media to change a published statement, specifically removing the phrase 「it&#39;s critical that we maintain humans in the loop」 from Google&#39;s official position.</li>
+      
+      <li>Simon Willison flagged this as a notable shift in Google&#39;s public stance on human oversight of AI systems.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/4/a-slightly-different-version/#atom-everything">https://simonwillison.net/2026/Jun/4/a-slightly-different-version/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 16:38 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">TSMC struggles to keep up with AI demand: &#39;We can only support so much&#39;</div>
+    
+    <ul class="article-points">
+      
+      <li>TSMC CEO C.C. Wei stated 「Customer demand is so high, and we can only support so much」 after a shareholder meeting, as the world&#39;s largest chipmaker struggles to meet US customer demand even with ongoing US factory buildouts.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/tech/943066/tsmc-ai-demand-struggles">https://www.theverge.com/tech/943066/tsmc-ai-demand-struggles</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 14:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI, Xerox Debt and Canada&#39;s &#39;Lost Status&#39; at Sohn Montreal</div>
+    
+    <ul class="article-points">
+      
+      <li>At the Sohn Montreal investment conference, Whale Rock fund pitched Anthropic&#39;s user growth prospects ahead of its anticipated IPO; other themes included biotech and gold mining.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-04/whale-rock-talks-up-anthropic-s-user-prospects-ahead-of-ipo">https://www.bloomberg.com/news/articles/2026-06-04/whale-rock-talks-up-anthropic-s-user-prospects-ahead-of-ipo</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 13:28 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Nasdaq 100 Declines, Dow Jones Hits Record as AI Trade Falters</div>
+    
+    <ul class="article-points">
+      
+      <li>Investors rotated out of tech into 「old economy」 names on Thursday after Broadcom&#39;s earnings dampened AI enthusiasm; Nasdaq 100 fell while the Dow Jones hit a record high.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-04/nasdaq-100-futures-drop-as-broadcom-forecast-spooks-traders">https://www.bloomberg.com/news/articles/2026-06-04/nasdaq-100-futures-drop-as-broadcom-forecast-spooks-traders</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 12:20 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Download: AI-generated lawsuits and virtual power plants for data centers</div>
+    
+    <ul class="article-points">
+      
+      <li>MIT Technology Review covers two stories: AI-generated legal filings flooding courts, and virtual power plant strategies emerging to handle data center electricity loads.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/06/04/1138408/the-download-ai-lawsuits-virtual-power-plants-data-centers/">https://www.technologyreview.com/2026/06/04/1138408/the-download-ai-lawsuits-virtual-power-plants-data-centers/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 12:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Emerging-Market Stocks Sink as Broadcom Miss Revives AI Concerns</div>
+    
+    <ul class="article-points">
+      
+      <li>Emerging-market equities posted their worst session in roughly three weeks as Asian tech heavyweights retreated following Broadcom&#39;s disappointing AI chip outlook.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-04/emerging-market-stocks-fall-as-broadcom-miss-disrupts-ai-trade">https://www.bloomberg.com/news/articles/2026-06-04/emerging-market-stocks-fall-as-broadcom-miss-disrupts-ai-trade</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 11:13 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How courts are coping with a flood of AI-generated lawsuits</div>
+    
+    <ul class="article-points">
+      
+      <li>Federal Judge Maritza Braswell in Colorado now routinely sifts through AI-generated legal filings from pro se litigants, raising new burdens for the court system as AI lowers the barrier to filing.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/06/04/1138391/courts-coping-ai-lawsuits/">https://www.technologyreview.com/2026/06/04/1138391/courts-coping-ai-lawsuits/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 10:50 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">实现芯片设计验证自动化，提升开发效率10倍以上，「智维创芯」完成数千万元天使轮融资｜36氪首发</div>
+    
+    <ul class="article-points">
+      
+      <li>智维创芯完成数千万元天使轮融资（国中资本领投，石溪资本、奇绩创坛跟投），旗下「ChatDV」是全球首个面向数字芯片验证的大模型智能体，覆盖测试生成、断言生成、参考模型构建和自动调试等高频环节。</li>
+      
+      <li>开发效率提升超10倍，周期减少50%，成本降低33%；已与中电科集团、芯华章、清微智能等多家客户完成商业化落地。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3838488706370054?f=rss">https://36kr.com/p/3838488706370054?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 10:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">氪星晚报 ｜OpenAI首席财务官谈公司AI设备：今年年底前将正式发布；腾讯客服回应与华为、小米等合作；香港推出首个生产力级超级智能体</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI CFO Sarah Friar 确认 AI 设备年底前正式发布（此前文件预计2027年2月才开始发货）；香港推出首个「生产力级超级智能体」；鸿海与SK集团深化 AI 基础设施合作，涉及 AI 服务器、数据中心及机器人领域。</li>
+      
+      <li>小米旗下瀚星创投入股恒脉微（集成电路设计公司），注册资本增至约1702万元。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3838652242823687?f=rss">https://36kr.com/p/3838652242823687?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 09:37 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Amazon&#39;s new plan for games: James Bond and AI Snoop Dogg</div>
+    
+    <ul class="article-points">
+      
+      <li>Amazon is doubling down on gaming, leveraging MGM Studios IP including James Bond via its Luna cloud gaming platform, while incorporating AI-generated features including an AI-powered Snoop Dogg collaboration.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/games/943147/amazon-gaming-strategy-james-bond-snoop-dogg-luna">https://www.theverge.com/games/943147/amazon-gaming-strategy-james-bond-snoop-dogg-luna</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-04 17:01 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-05.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-04T22:51:38.035274+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
