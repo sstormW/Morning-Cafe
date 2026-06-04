@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-04 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-04</h1>
+  <div class="meta">41 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">SpaceX 申请史上最大 IPO：$75B，555M 股定价 $135，市值约 $1.77T</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-03/spacex-seeks-75-billion-in-record-ipo-plan-to-fund-ai-launch">https://www.bloomberg.com/news/articles/2026-06-03/spacex-seeks-75-billion-in-record-ipo-plan-to-fund-ai-launch</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Alphabet 股权融资上调至 $84.75B，较两天前宣布时再扩大 $4.75B，用于 AI 支出</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-03/alphabet-upsizes-equity-offering-to-85b-for-ai-spending-video">https://www.bloomberg.com/news/videos/2026-06-03/alphabet-upsizes-equity-offering-to-85b-for-ai-spending-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">星尘智能（Astribot）B 轮三个月累计超 10 亿元，估值突破百亿，深圳又一具身独角兽</span>
+      <span class="source">36氪 · <a href="https://36kr.com/p/3836068296209537?f=rss">https://36kr.com/p/3836068296209537?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Broadcom AI 芯片收入指引低于预期，盘后股价下跌</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-03/broadcom-outlook-disappoints-investors-seeking-ai-fueled-blowout">https://www.bloomberg.com/news/articles/2026-06-03/broadcom-outlook-disappoints-investors-seeking-ai-fueled-blowout</a></span>
+    </li>
+    
+    <li>
+      <span class="title">跨维智能登顶 WorldArena Track 2，世界模型全球第一，以机器人实际作业任务成功率为核心指标</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/06/428435.html">https://www.qbitai.com/2026/06/428435.html</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">跨维智能登顶 WorldArena Track 2 世界模型榜，以机器人实际作业任务成功率为核心指标</span>
+      <div class="why">强关注主题「空间智能 / 世界模型」；Track 2 考核数据合成引擎能力，直接影响具身训练数据质量评估框架</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/428435.html">https://www.qbitai.com/2026/06/428435.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">星尘智能 B 轮三个月累计超 10 亿元，估值突破百亿，深圳又一具身机器人独角兽</span>
+      <div class="why">机器人公司大额融资，绳驱路线具身独角兽，千台级商用落地节奏影响赛道融资节点</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3836068296209537?f=rss">https://36kr.com/p/3836068296209537?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">旷行科技 Pre-A，高危工业具身机器人 + 多传感器（图像/点云/超声/红外）工程大脑</span>
+      <div class="why">机器人公司融资，多传感器融合工程大模型与城市仿真训练数据的传感器需求直接相关</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3836744788014208?f=rss">https://36kr.com/p/3836744788014208?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Festo GripperAI：免训练、robot-agnostic 零样本抓取系统发布</span>
+      <div class="why">具身智能操作（manipulation）前沿，零样本抓取降低非结构场景部署门槛，关联具身智能训练数据方向</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/festo-launches-pneumatic-gripper-tests-gripperai/">https://www.therobotreport.com/festo-launches-pneumatic-gripper-tests-gripperai/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">美国贸易组织呼吁解决 AI 驱动的存储芯片短缺</span>
+      <div class="why">上游 HBM/存储供应链压力，AI 短缺波及汽车和医疗行业，影响 GPU 训练集群成本预期</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-03/trade-groups-urge-us-to-boost-memory-chip-supply-strained-by-ai">https://www.bloomberg.com/news/articles/2026-06-03/trade-groups-urge-us-to-boost-memory-chip-supply-strained-by-ai</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Broadcom AI 芯片收入指引低于预期，盘后股价下跌</span>
+      <div class="why">AI 芯片供给侧信号，影响训练算力市场供需预期</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-03/broadcom-outlook-disappoints-investors-seeking-ai-fueled-blowout">https://www.bloomberg.com/news/articles/2026-06-03/broadcom-outlook-disappoints-investors-seeking-ai-fueled-blowout</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Mach Industries 自主防御机器人融资 $300M</span>
+      <div class="why">机器人赛道大额融资，反映整体机器人产业资本热度</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/autonomous-defense-manufacturer-mach-industries-raises-300m/">https://www.therobotreport.com/autonomous-defense-manufacturer-mach-industries-raises-300m/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">美银预测英伟达 2027 财年下半年 Vera CPU 销售额达 200 亿美元</span>
+      <div class="why">上游算力供应商产品路线，英伟达 CPU 路线影响 Isaac 训练栈底层硬件演进</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3837330582008963?f=rss">https://36kr.com/p/3837330582008963?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">世界模型榜首易主！跨维智能登顶WorldArena</div>
+    
+    <ul class="article-points">
+      
+      <li>跨维智能在 WorldArena Track 2（Data Engine）赛道登顶全球第一，与第二名拉开显著差距，领先 WoW、BLM 等国际模型。</li>
+      
+      <li>Track 2 以机器人实际作业任务成功率为核心评判标准，考察世界模型在数据合成引擎、策略评估和行动规划全链路的落地能力，包含 16 项细分指标和 3 大真实应用任务。</li>
+      
+      <li>WorldArena 由全球顶尖高校及科研机构专家维护，是世界模型赛道目前最权威的榜单。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/428435.html">https://www.qbitai.com/2026/06/428435.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 09:54 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">36氪独家 | 火山引擎提升MaaS营收目标至全年150亿元，Seedance 2.0单月营收已超10亿元</div>
+    
+    <ul class="article-points">
+      
+      <li>字节跳动火山引擎在今年 4 月将 MaaS 营收目标上调至 150 亿元（2025 年底时目标为 100 亿元，2025 年全年实际仅约 15 亿元），目前 Token 日均消耗仍保持月度近 40% 增速。</li>
+      
+      <li>增长几乎完全由视频模型 Seedance 2.0 驱动：2 月 10 日发布后迅速爆火，目前单月营收已超 10 亿元。</li>
+      
+      <li>行业共识已清晰：代码生成和视频生成场景比常规文本对话拥有更高议价权，视频场景尤甚。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3836973710423429?f=rss">https://36kr.com/p/3836973710423429?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 05:28 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">As AI gets better, it reveals an empty promise</div>
+    
+    <ul class="article-points">
+      
+      <li>Google&#39;s Gemini agent &#34;Spark&#34; impressed testers by proactively knowing details like a tester&#39;s dog&#39;s name (Frida) and a colleague&#39;s spouse&#39;s first name — information the users never explicitly shared.</li>
+      
+      <li>The piece argues that as AI agents become more effective, they expose a gap between what users thought they consented to and the reality of pervasive personal data access.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/942629/as-ai-gets-better-it-reveals-an-empty-promise">https://www.theverge.com/ai-artificial-intelligence/942629/as-ai-gets-better-it-reveals-an-empty-promise</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 17:45 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">京东开源JoyAI-Echo长音视频生成框架</div>
+    
+    <ul class="article-points">
+      
+      <li>京东推出 JoyAI-Echo，内置「导演助理」Director Agent 和专属记忆库，在多镜头生成过程中持续保存角色外观特征和说话人音色信息。</li>
+      
+      <li>代码与权重已全部开源。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3837620499777795?f=rss">https://36kr.com/newsflashes/3837620499777795?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 23:15 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">6 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">深圳具身公司星尘智能完成超10亿B轮融资，估值破百亿｜硬氪首发</div>
+    
+    <ul class="article-points">
+      
+      <li>绳驱 AI 机器人公司星尘智能（Astribot）完成 B 轮系列融资，三个月内三轮累计超 10 亿元，投资方包括梁溪科创产业二期、扬州龙投芯粒、中科创达、科德教育等，腾讯、阿里、字节系老股东持续追投，估值突破百亿元。</li>
+      
+      <li>商业化已落地：与中科创达的千台级工业及商业服务订单并推进出海，与江都经开区共建亿元级应用创新中心落地文旅酒店场景。</li>
+      
+      <li>创始人来杰采用「Design for AI」路径，先定义适配 AI 大模型学习规律的机器人身体，再匹配算法与操作系统。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3836068296209537?f=rss">https://36kr.com/p/3836068296209537?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 01:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">36氪首发 | 浙大教授团队获财通、商汤投资，做高危场景具身机器人大脑</div>
+    
+    <ul class="article-points">
+      
+      <li>旷行科技（杭州）完成数千万元 Pre-A 轮，由财通资本和商汤国香投资，专注高危工业工程领域（矿山、电力、油气、交通城建）的「机器人 + AI 大脑」运维解决方案。</li>
+      
+      <li>自研工程多模态大模型融合图像、点云、超声、电磁波、红外等多传感器数据，可对混凝土开裂、钢结构锈蚀等病害实现亚毫米级定量识别；创始人舒江鹏为浙大百人计划研究员，团队自 2011 年积累超 15 年行业数据。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3836744788014208?f=rss">https://36kr.com/p/3836744788014208?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 01:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Autonomous defense manufacturer Mach Industries raises $300M</div>
+    
+    <ul class="article-points">
+      
+      <li>Mach Industries, which builds autonomous defense systems, raised $300M to accelerate government contract execution, talent acquisition, and product development.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/autonomous-defense-manufacturer-mach-industries-raises-300m/">https://www.therobotreport.com/autonomous-defense-manufacturer-mach-industries-raises-300m/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 21:41 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Festo launches lightweight pneumatic gripper and tests GripperAI</div>
+    
+    <ul class="article-points">
+      
+      <li>Festo released a compact cobot pneumatic gripper alongside GripperAI — a robot-agnostic grasping system that requires no prior object training, enabling zero-shot manipulation in unstructured environments.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/festo-launches-pneumatic-gripper-tests-gripperai/">https://www.therobotreport.com/festo-launches-pneumatic-gripper-tests-gripperai/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 12:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Boston University team wins MassRobotics Form &amp; Function Challenge at Robotics Summit</div>
+    
+    <ul class="article-points">
+      
+      <li>MassRobotics awarded Boston University&#39;s team top prize at the 2026 Robotics Summit, which also showcased healthcare innovators, physical AI developers, and startups.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/boston-university-team-wins-massrobotics-form-function-challenge-2026-robotics-summit/">https://www.therobotreport.com/boston-university-team-wins-massrobotics-form-function-challenge-2026-robotics-summit/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 12:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">RoboBusiness 2026 opens call for speakers</div>
+    
+    <ul class="article-points">
+      
+      <li>RoboBusiness 2026, the premier commercial robotics industry event, has opened its call for expert speakers.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/robobusiness-2026-opens-call-for-speakers/">https://www.therobotreport.com/robobusiness-2026-opens-call-for-speakers/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 13:26 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla expands &#39;Robotaxi&#39; to entire Austin metro — but still has only ~20 vehicles</div>
+    
+    <ul class="article-points">
+      
+      <li>Tesla expanded its unsupervised Robotaxi service to cover the entire Austin metro area — a notable geofence milestone — but the active fleet stands at only ~20 vehicles, a number that has actually been shrinking.</li>
+      
+      <li>The gap between geographic coverage and fleet density highlights the difference between Tesla&#39;s announcement cadence and actual deployment scale.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/06/03/tesla-robotaxi-expands-entire-austin-metro-only-20-vehicles/">https://electrek.co/2026/06/03/tesla-robotaxi-expands-entire-austin-metro-only-20-vehicles/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 17:14 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">文远知行正式纳入港股通</div>
+    
+    <ul class="article-points">
+      
+      <li>自动驾驶科技公司文远知行（WeRide）宣布，公司港股于 6 月 4 日正式纳入港股通标的证券名单，内地合格投资者可通过港股通机制买卖文远知行在联交所的股票。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3837455275985152?f=rss">https://36kr.com/newsflashes/3837455275985152?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 13:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla retroactively added &#39;supervised&#39; to FSD contracts owners signed years ago</div>
+    
+    <ul class="article-points">
+      
+      <li>Tesla retroactively modified Full Self-Driving purchase agreements signed between 2016 and early 2024 to insert &#34;supervised&#34; language that did not exist at signing; in some cases the original documents have been made inaccessible.</li>
+      
+      <li>Electrek confirmed the issue with multiple owners who bought &#34;Full Self-Driving Capability&#34; with an implicit promise of unsupervised autonomy.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/06/03/tesla-retroactively-modified-fsd-contracts-supervised/">https://electrek.co/2026/06/03/tesla-retroactively-modified-fsd-contracts-supervised/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 12:54 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX Seeks $75 Billion in Record IPO to Fund AI, Launch</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX filed with the SEC for an IPO targeting $75B — the largest in history — pricing ~555.6M shares at $135, implying a market cap of ~$1.77 trillion.</li>
+      
+      <li>Proceeds are earmarked for Elon Musk&#39;s rocket and satellite operations and AI development; the listing could unlock a wave of mega-IPOs from other high-value private tech companies.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-03/spacex-seeks-75-billion-in-record-ipo-plan-to-fund-ai-launch">https://www.bloomberg.com/news/articles/2026-06-03/spacex-seeks-75-billion-in-record-ipo-plan-to-fund-ai-launch</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 20:46 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AST SpaceMobile sees New Glenn setback delaying initial commercial service into 2027</div>
+    
+    <ul class="article-points">
+      
+      <li>Blue Origin&#39;s launchpad explosion is expected to delay AST SpaceMobile&#39;s direct-to-smartphone satellite constellation by 3-6 months, pushing initial commercial service into H1 2027, per William Blair equity research.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/ast-spacemobile-sees-new-glenn-setback-delaying-initial-commercial-service-into-2027/">https://spacenews.com/ast-spacemobile-sees-new-glenn-setback-delaying-initial-commercial-service-into-2027/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 21:12 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Muon Space unveils Starship-class satellite platform for orbital data centers</div>
+    
+    <ul class="article-points">
+      
+      <li>Muon Space announced a Starship-compatible large satellite platform designed specifically for the emerging orbital data center market, with an initial launch targeted for 2028 after securing customers.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/muon-space-unveils-starship-class-satellite-platform-for-orbital-data-centers/">https://spacenews.com/muon-space-unveils-starship-class-satellite-platform-for-orbital-data-centers/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 11:39 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Blue Origin seeks to resume New Glenn launches by year&#39;s end</div>
+    
+    <ul class="article-points">
+      
+      <li>Blue Origin&#39;s CEO stated that damage to the New Glenn launch pad from a recent explosion is not as severe as initially feared, and the rocket could return to flight before end of 2026.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/blue-origin-seeks-to-resume-new-glenn-launches-by-years-end/">https://spacenews.com/blue-origin-seeks-to-resume-new-glenn-launches-by-years-end/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 10:39 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How long will it take to rebuild Blue Origin&#39;s launch pad? We asked some SpaceX vets.</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX veterans describe the situation as &#34;no fun to be there,&#34; offering context on the complexity and timeline of rebuilding a damaged orbital-class launch facility.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/space/2026/06/how-long-will-it-take-to-rebuild-blue-origins-launch-pad-we-asked-some-spacex-vets/">https://arstechnica.com/space/2026/06/how-long-will-it-take-to-rebuild-blue-origins-launch-pad-we-asked-some-spacex-vets/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 10:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">21 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">DoubleLine&#39;s Robert Cohen on AI Debt Loads, Private Credit</div>
+    
+    <ul class="article-points">
+      
+      <li>Robert Cohen (DoubleLine, Director of Global Developed Credit) notes that despite ongoing capital raising in debt and equity markets, high-quality companies continue to maintain strong balance sheets and healthy cash flow, speaking at Bloomberg Global Credit Forum.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-03/doubleline-s-robert-cohen-on-ai-debt-private-credit-video">https://www.bloomberg.com/news/videos/2026-06-03/doubleline-s-robert-cohen-on-ai-debt-private-credit-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 22:23 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Rockefeller&#39;s Sharma on AI Boom, US Market Fault Lines</div>
+    
+    <ul class="article-points">
+      
+      <li>Ruchir Sharma (Rockefeller International chairman, Breakout Capital CIO) argues in an FT op-ed that despite strong AI-driven tech profits, the earnings narrative is less robust than investors perceive, pointing to emerging market vulnerabilities.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-03/rockefeller-s-sharma-on-ai-boom-us-market-fault-lines-video">https://www.bloomberg.com/news/videos/2026-06-03/rockefeller-s-sharma-on-ai-boom-us-market-fault-lines-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 21:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Trade Groups Urge US to Boost Memory Chip Supply Strained by AI</div>
+    
+    <ul class="article-points">
+      
+      <li>A coalition of US business groups warned the Trump administration that the global AI-driven memory chip shortage poses growing risks to automakers, medical device producers, and other industries.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-03/trade-groups-urge-us-to-boost-memory-chip-supply-strained-by-ai">https://www.bloomberg.com/news/articles/2026-06-03/trade-groups-urge-us-to-boost-memory-chip-supply-strained-by-ai</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 20:49 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Google ordered to put clearer links in AI search and let UK publishers opt out</div>
+    
+    <ul class="article-points">
+      
+      <li>UK regulators ordered Google to add clearer source attribution in AI Overviews and provide publishers an opt-out mechanism — directly countering Google&#39;s claim that users don&#39;t want &#34;lots of sources.&#34;</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/tech-policy/2026/06/google-ordered-to-put-clearer-links-in-ai-search-and-let-uk-publishers-opt-out/">https://arstechnica.com/tech-policy/2026/06/google-ordered-to-put-clearer-links-in-ai-search-and-let-uk-publishers-opt-out/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 20:26 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Broadcom Slides After AI Chip Outlook Disappoints Investors</div>
+    
+    <ul class="article-points">
+      
+      <li>Broadcom shares fell in after-hours trading after the company&#39;s AI chip revenue forecast fell short of investor expectations, signaling slower-than-anticipated progress in capturing AI chip market share.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-03/broadcom-outlook-disappoints-investors-seeking-ai-fueled-blowout">https://www.bloomberg.com/news/articles/2026-06-03/broadcom-outlook-disappoints-investors-seeking-ai-fueled-blowout</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 20:20 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Euphoria in Old World Auto Stocks Gets a Nod From Wall Street</div>
+    
+    <ul class="article-points">
+      
+      <li>Wall Street validated investor bets that traditional automakers stand to benefit from the AI boom, adding institutional credibility to a trade previously seen as speculative.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-03/ai-euphoria-in-old-world-auto-stocks-gets-a-nod-from-wall-street">https://www.bloomberg.com/news/articles/2026-06-03/ai-euphoria-in-old-world-auto-stocks-gets-a-nod-from-wall-street</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 19:45 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI CapEx Rush Seen as Continuing as Market Stresses Bubble Up</div>
+    
+    <ul class="article-points">
+      
+      <li>Diameter Capital Partners co-founder Scott Goodwin (Bloomberg Global Credit Forum) said the AI-driven capex boom will continue for the foreseeable future, even as market stress indicators accumulate.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-03/ai-capex-rush-seen-as-continuing-as-market-stresses-bubble-up">https://www.bloomberg.com/news/articles/2026-06-03/ai-capex-rush-seen-as-continuing-as-market-stresses-bubble-up</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 19:45 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Nvidia&#39;s RTX Spark Sets Up Fight Over the Soul of Windows PCs</div>
+    
+    <ul class="article-points">
+      
+      <li>Nvidia announced RTX Spark in partnership with Microsoft, aiming to bring the biggest architectural change to Windows laptops in decades — positioning Nvidia&#39;s GPU to take over the central compute role from Intel/AMD CPUs.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-03/nvidia-s-rtx-spark-sets-up-fight-over-the-soul-of-windows-pcs">https://www.bloomberg.com/news/articles/2026-06-03/nvidia-s-rtx-spark-sets-up-fight-over-the-soul-of-windows-pcs</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 19:27 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Data Center Parts Maker Xnrgy Said to Mull $10 Billion Sale</div>
+    
+    <ul class="article-points">
+      
+      <li>Xnrgy Climate Systems, a closely held manufacturer of heating and cooling equipment for AI data centers, is considering a sale that could value the company at up to $10B.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-03/ai-data-center-parts-maker-xnrgy-said-to-mull-10-billion-sale">https://www.bloomberg.com/news/articles/2026-06-03/ai-data-center-parts-maker-xnrgy-said-to-mull-10-billion-sale</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 19:27 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">DoubleLine&#39;s Cohen Warns of AI Bubble Coming to Credit Markets</div>
+    
+    <ul class="article-points">
+      
+      <li>Robert Cohen (DoubleLine) declared at the Bloomberg Global Credit Forum that AI debt will &#34;almost certainly&#34; reach bubble levels — one of the most direct bubble warnings from a senior credit manager to date.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-03/doubleline-s-cohen-warns-of-ai-bubble-coming-to-credit-video">https://www.bloomberg.com/news/videos/2026-06-03/doubleline-s-cohen-warns-of-ai-bubble-coming-to-credit-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 19:07 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">BofA CEO Moynihan on Affordability, Lending and AI Spending</div>
+    
+    <ul class="article-points">
+      
+      <li>Bank of America CEO Brian Moynihan discussed consumer spending trends amid rising inflation and AI&#39;s growing impact on banking operations and spending, at the Forbes Iconoclast Summit in New York.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-03/bofa-ceo-moynihan-on-affordability-lending-and-ai-video">https://www.bloomberg.com/news/videos/2026-06-03/bofa-ceo-moynihan-on-affordability-lending-and-ai-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 18:56 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Alphabet Upsizes Equity Offering to $85B for AI Spending</div>
+    
+    <ul class="article-points">
+      
+      <li>Google parent Alphabet upsized its equity raise from $80B to $84.75B just two days after the initial announcement, driven by escalating AI spending plans.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-03/alphabet-upsizes-equity-offering-to-85b-for-ai-spending-video">https://www.bloomberg.com/news/videos/2026-06-03/alphabet-upsizes-equity-offering-to-85b-for-ai-spending-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 18:42 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How Duke Energy Plans to Meet AI Demand</div>
+    
+    <ul class="article-points">
+      
+      <li>Duke Energy President Harry Sideris says the utility is focused on keeping power affordable while meeting surging AI data center demand, speaking at the Edison Electric Institute Conference in Las Vegas.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-03/how-duke-energy-plans-to-meet-ai-demand-video">https://www.bloomberg.com/news/videos/2026-06-03/how-duke-energy-plans-to-meet-ai-demand-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 18:37 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Trump plan to test AI models has a problem—US security teams were gutted by DOGE</div>
+    
+    <ul class="article-points">
+      
+      <li>Critics say Trump&#39;s plan to test AI models before deployment is performative because DOGE dismantled the government security teams that would need to conduct such evaluations, creating a structural capacity gap.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/tech-policy/2026/06/trumps-ai-executive-order-may-not-prevent-dangerous-deployments/">https://arstechnica.com/tech-policy/2026/06/trumps-ai-executive-order-may-not-prevent-dangerous-deployments/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 18:11 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">7 Ways New Engineers Can Flourish in the Age of AI</div>
+    
+    <ul class="article-points">
+      
+      <li>IEEE Spectrum outlines seven career strategies for new engineering graduates: master fundamentals first (data structures, OS, networking, core languages), treat AI as leverage not competition, and develop system-level thinking.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">IEEE Spectrum</span>
+      <span class="sep">·</span>
+      <a href="https://spectrum.ieee.org/7-ways-engineers-flourish-ai">https://spectrum.ieee.org/7-ways-engineers-flourish-ai</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 18:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Inside Meta&#39;s attempts to play catch-up with AI</div>
+    
+    <ul class="article-points">
+      
+      <li>Despite heavy investment, doubts linger over whether Meta can close the AI capability gap with OpenAI, Google, and Anthropic.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/inside-metas-attempts-to-play-catch-up-with-ai/">https://arstechnica.com/ai/2026/06/inside-metas-attempts-to-play-catch-up-with-ai/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 13:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Download: Trump&#39;s new AI order, and smart glasses for warfare</div>
+    
+    <ul class="article-points">
+      
+      <li>Trump signed a new AI executive order less than two weeks after scrapping a prior one, this one promising to promote AI development with provisions around national security testing; the issue also covers smart glasses integration into military applications.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/06/03/1138322/the-download-trump-ai-order-smart-glasses-warfare/">https://www.technologyreview.com/2026/06/03/1138322/the-download-trump-ai-order-smart-glasses-warfare/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 12:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Uber Caps Usage of AI Tools Like Claude Code to Manage Costs</div>
+    
+    <ul class="article-points">
+      
+      <li>Uber is limiting all employees to $1,500/month in token spending per AI coding tool (including Claude Code), after blowing through its entire 2026 AI budget in just four months — a budget set in 2025 before anyone predicted how aggressively coding agents would be adopted.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/3/uber-caps-usage/#atom-everything">https://simonwillison.net/2026/Jun/3/uber-caps-usage/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 12:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Amazon&#39;s search bar will invent AI-generated products you can&#39;t buy</div>
+    
+    <ul class="article-points">
+      
+      <li>Amazon&#39;s updated search bar now shows AI-generated images of clothing and home goods as users type descriptions, allowing them to find visually similar real products.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/tech/942547/amazon-search-bar-ai-images">https://www.theverge.com/tech/942547/amazon-search-bar-ai-images</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 16:07 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">氪星晚报 ｜曲美家居：境外子公司拟发行不超9亿挪威克朗境外债券；段永平在泡泡玛特持股比例升至6.04%；现货白银向下跌破74美元/盎司</div>
+    
+    <ul class="article-points">
+      
+      <li>瑞典 AI 初创公司 Lovable 扩大与 Google Cloud 的多年期合作，整合 Gemini 模型和 AI 优化基础设施，向全球扩展 AI 驱动的软件开发服务。</li>
+      
+      <li>美银分析师 Vivek Arya 团队预测英伟达 2027 财年下半年 Vera CPU 销售额有望达 200 亿美元，下一财年年化营收规模将突破 500 亿美元，有望跻身全球头部服务器 CPU 供应商。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3837330582008963?f=rss">https://36kr.com/p/3837330582008963?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 15:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">8点1氪丨腾讯股价暴涨，创2021年后单日最高涨幅；预计今年安排约1100亿育儿补贴；英伟达与微软合作推出统一技术栈</div>
+    
+    <ul class="article-points">
+      
+      <li>英伟达 CEO 黄仁勋表示 Vera CPU 将比 GPU 更受欢迎，将成为公司新的主要增长动力；英伟达与微软合作推出统一技术栈。</li>
+      
+      <li>字节豆包付费版定价锚定 ChatGPT，专注复杂任务场景；腾讯股价 6 月 2 日收盘大涨 10.46% 至 481.6 港元，创 2021 年 1 月以来单日最高涨幅。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3836703946257542?f=rss">https://36kr.com/p/3836703946257542?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-03 00:21 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-04.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-03T23:16:56.152957+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
