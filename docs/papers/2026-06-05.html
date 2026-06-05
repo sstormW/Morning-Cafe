@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-05</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-05</h1>
+  <div class="meta">39 篇候选 · 精读 1 · 速览 5 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    <div class="group-label">🔥 直接相关精读 (1 篇)</div>
+    <ul>
+      
+      <li><strong>WorldFly: A World-Model-Based Vision-Language-Action Model for UAV Navigation</strong> — 对城市/户外机器人导航评测这一研究点有填充价值，新建的城市峡谷穿越 benchmark 可对标 MetaUrban / URBAN-SIM — <a href="http://arxiv.org/abs/2606.06147">arXiv</a></li>
+      
+    </ul>
+    
+    
+    <div class="group-label">📚 值得扫一眼 (4 篇)</div>
+    <ul>
+      
+      <li><strong>ZipSplat: Fewer Gaussians, Better Splats</strong> — token 化前馈 3DGS，高斯数与场景复杂度而非分辨率挂钩，约 6× 更少高斯刷新 SOTA，属重建基建 — <a href="https://arxiv.org/abs/2606.05102">arXiv</a></li>
+      
+      <li><strong>Learning Geometric Representations from Videos for Spatial Intelligent Multimodal Large Language Models</strong> — 仅用 2D 视频蒸馏 3D 基础模型，给 MLLM 注入几何/空间一致性表征 — <a href="http://arxiv.org/abs/2606.05833">arXiv</a></li>
+      
+      <li><strong>HomeWorld: A Unified Floorplan-to-Furnished Framework for Generating Controllable, Densely Interactive Whole-Home Scenes</strong> — 300K 真实户型训 LLM + 图像/3D 生成布置家具，产可仿真室内场景（偏室内） — <a href="http://arxiv.org/abs/2606.06390">arXiv</a></li>
+      
+      <li><strong>LongSpace: Exploring Long-Horizon Spatial Memory from Perception to Recall in Video</strong> — room-tour 视频评测长视频空间推理，触及机器人导航与 3D 空间推理 — <a href="http://arxiv.org/abs/2606.05677">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🔥</span>
+    <h2>强相关精读 (1 篇)</h2>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.06147">WorldFly: A World-Model-Based Vision-Language-Action Model for UAV Navigation</a></div>
+    <div class="meta">
+      arXiv cs.AI · 2026-06-04 · Shengtao Zheng et al.
+      <span class="score">16 (12+4)</span>
+    </div>
+    <div class="reason">World-model VLA for UAV urban canyon navigation with new urban traversal benchmark</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">现有端到端 VLA 的 UAV 导航多靠历史观测直接预测动作，在密集城市环境里遇到严重遮挡和急转弯（剧烈视角切换）时容易失效。作者认为世界模型“想象未来状态”的能力是这类部分可观测场景下稳健决策的关键，于是构建了专门评测此类遮挡/视角剧变的 Urban Canyon Traversal Benchmark，并提出 WorldFly：用双分支耦合 flow matching 机制联合生成未来视频预测与导航动作，以“空间想象”显式引导策略。在该 benchmark 上、尤其在未见环境中显著优于基线。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对城市/户外机器人在严重遮挡与剧烈视角切换下的导航评测这一研究点有填充价值；其新建的城市峡谷穿越 benchmark 可对标 MetaUrban / URBAN-SIM 的户外导航评测设计，世界模型 + flow matching 联合预测未来视频与动作的做法值得借鉴。</div></div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (5 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.06390">HomeWorld: A Unified Floorplan-to-Furnished Framework for Generating Controllable, Densely Interactive Whole-Home Scenes</a></div>
+    <div class="meta">arXiv cs.AI · Wenbo Li et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">用 300K 真实住宅户型训 LLM 做全屋户型生成，再用图像/3D 生成模型分层布置家具与可操作小物，产出可用于 embodied AI 仿真的室内场景，并将开源户型数据集与 5K 精装场景；偏室内、无户外/城市迁移。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://arxiv.org/abs/2606.05102">ZipSplat: Fewer Gaussians, Better Splats</a></div>
+    <div class="meta">HF Daily Papers · Alexander Veicht et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">基于 token 的前馈式 3DGS，用 k-means 把像素 token 聚成紧凑场景 token，使高斯预算与场景复杂度而非相机分辨率挂钩，无需位姿/内参即在 DL3DV、RealEstate10K 上以约 6× 更少高斯刷新 SOTA 并零样本泛化；属重建基建，但偏室内/物体而非街景。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.05833">Learning Geometric Representations from Videos for Spatial Intelligent Multimodal Large Language Models</a></div>
+    <div class="meta">arXiv cs.AI · Haibo Wang et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">提出 GeoVR，仅用 2D 视频序列、通过四个几何目标（帧间位姿、稠密深度、度量尺度、多尺度 3D 特征蒸馏）从 3D 基础模型蒸馏知识，重塑 MLLM 内部表征以获得 3D 空间一致性，在空间推理 benchmark 上 SOTA。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://arxiv.org/abs/2606.05979">World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis</a></div>
+    <div class="meta">HF Daily Papers · Yi Yang et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">提出 WLA embodied 基础模型，用 AR Transformer 联合预测子任务文本、子目标图像与机器人动作，2B 激活参数 40ms/次推理，在 RoboTwin2.0、RMBench 上 SOTA；以操作任务为主，无城市/户外落点。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.05677">LongSpace: Exploring Long-Horizon Spatial Memory from Perception to Recall in Video</a></div>
+    <div class="meta">arXiv cs.AI · Shiqiang Lang et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">提出 room-tour 视频的长时空间记忆 benchmark（LongSpace-Bench）与记忆框架，把长视频分块、在早期解码层注入 3D 结构线索并构建可检索的层级记忆，提升长视频空间推理，触及自动驾驶与机器人导航。</div></div>
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📖</span>
+    <h2>期刊新刊</h2>
+  </div>
+  
+  <div class="journal-group">
+    <h3>Journal of Field Robotics</h3>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70250?af=R">Design, Development, and Field Testing of a Tomato Bunch Harvesting Robot</a></div>
+      <div class="meta">Can Xu et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">番茄串采摘机器人的设计、研制与田间测试；农业户外作业，无城市仿真或 3D 场景生成相关性。</div></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">⚠️</span>
+    <h2>抓取失败的源</h2>
+  </div>
+  <ul class="failed">
+    
+    <li><strong>arXiv cs.RO</strong>: arXiv cs.RO: empty after retries (likely rate-limited)</li>
+    
+    <li><strong>arXiv cs.CV</strong>: arXiv cs.CV: empty after retries (likely rate-limited)</li>
+    
+    <li><strong>arXiv cs.GR</strong>: arXiv cs.GR: empty after retries (likely rate-limited)</li>
+    
+    <li><strong>arXiv astro-ph.IM</strong>: Remote end closed connection without response</li>
+    
+    <li><strong>arXiv astro-ph.EP</strong>: arXiv astro-ph.EP: empty after retries (likely rate-limited)</li>
+    
+  </ul>
+</section>
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-05T08:36:02.705936+00:00
+</footer>
+
+</div>
+</body>
+</html>
