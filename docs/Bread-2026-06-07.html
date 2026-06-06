@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-07 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-07</h1>
+  <div class="meta">23 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">Trump explores US government equity stakes in OpenAI and top AI labs, saying citizens could share in the AI revolution&#39;s upside</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-06/trump-shows-interest-in-us-owning-stakes-in-top-ai-labs-video">https://www.bloomberg.com/news/videos/2026-06-06/trump-shows-interest-in-us-owning-stakes-in-top-ai-labs-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">MiniMax M3 成全球首个集齐 Frontier 三件套的开源大模型；Anthropic 同步提交 IPO 申请</span>
+      <span class="source">钛媒体 · <a href="https://www.tmtpost.com/8017665.html">https://www.tmtpost.com/8017665.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Anthropic 呼吁全球 AI 实验室考虑放缓研发步伐，警告 AI 自我改进将带来重大社会风险</span>
+      <span class="source">36氪 · <a href="https://36kr.com/p/3840996342073604?f=rss">https://36kr.com/p/3840996342073604?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Sriram Krishnan exits White House AI advisor role to found new AI policy institution outside government</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-06/trump-ai-policy-adviser-krishnan-is-giving-up-white-house-role">https://www.bloomberg.com/news/articles/2026-06-06/trump-ai-policy-adviser-krishnan-is-giving-up-white-house-role</a></span>
+    </li>
+    
+    <li>
+      <span class="title">OpenAI Lockdown Mode rolls out to all free and paid tiers, blocking prompt-injection data exfiltration</span>
+      <span class="source">TechCrunch · <a href="https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/">https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Robots can enhance manufacturing workers rather than replace them</span>
+      <div class="why">文章重点讨论 teleoperation 在工厂机器人中的核心机制，对应 lens 中「具身智能训练数据 — teleop 数据集」强关注项</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/robots-can-enhance-manufacturing-workers-rather-than-replace-them/">https://www.therobotreport.com/robots-can-enhance-manufacturing-workers-rather-than-replace-them/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">华为云不打Token价格战，周跃峰要给AI云换一个赢的方式</span>
+      <div class="why">上游 AI 云算力竞争焦点从 Token 吞吐量转向企业智能体落地能力，间接影响 LeapsCora 训练栈算力供应商格局</div>
+      <div class="source">钛媒体 · <a href="https://www.tmtpost.com/8017599.html">https://www.tmtpost.com/8017599.html</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">大模型发展三年半，AI圈终于等来了一场&#34;不要大厂，只赌脑洞&#34;的比赛</div>
+    
+    <ul class="article-points">
+      
+      <li>大模型领域出现首个明确排除大厂参赛的公开评测赛，主打独立研究者与草根团队的创意能力，以「脑洞」而非算力作为核心评判维度。</li>
+      
+      <li>排名由观众投币投票产生，打破 benchmark 榜单常态，为 AI 社区的非商业创新提供新曝光渠道。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/431287.html">https://www.qbitai.com/2026/06/431287.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 07:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Running Python code in a sandbox with MicroPython and WASM</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison released `micropython-wasm`, an alpha Python code-execution sandbox built on MicroPython and WebAssembly — delivering WASM-level isolation for AI agent code-running without a server.</li>
+      
+      <li>The companion plugin `datasette-agent-micropython` integrates this sandbox into Datasette Agent, enabling AI agents to execute user-submitted code safely in the browser environment.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox/#atom-everything">https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 03:53 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Anthropic交表，MiniMax冲A，而我最想聊的是M3大模型</div>
+    
+    <ul class="article-points">
+      
+      <li>MiniMax M3 被定位为全球首个同时具备 Frontier 级别语言、语音、视频三项能力的开源大模型，标志着开源阵营首次在全模态能力上追平闭源顶尖水准。</li>
+      
+      <li>与此同时，Anthropic 正式提交 IPO 申请，MiniMax 推进 A 股冲刺，国内大模型头部玩家资本化进程同步提速。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8017665.html">https://www.tmtpost.com/8017665.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 09:06 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">算得更快更准 全球海洋现象智能预报大模型「琅琊」2.0发布</div>
+    
+    <ul class="article-points">
+      
+      <li>中科院海洋研究所发布「琅琊」2.0，将多源观测、机理认知与 AI 推理融合，实现全球海洋现象（而非仅基础变量）的智能预报。</li>
+      
+      <li>应用场景涵盖海洋防灾减灾、航运安全、极地导航及气候变化应对，是中国科学 AI 大模型落地垂直场景的又一案例。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3841255177079303?f=rss">https://36kr.com/newsflashes/3841255177079303?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 05:26 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Robots can enhance manufacturing workers rather than replace them</div>
+    
+    <ul class="article-points">
+      
+      <li>One to ONE Holdings&#39; president argues that with proper AI, teleoperation, and safeguards, robotics augments rather than displaces manufacturing labor — positioning collaborative human-robot manufacturing as the near-term model.</li>
+      
+      <li>The emphasis on teleoperation as the key bridging mechanism aligns with the broader industry shift toward human-guided robot training paradigms over full automation.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/robots-can-enhance-manufacturing-workers-rather-than-replace-them/">https://www.therobotreport.com/robots-can-enhance-manufacturing-workers-rather-than-replace-them/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 12:30 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">17 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Trump AI Policy Adviser Krishnan Is Giving Up White House Role</div>
+    
+    <ul class="article-points">
+      
+      <li>Sriram Krishnan, President Trump&#39;s top White House AI policy adviser, is stepping down from the role after a period shaping the administration&#39;s AI strategy.</li>
+      
+      <li>Krishnan is reportedly founding a new institution to continue influencing Trump&#39;s AI policy from outside the federal government.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-06/trump-ai-policy-adviser-krishnan-is-giving-up-white-house-role">https://www.bloomberg.com/news/articles/2026-06-06/trump-ai-policy-adviser-krishnan-is-giving-up-white-house-role</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 19:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Grindr Growing From Just Dating App to Politics, AI</div>
+    
+    <ul class="article-points">
+      
+      <li>Grindr Inc. unveiled new app features and a premium subscription tier centered on AI personalization, with CEO George Arison confirming investment in AI-powered safety tools and backend operational AI.</li>
+      
+      <li>The company is repositioning as an AI-integrated LGBTQ platform targeting deeper engagement beyond dating, through political content and AI personalization features.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-06/grindr-growing-from-just-dating-app-to-politics-ai-video">https://www.bloomberg.com/news/videos/2026-06-06/grindr-growing-from-just-dating-app-to-politics-ai-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 13:54 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Trump Signals Interest in US Owning Stakes in Top AI Labs</div>
+    
+    <ul class="article-points">
+      
+      <li>President Trump expressed interest in the US government taking equity stakes in leading AI developers, describing it as &#39;almost a partnership with the American public&#39; where citizens share in the upside of trillion-dollar companies.</li>
+      
+      <li>He plans to discuss the idea with AI executives as soon as next week; OpenAI CEO Sam Altman has actively advocated for this arrangement with the Trump administration over the past year.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-06/trump-shows-interest-in-us-owning-stakes-in-top-ai-labs-video">https://www.bloomberg.com/news/videos/2026-06-06/trump-shows-interest-in-us-owning-stakes-in-top-ai-labs-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 13:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">港股鞋王千百度，一夜完成AI数据公司转型</div>
+    
+    <ul class="article-points">
+      
+      <li>港股上市公司千百度（鞋业）宣布转型，将形成「鞋履 + 人工智能数据」双主业格局。</li>
+      
+      <li>这一快速转型折射出 AI 数据业务的高资本吸引力，促使传统实体行业企业加速跨界布局。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/431056.html">https://www.qbitai.com/2026/06/431056.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 03:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI Help: Lockdown Mode</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI&#39;s Lockdown Mode, first teased in February, is now live and rolling out to Free, Go, Plus, Pro, and self-serve ChatGPT Business accounts.</li>
+      
+      <li>The mode limits outbound network requests to block the final stage of prompt injection-driven data exfiltration; it does not prevent prompt injections from appearing in ChatGPT&#39;s processed content.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/#atom-everything">https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-05 23:56 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Wall Street Week | AI-era Internet, Spaceport Investment, Bolivia&#39;s Investability</div>
+    
+    <ul class="article-points">
+      
+      <li>Bloomberg&#39;s Wall Street Week covered: economist Ken Rogoff&#39;s view that rising US debt and geopolitical shifts are eroding dollar dominance; AI-powered search reducing publisher web traffic and forcing new monetization models; and whether the US-China satellite launch competition will create the next major infrastructure boom.</li>
+      
+      <li>Bolivia&#39;s mineral reserves and foreign capital flows into Latin America were also featured.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-05/wall-street-week-space-investment-boom-ai-vs-search-video">https://www.bloomberg.com/news/videos/2026-06-05/wall-street-week-space-investment-boom-ai-vs-search-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-05 23:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI unveils Lockdown Mode to protect sensitive data from prompt injection attacks</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI officially launched Lockdown Mode to limit outbound network requests that could transfer sensitive user data to attackers during a prompt injection attack.</li>
+      
+      <li>Even with Lockdown Mode active, ChatGPT remains vulnerable to prompt injections appearing in processed content — the mode reduces exfiltration risk, not injection risk itself.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/">https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 20:32 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Sriram Krishnan is leaving his role as White House AI advisor</div>
+    
+    <ul class="article-points">
+      
+      <li>Krishnan is departing the White House to start a new institution aimed at continuing to shape the Trump administration&#39;s AI policy from outside government.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/06/sriram-krishnan-is-leaving-his-role-as-white-house-ai-advisor/">https://techcrunch.com/2026/06/06/sriram-krishnan-is-leaving-his-role-as-white-house-ai-advisor/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 17:42 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Trump administration might take an equity stake in OpenAI</div>
+    
+    <ul class="article-points">
+      
+      <li>Trump confirmed he is in discussions about &#39;deals where the American people can benefit from the success of AI,&#39; explicitly signaling openness to government equity stakes in OpenAI and peer companies.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/06/the-trump-administration-might-take-an-equity-stake-in-openai/">https://techcrunch.com/2026/06/06/the-trump-administration-might-take-an-equity-stake-in-openai/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 16:17 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Meta made its own AI-generated clickbait news feed</div>
+    
+    <ul class="article-points">
+      
+      <li>Meta&#39;s standalone Meta AI app now features a &#39;For You&#39; section populated with AI-generated clickbait-style stories — topics, images, and text are entirely AI-generated, with quality described as questionable.</li>
+      
+      <li>The move accelerates the proliferation of AI-generated filler content on mainstream platforms, raising fresh concerns about synthetic content crowding out authentic journalism.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/944235/meta-app-ai-clickbait-articles">https://www.theverge.com/ai-artificial-intelligence/944235/meta-app-ai-clickbait-articles</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 14:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Trump: U.S. stake in AI giants &#34;could be a beautiful thing&#34;</div>
+    
+    <ul class="article-points">
+      
+      <li>Aboard Air Force One, Trump told reporters that US ownership stakes in AI companies would be &#39;a beautiful thing,&#39; framing citizens as &#39;partners in this revolution&#39; who would share in the wealth created by trillion-dollar AI companies.</li>
+      
+      <li>OpenAI CEO Sam Altman has been the primary advocate for this type of government-AI partnership arrangement over the past year.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Axios</span>
+      <span class="sep">·</span>
+      <a href="https://www.axios.com/2026/06/06/trump-us-stake-ai-companies">https://www.axios.com/2026/06/06/trump-us-stake-ai-companies</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 13:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Revenge of the AI bubble</div>
+    
+    <ul class="article-points">
+      
+      <li>Axios traces the AI investment narrative through three phases: suspicion (historic capital poured in pre-proof), mania (Claude Code and autonomous agents silenced skeptics), and current reckoning (AI is powerful when precisely targeted but ruinously expensive as a blanket tool).</li>
+      
+      <li>The reckoning phase is forcing enterprises to shift from broad AI adoption to precision deployment strategies, reshaping how AI ROI is measured across industries.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Axios</span>
+      <span class="sep">·</span>
+      <a href="https://www.axios.com/2026/06/06/ai-bubble-economy-growth">https://www.axios.com/2026/06/06/ai-bubble-economy-growth</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 12:59 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Crypto-Funded Chinese Peptide Labs Are Booming</div>
+    
+    <ul class="article-points">
+      
+      <li>Wired&#39;s weekly security roundup includes: hackers using Meta&#39;s AI bots to compromise Instagram accounts; a report that Anthropic assisted NSA-linked hackers; a decades-long GPS satellite anomaly resolved; and crypto-funded Chinese peptide research labs expanding rapidly.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Wired</span>
+      <span class="sep">·</span>
+      <a href="https://www.wired.com/story/security-news-this-week-crypto-funded-chinese-peptide-labs-are-booming/">https://www.wired.com/story/security-news-this-week-crypto-funded-chinese-peptide-labs-are-booming/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 10:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">证监会主席吴清：坚决遏制概念炒作、复杂嵌套、过度投机、通道空转等伪创新、乱创新</div>
+    
+    <ul class="article-points">
+      
+      <li>证监会主席吴清在基金业大会上要求基金机构稳妥运用 AI、大数据赋能投研和客服，但坚决遏制「概念炒作、复杂嵌套、通道空转」等伪创新。</li>
+      
+      <li>头部机构需全面提升综合竞争实力，中小机构应走精品特色路线，创新节奏须与风险管理能力相适配。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3841354006645248?f=rss">https://36kr.com/newsflashes/3841354006645248?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 07:07 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">华为云不打Token价格战，周跃峰要给AI云换一个赢的方式</div>
+    
+    <ul class="article-points">
+      
+      <li>华为云周跃峰表示不参与 Token 吞吐量价格战，将竞争焦点转向「企业 AI 智能体能否真正落地运行」。</li>
+      
+      <li>这标志 AI 云竞争从基础算力价格层上移至应用集成层，与 AWS、阿里云等同期战略方向一致。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8017599.html">https://www.tmtpost.com/8017599.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 05:39 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">字节跳动：没有造车或推出汽车品牌的计划</div>
+    
+    <ul class="article-points">
+      
+      <li>字节跳动官方声明：「赛豆」非豆包或字节的汽车品牌，两者无股权合作；字节与汽车行业的合作本质是提供豆包大模型和智能座舱技术服务。</li>
+      
+      <li>澄清背景是市场将「赛豆」误解为字节造车动作，此次官方回应明确切割整车制造与 AI 技术授权两个方向。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3841237523859972?f=rss">https://36kr.com/newsflashes/3841237523859972?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 05:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">9点1氪｜豆包推出付费后月活减少610万；Anthropic呼吁全球放缓AI开发，警告AI&#34;自我改进&#34;风险；罗永浩卸任锤子软件公司执行董事</div>
+    
+    <ul class="article-points">
+      
+      <li>豆包 5 月 MAU 减少 610 万（Aicpb.com 数据），为上线以来最大单月降幅，分析认为付费订阅推出过早，中国免费 AI 时代尚未结束。</li>
+      
+      <li>Anthropic 援引内部数据呼吁全球 AI 实验室考虑放缓研发，警告当前模型能力提升速度可能令 AI 很快在无需人类干预的情况下自我改进，带来重大社会风险；SpaceX 据悉将日本 IPO 融资目标提升至 25 亿美元。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3840996342073604?f=rss">https://36kr.com/p/3840996342073604?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-06 01:07 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-07.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-06T22:34:26.338452+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
