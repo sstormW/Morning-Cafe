@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-08 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-08</h1>
+  <div class="meta">16 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">AI 搜索「零点击」侵蚀出版商流量，研究者警告内容创作经济正陷死螺旋</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-07/why-an-ai-death-spiral-threatens-the-internet-video">https://www.bloomberg.com/news/videos/2026-06-07/why-an-ai-death-spiral-threatens-the-internet-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">苹果内部「秘密会议」终触发 AI 战略转向，WWDC 2026 将集中兑现</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/newsletters/2026-06-07/wwdc-2026-apple-s-secret-meeting-that-led-it-to-take-ai-seriously-ios-27">https://www.bloomberg.com/news/newsletters/2026-06-07/wwdc-2026-apple-s-secret-meeting-that-led-it-to-take-ai-seriously-ios-27</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Axios 汇总：AI 商业面临 4 大严峻现实——成本高、回报低、基建需求放缓、利率居高</span>
+      <span class="source">Axios · <a href="https://www.axios.com/2026/06/07/ai-business-technology-stocks-broadcom">https://www.axios.com/2026/06/07/ai-business-technology-stocks-broadcom</a></span>
+    </li>
+    
+    <li>
+      <span class="title">韩国总统李在明提名科技部长韩成淑出任总理，押注 AI 国策</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-07/lee-nominates-tech-guru-han-as-prime-minister-to-lead-ai-growth">https://www.bloomberg.com/news/articles/2026-06-07/lee-nominates-tech-guru-han-as-prime-minister-to-lead-ai-growth</a></span>
+    </li>
+    
+    <li>
+      <span class="title">AGIBOT 举办 World Challenge 2026，宣示行业正从仿真得分转向真实机器人闭环测试</span>
+      <span class="source">The Robot Report · <a href="https://www.therobotreport.com/agibot-holds-world-challenge-2026-see-how-ai-models-perform-real-tasks/">https://www.therobotreport.com/agibot-holds-world-challenge-2026-see-how-ai-models-perform-real-tasks/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">AGIBOT World Challenge 2026：行业明确宣告「仿真分数不够，真机闭环才算数」</span>
+      <div class="why">AGIBOT 是 roster 内重点关注的机器人厂商，closed-loop real-task 测试直接触碰 LeapsCora sim→real 迁移的价值命题</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/agibot-holds-world-challenge-2026-see-how-ai-models-perform-real-tasks/">https://www.therobotreport.com/agibot-holds-world-challenge-2026-see-how-ai-models-perform-real-tasks/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">英国政府拟向本土科技企业购买 AI 芯片以留住产业</span>
+      <div class="why">上游 GPU/算力供应链政策信号</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-07/uk-to-buy-ai-chips-from-british-tech-firms-telegraph-reports">https://www.bloomberg.com/news/articles/2026-06-07/uk-to-buy-ai-chips-from-british-tech-firms-telegraph-reports</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">DeepSeek、小米 MiMo 等多家厂商算力永久降价，最高降幅接近 99%</span>
+      <div class="why">上游算力成本大幅下降，直接影响仿真训练基础设施成本预期</div>
+      <div class="source">36氪 · <a href="https://36kr.com/newsflashes/3842626008647945?f=rss">https://36kr.com/newsflashes/3842626008647945?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AGIBOT holds World Challenge 2026 to see how AI models perform on real tasks</div>
+    
+    <ul class="article-points">
+      
+      <li>AGIBOT declared the industry is shifting beyond simulation benchmark scores toward closed-loop evaluation on real robots executing real tasks.</li>
+      
+      <li>The World Challenge 2026 directly pits AI models against physical hardware, signaling that simulation-only metrics are losing credibility as the primary measure of robot AI progress.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/agibot-holds-world-challenge-2026-see-how-ai-models-perform-real-tasks/">https://www.therobotreport.com/agibot-holds-world-challenge-2026-see-how-ai-models-perform-real-tasks/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 12:30 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">15 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Starmer to Roll Out UK Job Center Tools to Beat AI Work Threat</div>
+    
+    <ul class="article-points">
+      
+      <li>UK Prime Minister Keir Starmer pledged to deploy AI tools across job centers to prevent communities from being 「left behind」 in the tech revolution.</li>
+      
+      <li>The initiative frames AI as a workforce transition tool rather than a pure displacement risk, marking a concrete shift in UK government AI policy posture.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-07/starmer-to-roll-out-uk-job-center-tools-to-beat-ai-work-threat">https://www.bloomberg.com/news/articles/2026-06-07/starmer-to-roll-out-uk-job-center-tools-to-beat-ai-work-threat</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 21:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Why an AI &#39;Death Spiral&#39; Threatens the Internet</div>
+    
+    <ul class="article-points">
+      
+      <li>AI-powered 「zero-click」 searches increasingly keep users inside platforms rather than routing them to publishers, slashing referral traffic and threatening publisher economics.</li>
+      
+      <li>Rutgers professor Caitlin Petre and analyst Rand Fishkin are documenting the trend; some large publishers like People Inc. (CEO Neil Vogel) report adapting by diversifying away from search dependency.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-07/why-an-ai-death-spiral-threatens-the-internet-video">https://www.bloomberg.com/news/videos/2026-06-07/why-an-ai-death-spiral-threatens-the-internet-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 14:04 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Inside Apple&#39;s Secret Meeting That Led It to Finally Take AI Seriously</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple reportedly held an internal meeting that became a strategic turning point, leading the company to accelerate its AI ambitions after years of relative caution.</li>
+      
+      <li>WWDC 2026 is expected to serve as the public showcase of this internal AI realignment.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/newsletters/2026-06-07/wwdc-2026-apple-s-secret-meeting-that-led-it-to-take-ai-seriously-ios-27">https://www.bloomberg.com/news/newsletters/2026-06-07/wwdc-2026-apple-s-secret-meeting-that-led-it-to-take-ai-seriously-ios-27</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 14:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Stocks Face Rising Risk With Mega AI Deals Ready to Flood Market</div>
+    
+    <ul class="article-points">
+      
+      <li>A wave of new equity issuances from AI-ambition companies is raising Wall Street concerns about whether buyer demand can absorb the supply of new shares.</li>
+      
+      <li>Analysts are questioning whether the volume of fresh equity will depress stock prices broadly across AI names, not just individual issuers.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-07/ai-s-mega-stock-deals-raise-specter-of-more-shares-than-buyers">https://www.bloomberg.com/news/articles/2026-06-07/ai-s-mega-stock-deals-raise-specter-of-more-shares-than-buyers</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 13:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">School shooting survivor sues AI gun detection firm after system failed to spot weapon</div>
+    
+    <ul class="article-points">
+      
+      <li>A school shooting survivor filed a lawsuit against an AI-based gun detection company after its system failed to identify a weapon before a shooting.</li>
+      
+      <li>The case raises the central question of what accuracy threshold AI safety systems must meet before deployment in high-stakes environments.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/tech-policy/2026/06/school-shooting-survivor-sues-ai-gun-detection-firm-after-system-failed-to-spot-weapon/">https://arstechnica.com/tech-policy/2026/06/school-shooting-survivor-sues-ai-gun-detection-firm-after-system-failed-to-spot-weapon/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 11:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">UK to Buy AI Chips From British Tech Firms, Telegraph Reports</div>
+    
+    <ul class="article-points">
+      
+      <li>The UK government plans to purchase AI chips from domestic technology companies as an incentive for firms to remain headquartered in Britain, per the Telegraph.</li>
+      
+      <li>The move is part of a broader effort to build a sovereign AI chip supply chain and retain AI talent and capital on British soil.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-07/uk-to-buy-ai-chips-from-british-tech-firms-telegraph-reports">https://www.bloomberg.com/news/articles/2026-06-07/uk-to-buy-ai-chips-from-british-tech-firms-telegraph-reports</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 08:58 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SKorea&#39;s Lee Nominates Tech Guru Han as PM to Lead AI Growth</div>
+    
+    <ul class="article-points">
+      
+      <li>South Korean President Lee Jae Myung nominated Han Seong-sook, current SME and Startup Minister, as Prime Minister explicitly to advance the country&#39;s AI agenda.</li>
+      
+      <li>Han is described as a tech industry veteran, signaling that Seoul is elevating AI national strategy to the executive level of government.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-07/lee-nominates-tech-guru-han-as-prime-minister-to-lead-ai-growth">https://www.bloomberg.com/news/articles/2026-06-07/lee-nominates-tech-guru-han-as-prime-minister-to-lead-ai-growth</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 05:58 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Is this the dawn of the Tokenpocalypse?</div>
+    
+    <ul class="article-points">
+      
+      <li>AI token prices are likely to rise as major AI companies — many planning IPOs — shift toward monetization, reversing the recent trend of aggressive price cuts.</li>
+      
+      <li>The era of cheap AI access subsidized by venture capital may be ending as companies prepare to demonstrate unit economics to public markets.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse/">https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 20:26 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Notion restores access to Anthropic after service disruption</div>
+    
+    <ul class="article-points">
+      
+      <li>Notion restored its Anthropic-powered AI features after a service disruption, with the head of product expressing surprise at the volume of social media attention the outage attracted.</li>
+      
+      <li>The episode highlights how deeply embedded third-party AI services have become in productivity workflows, and the reputational exposure when they fail.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/">https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 17:56 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI is still working on that &#39;super app&#39;</div>
+    
+    <ul class="article-points">
+      
+      <li>A senior OpenAI employee declared 「Chat is dead,」 suggesting the company&#39;s product vision has moved well beyond conversational interfaces.</li>
+      
+      <li>OpenAI is reportedly still developing a 「super app」 to consolidate AI capabilities into a single product, though no timeline has been announced.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/07/openai-is-still-working-on-that-super-app/">https://techcrunch.com/2026/06/07/openai-is-still-working-on-that-super-app/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 16:23 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">10 Key Reflections on China&#39;s Tech Giant Tencent&#39;s AI Second Half</div>
+    
+    <ul class="article-points">
+      
+      <li>腾讯如何理解 AI、围绕 AI 重组业务、并将其落地到实际应用场景，是本文梳理的核心命题。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8018365.html">https://www.tmtpost.com/8018365.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 14:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The business of AI is facing 4 harsh realities</div>
+    
+    <ul class="article-points">
+      
+      <li>Bain&#39;s latest study shows AI is not paying off nearly as much as enterprises expected; CEOs including Microsoft&#39;s own leadership have called AI 「too expensive.」</li>
+      
+      <li>Broadcom&#39;s 「weak」 infrastructure forecast and signals pointing to the Fed raising (not cutting) interest rates compound the pressure, suggesting AI capex cycles may slow.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Axios</span>
+      <span class="sep">·</span>
+      <a href="https://www.axios.com/2026/06/07/ai-business-technology-stocks-broadcom">https://www.axios.com/2026/06/07/ai-business-technology-stocks-broadcom</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 12:42 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Exclusive: JD.com and Tencent Partner on AI Agents</div>
+    
+    <ul class="article-points">
+      
+      <li>京东与腾讯已在 AI 智能体领域达成合作，腾讯近期在 agent 方向同时推进多个项目。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8018139.html">https://www.tmtpost.com/8018139.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 08:58 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI等机器网络请求量首超人类</div>
+    
+    <ul class="article-points">
+      
+      <li>全球最大互联网托管服务商之一发布数据：其托管网站中约 57.4% 的网络访问请求来自 AI 与自动化程序，42.6% 来自人类——互联网史上首次机器流量超越人类。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3842694357092869?f=rss">https://36kr.com/newsflashes/3842694357092869?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 06:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">多家供给方下调算力价格 算力普惠再提速</div>
+    
+    <ul class="article-points">
+      
+      <li>DeepSeek、小米 MiMo 等多家模型厂商宣布永久降价，最高降幅接近 99%，此前昂贵的 GPU 算力正趋向「数字水电」式的基础设施定价。</li>
+      
+      <li>降价覆盖日常问答、代码编程、网页设计等高频场景，大幅压低轻量化 AI 应用的准入门槛。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3842626008647945?f=rss">https://36kr.com/newsflashes/3842626008647945?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 06:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（4）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>Hugging Face Blog</strong>: <code>parse error: text/html is not an XML media type</code></li>
+    
+    <li><strong>Ars Technica Space</strong>: <code>parse error: text/html is not an XML media type</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-08.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-07T22:34:57.465467+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
