@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-09 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-09</h1>
+  <div class="meta">41 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">OpenAI 向 SEC 秘密提交 IPO 申请，高盛和摩根士丹利担任承销商，加入 AI 公司上市浪潮</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-08/openai-filed-confidentially-for-ipo-as-rivals-race-to-market">https://www.bloomberg.com/news/articles/2026-06-08/openai-filed-confidentially-for-ipo-as-rivals-race-to-market</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Apple WWDC 2026：Apple Intelligence 全面升级，引入 Google Gemini 双层架构，Siri AI 重磅亮相</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-08/apple-unveils-next-generation-of-ai-platform-video">https://www.bloomberg.com/news/videos/2026-06-08/apple-unveils-next-generation-of-ai-platform-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SpaceX 备战 IPO，马斯克旗下各公司（SpaceX/xAI/Tesla/Neuralink）资本、人才、基础设施高度交织，投资者须整体定价</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/features/2026-06-08/spacex-ipo-puts-elon-musk-s-intertwined-business-empire-under-scrutiny">https://www.bloomberg.com/news/features/2026-06-08/spacex-ipo-puts-elon-musk-s-intertwined-business-empire-under-scrutiny</a></span>
+    </li>
+    
+    <li>
+      <span class="title">OpenAI 筹备 ChatGPT 上线以来最大升级，转型「超级应用」抢在 IPO 前寻找新增长引擎</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/ai/2026/06/chat-is-dead-openai-preps-overhaul-of-chatgpt/">https://arstechnica.com/ai/2026/06/chat-is-dead-openai-preps-overhaul-of-chatgpt/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">微软 NuGet 生态第二次遭供应链攻击：73 个包含 AI Agent 触发型凭证窃取器，自我复制</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/">https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">原力灵机抢先入局具身 Picking 赛道，行业判断具身时代 Picking 是制高点</span>
+      <div class="why">国内具身 Picking 商业化赛道入局动态，对标 LeapsCora 具身训练场景规划</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/432417.html">https://www.qbitai.com/2026/06/432417.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Daimon Robotics + Galbot 联合发布 RobOmni：首个触觉感知与灵巧操作综合 benchmark</span>
+      <div class="why">具身智能训练评测标准建设，Physical AI 从视觉转向触觉的行业信号</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/daimon-robotics-and-galbot-jointly-launches-robomni-for-benchmarking-tactile-perception-and-dexterous-manipulation/">https://www.therobotreport.com/daimon-robotics-and-galbot-jointly-launches-robomni-for-benchmarking-tactile-perception-and-dexterous-manipulation/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">开源社区支持 OpenEnv 用于 Agentic RL 训练</span>
+      <div class="why">智能体 RL 训练开源环境生态，可能影响具身 RL 训练方法论</div>
+      <div class="source">Hugging Face Blog · <a href="https://huggingface.co/blog/openenv-agentic-rl">https://huggingface.co/blog/openenv-agentic-rl</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">ACS 获 2 亿美元融资，扩产自主反无人机武器站 Bullfrog</span>
+      <div class="why">机器人公司大额融资体现自主系统赛道资本热度</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/allen-control-systems-raises-200m-for-autonomous-weapons-stations/">https://www.therobotreport.com/allen-control-systems-raises-200m-for-autonomous-weapons-stations/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Gemini 3.5 and Antigravity come to Google NotebookLM</div>
+    
+    <ul class="article-points">
+      
+      <li>NotebookLM 将引入 Gemini 3.5 和 Antigravity 功能，迎来重大升级。</li>
+      
+      <li>目前升级仅限 AI Ultra 和企业账户，尚未向普通用户开放。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/gemini-3-5-and-antigravity-come-to-google-notebooklm/">https://arstechnica.com/ai/2026/06/gemini-3-5-and-antigravity-come-to-google-notebooklm/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 19:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">难上热搜的高考数学，我拿ChatGPT和豆包PK了一把！</div>
+    
+    <ul class="article-points">
+      
+      <li>今日高考数学题成为大模型测试场，豆包正面硬刚 ChatGPT，在最受关注的高考评测中两者表现引发广泛讨论。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/432425.html">https://www.qbitai.com/2026/06/432425.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 08:28 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">datasette-agent-edit 0.1a0</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison released datasette-agent-edit 0.1a0, an early plugin for agentic text editing within Datasette covering Markdown, SQL queries, and SVG files.</li>
+      
+      <li>The tool design mirrors Claude&#39;s text editor approach (view / str_replace / insert), enabling AI agents to make reliable incremental edits without rewriting whole files.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/7/datasette-agent-edit/#atom-everything">https://simonwillison.net/2026/Jun/7/datasette-agent-edit/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-07 23:56 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">腾讯汤道生评价姚顺雨、混元 3和元宝</div>
+    
+    <ul class="article-points">
+      
+      <li>腾讯首席 AI 科学家姚顺雨（27 岁，前 OpenAI，清华背景）判断 AI 是长期游戏，Coding Agent 是核心战场，腾讯策略是押注 B 端离钱更近的效率工具。</li>
+      
+      <li>元宝用户活跃度已被豆包大幅甩开；腾讯云大会发布了覆盖 20+ 垂直场景的 Agent 矩阵，To B 路线清晰。</li>
+      
+      <li>姚顺雨直接向腾讯总裁刘炽平汇报，其判断几乎代表腾讯 AI 整体方向。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3844018911889924?f=rss">https://36kr.com/p/3844018911889924?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 09:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Open Source Community is backing OpenEnv for Agentic RL</div>
+    
+    <ul class="article-points">
+      
+      <li>The open source community is rallying behind OpenEnv as a shared environment for agentic reinforcement learning.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Hugging Face Blog</span>
+      <span class="sep">·</span>
+      <a href="https://huggingface.co/blog/openenv-agentic-rl">https://huggingface.co/blog/openenv-agentic-rl</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 00:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">大模型看Coding，具身看Picking！原力灵机已抢先入局</div>
+    
+    <ul class="article-points">
+      
+      <li>行业判断：大模型时代 Coding 是 AI 制高点，具身时代 Picking（物体拾取）是核心场景，轻视则错过整个时代。</li>
+      
+      <li>原力灵机已抢先布局具身 Picking 赛道，成为国内最早入局者之一。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/432417.html">https://www.qbitai.com/2026/06/432417.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 06:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Daimon Robotics and Galbot jointly launches RobOmni for benchmarking tactile perception and dexterous manipulation</div>
+    
+    <ul class="article-points">
+      
+      <li>Daimon Robotics and Galbot jointly launched RobOmni, a benchmark for evaluating tactile perception and dexterous manipulation in embodied AI systems.</li>
+      
+      <li>The project signals a shift in Embodied AI from vision-centric toward Physical AI, where touch-based feedback becomes a critical evaluation axis.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/daimon-robotics-and-galbot-jointly-launches-robomni-for-benchmarking-tactile-perception-and-dexterous-manipulation/">https://www.therobotreport.com/daimon-robotics-and-galbot-jointly-launches-robomni-for-benchmarking-tactile-perception-and-dexterous-manipulation/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 14:16 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">ACS raises $200M to scale autonomous counter-drone system</div>
+    
+    <ul class="article-points">
+      
+      <li>Allen Control Systems raised $200M to scale manufacturing and accelerate deployment of Bullfrog, its autonomous weapon station for counter-drone operations.</li>
+      
+      <li>The funding round reflects growing capital flows into defense robotics and autonomous systems.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/allen-control-systems-raises-200m-for-autonomous-weapons-stations/">https://www.therobotreport.com/allen-control-systems-raises-200m-for-autonomous-weapons-stations/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 17:02 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX IPO Forces Investors to Bet on Musk&#39;s Entangled AI Empire</div>
+    
+    <ul class="article-points">
+      
+      <li>As SpaceX moves toward its IPO, boundaries between Musk&#39;s companies — SpaceX, xAI, Tesla, Neuralink — are increasingly blurred through shared capital, talent, and infrastructure.</li>
+      
+      <li>Investors must price the entire ecosystem rather than just the rocket business, creating unusual valuation complexity that could affect both SpaceX and xAI positioning.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/features/2026-06-08/spacex-ipo-puts-elon-musk-s-intertwined-business-empire-under-scrutiny">https://www.bloomberg.com/news/features/2026-06-08/spacex-ipo-puts-elon-musk-s-intertwined-business-empire-under-scrutiny</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 21:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">FCC lets Amazon Leo miss deployment deadline with temporary spectrum penalty</div>
+    
+    <ul class="article-points">
+      
+      <li>Amazon&#39;s Kuiper constellation no longer faces the July 30 cutoff for deploying half of its planned 3,232 broadband satellites, after FCC action.</li>
+      
+      <li>The reprieve comes with a temporary loss of spectrum priority, potentially giving SpaceX and other rivals more leverage in orbit.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/fcc-lets-amazon-leo-miss-deployment-deadline-with-temporary-spectrum-penalty/">https://spacenews.com/fcc-lets-amazon-leo-miss-deployment-deadline-with-temporary-spectrum-penalty/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 18:39 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">A Falcon 9 booster turns 5 years old—and just set a remarkable reuse record</div>
+    
+    <ul class="article-points">
+      
+      <li>A Falcon 9 booster reached 5 years of active service and set a new reuse milestone, underscoring how dramatically rocket reusability has transformed launch economics.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/space/2026/06/a-falcon-9-booster-turns-five-years-old-and-just-set-a-remarkable-reuse-record/">https://arstechnica.com/space/2026/06/a-falcon-9-booster-turns-five-years-old-and-just-set-a-remarkable-reuse-record/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 16:05 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">13 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI Filed Confidentially for IPO as Rivals Race to Market</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI filed a confidential Form S-1 with the SEC, working with Goldman Sachs and Morgan Stanley on a potential public listing.</li>
+      
+      <li>The move joins other AI rivals tapping public markets; OpenAI was last valued at approximately $850B and aims to fund ambitious growth plans.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-08/openai-filed-confidentially-for-ipo-as-rivals-race-to-market">https://www.bloomberg.com/news/articles/2026-06-08/openai-filed-confidentially-for-ipo-as-rivals-race-to-market</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 21:19 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple Unveils Next Generation of AI Platform, Including New Siri</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple unveiled its next-generation Apple Intelligence platform at WWDC 2026, featuring a revamped Siri AI powered by a two-tier Google AI model architecture.</li>
+      
+      <li>Investors gave a tepid reception — the announcement positions Apple as a catch-up play, not a leader, against Silicon Valley AI peers.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-08/apple-unveils-next-generation-of-ai-platform-video">https://www.bloomberg.com/news/videos/2026-06-08/apple-unveils-next-generation-of-ai-platform-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 19:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple Delays Siri AI for iPhone Users in the EU, Says Regulators Refusing to Engage</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple will not launch Siri AI on EU iPhones or iPads, citing inability to reach agreement with antitrust regulators.</li>
+      
+      <li>Apple says EU regulators are refusing to engage, marking the company&#39;s latest standoff with European watchdogs over AI product launches.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-08/apple-delays-siri-ai-for-iphone-users-in-eu-says-regulators-refusing-to-engage">https://www.bloomberg.com/news/articles/2026-06-08/apple-delays-siri-ai-for-iphone-users-in-eu-says-regulators-refusing-to-engage</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 20:23 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple Downplays Concerns That Its Use of Google AI Models Will Undermine Privacy</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple integrated Google AI models into the revamped Apple Intelligence platform but insists its on-device processing and Private Cloud Compute preserve user privacy.</li>
+      
+      <li>The company&#39;s argument: the Google partnership handles cloud-level reasoning while sensitive data stays on-device, maintaining existing privacy safeguards.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-08/apple-downplays-concerns-that-its-use-of-google-ai-models-will-undermine-privacy">https://www.bloomberg.com/news/articles/2026-06-08/apple-downplays-concerns-that-its-use-of-google-ai-models-will-undermine-privacy</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 20:21 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Say hi to &#34;Siri AI&#34;—Apple announces new, more &#34;conversational&#34; voice assistant</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple&#39;s &#39;Siri AI&#39; launches this fall with a two-tiered, Google-powered AI model overhaul, offering more personalized and conversational responses beyond the existing assistant.</li>
+      
+      <li>The redesign brings new APIs for developers; new features arrive in the fall alongside iOS 27.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/apple/2026/06/say-hi-to-siri-ai-apple-announces-new-more-conversational-voice-assistant/">https://arstechnica.com/apple/2026/06/say-hi-to-siri-ai-apple-announces-new-more-conversational-voice-assistant/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 19:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">For the 2nd time in weeks, Microsoft packages laced with credential stealer</div>
+    
+    <ul class="article-points">
+      
+      <li>73 Microsoft NuGet packages were found laced with a self-replicating credential stealer that activates the moment an AI agent opens them.</li>
+      
+      <li>This is the second supply-chain attack on the Microsoft package ecosystem within weeks, raising urgent security concerns about AI agent workflows consuming untrusted packages.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/">https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 18:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">&#34;Chat is dead&#34;: OpenAI preps overhaul of ChatGPT</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI is preparing the biggest-ever overhaul of ChatGPT, repositioning it from a chatbot into a 「super app」 that integrates coding tools and other higher-margin products.</li>
+      
+      <li>The strategic pivot is timed before the company&#39;s IPO, signaling OpenAI needs new revenue streams beyond chat subscriptions.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/chat-is-dead-openai-preps-overhaul-of-chatgpt/">https://arstechnica.com/ai/2026/06/chat-is-dead-openai-preps-overhaul-of-chatgpt/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 13:51 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">蚂蚁集团推出海外AI支付解决方案 商户可实现全球智能体运营</div>
+    
+    <ul class="article-points">
+      
+      <li>蚂蚁集团推出面向海外的 AI 支付解决方案，帮助商户和用户判断智能体可信赖程度，支持全球化 AI Agent 场景下的支付流程。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/432587.html">https://www.qbitai.com/2026/06/432587.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 10:40 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">同程旅行将接入微信AI智能体，机票、酒店将实现AI一键预订</div>
+    
+    <ul class="article-points">
+      
+      <li>同程旅行宣布即将全面接入微信 AI 智能体生态，成为首批接入微信 AI 生态的在线旅游平台（OTA）。</li>
+      
+      <li>用户可在微信 AI 智能体内通过语音或文字完成行程规划，并实现机票、酒店对比与一键预订。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3844514407336201?f=rss">https://36kr.com/newsflashes/3844514407336201?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 12:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">昆仑元AI获5000万元战略融资</div>
+    
+    <ul class="article-points">
+      
+      <li>昆仑元 AI（KunlunMeta）完成 5000 万元战略轮融资，由景嘉微旗下长沙景美集成电路设计领投。</li>
+      
+      <li>双方将共建「国产 GPU + 全栈 AI 基础设施」一体化方案，涵盖芯片设计、算力适配和产品联合研发。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3844456903166217?f=rss">https://36kr.com/newsflashes/3844456903166217?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 11:43 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">华超神控获亿元天使系列融资，加速打造新一代AI超声脑机接口平台</div>
+    
+    <ul class="article-points">
+      
+      <li>AI 超声脑机公司华超神控（BCI-Sonics）完成亿元人民币级天使系列融资，经纬创投领投天使轮，德联资本、道远资本联投天使+轮。</li>
+      
+      <li>创始人李昕来自 GE 医疗全球科研中心，团队覆盖清华、上海交大、帝国理工，主攻非侵入式超声脑机接口技术产业化；同类赛道已吸引 Sam Altman、Fred Ehrsam 等硅谷科技派下场创业。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3841459663030532?f=rss">https://36kr.com/p/3841459663030532?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 00:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">改变全球速度的AI，付款却卡在上一个时代</div>
+    
+    <ul class="article-points">
+      
+      <li>2026 年全球每小时诞生一家 AI 公司，但中国 AI 企业海外采购（GPU、云服务、大模型 API）几乎全须以美元结算，跨境支付摩擦正成为利润黑洞。</li>
+      
+      <li>AI 企业在「进」端受制于海外算力采购币种壁垒，在「出」端受困于跨币种汇损与本地支付碎片化，资金闭环难以建立。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3844199957236227?f=rss">https://36kr.com/p/3844199957236227?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 07:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">8点1氪丨八家上市公司集中公告「补税」；ChatGPT将迎来史上最大幅度升级；高考新增AI监考员，自动截取异常录像</div>
+    
+    <ul class="article-points">
+      
+      <li>AI 等机器网络请求量已首次超越人类流量，标志互联网流量结构性转变；OpenAI 正筹备 ChatGPT 上线以来最大升级，计划转型超级应用整合编程工具。</li>
+      
+      <li>另有八家 A 股上市公司集中披露补缴税款，合计约 4 亿元，其中苹果最大授权经销商爱施德（002416.SZ）一家补缴 3.08 亿元，部分公司补缴额超全年净利润。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3843764238174729?f=rss">https://36kr.com/p/3843764238174729?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-08 00:01 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-09.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-08T22:54:26.612058+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
