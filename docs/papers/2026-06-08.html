@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-08</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-08</h1>
+  <div class="meta">44 篇候选 · 精读 2 · 速览 16 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    <div class="group-label">🔥 直接相关精读 (2 篇)</div>
+    <ul>
+      
+      <li><strong>Dash2Sim: Closed-Loop Driving Simulation from in-the-wild Dashcam Videos</strong> — 对&#39;视频→3D scene 重建 + 城市级闭环仿真&#39;这一研究点有直接填充价值，覆盖 17 城、长尾施工区 — <a href="http://arxiv.org/abs/2606.07366">arXiv</a></li>
+      
+      <li><strong>QuadVerse: An Integrated Framework Aligning Visual-Physical Reality for Quadruped Simulation</strong> — 对&#39;场景级四足 sim-to-real&#39;有直接推进价值，重建场景作标定基底 — <a href="http://arxiv.org/abs/2606.07118">arXiv</a></li>
+      
+    </ul>
+    
+    
+    <div class="group-label">📚 值得扫一眼 (4 篇)</div>
+    <ul>
+      
+      <li><strong>Stream3D-VLM: Online 3D Spatial Understanding with Incremental Geometry Priors</strong> — 流式视频在线 3D 空间理解，配 100 万 QA 在线基准 — <a href="http://arxiv.org/abs/2606.06891">arXiv</a></li>
+      
+      <li><strong>Native3D: End-to-End 3D Scene Generation via Unified Mesh-Texture Modeling and Semantic Alignment</strong> — 端到端绕过 2D 的 3D 场景生成 — <a href="http://arxiv.org/abs/2606.07117">arXiv</a></li>
+      
+      <li><strong>Affordance-Based Hierarchical Reinforcement Learning for Quadruped Pedipulation</strong> — IsaacSim 三层分层 RL，导航+足部操作 sim+real — <a href="http://arxiv.org/abs/2606.07506">arXiv</a></li>
+      
+      <li><strong>Multi‐Robot Collaborative Navigation Framework Based on 3D Voronoi Partitioning in Uneven and Unstructured Environments</strong> — 不平整非结构化户外环境的多机器人协同导航 — <a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70260?af=R">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🔥</span>
+    <h2>强相关精读 (2 篇)</h2>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07366">Dash2Sim: Closed-Loop Driving Simulation from in-the-wild Dashcam Videos</a></div>
+    <div class="meta">
+      arXiv cs.RO · 2026-06-05 · Anurag Ghosh et al.
+      <span class="score">9 (5+4)</span>
+    </div>
+    <div class="reason">Dashcam video-to-4D closed-loop driving sim across 17 cities, directly relevant</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">把野外单目行车记录仪视频转成度量化、地理配准的 4D 驾驶日志，兼容现有仿真器，并用独立维护的地图无标注逐场景验证。基于此构建 ROADWork4D 基准——4,244 个场景、270 万个 3D 物体、覆盖 17 座城市，重点关注施工区这类长尾场景。在验证子集 ROADWork4D-CL（2,201 场景）上研究特权闭环规划器，发现施工区很难：规则类与混合类规划器泛化优于学习类，但都做不出临时施工通道要求的变道。Dash2Sim 恢复的稠密深度还把新视角合成的感知指标最多提升 19%。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#39;视频→3D scene 重建 + 城市级闭环仿真&#39;这一研究点有直接填充价值；其无标注地图验证机制与长尾施工区场景设计可对标 Vid2Sim 类 driving 仿真路线。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07118">QuadVerse: An Integrated Framework Aligning Visual-Physical Reality for Quadruped Simulation</a></div>
+    <div class="meta">
+      arXiv cs.RO · 2026-06-05 · Yuxiang Chen et al.
+      <span class="score">9 (5+4)</span>
+    </div>
+    <div class="reason">Quadruped 3DGS scene reconstruction for sim-to-real locomotion, core to roster</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">QuadVerse 用重建场景作为&#39;标定基底&#39;，同时对齐视觉感知、物理交互与执行器动力学，解决四足 sim-to-real 中视觉与动力学 gap 累积、沿状态演化传播的问题。从 RGB 视频重建几何约束的 3DGS 场景，支持批量逼真 ego-view 渲染和可碰撞语义网格提取；网格用于接触标定——初始化空间变化的摩擦先验、再经轨迹后验搜索精修；最后训练残差动力学补偿器消除执行器误差。实验显示重建质量与运动跟踪均优于基线，并实现无需任务特定真实回放的零样本视觉导航策略部署。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#39;场景级四足导航的 sim-to-real（real-to-sim + 域标定）&#39;这一研究点有直接推进价值；其用 3DGS 重建场景作 sim 标定基底 + 残差动力学补偿的设计可借鉴。</div></div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (16 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07089">Dreaming when Necessary: Advancing World Action Models with Adaptive Multi-Modal Reasoning</a></div>
+    <div class="meta">arXiv cs.RO · Yinzhou Tang et al. <span class="score">9</span></div>
+    <div class="field"><div class="field-body">给世界动作模型（AdaWAM）加轻量动态路由器，按情境自适应触发文本或视觉推理，提升推理效率并超越 SOTA 策略（偏室内操作，无城市/户外迁移）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.06891">Stream3D-VLM: Online 3D Spatial Understanding with Incremental Geometry Priors</a></div>
+    <div class="meta">arXiv cs.CV · Hanxun Yu et al. <span class="score">8</span></div>
+    <div class="field"><div class="field-body">在线 3D 视觉-语言模型，从流式视频做实时空间理解，几何先验增量注入+体素压缩，并造 100 万在线 3D QA 基准（相关但偏室内）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07506">Affordance-Based Hierarchical Reinforcement Learning for Quadruped Pedipulation</a></div>
+    <div class="meta">arXiv cs.RO · Tuba Girgin et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">三层分层 RL，用位姿/交互点 affordance 引导四足导航与足部操作，IsaacSim 训练并 sim+real 验证（聚焦物体操作）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07193">Shield-Loco: Shielding Locomotion Policies with Predictive Safety Filtering</a></div>
+    <div class="meta">arXiv cs.RO · Aditya Shirwatkar et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">预测式安全过滤器对 RL 运动策略的接触点做后置过滤，碰撞预测触发采样优化，密集杂乱环境四足 sim+real 大幅降低安全违规。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07117">Native3D: End-to-End 3D Scene Generation via Unified Mesh-Texture Modeling and Semantic Alignment</a></div>
+    <div class="meta">arXiv cs.CV · Yibo Liu et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">首个完全绕过 2D 中间表示的端到端 3D 场景生成框架，统一 mesh-texture 表示 + 3D REPA 损失提升保真（物体级而非城市级）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07436">Skill-3D: Evolving Scene-Aware Skills for Agentic 3D Spatial Reasoning</a></div>
+    <div class="meta">arXiv cs.CV · Haoyuan Li et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">让 MLLM agent 学&#39;场景感知技能库&#39;做 3D 空间推理，成功工具轨迹蒸馏成可复用技能，VSI-Bench 工具利用率 39%→78%（偏室内）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07326">AnchorWorld: Embodied Egocentric World Simulation with View-based Evolution Customization</a></div>
+    <div class="meta">arXiv cs.CV · Yu Li et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">以 3D 人体动作为主交互模态的第一人称世界模拟，外部视角辅助监督+锚视图文本定制自演化场景（世界模型邻域，无 robotics 接口）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07083">Predictive Style Matching: Natural and Robust Humanoid Locomotion</a></div>
+    <div class="meta">arXiv cs.RO · Simeon Nedelchev et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">离线预测器把下肢状态+速度指令映射到上肢/步态目标塑形奖励，Unitree G1 风格误差降约一个数量级且保持跌倒恢复率（非 roster）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.06944">T-GMP: Terrain-conditioned Generative Motion Priors for Versatile and Natural Humanoid Locomotion</a></div>
+    <div class="meta">arXiv cs.RO · Junhong Guo et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">地形条件生成式运动先验（CVAE 学地形-动作流形）+对抗学习与落脚惩罚，人形跨地形平滑切换步态（off-roster）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70260?af=R">Multi‐Robot Collaborative Navigation Framework Based on 3D Voronoi Partitioning in Uneven and Unstructured Environments</a></div>
+    <div class="meta">Journal of Field Robotics · Hongyang Zhao et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">基于 3D Voronoi 划分的多机器人协同导航框架，面向不平整、非结构化环境（户外相关但非城市级）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07186">A Causal Probabilistic Framework for Perception-Informed Closed-Loop Simulation of Autonomous Driving</a></div>
+    <div class="meta">arXiv cs.RO · Zhennan Fei et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">把因果概率感知误差模型注入标准化驾驶 SIL 仿真，模拟雾/雨/物体合并的漏检与定位偏差，揭示理想 SIL 掩盖的风险（无 3D/城市场景）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07508">Streaming Video Generation with Streaming Force Control</a></div>
+    <div class="meta">arXiv cs.CV · Hanhui Wang et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">流式视频生成框架 StreamForce，用统一力表示作控制信号实现连续力可控、因果实时生成，单 GPU 最高 16.6 FPS（与世界模型松散相关）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07288">ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation</a></div>
+    <div class="meta">arXiv cs.CV · Chuanjin Fan et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">直接优化显式网格的多视图重建，把离散拓扑更新（顶点分裂/合并）与可微优化结合、实时维护 UV（物体级，无街景用例）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07179">EvoGS: Constructing Continuous-Layered Gaussian Splatting with Evolution Tree for Scalable 3D Streaming</a></div>
+    <div class="meta">arXiv cs.CV · Yuang Shi et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">首个&#39;连续分层&#39;3DGS 流式表示，用 Evolution Tree 父子小波式细化纠正祖先误差，冗余 65%→25% 以下、传输与显存最多省 2.4×/5.5×（通用，无城市用例）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70246?af=R">From Flybys to Sample Return: A Review of Space Probes and Robotic Sampling Technologies for Small Bodies</a></div>
+    <div class="meta">Journal of Field Robotics · Xin Zhang et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">小天体空间探测器与机器人采样技术综述（行星邻域，但无 sim/数字孪生/机器人训练落点）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07017">The Sim-to-Real Gap of Foundation Model Agents: A Unified MDP Perspective</a></div>
+    <div class="meta">arXiv cs.AI · Xiaoou Liu et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">主张把基础模型 agent 的评测/训练 gap 形式化为经典 MDP 四要素的 sim-to-real 问题，倡导 domain randomization（面向 LLM agent，非物理户外机器人）。</div></div>
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📖</span>
+    <h2>期刊新刊</h2>
+  </div>
+  
+  <div class="journal-group">
+    <h3>Journal of Field Robotics</h3>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70260?af=R">Multi‐Robot Collaborative Navigation Framework Based on 3D Voronoi Partitioning in Uneven and Unstructured Environments</a></div>
+      <div class="meta">Hongyang Zhao et al. <span class="score">3</span></div>
+      <div class="field"><div class="field-body">基于 3D Voronoi 划分的多机器人协同导航，面向不平整、非结构化户外环境。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70253?af=R">A Low‐Drift Legged Robot State‐Estimation System Through Combined Physics‐Informed Contact Estimation Network and Full Joint State</a></div>
+      <div class="meta">Zhentao Xie et al. <span class="score">2</span></div>
+      <div class="field"><div class="field-body">结合物理信息接触估计网络与全关节状态的低漂移腿足机器人状态估计系统。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70246?af=R">From Flybys to Sample Return: A Review of Space Probes and Robotic Sampling Technologies for Small Bodies</a></div>
+      <div class="meta">Xin Zhang et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">小天体空间探测器与机器人采样技术综述。</div></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>航天 / 星际建造</h2>
+  </div>
+  
+  <div class="paper space">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07177">High-Speed Observations of Lunar Impact Flashes</a></div>
+    <div class="meta">arXiv astro-ph.IM</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">用西澳 Zadko 望远镜以 200/250 FPS 高速观测月面撞击闪光，解析 4 次确认事件光变曲线，发现复杂形态难用简单指数衰减拟合，并指出初始闪光强度方差远小于总光能、二者无统计相关，提示初始蒸气膨胀与冷却辉光机制可能物理解耦。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">暂未直接对位某研究点——属纯天文观测，无 robot/数字孪生/ISRU 落点，但月面活动监测可作&#39;Lunar/Mars 表面建造&#39;线的背景信号跟踪。</div></div>
+  </div>
+  
+</section>
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-08T03:23:13.552855+00:00
+</footer>
+
+</div>
+</body>
+</html>
