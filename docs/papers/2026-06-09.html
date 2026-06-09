@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-09</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-09</h1>
+  <div class="meta">60 篇候选 · 精读 0 · 速览 33 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    
+    <div class="group-label">📚 值得扫一眼 (5 篇)</div>
+    <ul>
+      
+      <li><strong>Continual Quadruped Robots Coordination via Semantic Skill Discovery</strong> — 持续学习中复用旧技能、免遗忘并实机验证，对户外多机协同的技能复用思路可借鉴 — <a href="http://arxiv.org/abs/2606.08102">arXiv</a></li>
+      
+      <li><strong>IntentNav: Learning Spatial-Visual Object Navigation from Human Demonstrations</strong> — 导航策略零样本迁移到轮式/四足/人形，对导航接口跨本体迁移这一研究点有参考 — <a href="http://arxiv.org/abs/2606.08029">arXiv</a></li>
+      
+      <li><strong>SceneConductor: 3D Scene Generation from Single Image with Multi-Agent Orchestration</strong> — 多智能体编排的单图→3D 场景生成 pipeline，对场景生成流程设计可借鉴 — <a href="http://arxiv.org/abs/2606.08402">arXiv</a></li>
+      
+      <li><strong>DisCo: World Models with Discrete Camera Motion Control</strong> — 用离散动作基元提升可控视频世界模型的动作可分性，对世界模型作探索环境的动作接口有参考 — <a href="http://arxiv.org/abs/2606.07967">arXiv</a></li>
+      
+      <li><strong>DriveReward: A Comprehensive Dataset and Generative Vision-Language Reward Model for Autonomous Driving</strong> — 含反事实驾驶数据的自动驾驶视觉-语言奖励模型，对城市驾驶评测/奖励设计可借鉴 — <a href="http://arxiv.org/abs/2606.08525">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (33 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08102">Continual Quadruped Robots Coordination via Semantic Skill Discovery</a></div>
+    <div class="meta">arXiv cs.RO · Daoqing Wang et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">提出语义技能库框架 Conquer，把多四足协作建模为检索-适配-更新，持续学习中复用旧技能、避免灾难性遗忘，仿真平均成功率 95.6% 并在 Unitree Go2 实机验证（偏操作协作，非户外导航）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08278">SIMPLE: Simulation-Based Policy Learning and Evaluation for Humanoid Loco-manipulation</a></div>
+    <div class="meta">arXiv cs.RO · Songlin Wei et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">耦合 MuJoCo 接触动力学与 IsaacSim 真实渲染的人形全身 loco-manipulation 仿真测试台，含 60 任务/50 室内场景/千余资产，仿真表现与真机强相关、可零样本迁移——但仅室内场景。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08059">Perceptive Behavior Foundation Model: Adapting Human Motion Priors to Robot-Centric Terrain</a></div>
+    <div class="meta">arXiv cs.RO · Zifan Wang et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">把人类动作先验落地到机器人本体感知的地形感知人形控制框架，用局部地形观测调整落脚/姿态/接触时序；面向通用地形而非城市/户外场景。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08039">MuJoCo-Drones-Gym: A GPU-Accelerated Multi-Drone Simulator for Control and Reinforcement Learning</a></div>
+    <div class="meta">arXiv cs.RO · Manan Tayal <span class="score">5</span></div>
+    <div class="field"><div class="field-body">GPU 加速、Gymnasium 兼容的多无人机 MuJoCo 仿真器，模块化物理/动作/观测接口与 7 类任务，可作多智能体 RL 训练环境（空中，非城市场景）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08525">DriveReward: A Comprehensive Dataset and Generative Vision-Language Reward Model for Autonomous Driving</a></div>
+    <div class="meta">arXiv cs.CV · Qimao Chen et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">面向自动驾驶的生成式视觉-语言奖励模型与数据集，含反事实驾驶行为标注，1B 奖励模型在任务对齐上超越更大 VLM；无 3D/仿真场景成分。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08402">SceneConductor: 3D Scene Generation from Single Image with Multi-Agent Orchestration</a></div>
+    <div class="meta">arXiv cs.CV · Jeonghwan Kim et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">用多智能体编排把单图→完整 3D 场景拆成初始化/环境构建/多智能体细化三阶段，几何感知布局预测器可从分割级数据训练、泛化真实场景；非城市尺度但与场景引擎相关。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07967">DisCo: World Models with Discrete Camera Motion Control</a></div>
+    <div class="meta">arXiv cs.CV · Hongrui Huang et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">把可控视频世界模型的动作条件从连续相机轨迹改为离散动作基元以提升动作可分性，并提出 DisCoBench 评测长时/高动态探索；世界模型方向但非城市专用。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08530">GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation</a></div>
+    <div class="meta">arXiv cs.RO · Yuan Zhang et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">学习统一的几何感知动作表征以提升 VLA 泛化，在 LIBERO/RoboTwin 2.0 等达 SOTA、跨本体抓取成功率高；室内桌面，无户外迁移。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08288">MotionVLA: Injecting Geometric Motion into Vision-Language-Action Model</a></div>
+    <div class="meta">arXiv cs.RO · Shanglin Yuan et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">把过去帧视频窗口压成时间连续的轨迹场 token 注入 VLA，以记住运动而非记住帧改善长时操作；室内，无城市关联。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08253">Mind Your Steps: A General Learning Framework for Accurate Humanoid Foothold Tracking</a></div>
+    <div class="meta">arXiv cs.RO · Alessandro Montenegro et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">轻量通用 3D 落脚点跟踪策略，通过目标采样器使策略地形无关、可对接不同高层规划器实现精确人形导航；地形无关，非城市/户外。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08169">CLASP: Language-Driven Robot Skill Selection and Composition using Task-Parameterized Learning</a></div>
+    <div class="meta">arXiv cs.RO · Markus Knauer et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">把任务参数化运动基元(TP-KMP)与预训练 VLM 结合，从 2-5 个示教学技能、用语言选择与组合技能，数据高效；仅室内机械臂。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08107">Ego-Pi: VLA Fine-Tuning for Ego-Centric Human and Robot Data</a></div>
+    <div class="meta">arXiv cs.RO · Ji Woong Kim et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">以 π0.5 为底座研究跨人类/人形本体的 VLA 微调，自我中心人类数据可让机器人学到新任务语义并组合技能、无需对应机器人数据；灵巧操作，无户外。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08015">Q-VGM: Q-Guided Value-Gradient Matching for Flow-Matching VLA Policies</a></div>
+    <div class="meta">arXiv cs.RO · Ziqian Wang et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">用值梯度匹配实现流匹配 VLA 策略的离线 RL 微调，避开去噪链反传不稳定问题，在 LIBERO/RoboTwin/真机大幅提升成功率；算法层，无城市/户外。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07934">X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting</a></div>
+    <div class="meta">arXiv cs.RO · Jen-Wei Wang et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">单 XR 设备驱动的跨形态全身遥操作框架，用 MPC 重定向兼顾操作意图与动力学可行性、免重训，跨人形与移动机械臂泛化；数据采集向，无城市场景。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07932">LEGS: Laplacian-Enhanced Gaussian Splatting with a Nonlinear Weighted Loss</a></div>
+    <div class="meta">arXiv cs.CV · Yongfei Guo et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">用二阶 Laplacian 结构引导与非线性加权损失改进 3DGS，在 Tanks&amp;Temples/Mip-NeRF360 上 PSNR 提升最高 1.68 dB；通用 3DGS，无街景/城市重建。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08170">Learning from Human Driving: A Human-in-the-Loop Online Behavior Cloning Framework for Autonomous Driving</a></div>
+    <div class="meta">arXiv cs.RO · Yuhong Shi et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">人在回路在线行为克隆框架(HiL-OBC)，把大模型感知与人类驾驶智慧融合应对长尾驾驶，在 LangAuto-Human CARLA 上显著提升多基线驾驶分；城市驾驶但仿真相关度一般。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08564">Real-IKEA: Physical Fidelity is the Prerequisite for Robust Manipulation</a></div>
+    <div class="meta">arXiv cs.RO · Kunqi Xu et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">以物理真实为首要目标的铰接操作数据集与仿真框架，含 1079 个 IKEA 把手/旋钮配置与阻力标定，RL 可发现钩/撬等鲁棒策略；仅室内物体。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08548">OASIS: From Simulation Data Collection to Real-World Humanoid Loco-Manipulation</a></div>
+    <div class="meta">arXiv cs.RO · Zehao Yu et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">仿真数据驱动的人形 loco-manipulation 框架，用 3D 生成模型从真实图重建资产、在仿真遥操作采集并域随机化，零样本部署成功率超真机示教；室内，无城市。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08533">Autonomous Aerial Manipulation via Contextual Contrastive Meta Reinforcement Learning</a></div>
+    <div class="meta">arXiv cs.RO · Lixuan Jin et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">上下文对比元 RL 实现自主空中操作，四旋翼带钩自主抓取/运输/投放不同载荷、在线适配载荷动力学、纯仿真训练可直接上机；空中，非城市场景。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08495">EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control</a></div>
+    <div class="meta">arXiv cs.RO · Haoyang Ge et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">从自我中心人类示教学人形全身运动先验，三流 DiT 联合建模身体动态/视觉/文本，一个 checkpoint 支持重建/生成/预测并可在 Unitree 人形执行；室内全身，无户外。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08440">GraspFoM: Towards Reconstruction-Driven Robotic Grasping with 3D Foundation Priors</a></div>
+    <div class="meta">arXiv cs.RO · Dongli Wu et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">用 3D 基础先验(SAM3D)构建可复用物体潜变量，统一重建与抓取位姿预测、互相促进，在重建与抓取两任务上达 SOTA；物体级，无城市。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08249">Disturbance-Aware Aerial Robotics for Ethical Wildlife Monitoring</a></div>
+    <div class="meta">arXiv cs.RO · Mahmut Osmanovic et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">扰动感知的强化学习异构空中机器人框架，在动物行为模型驱动的仿真中训练，兼顾观测质量与扰动最小化、跨三物种泛化；户外但非城市/3D 场景。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08154">SynthICL: Scalable In-context Imitation Learning with Synthetic Data</a></div>
+    <div class="meta">arXiv cs.RO · Cheng Qian et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">完全用 RGB 合成数据训练的可扩展上下文模仿学习框架，免深度/标定/真实数据，16 个真实操作任务单示教平均成功率 79%；仅室内操作。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08094">vla.cpp: A Unified Inference Runtime for Vision-Language-Action Models</a></div>
+    <div class="meta">arXiv cs.RO · Khanh D. Nguyen et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">基于 llama.cpp 的可移植 C++ VLA 推理运行时，单运行时服务 7 种架构、跨三档硬件不变运行，batch-1 推理受算力约束并给出优化；部署工程，无城市/户外。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08057">EgoAERO: Learning Dexterous Manipulation from a Single Egocentric Video without Object Assets</a></div>
+    <div class="meta">arXiv cs.RO · Yichen Niu et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">首个无需物体资产、从单段自我中心 RGB-D 视频学灵巧操作的框架，做无资产物体跟踪/重建并两阶段残差学习，并发布 430 万帧 EgoDex-R 数据集；室内，无迁移。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08029">IntentNav: Learning Spatial-Visual Object Navigation from Human Demonstrations</a></div>
+    <div class="meta">arXiv cs.RO · Yuxin Cai et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">从人类示教学类人探索的物体导航策略，用 BEV 记忆+前沿意图标注+VLM 选点，在 MP3D/HM3D 达 SOTA 且零样本迁移到轮式/四足/人形；室内，非户外城市。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07974">PRISM: PRior-guided Imagination Sampling in world Models</a></div>
+    <div class="meta">arXiv cs.RO · Yuhai Wang et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">在 JEPA 风格潜世界模型上挂轻量 MLP 预测状态条件动作先验，以高斯乘积融入规划采样，无需额外 VLM，在 Cube/PushT 大幅提升成功率；无城市落地。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08555">FAWAM: Force-Aware World Action Models for Closed-Loop Contact-Rich Manipulation</a></div>
+    <div class="meta">arXiv cs.RO · Haotian He et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">力感知世界动作模型，在感知/预测/闭环三层引入 6 轴力-力矩信息并残差校正，接触密集操作成功率显著超视觉基线；室内。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08542">When Video Misreads: Closed-Loop Distillation of Reading Heuristics for Exploratory Manipulation Trace QA</a></div>
+    <div class="meta">arXiv cs.RO · Haizhou Ge et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">形式化探索性操作轨迹 QA(EMT-QA)，提出闭环轨迹蒸馏生成一行自然语言阅读启发式(DRH)，让冻结 VLM 更准恢复最小成功动作链；推理任务，无城市/户外。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08520">Two Bridges, One Pathway: From VLMs to Generalizable VLAs with Embodied Trajectory-Coupled Data</a></div>
+    <div class="meta">arXiv cs.RO · Linqi Yin et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">用具身轨迹耦合(ETC)数据作 VLM→VLA 的中间桥梁，三阶段渐进训练把 VLM 泛化迁移到可部署机器人策略；操作，无城市关联。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08284">G2G: Exploiting Intra-Group Geometry for Inter-Group Pose Estimation</a></div>
+    <div class="meta">arXiv cs.RO · Yufei Wei et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">冻结基础模型、加约 32M 可训练模块桥接两图像组以估计组间 6-DoF 相对位姿，跨室内外仿真与零样本 sim-to-real 达 SOTA；纯感知，无城市/机器人落点。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08214">Agentic Neuro-Symbolic Planning and Commissioning for Human-in-the-Loop Industrial Robotics with Digital Twins</a></div>
+    <div class="meta">arXiv cs.RO · Zhihao Liu et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">面向人在回路工业机器人的智能体神经符号框架，LLM 管语言推理、验证/排序/执行保持确定性，配 Unity3D 数字孪生供人工检查；工业数字孪生，非城市/BIM。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.08136">Learning Predictive Control with Deep Koopman Operators for Autonomous Vehicle Motion Planning</a></div>
+    <div class="meta">arXiv cs.RO · Xinglong Zhang et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">用深度 Koopman 算子做自动驾驶运动规划的学习预测控制，把车辆动力学升维到线性可观空间并嵌入避障势场，实车验证；户外驾驶但无仿真/城市引擎。</div></div>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-09T01:49:19.380616+00:00
+</footer>
+
+</div>
+</body>
+</html>
