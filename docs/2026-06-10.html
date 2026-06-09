@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>晨报 · 2026-06-10 · Morning Cafe</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="晨报 · 2026-06-10｜LeapsCora 视角">
+<meta property="og:description" content="Top 5 首条：Claude Fable 5 发布 — Anthropic 首款 Mythos 级模型，软件工程/知识工作/视觉三项领跑，任务越复杂领先越大 ｜ LeapsCora 直接相关：AGILINK 在 ICRA 2026（维也纳）展示「接触智能」——双机械手不破...">
+<meta property="og:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-10.png">
+<meta property="og:url" content="https://sstormw.github.io/Morning-Cafe/2026-06-10.html">
+<meta property="og:site_name" content="Morning Cafe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="晨报 · 2026-06-10｜LeapsCora 视角">
+<meta name="twitter:description" content="Top 5 首条：Claude Fable 5 发布 — Anthropic 首款 Mythos 级模型，软件工程/知识工作/视觉三项领跑，任务越复杂领先越大 ｜ LeapsCora 直接相关：AGILINK 在 ICRA 2026（维也纳）展示「接触智能」——双机械手不破...">
+<meta name="twitter:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-10.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 14px; }
+
+.section { margin-top: 40px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+.top5 .source a:hover { text-decoration: underline; }
+
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title {
+  font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink);
+}
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .nav { margin-bottom: 8px; }
+.footer .nav a { margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 28px 18px 50px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">☕ Morning Cafe</div>
+  <h1>晨报 · 2026-06-10</h1>
+  <div class="meta">46 条来源 · 抓取窗口 24h · LeapsCora 视角</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">Claude Fable 5 发布 — Anthropic 首款 Mythos 级模型，软件工程/知识工作/视觉三项领跑，任务越复杂领先越大</span>
+      <span class="source">The Verge · <a href="https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos">https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos</a></span>
+    </li>
+    
+    <li>
+      <span class="title">OpenAI 秘密提交 S-1 上市申请，AI IPO 管线总规模达 3.6 万亿美元</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-09/openai-joins-race-for-public-market-cash-video">https://www.bloomberg.com/news/videos/2026-06-09/openai-joins-race-for-public-market-cash-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Waymo 以 2.2 亿美元收购苹果废弃 Project Titan 自动驾驶试验场（5500 英亩），年末目标 100 万次/周 robotaxi</span>
+      <span class="source">Electrek · <a href="https://electrek.co/2026/06/09/waymo-buys-apple-project-titan-proving-ground-220-million/">https://electrek.co/2026/06/09/waymo-buys-apple-project-titan-proving-ground-220-million/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Super Micro 计划发行 70 亿美元股权融资，用于采购 AI 服务器组件</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-09/super-micro-plans-to-raise-7-billion-in-equity-for-ai-equipment">https://www.bloomberg.com/news/articles/2026-06-09/super-micro-plans-to-raise-7-billion-in-equity-for-ai-equipment</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Google 发布 Gemini 3.5 Live Translate — 实时语音对语音翻译，保留说话者音调/语速/音高，内嵌 SynthID 水印</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/ai/2026/06/google-announces-gemini-3-5-live-translate-for-instant-voice-to-voice-translation/">https://arstechnica.com/ai/2026/06/google-announces-gemini-3-5-live-translate-for-instant-voice-to-voice-translation/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">AGILINK 在 ICRA 2026（维也纳）展示「接触智能」——双机械手不破气球折叠气球狗</span>
+      <div class="why">具身操控前沿；接触力/柔顺控制是四足/轮式机器人精细操作核心挑战，对应「具身智能训练数据」强关注主题</div>
+      <div class="source">IEEE Spectrum · <a href="https://spectrum.ieee.org/agilink-contact-intelligence-robot-manipulation">https://spectrum.ieee.org/agilink-contact-intelligence-robot-manipulation</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Standard Bots 完成 2 亿美元融资，扩大美国制造布局</span>
+      <div class="why">机器人大额融资，对应强关注主题「机器人公司 IPO / 大额融资」</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/standard-bots-raises-200m-expand-u-s-manufacturing-footprint/">https://www.therobotreport.com/standard-bots-raises-200m-expand-u-s-manufacturing-footprint/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">美国「国家机器人委员会」立法提案在国会推进</span>
+      <div class="why">机器人产业政策（美方），对应「中国机器人产业政策」强关注的镜像维度</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/effort-establish-national-commission-on-robotics-advances-congress/">https://www.therobotreport.com/effort-establish-national-commission-on-robotics-advances-congress/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Super Micro 计划 70 亿美元股权融资采购 AI 服务器组件</span>
+      <div class="why">上游 AI 算力/服务器供应链信号，影响 Isaac Sim / Cosmos 训练集群采购成本</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-09/super-micro-plans-to-raise-7-billion-in-equity-for-ai-equipment">https://www.bloomberg.com/news/articles/2026-06-09/super-micro-plans-to-raise-7-billion-in-equity-for-ai-equipment</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">IBM 宣布 100 亿美元量子计算投资，联邦拨款 10 亿美元在奥尔巴尼建芯片厂</span>
+      <div class="why">上游芯片/算力供应链政策信号</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-09/ibm-ceo-ai-won-t-necessarily-lead-to-smaller-headcount-video">https://www.bloomberg.com/news/videos/2026-06-09/ibm-ceo-ai-won-t-necessarily-lead-to-smaller-headcount-video</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+  <div class="nav">
+    <a href="./index.html">← 归档</a>
+  </div>
+  <div>Morning Cafe · 个人非商业晨报 · 2026-06-09T22:55:41.852256+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
