@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>晨报 · 2026-06-12 · Morning Cafe</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="晨报 · 2026-06-12｜LeapsCora 视角">
+<meta property="og:description" content="Top 5 首条：SpaceX IPO 定价日：超 700 亿美元零售订单涌入，1.75 万亿美元估值争议持续 ｜ LeapsCora 直接相关：XRZero-G0 开源：2000 小时数据集，真机训练数据需求降 20 倍">
+<meta property="og:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-12.png">
+<meta property="og:url" content="https://sstormw.github.io/Morning-Cafe/2026-06-12.html">
+<meta property="og:site_name" content="Morning Cafe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="晨报 · 2026-06-12｜LeapsCora 视角">
+<meta name="twitter:description" content="Top 5 首条：SpaceX IPO 定价日：超 700 亿美元零售订单涌入，1.75 万亿美元估值争议持续 ｜ LeapsCora 直接相关：XRZero-G0 开源：2000 小时数据集，真机训练数据需求降 20 倍">
+<meta name="twitter:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-12.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 14px; }
+
+.section { margin-top: 40px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+.top5 .source a:hover { text-decoration: underline; }
+
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title {
+  font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink);
+}
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .nav { margin-bottom: 8px; }
+.footer .nav a { margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 28px 18px 50px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">☕ Morning Cafe</div>
+  <h1>晨报 · 2026-06-12</h1>
+  <div class="meta">43 条来源 · 抓取窗口 24h · LeapsCora 视角</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">SpaceX IPO 定价日：超 700 亿美元零售订单涌入，1.75 万亿美元估值争议持续</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-11/bloomberg-tech-6-11-2026-video">https://www.bloomberg.com/news/videos/2026-06-11/bloomberg-tech-6-11-2026-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">贝佐斯 AI 初创公司 Prometheus 完成新一轮融资，估值 410 亿美元</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-11/jeff-bezos-ai-startup-valued-at-41-billion-in-funding-round">https://www.bloomberg.com/news/articles/2026-06-11/jeff-bezos-ai-startup-valued-at-41-billion-in-funding-round</a></span>
+    </li>
+    
+    <li>
+      <span class="title">OpenAI 考虑大幅降价，剑指 Anthropic 用户，IPO 前价格战一触即发</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-11/openai-weighs-major-price-cuts-to-win-anthropic-users-wsj-says">https://www.bloomberg.com/news/articles/2026-06-11/openai-weighs-major-price-cuts-to-win-anthropic-users-wsj-says</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Anthropic 撤回 Fable 5「暗中降智」政策，致歉 AI 研究社区</span>
+      <span class="source">Simon Willison · <a href="https://simonwillison.net/2026/Jun/11/anthropic-walks-back-policy/#atom-everything">https://simonwillison.net/2026/Jun/11/anthropic-walks-back-policy/#atom-everything</a></span>
+    </li>
+    
+    <li>
+      <span class="title">XRZero-G0：2000 小时开源机器人数据集，将真机训练数据需求压缩 20 倍</span>
+      <span class="source">The Robot Report · <a href="https://www.therobotreport.com/inside-xrzero-g0-a-new-2000-hour-open-dataset-for-robotics-research/">https://www.therobotreport.com/inside-xrzero-g0-a-new-2000-hour-open-dataset-for-robotics-research/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">XRZero-G0 开源：2000 小时数据集，真机训练数据需求降 20 倍</span>
+      <div class="why">具身智能训练数据 / sim-generated data / real2sim2real，直接切中 LeapsCora 仿真数据生成核心价值主张</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/inside-xrzero-g0-a-new-2000-hour-open-dataset-for-robotics-research/">https://www.therobotreport.com/inside-xrzero-g0-a-new-2000-hour-open-dataset-for-robotics-research/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">小鹏机器人量产倒计时 200 天，何小鹏亲自带队</span>
+      <div class="why">人形 / 商用机器人量产节奏信号，LeapsCora 目标客户群体产业进度</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3848000003953926?f=rss">https://36kr.com/p/3848000003953926?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Meshy 发布全球首个 3D AI Agent</span>
+      <div class="why">图/视频转 3D 生成能力 Agent 化，与 LeapsCora 城市场景 3D 数据生成赛道相邻</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/434317.html">https://www.qbitai.com/2026/06/434317.html</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">KKR + 英伟达 + 科威特主权基金成立赫利克斯，首期 100 亿美元承诺</span>
+      <div class="why">上游 GPU/算力供应链，英伟达 DSX AI 工厂基础设施信号</div>
+      <div class="source">36氪 · <a href="https://36kr.com/newsflashes/3848736954635268?f=rss">https://36kr.com/newsflashes/3848736954635268?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">台积电释放涨价信号，通胀推高芯片运营成本</span>
+      <div class="why">上游芯片成本波动，影响机器人硬件成本链</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3848000003953926?f=rss">https://36kr.com/p/3848000003953926?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">国内算力市场：百万 Token 降至几块钱，算力价格持续走低</span>
+      <div class="why">算力 Token 成本下降，对 LeapsCora 训练成本有利</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3848516305605892?f=rss">https://36kr.com/p/3848516305605892?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">IEEE Spectrum：老年护理机器人自主性分级框架（CRAS 六级）</span>
+      <div class="why">机器人自主性评估框架，参考价值</div>
+      <div class="source">IEEE Spectrum · <a href="https://content.knowledgehub.wiley.com/wellness-robots-and-the-path-to-full-autonomy-a-new-paradigm-in-ai-powered-senior-care/">https://content.knowledgehub.wiley.com/wellness-robots-and-the-path-to-full-autonomy-a-new-paradigm-in-ai-powered-senior-care/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+  <div class="nav">
+    <a href="./index.html">← 归档</a>
+  </div>
+  <div>Morning Cafe · 个人非商业晨报 · 2026-06-11T23:01:48.151386+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
