@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-13 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-13</h1>
+  <div class="meta">33 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">SpaceX 首日上市股价涨近 20%，募资 750 亿美元刷新史上最大 IPO 纪录，马斯克身家跃升全球首位万亿富翁</span>
+      <span class="source">SpaceNews · <a href="https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/">https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SpaceX 因内部 AI 团队难以使用 Colossus 1 数据中心运行 Grok，已将整座设施租给 Anthropic</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-12/spacex-rented-out-computing-after-own-teams-had-trouble-using-it">https://www.bloomberg.com/news/articles/2026-06-12/spacex-rented-out-computing-after-own-teams-had-trouble-using-it</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Fable 5 在「智能体最后的考试」最难档全部得零，GPT 5.5 胜出</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/06/434774.html">https://www.qbitai.com/2026/06/434774.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Mistral 传将以 200 亿欧元估值融资 30 亿欧元，较 Series C 估值近乎翻倍</span>
+      <span class="source">TechCrunch · <a href="https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/">https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Bezos 新 AI 创业公司 Prometheus 目标打造「人工通用工程师」，聚焦 AI 辅助实体产品设计，是目前融资最充裕的 physical AI 创业公司之一</span>
+      <span class="source">The Verge · <a href="https://www.theverge.com/ai-artificial-intelligence/949005/jeff-bezos-prometheus-artificial-general-engineer">https://www.theverge.com/ai-artificial-intelligence/949005/jeff-bezos-prometheus-artificial-general-engineer</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">MotionDisco：从零发现 humanoid 接触丰富的长时域 loco-manipulation 运动，无需 teleop 数据</span>
+      <div class="why">具身智能训练数据方向——无 teleop 数据从头发现运动，对「从仿真数据训练四足/人形」直接相关</div>
+      <div class="source">IEEE Spectrum Robotics · <a href="https://spectrum.ieee.org/video-friday-humanoid-loco-manipulation">https://spectrum.ieee.org/video-friday-humanoid-loco-manipulation</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Robotics Summit 专家面板：2026 年人形机器人向 2 万美元价格点迈进</span>
+      <div class="why">人形机器人产业动态与成本曲线，直接影响 LeapsCora 目标机器人硬件市场节奏</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/robotics-summit-panel-explores-state-humanoid-robot-design/">https://www.therobotreport.com/robotics-summit-panel-explores-state-humanoid-robot-design/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">SpaceX 将 Colossus 1 数据中心（孟菲斯）全量租给 Anthropic，自身 AI 算力受阻</span>
+      <div class="why">上游 GPU / 算力供应链变动，大型算力资源向 AI 训练公司集中</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-12/spacex-rented-out-computing-after-own-teams-had-trouble-using-it">https://www.bloomberg.com/news/articles/2026-06-12/spacex-rented-out-computing-after-own-teams-had-trouble-using-it</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Sharon AI × 英伟达六年合作：澳大利亚新增 72MW、最多 4 万块 GB300 GPU</span>
+      <div class="why">英伟达 GB300 GPU 供应链扩张信号，上游算力生态动态</div>
+      <div class="source">36氪 · <a href="https://36kr.com/newsflashes/3850102005028103?f=rss">https://36kr.com/newsflashes/3850102005028103?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">全美 1300 亿美元数据中心项目今年已被抗议阻断</span>
+      <div class="why">AI 算力基础设施建设的政策和社区阻力信号，影响上游算力可及性</div>
+      <div class="source">Ars Technica · <a href="https://arstechnica.com/tech-policy/2026/06/130-billion-in-data-center-projects-blocked-by-protests-so-far-this-year/">https://arstechnica.com/tech-policy/2026/06/130-billion-in-data-center-projects-blocked-by-protests-so-far-this-year/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">2026.24: Hey Siri, Tell Me a Fable</div>
+    
+    <ul class="article-points">
+      
+      <li>Stratechery 本周精选聚焦三大主题：Apple Intelligence 正式落地、Anthropic Fable 模型发布，以及欧洲产业的未来走向。</li>
+      
+      <li>本文为付费墙内容，详细分析不可见；标题已点出 Fable 5 发布是本周最受关注的 AI 事件之一。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Stratechery</span>
+      <span class="sep">·</span>
+      <a href="https://stratechery.com/2026/hey-siri-tell-me-a-fable/">https://stratechery.com/2026/hey-siri-tell-me-a-fable/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 17:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">神了，世界杯第一天真按千问剧本踢了</div>
+    
+    <ul class="article-points">
+      
+      <li>千问 AI 对世界杯首日赛事的预测全面命中：比分、红牌和绝杀均押中。</li>
+      
+      <li>这是一次典型的模型预测能力宣传事件，呈现千问在体育赛事场景的应用效果。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/435321.html">https://www.qbitai.com/2026/06/435321.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 16:45 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">「智能体最后的考试」，Fable 5竟然不敌GPT 5.5</div>
+    
+    <ul class="article-points">
+      
+      <li>在最高难度智能体基准测试「最后的考试」中，Fable 5 最难档全部得零，GPT 5.5 胜出。</li>
+      
+      <li>这一公开测试结果是对 Fable 5「顶尖 agent 能力」定位的一次直接检验，引发大量讨论。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/434774.html">https://www.qbitai.com/2026/06/434774.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 04:13 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Claude Fable is relentlessly proactive</div>
+    
+    <ul class="article-points">
+      
+      <li>After two days with Claude Fable 5, Simon Willison describes it as relentlessly proactive — it deploys a wide range of tactics autonomously to reach its goal.</li>
+      
+      <li>In one example, Fable 5 was given only a screenshot of a UI scrollbar glitch in Datasette Agent and independently traced the dependency chain to diagnose the root cause without being prompted.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/11/fable-is-relentlessly-proactive/#atom-everything">https://simonwillison.net/2026/Jun/11/fable-is-relentlessly-proactive/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-11 23:35 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Ukraine&#39;s one-time test used fully autonomous drones to kill Russian soldiers</div>
+    
+    <ul class="article-points">
+      
+      <li>Ukraine conducted a live test of fully autonomous drones capable of targeting enemy soldiers without human input — full autonomy in lethal systems remains rare but is advancing.</li>
+      
+      <li>Ukraine is actively installing AI modules on drones and robots, marking a significant step toward deploying autonomous lethal systems in active conflict.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/ukraines-one-time-test-used-fully-autonomous-drones-to-kill-russian-soldiers/">https://arstechnica.com/ai/2026/06/ukraines-one-time-test-used-fully-autonomous-drones-to-kill-russian-soldiers/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 18:03 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Video Friday: Robotic Motion Discovery Reveals Unusual Behaviors</div>
+    
+    <ul class="article-points">
+      
+      <li>IEEE Spectrum highlights MotionDisco, a framework that discovers contact-rich, long-horizon humanoid loco-manipulation motions from scratch — no teleoperation data or motion retargeting required.</li>
+      
+      <li>Upcoming robotics events: RSS 2026 (Sydney, July 13–17), Summer School on Multi-Robot Systems (Prague, July 29–Aug 4), Actuate 2026 (San Francisco, Aug 18–19).</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">IEEE Spectrum Robotics</span>
+      <span class="sep">·</span>
+      <a href="https://spectrum.ieee.org/video-friday-humanoid-loco-manipulation">https://spectrum.ieee.org/video-friday-humanoid-loco-manipulation</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 17:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Robotics Summit panel explores the state of humanoid robot design</div>
+    
+    <ul class="article-points">
+      
+      <li>At the Robotics Summit &amp; Expo, industry experts reviewed the current state of humanoid robotics and the path to achieving a $20,000 price point.</li>
+      
+      <li>Consensus on the panel: cost reduction to the $20K level is the critical next milestone for humanoid robots to achieve commercial scale.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/robotics-summit-panel-explores-state-humanoid-robot-design/">https://www.therobotreport.com/robotics-summit-panel-explores-state-humanoid-robot-design/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 20:40 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">MassRobotics announces the winners of 2026 Robotics Medal and Rising Star awards</div>
+    
+    <ul class="article-points">
+      
+      <li>Allison Okamura and Ayoung Kim won MassRobotics&#39; 2026 Robotics Medal and Rising Star Medal respectively, both honors recognizing women in robotics.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/massrobotics-announces-winners-2026-robotics-medal-rising-star-awards/">https://www.therobotreport.com/massrobotics-announces-winners-2026-robotics-medal-rising-star-awards/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 21:46 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Gatik to bring autonomous freight to PepsiCo&#39;s North American supply chain</div>
+    
+    <ul class="article-points">
+      
+      <li>Gatik has partnered with PepsiCo to deploy autonomous freight vehicles across PepsiCo&#39;s North American regional supply chain, covering fixed-route middle-mile movements between sites.</li>
+      
+      <li>The partnership targets daily product transfers within PepsiCo&#39;s regional networks — Gatik&#39;s core operational segment.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/gatik-brings-autonomous-freight-pepsico-north-american-supply-chain/">https://www.therobotreport.com/gatik-brings-autonomous-freight-pepsico-north-american-supply-chain/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 17:47 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">9 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX is now a public company valued for its AI potential, so what comes next?</div>
+    
+    <ul class="article-points">
+      
+      <li>As of June 12, SpaceX began trading as a public company; investors who bought in will expect returns, reorienting the company toward public-market accountability.</li>
+      
+      <li>The framing of SpaceX&#39;s valuation around its AI potential signals that the Colossus data center infrastructure and Grok AI platform are seen as core growth levers by public market investors.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica Space</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/space/2026/06/spacex-is-now-a-public-company-valued-for-its-ai-potential-so-what-comes-next/">https://arstechnica.com/space/2026/06/spacex-is-now-a-public-company-valued-for-its-ai-potential-so-what-comes-next/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 22:20 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX shares rise nearly 20% in historic IPO</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX shares rose nearly 20% on their first day of trading on the Nasdaq, marking a historic milestone for the company and the broader commercial space industry.</li>
+      
+      <li>The IPO is the largest in history by proceeds raised.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/">https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 21:06 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Astronomers fear orbital data centers will interfere with observations</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX plans to begin launching orbital data center spacecraft as soon as next year, extending its Colossus computing infrastructure beyond Earth.</li>
+      
+      <li>Astronomers warn these satellites could cause serious interference with ground-based telescopic observations, compounding existing concerns about Starlink constellation brightness.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/">https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 19:49 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX Makes History With Biggest-Ever IPO | Bloomberg Tech 6/12/2026</div>
+    
+    <ul class="article-points">
+      
+      <li>Bloomberg&#39;s Caroline Hyde and Ed Ludlow covered SpaceX&#39;s Nasdaq debut live, joined by 137 Ventures&#39; Christian Garrett, Pegasus Tech Ventures&#39; Anis Uzzaman, and Laffer Tengler CEO Nancy Tengler.</li>
+      
+      <li>Panel discussion covered investor implications, the space economy, and the impact on the broader AI IPO pipeline.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-12/bloomberg-tech-6-12-2026-video">https://www.bloomberg.com/news/videos/2026-06-12/bloomberg-tech-6-12-2026-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 17:50 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Rocket Report: Nova moving through test campaign; SpaceX IPO launches Friday</div>
+    
+    <ul class="article-points">
+      
+      <li>The weekly Rocket Report covers Nova&#39;s progression through its test campaign alongside SpaceX&#39;s IPO, raising the question of what launch alternatives exist for customers who need options beyond SpaceX.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/space/2026/06/rocket-report-nova-moving-through-test-campaign-spacex-ipo-launches-friday/">https://arstechnica.com/space/2026/06/rocket-report-nova-moving-through-test-campaign-spacex-ipo-launches-friday/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 11:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX&#39;s massive IPO: all the latest news</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX&#39;s IPO raised enough to make Elon Musk the world&#39;s first trillionaire, with paper wealth exceeding the GDPs of Ireland, Sweden, or South Africa.</li>
+      
+      <li>The public offering covers SpaceX as a combined rocket, AI, and social media company — first time public investors can hold shares directly.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/business/948996/spacex-ipo-elon-musk">https://www.theverge.com/business/948996/spacex-ipo-elon-musk</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 14:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">氪星晚报｜SpaceX确定发行价，募资750亿美元创史上最大IPO；OpenAI CEO奥特曼推迟访韩计划；中央网信办举报中心开设「涉AI应用乱象举报专区」</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX 确定发行价，募资 750 亿美元创史上最大 IPO；OpenAI CEO 奥特曼因个人原因推迟原定 6 月 14-15 日访韩行程（原计划会见三星、Kakao、NAVER 等企业负责人）。</li>
+      
+      <li>Waymo 宣布推出 30 美元/月会员计划（仅限受邀用户，覆盖旧金山、洛杉矶、凤凰城），会员享优先接送、每次行程 10% 乘车返现及每月最多 5 次免费取消。</li>
+      
+      <li>SK 海力士 CEO 郭鲁正表示，正评估在安全前提下引入微软 Copilot 及 ChatGPT 等外部 AI 服务，跟进三星电子此前的 AI 工具试点方向。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3849942472512769?f=rss">https://36kr.com/p/3849942472512769?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 13:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">VCs Predict the SpaceX IPO Will Lift the Entire Industry</div>
+    
+    <ul class="article-points">
+      
+      <li>VCs predict SpaceX&#39;s public market debut will benefit the broader commercial space sector, which still relies heavily on private capital for most players.</li>
+      
+      <li>Key question: how the IPO&#39;s signal effect translates into valuation tailwinds for smaller private space companies.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Payload Space</span>
+      <span class="sep">·</span>
+      <a href="https://payloadspace.com/vcs-predict-the-spacex-ipo-will-lift-the-entire-industry/">https://payloadspace.com/vcs-predict-the-spacex-ipo-will-lift-the-entire-industry/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 12:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">What the SpaceX IPO Means for Europe&#39;s Space Industry</div>
+    
+    <ul class="article-points">
+      
+      <li>The SpaceX IPO represents more than a record-breaking US exit; it sets benchmarks and investor expectations against which European space companies will now be measured.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Payload Space</span>
+      <span class="sep">·</span>
+      <a href="https://payloadspace.com/what-the-spacex-ipo-means-for-europes-space-industry/">https://payloadspace.com/what-the-spacex-ipo-means-for-europes-space-industry/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 06:03 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">14 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Here&#39;s what Jeff Bezos&#39; new startup Prometheus will do</div>
+    
+    <ul class="article-points">
+      
+      <li>Jeff Bezos&#39; startup Prometheus is tackling physical AI and is described as one of the best-funded startups in the space.</li>
+      
+      <li>Prometheus aims to develop AI-powered engineering tools to assist in the design of physical products, with the stated goal of building an artificial general engineer.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/heres-what-jeff-bezos-new-startup-prometheus-will-do/">https://arstechnica.com/ai/2026/06/heres-what-jeff-bezos-new-startup-prometheus-will-do/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 18:45 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX Rented Out Computing After Own Teams Had Trouble Using It</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX rented out the full capacity of its Colossus 1 data center in Memphis to Anthropic after its internal teams encountered technical challenges using the facility to develop and run Grok AI models.</li>
+      
+      <li>This reveals a significant gap between SpaceX&#39;s hardware ambitions and its AI execution capability, while substantially boosting Anthropic&#39;s available compute.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-12/spacex-rented-out-computing-after-own-teams-had-trouble-using-it">https://www.bloomberg.com/news/articles/2026-06-12/spacex-rented-out-computing-after-own-teams-had-trouble-using-it</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 18:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Quoting Andrew Singleton</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison quotes a satirical allegory about circular AI investment accounting: a crematorium owner receives a $20B investment, burns half and returns the rest as propane revenue — generating misleading AI revenue metrics for the investor.</li>
+      
+      <li>The anecdote ends with a Forbes reporter becoming entangled in a darkly comic love triangle — a sharp commentary on AI hype journalism.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/12/andrew-singleton/#atom-everything">https://simonwillison.net/2026/Jun/12/andrew-singleton/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 18:09 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">$130 billion in data center projects blocked by protests so far this year</div>
+    
+    <ul class="article-points">
+      
+      <li>Community protests have blocked $130 billion worth of AI data center projects in the US so far in 2026.</li>
+      
+      <li>Successful opposition campaigns are giving local communities a taste of political power, with implications for AI infrastructure buildout timelines.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/tech-policy/2026/06/130-billion-in-data-center-projects-blocked-by-protests-so-far-this-year/">https://arstechnica.com/tech-policy/2026/06/130-billion-in-data-center-projects-blocked-by-protests-so-far-this-year/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 17:18 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">When it comes to total water use, AI data centers are a drop in the bucket</div>
+    
+    <ul class="article-points">
+      
+      <li>AI data centers account for a small fraction of total national water consumption, but even moderately sized facilities can have an outsized local impact on regional water supplies.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/when-it-comes-to-total-water-use-ai-data-centers-are-a-drop-in-the-bucket/">https://arstechnica.com/ai/2026/06/when-it-comes-to-total-water-use-ai-data-centers-are-a-drop-in-the-bucket/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 16:51 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Google sues Chinese cybercrime network that used Gemini to automate scams</div>
+    
+    <ul class="article-points">
+      
+      <li>Google sued a Chinese cybercrime group called Outsider Enterprise that used Gemini to build scam websites, targeting hundreds of thousands of victims.</li>
+      
+      <li>The group sent 2.5 million fraudulent text messages over two weeks; the lawsuit sets a precedent for holding AI-powered cybercrime networks legally accountable.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/google/2026/06/google-sues-chinese-cybercrime-network-that-used-gemini-to-automate-scams/">https://arstechnica.com/google/2026/06/google-sues-chinese-cybercrime-network-that-used-gemini-to-automate-scams/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 16:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Four Biggest Issues Facing the Music Industry Right Now</div>
+    
+    <ul class="article-points">
+      
+      <li>The music industry&#39;s four biggest concerns in 2026 span AI-generated content, streaming fraud, and AI-powered fraud, reflecting a sector under compound technological pressure.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/newsletters/2026-06-12/the-four-biggest-issues-facing-the-music-industry-in-2026">https://www.bloomberg.com/news/newsletters/2026-06-12/the-four-biggest-issues-facing-the-music-industry-in-2026</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 16:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Pokémon Go players unwittingly contributed to tech with military drone uses</div>
+    
+    <ul class="article-points">
+      
+      <li>Pokémon Go location and map data has reportedly been repurposed for AI training for military drone applications, drawing renewed public and regulatory scrutiny.</li>
+      
+      <li>The incident illustrates how consumer game data collected years ago can end up in ethically fraught downstream applications without user awareness.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/pokemon-go-players-unwittingly-contributed-to-tech-with-military-drone-uses/">https://arstechnica.com/ai/2026/06/pokemon-go-players-unwittingly-contributed-to-tech-with-military-drone-uses/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 11:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">&#39;Tell Him He&#39;s a Piece of Shit&#39;: Meta&#39;s New AI Unit Is a Total Mess</div>
+    
+    <ul class="article-points">
+      
+      <li>Both executives and employees are struggling with Meta&#39;s chaotic AI strategy, per sources and internal discussions reviewed by WIRED.</li>
+      
+      <li>The article&#39;s title references a quote from an internal employee meeting, signaling significant leadership friction and morale problems within Meta&#39;s AI division.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Wired</span>
+      <span class="sep">·</span>
+      <a href="https://www.wired.com/story/mark-zuckerberg-meta-employee-meeting-interrupt-ai/">https://www.wired.com/story/mark-zuckerberg-meta-employee-meeting-interrupt-ai/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 21:16 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Chinese cybercrime operation that used AI to scam &#39;hundreds of thousands of victims&#39; sued by Google</div>
+    
+    <ul class="article-points">
+      
+      <li>Google sued Outsider Enterprise for using AI to scam hundreds of thousands of victims via 2.5 million fraudulent text messages sent over a two-week span.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thousands-of-victims-sued-by-google/">https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thousands-of-victims-sued-by-google/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 20:38 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Mistral is rumored to be raising €3B at €20B valuation</div>
+    
+    <ul class="article-points">
+      
+      <li>Mistral is rumored to be closing a funding round valuing the company at €20 billion (~$23.15 billion), nearly double its Series C valuation of €11.7 billion.</li>
+      
+      <li>The round would total €3 billion, making it one of the largest European AI fundraises to date.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/">https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 17:38 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Jeff Bezos&#39; AI startup aims to build an &#39;artificial general engineer&#39;</div>
+    
+    <ul class="article-points">
+      
+      <li>Amazon founder Jeff Bezos&#39; new AI startup Prometheus will work toward developing an artificial general engineer, building AI tools to assist in the design of physical products.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/949005/jeff-bezos-prometheus-artificial-general-engineer">https://www.theverge.com/ai-artificial-intelligence/949005/jeff-bezos-prometheus-artificial-general-engineer</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 14:03 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">澳大利亚AI云服务商Sharon AI与英伟达达成六年合作</div>
+    
+    <ul class="article-points">
+      
+      <li>澳大利亚 AI 云服务商 Sharon AI 与英伟达签署六年合作协议，在澳大利亚新增 72MW 数据中心，部署英伟达 DSX AI Factory 架构。</li>
+      
+      <li>设施未来可扩展至 4 万块 Grace Blackwell GB300 GPU，服务 AI 初创企业、商业客户及高校研究机构。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3850102005028103?f=rss">https://36kr.com/newsflashes/3850102005028103?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 11:26 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">2026奇点智能产品大会首批嘉宾官宣：在 AI 的「可交付的时代」，看一线专家如何拆解真实落地闭环！</div>
+    
+    <ul class="article-points">
+      
+      <li>2026 奇点智能产品大会定于 7 月 17-18 日举行，首批嘉宾已公布，主题聚焦 AI 可交付落地时代的一线闭环实践。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/435105.html">https://www.qbitai.com/2026/06/435105.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 07:27 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX Isn&#39;t in the S&amp;P 500. That&#39;s Good.</div>
+    
+    <ul class="article-points">
+      
+      <li>Bloomberg Opinion columnist Nir Kaissar argues the S&amp;P 500 should not make exceptions to its inclusion criteria for large tech companies like SpaceX, Anthropic, or OpenAI.</li>
+      
+      <li>Maintaining the integrity of the index&#39;s admission standards is more valuable than chasing marquee names.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-12/opinion-spacex-isn-t-in-the-s-p-500-that-s-good-video">https://www.bloomberg.com/news/videos/2026-06-12/opinion-spacex-isn-t-in-the-s-p-500-that-s-good-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-12 16:08 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-13.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-12T22:53:08.655480+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
