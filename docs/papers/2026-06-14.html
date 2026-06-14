@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-14</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-14</h1>
+  <div class="meta">60 篇候选 · 精读 0 · 速览 8 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    
+    <div class="group-label">📚 值得扫一眼 (5 篇)</div>
+    <ul>
+      
+      <li><strong>World Tracing: Generative Pixel-Aligned Geometry Beyond the Visible</strong> — 为每个像素预测可见面+被遮挡面的多层 3D 点，对 video→3D scene 重建线可借鉴 — <a href="http://arxiv.org/abs/2606.13652">arXiv</a></li>
+      
+      <li><strong>WEAVER, Better, Faster, Longer: An Effective World Model for Robotic Manipulation</strong> — 同时兼顾保真/一致/效率的机器人操作世界模型，真实硬件上做策略评估与提升 — <a href="http://arxiv.org/abs/2606.13672">arXiv</a></li>
+      
+      <li><strong>Redesigning Regularization for Effective Policy Smoothing</strong> — 四足 sim-to-real 上展示对突变速度指令的鲁棒平滑运动 — <a href="http://arxiv.org/abs/2606.13169">arXiv</a></li>
+      
+      <li><strong>Diffusion Transformer World-Action Model for AV Scene Prediction</strong> — nuScenes 上动作可控的潜空间世界模型，揭示感知-失真前沿 — <a href="http://arxiv.org/abs/2606.12987">arXiv</a></li>
+      
+      <li><strong>MoVerse: Real-Time Video World Modeling with Panoramic Gaussian Scaffold</strong> — 单图→360° 全景→持久 3D 高斯 scaffold，可交互场景漫游 — <a href="http://arxiv.org/abs/2606.13376">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (8 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.13652">World Tracing: Generative Pixel-Aligned Geometry Beyond the Visible</a></div>
+    <div class="meta">arXiv cs.CV · Hao Zhang et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">提出生成式「像素对齐几何」表示，为每个像素预测有序多层 3D 点（首层可见面、后续层前后遮挡面），用 WT-DiT 扩散 transformer 在物体/场景/动态基准上同时超越深度预测器和 image-to-3D，并保留 2D-3D 对应以支持文本驱动 3D 场景编辑与新视角视频合成。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.13672">WEAVER, Better, Faster, Longer: An Effective World Model for Robotic Manipulation</a></div>
+    <div class="meta">arXiv cs.RO · Arnav Kumar Jain et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">多视角机器人操作世界模型，同时满足保真度/长程一致性/效率，真实硬件上实现策略评估（ρ=0.870）、策略提升（叠加 π0.5 后 +38%）和测试时规划（+14%、5–10× 加速）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.13169">Redesigning Regularization for Effective Policy Smoothing</a></div>
+    <div class="meta">arXiv cs.RO · Taisuke Kobayashi et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">重新设计 RL 正则化以平滑策略函数，修复原 Lipschitz 实现的三处缺陷，并在四足 sim-to-real 上展示对突变速度指令的鲁棒平滑运动。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.13049">Y-BotFrame: An Extensible Embodied Agent Framework for Quadruped Robot Assistants</a></div>
+    <div class="meta">arXiv cs.RO · Luyao Zhang et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">可扩展的四足具身智能体框架，集成语音/视觉/LiDAR 多模态感知、以 LLM 为认知核心把自然语言指令映射为可执行任务单元，主打真实地面机器人即插即用部署。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.12987">Diffusion Transformer World-Action Model for AV Scene Prediction</a></div>
+    <div class="meta">arXiv cs.RO · Ruslan Sharifullin et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">紧凑潜空间世界模型，给定前视图潜变量与自车动作预测未来场景（nuScenes，8s/256²），用 latent DiT 揭示扭曲度指标会奖励模糊均值（KID 比回归基线好 4.8×），动作可控性强（ρ=0.81）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.13673">SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning</a></div>
+    <div class="meta">arXiv cs.CV · Seokju Cho et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">训练-free 空间推理框架，用「代码即动作接口」让 VLM agent 维护预载感知与几何原语的有状态 Python kernel，在 20 个 3D/4D 空间推理基准上平均 59.9%（+11.2 点）。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.13376">MoVerse: Real-Time Video World Modeling with Panoramic Gaussian Scaffold</a></div>
+    <div class="meta">arXiv cs.CV · Yang Zhou et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">实时视频世界模型，把单张窄视场图补成 360° 全景、提升为持久 3D 高斯 scaffold 作空间记忆，再由 Gaussian-conditioned 渲染器沿相机轨迹生成逼真视频，RTX 4090 上 8 FPS 可交互漫游。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70255?af=R">DynaSki: A Robust Locomotion Framework for Dynamic Skiing Robot on Challenging Terrains</a></div>
+    <div class="meta">Journal of Field Robotics · Tenghui Wang et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">面向动态滑雪机器人的鲁棒运动框架，处理挑战性户外地形下的腿式运动控制（期刊早期视图，摘要待补）。</div></div>
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📖</span>
+    <h2>期刊新刊</h2>
+  </div>
+  
+  <div class="journal-group">
+    <h3>ACM Transactions on Graphics</h3>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://doi.org/10.1145/3820375">Articulate That Object Part (ATOP): 3D Part Articulation from Text and via Motion Personalization</a></div>
+      <div class="meta">Aditya Vora et al. <span class="score">4</span></div>
+      <div class="field"><div class="field-body">基于运动个性化的 few-shot 方法：用文本提示借助扩散模型为指定部件生成运动样本，再用输入 3D 物体做图像提示个性化，经可微渲染迁移回 3D 优化铰接参数，PartNet-Mobility/ACD 上优于先前 few-shot 方法。</div></div>
+    </div>
+    
+  </div>
+  
+  <div class="journal-group">
+    <h3>Journal of Field Robotics</h3>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70255?af=R">DynaSki: A Robust Locomotion Framework for Dynamic Skiing Robot on Challenging Terrains</a></div>
+      <div class="meta">Tenghui Wang et al. <span class="score">3</span></div>
+      <div class="field"><div class="field-body">动态滑雪机器人的鲁棒运动框架，挑战性地形下的腿式运动控制（早期视图）。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70251?af=R">LIO‐RRTNav for Cattle Yard Inspection Robots: Prior Map Aided Relocalization and Goal‐Oriented, Smooth RRT Path Planning</a></div>
+      <div class="meta">Shuo Yang et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">牛场巡检机器人：先验地图辅助重定位 + 目标导向的平滑 RRT 路径规划（早期视图）。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70252?af=R">Cross‐Modal Synergistic Optimization Multi‐Task Segmentation Network for Autonomous Ground Intelligent Agents in Field Environments</a></div>
+      <div class="meta">Yifang Huang et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">面向野外环境自主地面智能体的跨模态协同优化多任务分割网络（早期视图）。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70261?af=R">Two Fossa Flat Minima Optimization Algorithm‐Based Enhancement of Ecological Balance Using Carbon‐Neutral Eco‐Robots With Situational Intelligence for Air Quality Monitoring</a></div>
+      <div class="meta">Kavitha Devi K et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">碳中和生态机器人空气质量监测的优化算法（早期视图，跟研究线无关）。</div></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-14T04:49:47.171523+00:00
+</footer>
+
+</div>
+</body>
+</html>
