@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Weekly · 2026-W24</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #7c2d12;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink); line-height: 1.65; font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 800px; margin: 0 auto; padding: 36px 28px 60px;
+  background: #fff; min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 3px double var(--ink); padding-bottom: 20px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px; font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e; letter-spacing: 0.5px;
+}
+
+.overview {
+  background: #f5f3ff; border-left: 4px solid #6d28d9;
+  padding: 18px 22px; border-radius: 0 6px 6px 0; margin-bottom: 28px;
+}
+.overview .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 12px; font-size: 14px; }
+.overview .stat { font-family: "JetBrains Mono", monospace; }
+.overview .stat strong { font-size: 20px; color: #6d28d9; }
+.overview .themes, .overview .dynamics {
+  margin: 8px 0; font-size: 14px; line-height: 1.6;
+}
+.overview .label {
+  font-weight: 700; color: var(--accent); font-size: 12px;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-right: 8px;
+}
+
+.bucket { margin-top: 32px; }
+.bucket-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 14px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--ink);
+}
+.bucket-head .icon { font-size: 22px; }
+.bucket-head h2 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+.bucket-head .count { margin-left: auto; font-size: 12px; color: var(--ink-light); }
+
+.paper {
+  margin-bottom: 18px; padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+
+.coverage {
+  margin-top: 36px; padding: 14px 16px;
+  background: #f9fafb; border-radius: 4px; font-size: 13px;
+}
+.coverage h3 { margin: 0 0 8px; font-size: 13px; color: var(--ink-light); text-transform: uppercase; letter-spacing: 1px; }
+.coverage .dates { display: flex; flex-wrap: wrap; gap: 8px; }
+.coverage .date {
+  padding: 2px 10px; background: #fff; border: 1px solid var(--line);
+  border-radius: 3px; font-family: "JetBrains Mono", monospace; font-size: 12px;
+}
+.coverage .date.missing { background: #fef2f2; border-color: #fecaca; color: #991b1b; text-decoration: line-through; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 28px; }
+  .bucket-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief · Weekly</div>
+  <h1>论文周报 · 2026-W24</h1>
+  <div class="meta">2026-06-08 → 2026-06-14 · 池子 68 篇 · 精挑 13 篇</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+<div class="overview">
+  <div class="stat-row">
+    <span class="stat"><strong>68</strong> 候选</span>
+    <span class="stat"><strong>13</strong> 精挑</span>
+    <span class="stat"><strong>5</strong> 主题</span>
+  </div>
+  
+  <div class="themes"><span class="label">本周主题</span>城市级 3DGS 生成与街景重建集中放出（卫星→城市 3DGS、十亿级多 GPU GS、NeRF→3DGS 街景），并行一波月/火行星地表机器人与重建。</div>
+  
+  
+  <div class="dynamics"><span class="label">团队动态</span>NVIDIA（Sanja Fidler 组）放出十亿级多 GPU 高斯泼溅，把城市级 3DGS 规模推到 SOTA 的 25×；行星机器人方向本周连发 3 篇（含玉兔二号真车验证 + 月面 regolith 软接触运动）；世界模型 / 4D 场景生成（CP4D、Mirage、Prisma-World）密集出现。</div>
+  
+</div>
+
+
+<section class="bucket">
+  <div class="bucket-head">
+    <span class="icon">🏙️</span>
+    <h2>城市生成 / 数字孪生</h2>
+    <span class="count">1 篇</span>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.09967">ABot-Earth 0.5: Generative 3D Earth Model</a></div>
+    <div class="meta">
+      arXiv cs.CV · Ming Qian et al. · 首见 2026-06-11
+      <span class="score">16</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">提出 ABot-Earth 0.5，一个直接以 3D Gaussian Splatting 为表示的生成式框架，从地理配准的卫星影像合成大范围、无缝的 3D 环境。模型在真实城市重建语料上训练，学到真实的几何与纹理。推理时仅以卫星影像为条件，以低于 10 分钟/平方公里的速率合成新场景，并集成分层 LOD 结构支持网页地图引擎上的实时交互可视化。作者强调该仿真沙盒能缓解 sim-to-real 域差，支撑闭环无人机导航等下游具身 AI 应用。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;卫星/航拍影像→城市级 3D scene 生成 + sim-to-real 闭环 UAV 导航&#34;这一研究点有直接推进价值；其内置的 hierarchical LOD 结构对&#34;LOD × 训练消融&#34;这一研究点也有参考价值。可对标 MetaUrban / UrbanWorld 的城市级环境构建路线。</div></div>
+    
+  </div>
+  
+</section>
+
+<section class="bucket">
+  <div class="bucket-head">
+    <span class="icon">🤖</span>
+    <h2>户外具身 / 训练环境</h2>
+    <span class="count">3 篇</span>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07118">QuadVerse: An Integrated Framework Aligning Visual-Physical Reality for Quadruped Simulation</a></div>
+    <div class="meta">
+      arXiv cs.RO · Yuxiang Chen et al. · 首见 2026-06-08
+      <span class="score">9</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">QuadVerse 用重建场景作为&#34;标定基底&#34;，同时对齐视觉感知、物理交互与执行器动力学，解决四足 sim-to-real 中视觉与动力学 gap 累积、沿状态演化传播的问题。从 RGB 视频重建几何约束的 3DGS 场景，支持批量逼真 ego-view 渲染和可碰撞语义网格提取；网格用于接触标定——初始化空间变化的摩擦先验、再经轨迹后验搜索精修；最后训练残差动力学补偿器消除执行器误差。实验显示重建质量与运动跟踪均优于基线，并实现无需任务特定真实回放的零样本视觉导航策略部署。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;场景级四足导航的 sim-to-real（real-to-sim + 域标定）&#34;这一研究点有直接推进价值；其用 3DGS 重建场景作 sim 标定基底 + 残差动力学补偿的设计可借鉴。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.11909">Embodied-BenchClaw: An Autonomous Multi-Agent System for Embodied Spatial Intelligence Benchmark Construction</a></div>
+    <div class="meta">
+      arXiv cs.AI · Baoyang Jiang et al. · 首见 2026-06-11
+      <span class="score">9</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">给定评测意图即自动产出可持续更新的具身空间智能 benchmark（五阶段 + 三 agent），实例化覆盖室外空间推理、四足导航、无人机/航拍视角等。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;户外具身空间智能 benchmark 构建&#34;这一研究点有参考价值；其自动化、可持续更新的 benchmark 生成范式可对标 LeapsCora-PZ 类基准的构建路线（含室外导航 / 四足 / 无人机视角）。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.10927">AllDayNav: Lifelong Navigation via Real-World Reinforcement Learning</a></div>
+    <div class="meta">
+      arXiv cs.RO · Hang Yin et al. · 首见 2026-06-11
+      <span class="score">8</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">不依赖显式地图/场景图，用真实世界 RL 把场景动态隐式编码进十亿参数大模型 + 自演化多模态记忆，合成与真实环境成功率接近 100%。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;户外机器人终身导航 + 真实世界 RL（sim-to-real）&#34;这一研究点有价值；不依赖显式地图、把场景动态隐式编码进大模型 + 自演化记忆的设计可借鉴到城市级导航训练环境。</div></div>
+    
+  </div>
+  
+</section>
+
+<section class="bucket">
+  <div class="bucket-head">
+    <span class="icon">🎥</span>
+    <h2>视频/重建 → 3D</h2>
+    <span class="count">3 篇</span>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.07366">Dash2Sim: Closed-Loop Driving Simulation from in-the-wild Dashcam Videos</a></div>
+    <div class="meta">
+      arXiv cs.RO · Anurag Ghosh et al. · 首见 2026-06-08
+      <span class="score">9</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">把野外单目行车记录仪视频转成度量化、地理配准的 4D 驾驶日志，兼容现有仿真器，并用独立维护的地图无标注逐场景验证。基于此构建 ROADWork4D 基准——4,244 个场景、270 万个 3D 物体、覆盖 17 座城市，重点关注施工区这类长尾场景。在验证子集 ROADWork4D-CL（2,201 场景）上研究特权闭环规划器，发现施工区很难：规则类与混合类规划器泛化优于学习类，但都做不出临时施工通道要求的变道。Dash2Sim 恢复的稠密深度还把新视角合成的感知指标最多提升 19%。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;视频→3D scene 重建 + 城市级闭环仿真&#34;这一研究点有直接填充价值；其无标注地图验证机制与长尾施工区场景设计可对标 Vid2Sim 类 driving 仿真路线。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.11390">A Scalable PyTorch Abstraction for Multi-GPU Gaussian Splatting</a></div>
+    <div class="meta">
+      arXiv cs.CV · Matthew Cong et al. · 首见 2026-06-11
+      <span class="score">9</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">提出一种多 GPU 的高斯泼溅方法，把重建扩展到更高分辨率和更大场景，同时屏蔽分布式带来的代码复杂度。核心是一个 PyTorch 后端，通过 CUDA 统一内存 + NVLink 在多卡间分布高斯参数与泼溅算子；因为分布发生在算子层，模型代码无需显式跨设备通信。后端把多卡暴露为单一聚合 PyTorch 设备。展示了带街道级细节、超 10 亿高斯点的城市级重建，规模是当前 SOTA 的 25 倍以上。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;城市级 3D scene 重建 / 视频→3D scene&#34;的工程基础设施有价值——把 3DGS 推到十亿级城市规模，是大规模城市训练环境的底座；NVIDIA（Sanja Fidler）团队动态值得跟踪。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.09034">Leveraging NeRF-Rendered Images for 3D Gaussian Splatting</a></div>
+    <div class="meta">
+      arXiv cs.CV · Mizuki Morikawa et al. · 首见 2026-06-11
+      <span class="score">9</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">利用 NeRF 与 3DGS 的互补性（3DGS 渲染快、NeRF 质量高），针对街景场景，用预训练的街道专用 NeRF 生成训练图来辅助目标 3DGS。NeRF 渲染图用于在街景输入视角中移除瞬态物体，并生成鸟瞰视角作为额外视图，把 NeRF 的高质量继承进 3DGS；再加 diffusion 图像增强提升额外视图质量。在 1 个合成 + 2 个真实数据集上，在保持 3DGS 速度与 NeRF 质量的同时改进了街景渲染。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;街景 / 行车视频 → 3D scene 重建&#34;这一研究点有填充价值；其 NeRF 渲染图去瞬态物体 + 补鸟瞰视角的数据增强思路对城市街景重建管线可直接借鉴。</div></div>
+    
+  </div>
+  
+</section>
+
+<section class="bucket">
+  <div class="bucket-head">
+    <span class="icon">🌍</span>
+    <h2>空间智能 / 世界模型</h2>
+    <span class="count">3 篇</span>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.09187">CP4D: Compositional Physics-aware 4D Scene Generation</a></div>
+    <div class="meta">
+      arXiv cs.CV · Hanxin Zhu et al. · 首见 2026-06-11
+      <span class="score">11</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">把 4D 生成重构为静态 3D 环境 + 物理化动态前景的三阶段组合管线，融合物理仿真先验与视频扩散常识，生成可探索、可交互且物理一致的 4D 场景。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;可交互、物理一致的 4D 场景生成&#34;这一研究点有填充价值；其&#34;静态 3D 环境 + 物理化动态前景&#34;的组合范式可借鉴到城市级动态场景构建（行人/车辆等动态前景叠加静态街区）。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.09828">Latent Spatial Memory for Video World Models</a></div>
+    <div class="meta">
+      arXiv cs.CV · Weijie Wang et al. · 首见 2026-06-11
+      <span class="score">10</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">提出 Mirage，把持久 3D 空间记忆直接存在 diffusion latent 空间（深度引导反投影 + latent 直接 warp 新视角），端到端快 10.57×、省 55× 显存，WorldScore SOTA。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;带持久 3D 空间记忆的视频世界模型&#34;有参考价值；latent 空间直接 warp 新视角、大幅省显存的设计对大尺度可探索场景的世界模型底座有借鉴意义。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.09507">Prisma-World: Camera-Controllable Multi-Agent Video World Model</a></div>
+    <div class="meta">
+      arXiv cs.CV · Huiqiang Sun et al. · 首见 2026-06-11
+      <span class="score">9</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">相机可控的多智能体世界模型，用联合几何感知去噪 + 多智能体 RoPE 保证跨视角一致性，并发布 UE5 全景多智能体数据集 PrismaDataset。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;相机可控的多智能体世界模型 + 合成数据集&#34;有参考价值；其 UE5 全景多智能体 PrismaDataset 与跨视角一致性设计可借鉴到城市级多智能体仿真数据生成。</div></div>
+    
+  </div>
+  
+</section>
+
+<section class="bucket">
+  <div class="bucket-head">
+    <span class="icon">🚀</span>
+    <h2>航天 / 星际建造</h2>
+    <span class="count">3 篇</span>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.10273">Locomotion analysis of a quadruped interacting with the lunar granular surface</a></div>
+    <div class="meta">
+      arXiv cs.RO · Yash J Vyas · 首见 2026-06-11
+      <span class="score">12</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">针对月面颗粒风化层（regolith）对腿足机器人运动的影响，把颗粒地表—机器人足接触的物理建模引入仿真环境，并用强化学习训练运动策略。对比刚性接触与软接触两种环境下训练出的策略，分析步态与运动性能指标。结论是模拟 regolith 的软接触给 RL 训练带来额外挑战，导致定性上不同的步态，并整体增加能耗。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;lunar/Mars 地表机器人 + sim-to-real&#34;这一研究点有直接推进价值；其 regolith 软接触建模与刚/软接触策略对比可直接借鉴到行星地表训练环境设计。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.10602">Globally Localizing Lunar Rover in Pixels via Graph Alignment</a></div>
+    <div class="meta">
+      arXiv cs.CV · Mao Chen et al. · 首见 2026-06-11
+      <span class="score">12</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">针对月面无 GNSS、局部定位累积漂移的问题，提出 WARG（Warped Alignment of Reprojected Graphs），用统一图学习 + 重投影图匹配做 rover-view 与卫星-view 的 cross-view 对齐。在合成 LuSNAR 上预训练，测试误差 0.32 m，对合成月球南极区零样本泛化误差 3.63 m；在真实玉兔二号数据上 100 m×100 m 搜索区内定位误差 1.68 m（约 1 像素精度）。仅 1.56M 参数、A6000 上 5.49 Hz，接近 GNSS 更新频率，代码开源。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;行星地表机器人 cross-view 全局定位 + 合成→真实（sim-to-real）迁移&#34;这一研究点有价值；其合成数据预训练 + 真车（Yutu-2）验证的评测设计可借鉴。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.10364">Benchmarking stereo reconstruction for 3D printable Martian terrain models</a></div>
+    <div class="meta">
+      arXiv cs.CV · Josephine Wang · 首见 2026-06-11
+      <span class="score">8</span>
+    </div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">评测从 Curiosity 影像估计立体深度→补全几何→导出可打印网格的管线，发现 Middlebury 上的 benchmark 精度并不直接迁移到低纹理火星地形。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#34;行星地表 3D 重建&#34;有对位；提示低纹理域上 benchmark 精度与真实地表重建质量的 gap，可作为行星地表数字孪生的评测警示。</div></div>
+    
+  </div>
+  
+</section>
+
+
+<div class="coverage">
+  <h3>本周覆盖日报</h3>
+  <div class="dates">
+    <span class="date">2026-06-08</span><span class="date">2026-06-09</span><span class="date">2026-06-11</span>
+    <span class="date missing">2026-06-10</span><span class="date missing">2026-06-12</span><span class="date missing">2026-06-13</span><span class="date missing">2026-06-14</span>
+  </div>
+</div>
+
+<footer class="footer">
+  Paper Brief Weekly · 私人研究跟踪 · 2026-06-14T04:51:52+00:00
+</footer>
+
+</div>
+</body>
+</html>
