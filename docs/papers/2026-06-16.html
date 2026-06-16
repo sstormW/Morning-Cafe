@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-16</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-16</h1>
+  <div class="meta">26 篇候选 · 精读 0 · 速览 10 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    
+    <div class="group-label">📚 值得扫一眼 (5 篇)</div>
+    <ul>
+      
+      <li><strong>OmniTraffic: A Controllable Generation Pipeline and Benchmark for Spatio-Temporal Traffic Reasoning</strong> — 把真实路口重建成可编辑 3D 交通环境做时空推理 benchmark，可编辑城市环境思路值得看 — <a href="http://arxiv.org/abs/2606.15749">arXiv</a></li>
+      
+      <li><strong>Bridging Geographic Bias in Urban Streetscape Inference via Lifelong Learning with Visual-Semantic Pivoting</strong> — 四大洲 12 城全景街景感知 benchmark + 终身学习缓解地理偏差 — <a href="http://arxiv.org/abs/2606.15055">arXiv</a></li>
+      
+      <li><strong>LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies</strong> — 潜空间世界-动作模型，用潜视觉子目标替代像素级未来视频，延迟降 24× — <a href="http://arxiv.org/abs/2606.15768">arXiv</a></li>
+      
+      <li><strong>Pixels to Proofs: Probabilistically-Safe Latent World Model Control via Parallel Conformal Robust MPC</strong> — 潜空间世界模型 + 鲁棒 MPC + 共形预测做概率安全运动规划 — <a href="http://arxiv.org/abs/2606.15594">arXiv</a></li>
+      
+      <li><strong>Trust-Region Diffusion Policies for Massively Parallel On-Policy RL</strong> — 把信赖域约束引入扩散策略，支撑大规模并行 on-policy RL — <a href="http://arxiv.org/abs/2606.15260">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (10 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15768">LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies</a></div>
+    <div class="meta">arXiv cs.AI · Jialei Chen et al. <span class="score">10</span></div>
+    <div class="field"><div class="field-body">提出潜空间世界-动作模型 LaWAM，用紧凑的潜视觉子目标替代昂贵的像素级未来视频生成，在 LIBERO（98.6%）、RoboTwin（91.22%）及真机操作上达 SOTA 成功率，且推理延迟比像素级 WAM 低 24×（187ms/动作块）——局限在室内操作，无户外/城市迁移故事。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15749">OmniTraffic: A Controllable Generation Pipeline and Benchmark for Spatio-Temporal Traffic Reasoning</a></div>
+    <div class="meta">arXiv cs.AI · Maonan Wang et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">把 12 个真实路口重建为可编辑的 3D 交通环境并生成 800 万条多视角 VQA 样本，构建三级时空交通推理 benchmark，并发现前沿 MLLM 与人类差距大；可编辑 3D 城市环境的思路值得关注，但落点是 VQA 而非机器人 sim。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15753">RoboPIN: Grounded Embodied Reasoning via Pinned Chain-of-Thought</a></div>
+    <div class="meta">arXiv cs.AI · Yaoting Huang et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">提出 Pinned Chain-of-Thought，把每步推理锚定到带实体名/视图索引/空间定位的结构化视觉证据，仅 4B 参数在 14 个具身空间推理 benchmark 上平均超过最强 7B 基线 12%；纯室内具身推理，无城市/3D-sim 接口。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15631">Retrieve, Don&#39;t Retrain: Extending Vision Language Action Models to New Tasks at Test Time</a></div>
+    <div class="meta">arXiv cs.AI · Jeongeun Park et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">用检索代替逐任务微调来扩展 VLA 策略——训练一次后冻结，新任务靠把廉价本体示范（如人手视频）加入检索池实现，在 RoboTwin 2.0 跨本体未见任务上超过基线并在真机验证；面向室内操作，无户外迁移。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15260">Trust-Region Diffusion Policies for Massively Parallel On-Policy RL</a></div>
+    <div class="meta">arXiv cs.AI · Huy Le et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">提出 TruDi，把覆盖整条扩散轨迹的信赖域/KL 约束引入扩散策略，使其能在大规模并行 on-policy RL 下稳定训练，在 4 个并行 RL benchmark 共 73 个任务（尤其类人控制）上刷新基线；通用控制，无城市/户外聚焦。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15709">AI-Driven Framework for Adaptive Water Network Management with Proof-of-Concept Implementation: Addressing Non-Revenue Water in Jordan</a></div>
+    <div class="meta">arXiv cs.AI · Mohammed Fasha et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">把 EPANET 水力模型、数字孪生、SCADA 与本地离线 LLM agent 结合，做约旦供水管网漏损（非营收水）的实时监测与异常定位，在 1164 节点曼城管网上 PoC 验证、响应 &lt;2 分钟且零 API 成本；城市基础设施主题但无机器人/3D sim。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15654">PO-PDDL: Learning Symbolic POMDPs from Visual Demonstrations for Robot Planning Under Uncertainty</a></div>
+    <div class="meta">arXiv cs.AI · Wenjing Tang et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">提出 PO-PDDL，把部分可观测/随机性/信念显式编入保留 PDDL 关系结构的符号 POMDP，并从真机执行视频自动重建符号状态轨迹来学习模型，用于不确定下的长程操作规划；面向室内操作，无户外接口。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15594">Pixels to Proofs: Probabilistically-Safe Latent World Model Control via Parallel Conformal Robust MPC</a></div>
+    <div class="meta">arXiv cs.AI · Devesh Nath et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">SLS² 在学习的潜空间世界模型里用 GPU 加速的鲁棒 MPC（系统级综合）+ 共形预测得到标定的潜误差界与鲁棒约束集，从像素实现概率安全的闭环运动规划，在视觉控制任务上同时提升达标率与安全性；通用视觉控制，无城市机器人落点。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15148">MimicIK: Real-Time Generative Inverse Kinematics from Teleoperation with FK Consistency</a></div>
+    <div class="meta">arXiv cs.AI · Jiahao Yang et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">MimicIK 用条件流匹配从遥操作示范学习平滑鲁棒的关节空间运动先验做实时逆运动学，并加可微 FK 一致性损失，6-DOF 真机上 4.65mm 平均误差、奇异点附近稳定、20Hz 实时（延迟 6.74ms）；手臂操作，无城市相关性。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15055">Bridging Geographic Bias in Urban Streetscape Inference via Lifelong Learning with Visual-Semantic Pivoting</a></div>
+    <div class="meta">arXiv cs.AI · Xinze Zhang <span class="score">1</span></div>
+    <div class="field"><div class="field-body">HVSP-LL 用分层视觉-语义锚点 + 公平感知重放做终身学习，缓解街景感知模型对欠拍摄城区的地理偏差，在四大洲 12 城全景 benchmark 上 Spearman 0.834、城际感知差距缩小 38% 并消除灾难性遗忘；城市主题但纯感知，无 3D/sim 落点。</div></div>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">⚠️</span>
+    <h2>抓取失败的源</h2>
+  </div>
+  <ul class="failed">
+    
+    <li><strong>arXiv cs.GR</strong>: Remote end closed connection without response</li>
+    
+  </ul>
+</section>
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-16T01:35:37.731565+00:00
+</footer>
+
+</div>
+</body>
+</html>
