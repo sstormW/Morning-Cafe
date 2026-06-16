@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-17 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-17</h1>
+  <div class="meta">39 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">美商务部长卢特尼克致信 Anthropic CEO Dario Amodei，要求出口 Fable 5 / Mythos 5 须获政府审批，违者面临刑事与民事追责，Anthropic 随即停用 Mythos</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-16/read-the-lutnick-letter-that-led-anthropic-to-disable-mythos">https://www.bloomberg.com/news/articles/2026-06-16/read-the-lutnick-letter-that-led-anthropic-to-disable-mythos</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SpaceX IPO 后第三天市值逼近 $3 万亿（超亚马逊），同日宣布以 $600 亿收购 AI 编程工具 Cursor</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/ai/2026/06/spacex-will-acquire-coding-tool-cursor-to-compete-with-anthropic-openai/">https://arstechnica.com/ai/2026/06/spacex-will-acquire-coding-tool-cursor-to-compete-with-anthropic-openai/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">阿里三连发具身大模型 Qwen-Robot（Manip / Nav / World），Qwen-RobotManip 在 RoboChallenge Table30 v1 排名第一</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/06/435873.html">https://www.qbitai.com/2026/06/435873.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Current Robotics 推出 Curr-0：基于 HumanEx 外骨骼采集 2.1 万小时数据，单一端到端策略同时控制行走与精细操作</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/06/436073.html">https://www.qbitai.com/2026/06/436073.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">泄露财务文件显示 OpenAI 每年亏损数十亿美元，营收被研发与运营支出大幅超越</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/">https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">阿里 Qwen-RobotWorld：首个开源具身世界模型，可预测机器人动作与物理结果</span>
+      <div class="why">强关注主题「世界模型 / 空间智能」；Qwen-RobotManip 跨 4 平台统一 80 维动作表示，直接影响 LeapsCora sim-to-real 数据生成的动作表示设计</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/435873.html">https://www.qbitai.com/2026/06/435873.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Current Robotics Curr-0：HumanEx 全身外骨骼采集 2.1 万小时人类行为数据，训练具身操作策略</span>
+      <div class="why">强关注主题「具身智能训练数据 / real2sim2real」；HumanEx 规模化真实采集路线与 LeapsCora 仿真生成数据路线形成方法论对照</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/436073.html">https://www.qbitai.com/2026/06/436073.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">大晓机器人 Kairos 3.0 世界模型 4 项 SOTA + 天使+轮，100 万小时训练数据（传统真机采集 10 倍）</span>
+      <div class="why">具身世界模型直接竞品动态；100 万小时数据量是 LeapsCora 仿真生成目标数据量的量级参照；商汤系背景值得跟踪竞合关系</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3855262364488969?f=rss">https://36kr.com/p/3855262364488969?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">PSYONIC + ABB：将假肢用户真实抓取与触觉数据迁移至机器人灵巧度训练</span>
+      <div class="why">强关注主题「具身智能训练数据」；真实人体感知数据迁移至机器人抓取的方法论值得跟踪</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/psyonic-abb-robotics-partner-apply-human-touch-data-robot-dexterity/">https://www.therobotreport.com/psyonic-abb-robotics-partner-apply-human-touch-data-robot-dexterity/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Pegasus Tech Ventures + CYBERDYNE 联投 $6000 万 physical AI 基金</span>
+      <div class="why">「机器人公司大额融资」强关注；CYBERDYNE 参投意味着医疗+工业 physical AI 资金信号入场</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/pegasus-tech-ventures-launches-60m-fund-physical-ai-startups/">https://www.therobotreport.com/pegasus-tech-ventures-launches-60m-fund-physical-ai-startups/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">HPE 面向 AI 数据中心推出基于 Juniper 的新网络设备</span>
+      <div class="why">上游算力/网络供应链动态</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-16/hpe-boosts-networking-gear-for-ai-clients-adds-siemens-energy">https://www.bloomberg.com/news/articles/2026-06-16/hpe-boosts-networking-gear-for-ai-clients-adds-siemens-energy</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">川崎 RL030N 8-DoF physical AI 平台亮相 Automate 展会</span>
+      <div class="why">机器人产业动态；8-DoF 工业臂+视觉检测平台的产品方向</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/kawasaki-robotics-debut-rl030n-physical-ai-platform-automate/">https://www.therobotreport.com/kawasaki-robotics-debut-rl030n-physical-ai-platform-automate/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Quoting Georgi Gerganov</div>
+    
+    <ul class="article-points">
+      
+      <li>Georgi Gerganov (ggml-org maintainer) attests that Qwen3.6-27B is a capable daily-use local model for coding, running smoothly on both M2 Ultra and RTX 5090.</li>
+      
+      <li>He uses a stripped-down pi agent (pi -nc --offline) with a short custom system prompt for routine maintenance tasks at ggml-org.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/16/georgi-gerganov/#atom-everything">https://simonwillison.net/2026/Jun/16/georgi-gerganov/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 16:04 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">上线首月吸引 10 万开发者，AnySearch 为 Agent 解锁网页之外的世界</div>
+    
+    <ul class="article-points">
+      
+      <li>AnySearch 是专为 Agent 设计的 AI 搜索层服务，上线首月即吸引超过 10 万开发者接入。</li>
+      
+      <li>定位补充网页搜索局限，打通 Agent 获取非网页世界（结构化数据、私有文档等）的数据通路。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/435861.html">https://www.qbitai.com/2026/06/435861.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 01:32 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">8 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">一个模型控制手脚腰身！机器人终于学会全身协同干精细活了</div>
+    
+    <ul class="article-points">
+      
+      <li>Current Robotics 推出 Curr-0 全身灵巧操作系统，基于 HumanEx 全身外骨骼采集的 2.1 万小时人类行为数据（含 2,800 小时全身示范数据），单一端到端策略同步控制行走、姿态与手部精细操作。</li>
+      
+      <li>可执行撕茶包、点香、盖章等真实任务；计划引入多模态世界模型（视觉+本体感知+力传感）与「Human-in-the-World-Model」框架，实现无需持续真机部署即可修正策略。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/436073.html">https://www.qbitai.com/2026/06/436073.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 13:23 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">三连发！阿里发布首个具身大模型Qwen-Robot系列</div>
+    
+    <ul class="article-points">
+      
+      <li>阿里同步发布三款具身大模型：Qwen-RobotManip（VLA，操作任务，统一 80 维动作表示）、Qwen-RobotNav（VLN，导航+自适应记忆）、Qwen-RobotWorld（物理世界模型，预测动作结果）；三者可独立运行或协同，支持自然语言统一调度。</li>
+      
+      <li>Qwen-RobotManip 在 RoboChallenge Table30 v1 基准排名第一，覆盖 4 种机器人平台、30 项真实任务，训练数据全部来自开源数据集；跨平台统一动作表示消除绝对坐标依赖，大幅降低新硬件适配成本。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/435873.html">https://www.qbitai.com/2026/06/435873.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 04:39 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">融了数亿美金的「大晓机器人」，其创始人揭开了具身行业的割裂一面</div>
+    
+    <ul class="article-points">
+      
+      <li>大晓机器人（ACE ROBOTICS，董事长王晓刚为商汤联合创始人）完成天使+轮融资，投资方包括达晨财智、深创投、上海科创基金、沐曦股份等，距上一轮仅 4 个月；具身大脑模组 A1 已落地酒店、无人零售店、无人物流仓。</li>
+      
+      <li>世界模型「开悟 Kairos 3.0」在 4 项全球具身智能基准取得 SOTA，开源版 Kairos 3.0-4B 率先支持端侧直驱；以人为中心的环境采集将训练数据扩展至 100 万小时，是传统真机遥操采集的 10 倍。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3855262364488969?f=rss">https://36kr.com/p/3855262364488969?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 08:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Pegasus Tech Ventures launches $60M fund for physical AI startups</div>
+    
+    <ul class="article-points">
+      
+      <li>Pegasus Tech Ventures and CYBERDYNE have launched a $60M fund targeting startups in robotics, physical AI, healthcare automation, and intelligent systems.</li>
+      
+      <li>The fund takes a broad mandate spanning medical robotics through industrial automation, with CYBERDYNE&#39;s involvement signaling institutional commitment from an established robotics operator.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/pegasus-tech-ventures-launches-60m-fund-physical-ai-startups/">https://www.therobotreport.com/pegasus-tech-ventures-launches-60m-fund-physical-ai-startups/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 19:22 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Kawasaki Robotics to debut RL030N physical AI platform at Automate</div>
+    
+    <ul class="article-points">
+      
+      <li>Kawasaki Robotics will showcase the RL030N — an 8-DoF robot with integrated Pulseboard inspection technology — at the Automate conference, framing it as Kawasaki&#39;s vision for intelligent manufacturing automation.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/kawasaki-robotics-debut-rl030n-physical-ai-platform-automate/">https://www.therobotreport.com/kawasaki-robotics-debut-rl030n-physical-ai-platform-automate/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 13:59 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Genesis AI launches Eno general-purpose robot</div>
+    
+    <ul class="article-points">
+      
+      <li>Genesis AI has launched Eno, a general-purpose robot targeting production and enterprise deployments by end of 2026, with home deployments planned for a later phase.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/genesis-ai-launches-eno-general-purpose-robot/">https://www.therobotreport.com/genesis-ai-launches-eno-general-purpose-robot/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 12:59 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Built Robotics, Penn xLAB to develop physical AI for construction</div>
+    
+    <ul class="article-points">
+      
+      <li>Built Robotics and Penn Engineering&#39;s xLAB are partnering to capture additional construction-site data and advance AI models for safety and autonomous operation.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/xlab-and-built-robotics-partner-to-advance-construction/">https://www.therobotreport.com/xlab-and-built-robotics-partner-to-advance-construction/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 11:04 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">PSYONIC partners with ABB Robotics to apply human touch to robot dexterity</div>
+    
+    <ul class="article-points">
+      
+      <li>PSYONIC is combining its Ability Hand prosthetic with ABB Robotics&#39; GoFa cobot arm, applying grasp and tactile data from prosthetics users to improve robot dexterity training.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/psyonic-abb-robotics-partner-apply-human-touch-data-robot-dexterity/">https://www.therobotreport.com/psyonic-abb-robotics-partner-apply-human-touch-data-robot-dexterity/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 04:01 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Waymo taps fleet giant Element to scale its robotaxi service</div>
+    
+    <ul class="article-points">
+      
+      <li>Waymo has contracted Element — a major fleet management company — to keep its robotaxis charged, maintained, and on the road as the service expands to additional cities.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/06/16/waymo-taps-fleet-giant-element-to-scale-its-robotaxi-service/">https://electrek.co/2026/06/16/waymo-taps-fleet-giant-element-to-scale-its-robotaxi-service/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 20:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla &#39;Robotaxis&#39; are not crashing because they are not running</div>
+    
+    <ul class="article-points">
+      
+      <li>Tesla reported zero at-fault Robotaxi crashes in the latest NHTSA autonomous vehicle data, but live fleet data reveals the active fleet is actually shrinking a year into the program — the safety record reflects near-inactivity, not performance.</li>
+      
+      <li>The only logged incident was a Model Y rear-ended while stopped, clearly the other driver&#39;s fault.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/06/16/tesla-robotaxi-clean-crash-record-barely-running/">https://electrek.co/2026/06/16/tesla-robotaxi-clean-crash-record-barely-running/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 13:50 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Baidu Apollo Go wins Level 4 robotaxi approval in Switzerland as AmiGo</div>
+    
+    <ul class="article-points">
+      
+      <li>Baidu&#39;s Apollo Go received a Level 4 autonomous driving permit from Switzerland&#39;s FEDRO for AmiGo, a joint robotaxi service with Swiss Post&#39;s PostBus covering an 80 km² area across three eastern cantons.</li>
+      
+      <li>This positions Baidu ahead of Waymo and Tesla in deploying driverless vehicles in European public transport; the project targets becoming the largest planned automated public transit operation in Europe.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/06/16/baidu-apollo-go-amigo-switzerland-level-4-approval/">https://electrek.co/2026/06/16/baidu-apollo-go-amigo-switzerland-level-4-approval/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 12:40 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX Investor Powerlaw Debuts Amid IPO Race</div>
+    
+    <ul class="article-points">
+      
+      <li>Powerlaw, a closed-end fund holding stakes in SpaceX and OpenAI, debuted well above the net asset value of its underlying investments — retail demand for direct private-tech exposure drove the premium.</li>
+      
+      <li>CEO Mike Dinsdale described the platform as giving ordinary investors access to positions in the hottest pre-IPO tech companies.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-16/spacex-investor-powerlaw-debuts-amid-ipo-race-video">https://www.bloomberg.com/news/videos/2026-06-16/spacex-investor-powerlaw-debuts-amid-ipo-race-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 19:40 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX Soars On Third Trading Day, Seals Cursor Takeover | Bloomberg Tech 6/16/2026</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX&#39;s value eclipsed Amazon&#39;s on its third public trading day, while simultaneously cementing the $60B acquisition of AI coding platform Cursor; Sequoia Partner Shaun Maguire stated he never wants to sell his SpaceX shares.</li>
+      
+      <li>Separately, Anthropic met with US officials to resolve the national security dispute triggered by the Lutnick letter over its most advanced AI models.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-16/bloomberg-tech-6-16-2026-video">https://www.bloomberg.com/news/videos/2026-06-16/bloomberg-tech-6-16-2026-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 17:59 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX Pounces on $60 Billion Cursor Takeover Days After IPO</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX&#39;s $60B acquisition of Cursor — an AI-native coding platform — came within days of its IPO, signaling serious ambitions to compete with Anthropic and OpenAI in the developer AI stack.</li>
+      
+      <li>Franklin Templeton portfolio manager Sara Araghi, a pre-IPO SpaceX backer, called the deal logical given the company&#39;s stated AI strategy.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-16/spacex-pounces-on-60b-cursor-takeover-days-after-ipo-video">https://www.bloomberg.com/news/videos/2026-06-16/spacex-pounces-on-60b-cursor-takeover-days-after-ipo-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 17:55 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX Nears $3 Trillion in Value | Open Interest 6/16/2026</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX surged on its third trading day to approach a $3 trillion valuation, pushing ahead of Amazon; new Fed Chair Kevin Warsh signaled a changed approach to central bank communication.</li>
+      
+      <li>Brent crude dropped below $80 as a US-Iran deal opened the door to additional oil supply.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-16/open-interest-6-16-2026-video">https://www.bloomberg.com/news/videos/2026-06-16/open-interest-6-16-2026-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 17:51 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX to acquire AI coding platform Cursor for $60 billion</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX agreed to acquire Cursor for $60B, combining its launch and satellite infrastructure with Cursor&#39;s AI-native software development tools to compete directly with Anthropic and OpenAI.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/spacex-will-acquire-coding-tool-cursor-to-compete-with-anthropic-openai/">https://arstechnica.com/ai/2026/06/spacex-will-acquire-coding-tool-cursor-to-compete-with-anthropic-openai/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 16:37 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">17 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Can Play &#39;Significant&#39; Role in Tech for Managing Diabetes, Says David Roman</div>
+    
+    <ul class="article-points">
+      
+      <li>Goldman Sachs medtech analyst David Roman said AI plays a significant role in diabetes management, with Abbott and Dexcom deploying it to count carbohydrates and calibrate insulin delivery.</li>
+      
+      <li>Roman said he came away from Goldman&#39;s annual medtech conference very bullish on innovation across the sector.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-16/ai-can-play-significant-role-in-tech-for-managing-diabetes-says-david-roman">https://www.bloomberg.com/news/videos/2026-06-16/ai-can-play-significant-role-in-tech-for-managing-diabetes-says-david-roman</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 21:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Anthropic &#34;pauses&#34; token-based billing for its Claude Agent SDK</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic has paused a planned shift to token-based billing for the Claude Agent SDK; the change — originally scheduled for Monday — would have significantly raised costs for power users.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/anthropic-pauses-token-based-billing-for-its-claude-agent-sdk/">https://arstechnica.com/ai/2026/06/anthropic-pauses-token-based-billing-for-its-claude-agent-sdk/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 21:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Exclusive eBook: How AI is becoming the next military advisor</div>
+    
+    <ul class="article-points">
+      
+      <li>MIT Technology Review compiled six stories tracking how militaries worldwide are using AI models for operational decision-making, updated through April 2026.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/06/16/1138905/exclusive-ebook-how-ai-is-becoming-the-next-military-advisor/">https://www.technologyreview.com/2026/06/16/1138905/exclusive-ebook-how-ai-is-becoming-the-next-military-advisor/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 20:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How Kalshi&#39;s Lopes Lara Turned Kylie Jenner Gossip Into Billions</div>
+    
+    <ul class="article-points">
+      
+      <li>Prediction markets platform Kalshi has built an internal AI agent to handle complex contract wording challenges for its prediction markets.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-16/how-lopes-lara-turned-kylie-jenner-gossip-into-billions-video">https://www.bloomberg.com/news/videos/2026-06-16/how-lopes-lara-turned-kylie-jenner-gossip-into-billions-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 20:14 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Lutnick&#39;s Letter to Anthropic Warned of Curbs on Top AI Models</div>
+    
+    <ul class="article-points">
+      
+      <li>US Commerce Secretary Howard Lutnick warned Anthropic in a letter that it must obtain government permission before granting foreign nationals access to its most advanced AI models, threatening criminal and civil penalties for non-compliance.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-16/lutnick-s-letter-to-anthropic-warned-of-curbs-on-top-ai-models">https://www.bloomberg.com/news/articles/2026-06-16/lutnick-s-letter-to-anthropic-warned-of-curbs-on-top-ai-models</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 18:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Read the Lutnick Letter That Led Anthropic to Disable Mythos</div>
+    
+    <ul class="article-points">
+      
+      <li>The letter, addressed personally to CEO Dario Amodei, named Fable 5 and Mythos 5 specifically — stating that exporting either model to any destination worldwide, or to any foreign national regardless of location, requires prior government permission.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-16/read-the-lutnick-letter-that-led-anthropic-to-disable-mythos">https://www.bloomberg.com/news/articles/2026-06-16/read-the-lutnick-letter-that-led-anthropic-to-disable-mythos</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 18:46 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Pentagon boasts of using AI to write reports mandated by Congress</div>
+    
+    <ul class="article-points">
+      
+      <li>The Pentagon announced that 1.5 million personnel are now using generative AI tools, and claimed AI is actively being used to draft congressionally-mandated reports.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/pentagon-boasts-of-using-ai-to-write-reports-mandated-by-congress/">https://arstechnica.com/ai/2026/06/pentagon-boasts-of-using-ai-to-write-reports-mandated-by-congress/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 18:11 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Google Rolls Out Android 17; Major AI Features to Follow This Summer</div>
+    
+    <ul class="article-points">
+      
+      <li>Google has begun rolling out Android 17 with multitasking and social video improvements; marquee AI features are scheduled to arrive later this summer.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-16/google-debuts-android-17-multitasking-social-video-and-the-other-best-features">https://www.bloomberg.com/news/articles/2026-06-16/google-debuts-android-17-multitasking-social-video-and-the-other-best-features</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 18:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">HPE Boosts Networking Gear for AI Clients, Adds Siemens Energy</div>
+    
+    <ul class="article-points">
+      
+      <li>Hewlett Packard Enterprise introduced new networking gear for AI data centers built on technology acquired from Juniper Networks, adding Siemens Energy as a customer for its AI infrastructure offerings.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-16/hpe-boosts-networking-gear-for-ai-clients-adds-siemens-energy">https://www.bloomberg.com/news/articles/2026-06-16/hpe-boosts-networking-gear-for-ai-clients-adds-siemens-energy</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 16:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Leaked financial docs show OpenAI is losing billions of dollars a year</div>
+    
+    <ul class="article-points">
+      
+      <li>Audited financial documents show OpenAI&#39;s revenues are growing but substantially dwarfed by R&amp;D and other expenses, resulting in multi-billion-dollar annual losses.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/">https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 16:18 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Download: the first brain implant power user and South Korea&#39;s AI obsession</div>
+    
+    <ul class="article-points">
+      
+      <li>Casey Harrell, an ALS patient, is described as the first power user of a brain-computer interface implant enabling speech; the edition also covers South Korea&#39;s intensifying national focus on AI.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/06/16/1139010/the-download-brain-implant-power-user-bci-south-korea-ai-obsession/">https://www.technologyreview.com/2026/06/16/1139010/the-download-brain-implant-power-user-bci-south-korea-ai-obsession/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 12:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Critical Copilot vulnerability allowed hackers to steal 2FA code from users</div>
+    
+    <ul class="article-points">
+      
+      <li>A SearchLeak exploit in Microsoft Copilot allowed attackers to steal 2FA codes from users, illustrating what Ars Technica calls the industry&#39;s recurring failure to adequately secure LLM-integrated products.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/security/2026/06/critical-copilot-vulnerability-allowed-hackers-to-seal-2fa-code-from-users/">https://arstechnica.com/security/2026/06/critical-copilot-vulnerability-allowed-hackers-to-seal-2fa-code-from-users/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 11:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Fable 5 Export Controls Harm US Cyber Defense</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison highlights Kate Moussouris (Luta Security CEO) confirming that the Fable 5 export-control jailbreak was a multi-step process: the model refused 「review the code for security issues」 but complied when asked to 「fix this code」 — which Moussouris called the model working as intended.</li>
+      
+      <li>Her assessment, shared after reviewing the White House report at Anthropic&#39;s request (unpaid), challenges the classification of this as a genuine security vulnerability.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/16/fable-5-export-controls/#atom-everything">https://simonwillison.net/2026/Jun/16/fable-5-export-controls/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 05:20 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Quoting Matteo Wong, The Atlantic</div>
+    
+    <ul class="article-points">
+      
+      <li>Cybersecurity expert Kate Moussouris (CEO, Luta Security) described the Fable jailbreak: IT experts asked Fable to help find and patch bugs; 「review the code for security issues」 was refused, but 「fix this code」 succeeded, followed by further manual steps.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/16/matteo-wong-the-atlantic/#atom-everything">https://simonwillison.net/2026/Jun/16/matteo-wong-the-atlantic/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 03:07 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">沙利文权威认证：范式 Rise vGPU 获评 Tier 1 领先平台</div>
+    
+    <ul class="article-points">
+      
+      <li>范式 Rise vGPU 平台获 Frost &amp; Sullivan（弗若斯特沙利文）评为 Tier 1 领先平台，定位面向 AI 及通用人工智能场景的通用 vGPU 基础设施。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/435853.html">https://www.qbitai.com/2026/06/435853.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 02:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">微信支付&#34;AI专属卡&#34;最快本周内上线</div>
+    
+    <ul class="article-points">
+      
+      <li>微信支付正联合腾讯 WorkBuddy 智能体产品测试 AI 支付功能，计划在微信钱包内上线「AI 专属卡」，最快本周内落地。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3855774821929991?f=rss">https://36kr.com/newsflashes/3855774821929991?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 11:36 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">8点1氪｜智谱股价暴涨，创上市以来单日成交新高</div>
+    
+    <ul class="article-points">
+      
+      <li>6月15日港股 AI 板块全线走强，国产大模型龙头智谱（02513.HK）盘中最高涨幅达 47.6%，收盘涨幅收窄至 28.35%，报 1408 港元，总市值突破 62 亿港元，刷新上市以来单日成交纪录。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3855082873476102?f=rss">https://36kr.com/p/3855082873476102?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-15 23:56 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple Plans Camera AirPods Alongside Upgraded Foldable iPhone in 2027</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple&#39;s camera-equipped AirPods — intended to move the company into the AI wearable device market — are on schedule for a late 2027 launch alongside a second-generation foldable iPhone.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-16/apple-plans-camera-airpods-iphone-foldable-2-20th-anniversary-iphone-in-2027">https://www.bloomberg.com/news/articles/2026-06-16/apple-plans-camera-airpods-iphone-foldable-2-20th-anniversary-iphone-in-2027</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 16:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple 2027 rumors: AirPods with cameras for AI and the second folding iPhone</div>
+    
+    <ul class="article-points">
+      
+      <li>Bloomberg&#39;s Mark Gurman confirms camera AirPods remain on track for late 2027, positioned as an AI device entry point following WWDC.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/tech/950826/apple-airpod-camera-ai-foldable-iphone-rumor">https://www.theverge.com/tech/950826/apple-airpod-camera-ai-foldable-iphone-rumor</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 17:04 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Robinhood裁员10%以保持精简运营</div>
+    
+    <ul class="article-points">
+      
+      <li>Robinhood 将裁减约 10% 员工（约 300 个岗位），同时关闭部分尚未完成招聘的内部职位，以维持高绩效文化、加快产品开发速度。</li>
+      
+      <li>加入近期裁员行列的金融科技企业还有 Block、Crypto.com、Coinbase 及 PayPal；Robinhood 表示此次裁员与 AI 无直接关联。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3855813563552769?f=rss">https://36kr.com/newsflashes/3855813563552769?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-16 12:16 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-17.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-16T23:00:05.626142+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
