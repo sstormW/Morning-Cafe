@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-17</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-17</h1>
+  <div class="meta">60 篇候选 · 精读 1 · 速览 26 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    <div class="group-label">🔥 直接相关精读 (1 篇)</div>
+    <ul>
+      
+      <li><strong>SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks</strong> — 对标 MetaUrban/URBAN-SIM（同一 UCLA Bolei Zhou 团队），把城市导航 benchmark 推进到人行道粒度；对户外机器人导航的 sim 评测设计与合成数据 sim-to-real 这一研究点有直接推进价值 — <a href="http://arxiv.org/abs/2606.16953">arXiv</a></li>
+      
+    </ul>
+    
+    
+    <div class="group-label">📚 值得扫一眼 (5 篇)</div>
+    <ul>
+      
+      <li><strong>Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation</strong> — 解耦视频生成与动作的世界-动作模型，CityWalker 等城市导航 benchmark 上 SOTA 且推理更快 — <a href="http://arxiv.org/abs/2606.15869">arXiv</a></li>
+      
+      <li><strong>RealityBridge: Bridging Editable 3D Gaussian Splatting Driving Simulations and Real-World Videos</strong> — 可编辑 3DGS 驾驶仿真视频的 sim-to-real 修复，值得借鉴其伪影消除与时序一致设计 — <a href="http://arxiv.org/abs/2606.16278">arXiv</a></li>
+      
+      <li><strong>GASE: Gaussian Splatting-Based Automated System for Reconstructing Embodied-Simulation Environments</strong> — 全景阵列 + 3DGS 自动重建可导入物理仿真的高保真场景，sim-to-real 差距 &lt;10% — <a href="http://arxiv.org/abs/2606.17520">arXiv</a></li>
+      
+      <li><strong>BRDFusion: Physics Meets Generation for Urban Scene Inverse Rendering</strong> — 物理逆渲染 + 生成先验做城市场景逆渲染，支持重光照/夜景/动态物体插入 — <a href="http://arxiv.org/abs/2606.17049">arXiv</a></li>
+      
+      <li><strong>Binary Tracking for Spatial QA and Navigation with Open Vision-Language Models</strong> — 全开源户外机器人空间问答定位，并发布真实四足街道多趟 benchmark GangnamLoop — <a href="http://arxiv.org/abs/2606.16902">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🔥</span>
+    <h2>强相关精读 (1 篇)</h2>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16953">SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks</a></div>
+    <div class="meta">
+      arXiv cs.RO · 2026-06-15 · Zhizheng Liu et al.
+      <span class="score">17 (12+5)</span>
+    </div>
+    <div class="reason">Isaac Sim urban sidewalk nav benchmark, procedural+scanned scenes, MetaUrban/URBAN-SIM team</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">基于 NVIDIA Isaac Sim 构建的城市人行道视觉导航 benchmark，场景同时覆盖程序化生成与真实扫描两类高保真环境，并植入了基于事件的反应式行人行为与高效动画。论文在 330 个单元测试、800 个行人反应场景、105 个长程场景上系统评测了 9 个视觉导航模型。结论是：行人交互与长程鲁棒性仍是现有模型的关键瓶颈，而用合成数据扩大人行道训练规模是有前景的解法。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对标 MetaUrban/URBAN-SIM（同一 UCLA Bolei Zhou 团队）：把城市导航 benchmark 从马路/街区粒度推进到人行道，并强调 GPU 加速的程序化+扫描混合场景与反应式行人评测；对户外机器人导航的 sim 评测设计 + 合成数据 sim-to-real 这一研究点有直接推进价值。</div></div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (26 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15869">Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation</a></div>
+    <div class="meta">arXiv cs.CV · Jingyu Li et al. <span class="score">12</span></div>
+    <div class="field"><div class="field-body">用 Mixture-of-Transformers 解耦视频生成与动作预测的端到端世界-动作模型，在 NAVSIM、CityWalker 等城市导航 benchmark 上达 SOTA 且推理显著更快。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17520">GASE: Gaussian Splatting-Based Automated System for Reconstructing Embodied-Simulation Environments</a></div>
+    <div class="meta">arXiv cs.RO · Jiawei Zhang et al. <span class="score">10</span></div>
+    <div class="field"><div class="field-body">用全景相机阵列 + 3D Gaussian Splatting 自动重建可导入物理仿真器的高保真场景，机器人策略 sim-to-real 性能差距 &lt;10%。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16278">RealityBridge: Bridging Editable 3D Gaussian Splatting Driving Simulations and Real-World Videos</a></div>
+    <div class="meta">arXiv cs.CV · Zhenhua Wu et al. <span class="score">10</span></div>
+    <div class="field"><div class="field-body">针对可编辑 3DGS 驾驶仿真视频的 sim-to-real 修复框架，统一消除渲染伪影、修复前景资产、协调光照并保持长序列时序一致。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16993">DreamX-World 1.0: A General-Purpose Interactive World Model</a></div>
+    <div class="meta">arXiv cs.CV · DreamX Team et al. <span class="score">9</span></div>
+    <div class="field"><div class="field-body">通用交互式 text/image-to-video 世界模型，支持相机导航、场景重访与可控事件，UE 渲染 + 游戏录制 + 真实视频混合训练，8×RTX5090 上达 16 FPS。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17049">BRDFusion: Physics Meets Generation for Urban Scene Inverse Rendering</a></div>
+    <div class="meta">arXiv cs.CV · Yi-Ruei Liu et al. <span class="score">8</span></div>
+    <div class="field"><div class="field-body">把物理逆渲染与生成先验结合做城市场景逆渲染，支持新视角重光照、夜景模拟与动态物体插入/编辑。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16902">Binary Tracking for Spatial QA and Navigation with Open Vision-Language Models</a></div>
+    <div class="meta">arXiv cs.RO · Dongbin Na et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">全开源的户外服务机器人空间问答定位 agent，对轨迹做二分搜索定位地标，并发布真实四足街道多趟 benchmark GangnamLoop。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17030">Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation</a></div>
+    <div class="meta">arXiv cs.CV · Jie Zhang et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">语言条件视频世界模型，跨操作/驾驶/室内导航预测物理一致的未来视觉轨迹，可做策略训练数据生成与评测环境。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16638">MVM-IOD: An Industrial Object-Centric Benchmark Dataset for the Evaluation of 3D Reconstruction Methods</a></div>
+    <div class="meta">arXiv cs.CV · Robert Langendörfer et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">工业物体为中心的 3D 重建评测数据集，系统比较 SfM/MVS/前馈方法与 2DGS 在工业场景的精度与位姿表现。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17362">DriveJudge: Rethinking Autonomous Driving Evaluation with Vision-Language Models</a></div>
+    <div class="meta">arXiv cs.RO · Xinglong Sun et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">结合规则与 VLM 推理的自动驾驶评测 agent，配 33k 人工标注样本的驾驶质量分类与轨迹偏好基准。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16572">Steering Generative Reinforcement Learning into Stable Robotic Controller</a></div>
+    <div class="meta">arXiv cs.RO · Yixuan Wang et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">用潜空间 RL 把训练好的生成式策略转成稳定确定性控制器，在 Isaac Lab 与 Unitree G1 locomotion 上验证。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17937">ThinkingVLA: Interleaved Vision and Language Reasoning for Robotic Manipulation</a></div>
+    <div class="meta">arXiv cs.RO · Tianyi Lu et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">在统一 MoT 架构内交错文本与视觉推理（前向 + 逆向 CoT）的操作 VLA，长程任务收益显著。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17924">PearlVLA: Progressive Embodied Action-Plan Refinement in Latent Space</a></div>
+    <div class="meta">arXiv cs.RO · Bochen Yang et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">把 VLA 的推理放到 VLM 潜空间迭代细化，用冻结潜世界模型预测未来观测引导计划细化，LIBERO 上 SOTA。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17906">WAM-RL: World-Action Model Reinforcement Learning with Reconstruction Rewards and Online Video SFT</a></div>
+    <div class="meta">arXiv cs.RO · Zezhong Qian et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">首个把强化学习引入世界-动作范式的框架，联合优化世界模型与 actor，对长程操作至关重要。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17598">MuseVLA: An Adaptive Multimodal Sensing Vision-Language-Action Model for Robotic Manipulation</a></div>
+    <div class="meta">arXiv cs.RO · Xingyuming Liu et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">把温度/声音/雷达等新传感器作为按需工具调用的自适应多模态 VLA，操作平均成功率 80.6%。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17493">When Robots Sleep: Offline Skill Consolidation for Shared-Policy Robot Learning</a></div>
+    <div class="meta">arXiv cs.RO · Nethmi Jayasinghe et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">wake-sleep 框架在离线睡眠阶段用冻结技能记忆巩固共享策略，缓解持续技能学习中的技能耦合崩溃。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17463">WeaveLA: Event Driven Cross-Subtask Latent Memory Weaving for Repetitive Robot Manipulation</a></div>
+    <div class="meta">arXiv cs.CV · Shoujing Zhu et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">以子目标完成事件为单位，把已完成段压成潜 token 注入下一子任务动作路径的跨子任务记忆接口。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17200">ACE-Ego-0: Unifying Egocentric Human and Robotic Data for VLA Pretraining</a></div>
+    <div class="meta">arXiv cs.RO · Hao Li et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">统一第一人称人类视频与机器人数据的 VLA 预训练框架，用可靠性加权稳健吸收噪声伪动作监督。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16696">VENOM: Versatile Embodied Network for Omni-bodied Motion tracking</a></div>
+    <div class="meta">arXiv cs.RO · Siddharth Padmanabhan et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">基于 GPT 的跨形态人形全身动作跟踪器，无需上下身解耦即可在仿真中稳定跟踪多种人形。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16208">ATHENA: Accelerated Multi-Task Heterogeneous Influence Functions for Robot Data Curation</a></div>
+    <div class="meta">arXiv cs.RO · Tao Xu et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">面向十亿参数多任务 VLA 数据筛选的加速影响函数框架，影响计算提速约 313 倍，半量数据即可匹配全量微调。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16202">EgoPhys: Learning Generalizable Physics Models of Deformable Objects from Egocentric Video</a></div>
+    <div class="meta">arXiv cs.RO · Hyunjin Kim et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">从第一人称 RGB 视频构建可形变物体的物理数字孪生，预测稠密弹簧刚度场用于操作规划，是 real-to-sim 的可扩展路径。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.15918">Energy-Efficient Arm Reaching for a Humanoid Robot via Deep Reinforcement Learning with Identified Power Models</a></div>
+    <div class="meta">arXiv cs.RO · Nestor N. Deniz et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">结合实测电功率模型的能量感知 RL，为 Unitree G1 人形机械臂学习省电的伸臂动作并迁移真机。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16566">Local-GS: Accelerating 3D Gaussian Splatting via Tile-Local Warp Coherence</a></div>
+    <div class="meta">arXiv cs.CV · Yang Luo et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">以 SIMT 执行边界而非场景几何组织高斯基元的 warp 一致渲染范式，即插即用、最高 7.76× 加速 3DGS。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17666">FacProcessTwin: An LLM-Based System for Process Twin Development</a></div>
+    <div class="meta">arXiv cs.AI · Yash Pulse et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">基于 LLM 从工厂工艺文档与操作员自然语言生成并绑定实时数据的过程数字孪生系统，建模时间约为人工的六分之一。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16558">ROSA-RL: Uncertainty-Aware Roundabout Optimized Speed Advisory with Reinforcement Learning</a></div>
+    <div class="meta">arXiv cs.RO · Anna-Lena Schlamp et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">用 Transformer 预测环岛冲突区占用、增强不确定性感知 RL 的环岛限速建议，在混合交通中提升安全与效率。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16513">Agile Fall Recovery for Quadrotors with Bidirectional Thrust via Reinforcement Learning</a></div>
+    <div class="meta">arXiv cs.RO · Anke Zhao et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">用循环策略 + 非对称 actor-critic 实现四旋翼从任意地面姿态自主恢复悬停，仅靠轻量传感即可零样本迁移真机。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70263?af=R">Research on Orchard Navigation Path Planning Based on 3D LiDAR SLAM Considering Terrain Roughness</a></div>
+    <div class="meta">Journal of Field Robotics · Yiting Chen et al. <span class="score">1</span></div>
+    <div class="field"><div class="field-body">基于 3D LiDAR SLAM 并考虑地形粗糙度的果园导航路径规划研究（户外农业场景）。</div></div>
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📖</span>
+    <h2>期刊新刊</h2>
+  </div>
+  
+  <div class="journal-group">
+    <h3>Journal of Field Robotics</h3>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70263?af=R">Research on Orchard Navigation Path Planning Based on 3D LiDAR SLAM Considering Terrain Roughness</a></div>
+      <div class="meta">Yiting Chen et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">基于 3D LiDAR SLAM 并考虑地形粗糙度的果园导航路径规划，面向户外农业作业机器人。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70267?af=R">Deep Learning Based Dirt Detection and Cleanliness Evaluation in Autonomous Indian Domestic Concrete Water Tank Cleaning Robot</a></div>
+      <div class="meta">Rajesh Kannan Megalingam et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">面向家用混凝土水箱清洁机器人的深度学习污渍检测与清洁度评估。</div></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-17T01:38:37.334918+00:00
+</footer>
+
+</div>
+</body>
+</html>
