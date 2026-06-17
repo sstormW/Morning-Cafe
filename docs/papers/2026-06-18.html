@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-18</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-18</h1>
+  <div class="meta">60 篇候选 · 精读 1 · 速览 14 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    <div class="group-label">🔥 直接相关精读 (1 篇)</div>
+    <ul>
+      
+      <li><strong>Automated Digital Twin Construction for Highway Scenarios Using LiDAR Point Clouds and OpenStreetMap</strong> — 对&#39;传感器→3D scene 生成 / 城市数字孪生×仿真&#39;这一研究点有填充价值，几何与拓扑分离的自动化 pipeline 可借鉴 — <a href="http://arxiv.org/abs/2606.16570">arXiv</a></li>
+      
+    </ul>
+    
+    
+    <div class="group-label">📚 值得扫一眼 (5 篇)</div>
+    <ul>
+      
+      <li><strong>MoonSplat: Monocular Online Gaussian Splatting with Sim(3) Global Optimization</strong> — 单目在线体素化 3DGS + Sim(3) 全局优化，室内外位姿与渲染 SOTA，跟 video2sim 路线相关 — <a href="http://arxiv.org/abs/2606.17935">arXiv</a></li>
+      
+      <li><strong>TerraTransfer: Learning End-to-End Driving Policies Without Expert Demonstrations</strong> — 自博弈预训练 + 视觉骨干对齐，在 3DGS 真实感闭环驾驶场景上免专家示范学端到端策略 — <a href="http://arxiv.org/abs/2606.17386">arXiv</a></li>
+      
+      <li><strong>SemGeoNav: A Safety-Guided Visual Navigation Approach with Semantic Reasoning and Geometric Planning</strong> — 语义推理 + 几何规划耦合的视觉导航，在 Unitree Go2 四足户外场景超 ViNT/NoMaD — <a href="http://arxiv.org/abs/2606.16400">arXiv</a></li>
+      
+      <li><strong>OmniDrive: An LLM-Choreographed Multi-Agent World Model for Multi-View Driving Video Generation</strong> — LLM 编排多智能体驾驶世界模型，多视角视频生成，nuScenes 上 BEV mAP/一致性 SOTA — <a href="http://arxiv.org/abs/2606.17536">arXiv</a></li>
+      
+      <li><strong>MagicSim: A Unified Infrastructure for Executable Embodied Interaction</strong> — 单一确定性运行时的具身交互基础设施，统一世界构建/执行/评测/自动 rollout — <a href="http://arxiv.org/abs/2606.17511">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🔥</span>
+    <h2>强相关精读 (1 篇)</h2>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16570">Automated Digital Twin Construction for Highway Scenarios Using LiDAR Point Clouds and OpenStreetMap</a></div>
+    <div class="meta">
+      arXiv cs.RO · 2026-06-15 · Yongqi Zhao, Dong Bi, Paul Kovacevic, Tomislav Mihalj, Martin Schabauer et al.
+      <span class="score">6 (2+4)</span>
+    </div>
+    <div class="reason">Automated highway digital twin from LiDAR+OSM to OpenDRIVE for driving sim</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">提出一套几乎无需人工干预的自动化工作流，把移动测绘 LiDAR 点云与 OpenStreetMap 数据融合，生成符合 ASAM OpenDRIVE 标准、带地理参考的高速公路数字孪生地图。核心思路是用 LiDAR 重建车道级主线几何（精度高但只覆盖行驶走廊），用 OSM 路网图推断匝道几何与拓扑（覆盖广但车道级精度差），二者互补即可完成完整互通立交建模而无需全传感器覆盖。实验横向 RMSE 为 0.740 m，生成的地图可直接用于 IPG CarMaker、Esmini 等主流仿真平台。代码已开源。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对&#39;传感器/视频 → 3D scene 重建生成&#39;与&#39;城市数字孪生 × 仿真训练&#39;这一研究点有填充价值；其&#39;测量几何 + 地图拓扑分离再融合&#39;的自动化建图 pipeline 设计可借鉴，是把真实路网低成本转成可仿真资产的一条实用路径。</div></div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (14 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.18239">EBench: Elemental Diagnosis of Generalist Mobile Manipulation Policies</a></div>
+    <div class="meta">arXiv cs.RO · Ning Gao et al. <span class="score">11</span></div>
+    <div class="field"><div class="field-body">提出 EBench 仿真基准，沿 5 个能力维度 + 4 个泛化维度诊断通用移动操作策略（π0、π0.5、XVLA、InternVLA-A1），揭示成功率相近的模型能力画像差异巨大；偏室内移动操作，无城市/户外故事。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17935">MoonSplat: Monocular Online Gaussian Splatting with Sim(3) Global Optimization</a></div>
+    <div class="meta">arXiv cs.CV · Guo Pu et al. <span class="score">8</span></div>
+    <div class="field"><div class="field-body">单目在线体素化 3DGS 重建框架，引入 Sim(3) 全局优化实现可靠相机跟踪与回环闭合，室内外数据集上位姿与渲染质量双 SOTA 且保持实时，并部署到无人机主动重建系统；跟 video2sim 路线相关。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.18250">Future Dynamic 3D Reconstruction: A 3D World Model with Disentangled Ego-Motion</a></div>
+    <div class="meta">arXiv cs.CV · Nils Morbitzer et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">提出 FR3D 世界模型，预测持久 3D latent 表示并把 ego-motion 与场景动态显式解耦，单目观测下可预测未来 2 秒的动态 3D 重建，几何一致性强于在图像平面混合自/他运动的 2D 视频世界模型。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16480">HOLO-MPPI: Multi-Scenario Motion Planning via Hierarchical Policy Optimization</a></div>
+    <div class="meta">arXiv cs.RO · Youngjae Min et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">分层运动规划框架，离线学习高层策略 + 世界模型生成 MPPI 采样先验，在线实时优化低层控制以适应局部扰动，自动驾驶多场景下优于 MPPI 与端到端 RL 且保持实时。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16232">PolyMerge: Compressing 3D Gaussian Splats with Polytope Coverings for Provably Safe Resource-Constrained Navigation</a></div>
+    <div class="meta">arXiv cs.RO · Jihoon Hong et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">把大体量 3DGS 场景压缩为凸多面体并集（可证明过近似所有障碍），结合控制障碍函数规划无碰撞轨迹，在算力严重受限的 Crazyflie 无人机上实时跟踪安全轨迹。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17536">OmniDrive: An LLM-Choreographed Multi-Agent World Model for Multi-View Driving Video Generation</a></div>
+    <div class="meta">arXiv cs.CV · Zijie Meng et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">LLM 编排的多智能体驾驶世界模型，三个 Qwen2.5-VL 智能体（Director/Cartographer/Auditor）协作生成位置感知 token 序列并与多视角视频共压缩，nuScenes 上多视角一致性与 BEV mAP 创 SOTA，合成数据训检测器涨 +2.4 NDS。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17511">MagicSim: A Unified Infrastructure for Executable Embodied Interaction</a></div>
+    <div class="meta">arXiv cs.RO · Haoran Lu et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">围绕单一确定性批处理运行时与共享 MDP 构建的具身交互基础设施，从 YAML 规格构造可执行世界，在一个 reset-and-step 循环里统一世界构建、具身执行、任务评测、自动 rollout 生成与 agent/VLM 交互接口。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17386">TerraTransfer: Learning End-to-End Driving Policies Without Expert Demonstrations</a></div>
+    <div class="meta">arXiv cs.RO · Zikang Xiong et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">解耦&#39;学开车&#39;与&#39;学看&#39;——先在向量化仿真中自博弈预训练策略，再用动作 KL + 低秩结构损失把 latent 空间与预训练视觉骨干对齐，无需专家示范，在 3DGS 真实感闭环驾驶场景上匹配或超越端到端方法。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.16400">SemGeoNav: A Safety-Guided Visual Navigation Approach with Semantic Reasoning and Geometric Planning</a></div>
+    <div class="meta">arXiv cs.RO · Yu Liu et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">分层视觉导航框架，把端到端模型的高层语义推理与几何法的可靠局部规划紧耦合并加时序轨迹平滑，在 Unitree Go2 四足真实户外环境中比 ViNT、NoMaD 更高成功率、更短导航时间。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17730">ActWorld: From Explorable to Interactive World Model via Action-Aware Memory</a></div>
+    <div class="meta">arXiv cs.CV · Zhexiao Xiong et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">交互式世界模型，用分层动作感知记忆把导航中心的生成器扩展到 rollout 中途的物体交互，构建 10 万交互视频数据集 + 持久记忆库缓解&#39;动作遗忘&#39;，单模型兼顾灵活导航与丰富物体交互。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17482">SPHINX: First Explain, Then Explore</a></div>
+    <div class="meta">arXiv cs.CV · Nguyen Do et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">闭环对抗驾驶场景合成框架，遵循&#39;先解释后探索&#39;——用可解释 AI 诊断驾驶策略的失败模式（犹豫、多帧不一致），再用 VLM 生成针对性对抗场景用于重训练，鲁棒性持续提升且可解释。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.18153">Neural Tree Reconstruction for the Open Forest Observatory</a></div>
+    <div class="meta">arXiv cs.CV · Marissa Ramirez de Chanlatte et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">为 Open Forest Observatory 把 NeRF 引入无人机森林三维重建，替代易出伪影、林下细节差的 SfM，提升对稀疏俯拍视角的鲁棒性，服务再造林优先级、野火隐患减缓与碳汇监测等生态应用。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17539">Reinforcing Dual-Path Reasoning in Spatial Vision Language Models</a></div>
+    <div class="meta">arXiv cs.CV · Yatai Ji et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">用 RL 给空间 VLM 装两条互补推理路径（纯语言演绎 LOR + 先检测 3D 几何线索再推理 DTR），单个 RL 模型同时支持双路径且相互强化，跨多个空间基准显著超基线并跨域泛化。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.17833">HumanoidArena: Benchmarking Egocentric Hierarchical Whole-body Learning</a></div>
+    <div class="meta">arXiv cs.RO · Taowen Wang et al. <span class="score">2</span></div>
+    <div class="field"><div class="field-body">仿真优先的以自我为中心分层全身学习基准，设计 7 个腿部关键 HOI/HSI 任务，从扰动泛化与跨 GMT tracker 迁移两个角度诊断高层策略-低层 tracker 接口（结果显示跨 tracker 迁移仍脆弱）。</div></div>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-17T23:48:51.844855+00:00
+</footer>
+
+</div>
+</body>
+</html>
