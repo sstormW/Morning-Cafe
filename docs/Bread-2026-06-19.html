@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-19 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-19</h1>
+  <div class="meta">36 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">GLM-5.2 以 MIT 协议开放全量权重，753B MoE 架构、100万 token 上下文，或已成迄今最强纯文本开源 LLM</span>
+      <span class="source">Simon Willison · <a href="https://simonwillison.net/2026/Jun/17/glm-52/#atom-everything">https://simonwillison.net/2026/Jun/17/glm-52/#atom-everything</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SpaceX IPO 前，中国投资者秘密入股，其中一家与解放军承包商存在关联</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/information-technology/2026/06/before-spacex-ipo-investors-in-china-secretly-acquired-stakes/">https://arstechnica.com/information-technology/2026/06/before-spacex-ipo-investors-in-china-secretly-acquired-stakes/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Bernie Sanders 提出 7 万亿美元 AI 财富基金方案，拟让美国公众掌控 AI 行业</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/tech-policy/2026/06/bernie-sanders-unveils-7-trillion-plan-to-give-americans-control-of-ai-industry/">https://arstechnica.com/tech-policy/2026/06/bernie-sanders-unveils-7-trillion-plan-to-give-americans-control-of-ai-industry/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">具身大脑公司穹彻智能完成数亿元新融资，上交 AI 基金跟投，着力「工程稳定性」转向</span>
+      <span class="source">36氪 · <a href="https://36kr.com/p/3856708724315400?f=rss">https://36kr.com/p/3856708724315400?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">美国监管首次大规模提速 AI 数据中心电网接入，同步试图遏制电费上涨</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-18/us-to-fast-track-grid-connections-for-ai-data-centers">https://www.bloomberg.com/news/articles/2026-06-18/us-to-fast-track-grid-connections-for-ai-data-centers</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">穹彻智能数亿元融资：具身大脑采用真实+仿真并行数据训练，强调「工程稳定性」转向</span>
+      <div class="why">具身智能基础模型直接竞品；真实+仿真并行数据策略与 LeapsCora sim-data 生成路径高度重叠</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3856708724315400?f=rss">https://36kr.com/p/3856708724315400?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">蔚来向 18 款车型推送跨平台世界模型，自研推理引擎部署时间从 1-2 周压至 1-2 天</span>
+      <div class="why">「世界模型（World Model）」是 LeapsCora 强关注主题；跨硬件平台推理 infra 策略对 sim-to-real 迁移有直接参考价值</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3858329994875908?f=rss">https://36kr.com/p/3858329994875908?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">菜鸟攀爬机器人通过 618 大考，未来 4 个月全球新交付 4 座大型仓库</span>
+      <div class="why">商用仓储机器人大规模落地里程碑，机器人产业规模化动态</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3858015526704129?f=rss">https://36kr.com/p/3858015526704129?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Meta 与 Crusoe 达成新 AI 算力协议，扩充数据中心基础设施</span>
+      <div class="why">上游算力供应链信号</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-18/meta-strikes-new-ai-computing-deals-with-data-center-firm-crusoe">https://www.bloomberg.com/news/articles/2026-06-18/meta-strikes-new-ai-computing-deals-with-data-center-firm-crusoe</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">美国监管快速审批 AI 数据中心电网接入，上游基础设施扩张提速</span>
+      <div class="why">算力基础设施扩张信号，影响 GPU 算力可及性</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-18/us-to-fast-track-grid-connections-for-ai-data-centers">https://www.bloomberg.com/news/articles/2026-06-18/us-to-fast-track-grid-connections-for-ai-data-centers</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">GLM-5.2 is probably the most powerful text-only open weights LLM</div>
+    
+    <ul class="article-points">
+      
+      <li>Z.ai released GLM-5.2 with full MIT-licensed open weights on June 16th, following a June 13th limited release to coding plan subscribers; the model is 753B parameters (Mixture of Experts, 40 active), 1.51TB in size.</li>
+      
+      <li>It features a 1 million token context window (up from GLM-5.1&#39;s 200K), is text-only with no vision capability, and is generating strong buzz in the open-weights community.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/17/glm-52/#atom-everything">https://simonwillison.net/2026/Jun/17/glm-52/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-17 23:58 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Steinberger, LeCun, Habib on AI Deployment</div>
+    
+    <ul class="article-points">
+      
+      <li>Peter Steinberger, Yann LeCun (AMI Labs), and Writer CEO May Habib discussed the possibilities and deployment of artificial intelligence at the VivaTech x Bloomberg Awards in Paris.</li>
+      
+      <li>LeCun&#39;s continued public engagement on AI deployment strategy frames an industry-level perspective on how frontier models reach real-world applications.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-18/steinberger-lecun-habib-on-ai-deployment-video">https://www.bloomberg.com/news/videos/2026-06-18/steinberger-lecun-habib-on-ai-deployment-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 17:42 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">MosaicLeaks: Can your research agent keep a secret?</div>
+    
+    <ul class="article-points">
+      
+      <li>ServiceNow and Hugging Face researchers examine whether AI research agents can maintain confidentiality — probing agent memory, data leakage, and security in agentic workflows.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Hugging Face Blog</span>
+      <span class="sep">·</span>
+      <a href="https://huggingface.co/blog/ServiceNow/mosaicleaks">https://huggingface.co/blog/ServiceNow/mosaicleaks</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 18:13 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">智谱等中国大模型何时赶上Fable水平？马斯克：或在2027年一季度</div>
+    
+    <ul class="article-points">
+      
+      <li>马斯克在社交媒体回应「中国大模型何时达到 Anthropic Fable 水平」，给出预测时间节点为 2027 年一季度。</li>
+      
+      <li>AI 业内人士认为马斯克判断偏保守，中美模型差距可能短于 7 个月；谷歌 DeepMind CEO 哈萨比斯此前也称差距「仅几个月」。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3858650254791941?f=rss">https://36kr.com/newsflashes/3858650254791941?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 12:22 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Is it agentic enough? Benchmarking open models on your own tooling</div>
+    
+    <ul class="article-points">
+      
+      <li>Hugging Face proposes a framework for evaluating open model agentic capability against custom tooling, moving beyond standard benchmarks to task-specific agent evaluation.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Hugging Face Blog</span>
+      <span class="sep">·</span>
+      <a href="https://huggingface.co/blog/is-it-agentic-enough">https://huggingface.co/blog/is-it-agentic-enough</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 00:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">6 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">This robotic self-driving toilet comes to you</div>
+    
+    <ul class="article-points">
+      
+      <li>Chinese company Yueban debuted the Xiaoban at a Shanghai elderly care and rehabilitation expo — an autonomous self-driving toilet that navigates to mobility-impaired users rather than requiring them to move.</li>
+      
+      <li>The device targets improved accessibility for those with age-related or rehabilitation mobility limitations.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/tech/952441/yueban-xiaoban-self-driving-autonomous-toilet">https://www.theverge.com/tech/952441/yueban-xiaoban-self-driving-autonomous-toilet</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 18:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">RealSense unveils AI-native D585 Pro depth camera for robots</div>
+    
+    <ul class="article-points">
+      
+      <li>The D585 Pro is powered by a proprietary Gen 5 system-on-chip and delivers more than 2x better depth quality than the previous RealSense generation.</li>
+      
+      <li>The camera is designed with AI-native onboard processing specifically for robotic applications.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/realsense-unveils-ai-native-d585-pro-depth-camera-for-robots/">https://www.therobotreport.com/realsense-unveils-ai-native-d585-pro-depth-camera-for-robots/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 13:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Kinova launches KIMA medical robotic arm</div>
+    
+    <ul class="article-points">
+      
+      <li>Kinova designed the KIMA robotic arm from the ground up for clinical environments rather than adapting industrial technology, targeting hospital and rehabilitation use cases.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/kinova-launches-kima-medical-robotic-arm/">https://www.therobotreport.com/kinova-launches-kima-medical-robotic-arm/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 12:45 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Microbot Medical to expand veteran access to robotic surgery with LIBERTY</div>
+    
+    <ul class="article-points">
+      
+      <li>Microbot Medical&#39;s LIBERTY robotic surgery system will be supplied to US federal programs via Lovell Government Services, a service-disabled veteran-owned small business vendor.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/microbot-medical-expands-veteran-access-robotic-surgery-liberty/">https://www.therobotreport.com/microbot-medical-expands-veteran-access-robotic-surgery-liberty/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 12:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Richtech Robotics launches livestream for ADAM AI-powered humanoid</div>
+    
+    <ul class="article-points">
+      
+      <li>Richtech Robotics is launching a public livestream for its ADAM service humanoid robot, which runs on NVIDIA technology, allowing online users to engage with it in real time.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/richtech-robotics-launches-livestream-adam-ai-powered-humanoid/">https://www.therobotreport.com/richtech-robotics-launches-livestream-adam-ai-powered-humanoid/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 12:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">红杉、阿里押注过的具身大脑公司再融资，上交等投资数亿元｜硬氪首发</div>
+    
+    <ul class="article-points">
+      
+      <li>穹彻智能（Noematrix）完成新一轮数亿元融资，无锡数据集团领投，上海交通大学 AI 未来基金、一村资本等跟投；此前已获红杉中国、阿里巴巴、Prosperity7 Ventures、Sea Limited 等加持。</li>
+      
+      <li>核心产品「穹彻具身大脑」聚焦具身智能基础模型，将真实数据与仿真数据并行纳入训练体系；赛道叙事正从「完成一个动作」转向「工程稳定性」。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3856708724315400?f=rss">https://36kr.com/p/3856708724315400?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 01:28 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla HW3 claim grows to 7,000 owners, gets law firm backing for collective action</div>
+    
+    <ul class="article-points">
+      
+      <li>A Dutch collective legal claim against Tesla over broken FSD promises on Hardware 3 vehicles has reached nearly 7,000 verified participants since launching in April with 3,000 signups in the first week.</li>
+      
+      <li>Law firm Kennedy Van der Laan has backed the case, which will transfer to a foundation to pursue formal collective action under Dutch law.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/06/18/tesla-hw3-claim-netherlands-7000-owners-kennedy-van-der-laan/">https://electrek.co/2026/06/18/tesla-hw3-claim-netherlands-7000-owners-kennedy-van-der-laan/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 22:17 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Sweden tells EU to reject Tesla &#39;FSD&#39; unless speeding is removed</div>
+    
+    <ul class="article-points">
+      
+      <li>Sweden&#39;s transport authority sent an April 30 letter to the EU&#39;s Technical Committee on Motor Vehicles recommending rejection of Tesla FSD (Supervised) bloc-wide approval unless its ability to exceed posted speed limits is removed.</li>
+      
+      <li>The committee takes up the matter June 30, ahead of a vote on EU-wide FSD rollout.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/06/18/sweden-tesla-fsd-speeding-eu-vote/">https://electrek.co/2026/06/18/sweden-tesla-fsd-speeding-eu-vote/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 16:50 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla teases new FSD features — but it&#39;s still not the self-driving promised</div>
+    
+    <ul class="article-points">
+      
+      <li>Elon Musk announced Tesla FSD will soon remember parking preferences and accept voice commands via Grok, like giving directions to an Uber driver.</li>
+      
+      <li>Despite the advances, the system remains a supervised driver-assist product — not the unsupervised self-driving Tesla has sold to owners for years.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/06/18/tesla-fsd-parking-preferences-grok-voice-control/">https://electrek.co/2026/06/18/tesla-fsd-parking-preferences-grok-voice-control/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 16:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">氪星晚报｜BilibiliWorld 2026成国内首个海外售票的综合性ACG展会；让AI走进千家万户，17项举措推进“人工智能+消费”发展；快舟十一号遥十三运载火箭发射成功</div>
+    
+    <ul class="article-points">
+      
+      <li>滴滴自动驾驶参加伦敦 MOVE 2026 大会，L4 全栈核心技术已自主可控；与广汽埃安联合打造的新一代 Robotaxi R2 今年 1 月交付，持续在广州、北京开展全天候载客测试。</li>
+      
+      <li>菜鸟自研攀爬机器人通过 618 大促检验，未来 4 个月将在国内和欧洲新交付 4 座大型攀爬机器人仓库。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3858015526704129?f=rss">https://36kr.com/p/3858015526704129?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 12:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">蔚来补上“智驾课”，任少卿总结：智驾技术创新将重构竞争</div>
+    
+    <ul class="article-points">
+      
+      <li>蔚来同步向 8 款 NT2.0、4 款 NT2.5、6 款 NT3.0 共 18 款车型推送最新世界模型，实现同一智驾代码跑通不同代际芯片，核心是自研 AI Infra 及编译器实现跨平台部署。</li>
+      
+      <li>自研推理引擎将部署时间从 1-2 周压缩至 1-2 天，端侧推理性能提升超 20%；AI Agent 自动化工作流接管了原本需要工程师长时盯盘的繁琐流程。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3858329994875908?f=rss">https://36kr.com/p/3858329994875908?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 12:20 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Investors Anticipate Fresh Liquidity Following Historic SpaceX Debut</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX&#39;s public debut arrives as a wave of multibillion-dollar AI companies prepare IPOs; investors expect a broad &#39;distribution event&#39; returning much-needed capital to private markets.</li>
+      
+      <li>Wellington Management&#39;s Matt Witheiler (Head of Late-Stage Growth) sees the SpaceX listing as unlocking fresh cash that the private tech ecosystem urgently needs.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-18/investors-anticipate-fresh-liquidity-after-spacex-debut-video">https://www.bloomberg.com/news/videos/2026-06-18/investors-anticipate-fresh-liquidity-after-spacex-debut-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 19:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Before SpaceX IPO, investors in China secretly acquired stakes</div>
+    
+    <ul class="article-points">
+      
+      <li>Chinese investors secretly acquired SpaceX stakes ahead of the company&#39;s historic IPO; at least one previously unreported investor has ties to Chinese military contractors.</li>
+      
+      <li>The revelation raises national security questions around the US&#39;s most prominent private aerospace company at the moment of its public listing.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/information-technology/2026/06/before-spacex-ipo-investors-in-china-secretly-acquired-stakes/">https://arstechnica.com/information-technology/2026/06/before-spacex-ipo-investors-in-china-secretly-acquired-stakes/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 17:42 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">What the satellite servicing economy can borrow from carbon credits</div>
+    
+    <ul class="article-points">
+      
+      <li>In January 2026 alone the FCC authorized 15,000 Starlink Gen2 satellites; Starcloud has filed for 88,000 orbital data center satellites and SpaceX for 1 million — creating a massive future servicing market.</li>
+      
+      <li>The article argues satellite servicing economics could adopt carbon-credit-style market mechanisms to unlock commercial viability at scale.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/what-the-satellite-servicing-economy-can-borrow-from-carbon-credits/">https://spacenews.com/what-the-satellite-servicing-economy-can-borrow-from-carbon-credits/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 13:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Blue Origin begins rebuilding New Glenn pad</div>
+    
+    <ul class="article-points">
+      
+      <li>Blue Origin has started rebuilding the launch pad severely damaged in a New Glenn rocket explosion less than three weeks ago, aiming to resume launches by year&#39;s end.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/blue-origin-begins-rebuilding-new-glenn-pad/">https://spacenews.com/blue-origin-begins-rebuilding-new-glenn-pad/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 11:01 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">12 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Companies Move to Secure Data as AI Increases Security Risks</div>
+    
+    <ul class="article-points">
+      
+      <li>FedHIVE CEO Michael Cardaci said the US government is moving faster than it has ever moved to secure data and ensure US computing companies comply with national security requirements as AI use scales.</li>
+      
+      <li>The focus is keeping US technology within national borders as the race for global AI dominance intensifies.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-18/companies-move-to-secure-data-amid-ai-security-risks-video">https://www.bloomberg.com/news/videos/2026-06-18/companies-move-to-secure-data-amid-ai-security-risks-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 21:19 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Fmr. Lululemon CIO on AI&#39;s Impact on C-Suites, Jobs</div>
+    
+    <ul class="article-points">
+      
+      <li>Julie Averill (former CIO of Lululemon, REI, Nordstrom) argues in her new book Chief Impact Officer that AI adoption is critical for executive job security and driving organizational impact.</li>
+      
+      <li>She helped scale Lululemon&#39;s revenue to over $10 billion and now frames AI as a non-optional leadership imperative in the ongoing tech revolution.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-18/fmr-lululemon-cio-on-ai-s-impact-on-c-suites-jobs-video">https://www.bloomberg.com/news/videos/2026-06-18/fmr-lululemon-cio-on-ai-s-impact-on-c-suites-jobs-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 20:53 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Meta Strikes New AI Computing Deals With Data Center Firm Crusoe</div>
+    
+    <ul class="article-points">
+      
+      <li>Meta has secured new agreements with data center developer Crusoe for AI compute capacity, bolstering the infrastructure supporting its ambitious AI expansion.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-18/meta-strikes-new-ai-computing-deals-with-data-center-firm-crusoe">https://www.bloomberg.com/news/articles/2026-06-18/meta-strikes-new-ai-computing-deals-with-data-center-firm-crusoe</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 20:13 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Rumble Bets on AI Compute Demand With New AI Platform</div>
+    
+    <ul class="article-points">
+      
+      <li>Video platform Rumble is launching Quake AI, a new business segment combining cloud, compute, and AI infrastructure, pivoting from video hosting to the AI compute market.</li>
+      
+      <li>CEO Chris Pavlovski describes Quake AI as the next dominant business segment for the company, betting on sustained AI compute demand growth.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-18/rumble-bets-on-ai-compute-demand-with-new-ai-platform-video">https://www.bloomberg.com/news/videos/2026-06-18/rumble-bets-on-ai-compute-demand-with-new-ai-platform-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 19:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Ukraine&#39;s Denikeieva on Building AI for Citizens</div>
+    
+    <ul class="article-points">
+      
+      <li>Ukraine&#39;s Deputy Minister of Digital Transformation Nataliia Denikeieva discussed digital resiliency and building AI for citizens at the VivaTech x Bloomberg Awards in Paris.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-18/ukraine-s-denikeieva-on-building-ai-for-citizens-video">https://www.bloomberg.com/news/videos/2026-06-18/ukraine-s-denikeieva-on-building-ai-for-citizens-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 17:56 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Alibaba&#39;s Tsai, zu Furstenberg Discuss AI Investment</div>
+    
+    <ul class="article-points">
+      
+      <li>Alibaba Group Chairman Joe Tsai and General Catalyst MD Jeannette zu Furstenberg discussed AI investment opportunities and leadership at the VivaTech x Bloomberg Awards in Paris.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-18/alibaba-s-tsai-zu-furstenberg-discuss-ai-investment-video">https://www.bloomberg.com/news/videos/2026-06-18/alibaba-s-tsai-zu-furstenberg-discuss-ai-investment-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 17:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">WWW Inventor Tim Berners-Lee on Development of AI</div>
+    
+    <ul class="article-points">
+      
+      <li>Tim Berners-Lee, inventor of the World Wide Web, shared his perspective on AI development at the VivaTech x Bloomberg Awards in Paris.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-18/www-inventor-tim-berners-lee-on-development-of-ai-video">https://www.bloomberg.com/news/videos/2026-06-18/www-inventor-tim-berners-lee-on-development-of-ai-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 17:33 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Bernie Sanders unveils $7 trillion plan to give Americans control of AI industry</div>
+    
+    <ul class="article-points">
+      
+      <li>Bernie Sanders unveiled a $7 trillion AI wealth fund proposal intended to give Americans public control over the AI industry — the biggest AI firms will likely recoil at the plan.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/tech-policy/2026/06/bernie-sanders-unveils-7-trillion-plan-to-give-americans-control-of-ai-industry/">https://arstechnica.com/tech-policy/2026/06/bernie-sanders-unveils-7-trillion-plan-to-give-americans-control-of-ai-industry/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 17:02 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">US Acts to Speed Up Power Grid Hook-Ups for AI Data Centers</div>
+    
+    <ul class="article-points">
+      
+      <li>US regulators have taken their biggest step yet to fast-track data center connections to the national grid.</li>
+      
+      <li>The move simultaneously attempts to curb surging utility bills that have angered American consumers as AI data centers drive power demand.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-18/us-to-fast-track-grid-connections-for-ai-data-centers">https://www.bloomberg.com/news/articles/2026-06-18/us-to-fast-track-grid-connections-for-ai-data-centers</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 15:05 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AIEC 2026 | 太初元碁分享国产 AI 算力实践 助力 Token 服务落地生根</div>
+    
+    <ul class="article-points">
+      
+      <li>太初元碁在 AIEC 2026 大会上分享国产 AI 算力实践经验，聚焦 Token 服务的本地落地与规模化推进。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/436740.html">https://www.qbitai.com/2026/06/436740.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 09:45 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">北大科学家下场做脑机接口，种子轮融了近亿元</div>
+    
+    <ul class="article-points">
+      
+      <li>侵入式脑机接口公司「芯生视界」完成近亿元人民币种子轮融资，经纬创投领投，星连资本、燕缘创投、水木创投跟投；团队集合多位国家「脑计划」青年首席，创始人来自北大 IDG 麦戈文脑科学研究所。</li>
+      
+      <li>方向：视觉、语言和具身融合，目标打造万通道一体式「神经显卡」脑机接口系统，对标 Neuralink。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3855480467543042?f=rss">https://36kr.com/p/3855480467543042?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 01:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">中科院博士冲上市，市值超105亿港币</div>
+    
+    <ul class="article-points">
+      
+      <li>中科闻歌（01956.HK）6 月 17 日启动招股，发行价 60.70 港元，市值 105.07 亿港币，募资约 9 亿港元，预计 6 月 26 日在港交所主板挂牌，将成「通用决策大模型第一股」。</li>
+      
+      <li>2023-2025 年收入分别为 2.5 亿、3.18 亿、4.05 亿元（CAGR ~27.4%），毛利率超 51%，但净亏损仍存，经营现金流连续三年大额净流出。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3857959588418823?f=rss">https://36kr.com/p/3857959588418823?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 01:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">JPM Asset Mgt. CEO: AI Can Power Markets for Some Time</div>
+    
+    <ul class="article-points">
+      
+      <li>JPMorgan Asset Management CEO George Gatch highlighted strong innovation and investment opportunities in mega-cap tech IPOs, describing the trend as a &#39;rising tide that is lifting all boats.&#39;</li>
+      
+      <li>His comments reflect broad institutional optimism around the wave of AI-adjacent company listings anticipated throughout 2026.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-18/jpm-asset-mgt-ceo-ai-can-power-markets-for-some-time-video">https://www.bloomberg.com/news/videos/2026-06-18/jpm-asset-mgt-ceo-ai-can-power-markets-for-some-time-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 20:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Investors Look Beyond Chips For Next Big Thing in Tech</div>
+    
+    <ul class="article-points">
+      
+      <li>Alger Portfolio Manager Ankur Crawford said there has never been a business quite like SpaceX as investors search for post-chip opportunities to ride the AI trade.</li>
+      
+      <li>The commentary reflects growing investor focus on infrastructure, aerospace, and application layers beyond semiconductor supply chains.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-18/investors-look-beyond-chips-for-next-big-thing-in-tech-video">https://www.bloomberg.com/news/videos/2026-06-18/investors-look-beyond-chips-for-next-big-thing-in-tech-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 19:04 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">An Interview with Michael Morton About E-Commerce in the Age of AI</div>
+    
+    <ul class="article-points">
+      
+      <li>Stratechery&#39;s Michael Morton interview covers AI&#39;s impact on e-commerce, including distribution vs. referral models, grocery, and autonomous vehicle integration. [Paywalled]</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Stratechery</span>
+      <span class="sep">·</span>
+      <a href="https://stratechery.com/2026/an-interview-with-michael-morton-about-e-commerce-in-the-age-of-ai/">https://stratechery.com/2026/an-interview-with-michael-morton-about-e-commerce-in-the-age-of-ai/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 10:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">36氪「2026最具价值成长企业100」正式发布</div>
+    
+    <ul class="article-points">
+      
+      <li>36氪「2026 最具价值成长企业 100」榜单发布，历时两月评选，地域分布前三为北京（26 家）、深圳（21 家）、上海（14 家）。</li>
+      
+      <li>北京、上海入围企业多集中在 AI/大模型、先进制造/机器人/工业自动化方向，反映当前产业资本最关注的两大赛道。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3857980507919622?f=rss">https://36kr.com/p/3857980507919622?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-18 01:09 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-19.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-18T23:24:31.382185+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>

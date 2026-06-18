@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>晨报 · 2026-06-19 · Morning Cafe</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="晨报 · 2026-06-19｜LeapsCora 视角">
+<meta property="og:description" content="Top 5 首条：GLM-5.2 以 MIT 协议开放全量权重，753B MoE 架构、100万 token 上下文，或已成迄今最强纯文本开源 LLM ｜ LeapsCora 直接相关：穹彻智能数亿元融资：具身大脑采用真实+仿真并行数据训练，强调「工程稳定性」转向">
+<meta property="og:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-19.png">
+<meta property="og:url" content="https://sstormw.github.io/Morning-Cafe/2026-06-19.html">
+<meta property="og:site_name" content="Morning Cafe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="晨报 · 2026-06-19｜LeapsCora 视角">
+<meta name="twitter:description" content="Top 5 首条：GLM-5.2 以 MIT 协议开放全量权重，753B MoE 架构、100万 token 上下文，或已成迄今最强纯文本开源 LLM ｜ LeapsCora 直接相关：穹彻智能数亿元融资：具身大脑采用真实+仿真并行数据训练，强调「工程稳定性」转向">
+<meta name="twitter:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-19.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 14px; }
+
+.section { margin-top: 40px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+.top5 .source a:hover { text-decoration: underline; }
+
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title {
+  font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink);
+}
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .nav { margin-bottom: 8px; }
+.footer .nav a { margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 28px 18px 50px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">☕ Morning Cafe</div>
+  <h1>晨报 · 2026-06-19</h1>
+  <div class="meta">36 条来源 · 抓取窗口 24h · LeapsCora 视角</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">GLM-5.2 以 MIT 协议开放全量权重，753B MoE 架构、100万 token 上下文，或已成迄今最强纯文本开源 LLM</span>
+      <span class="source">Simon Willison · <a href="https://simonwillison.net/2026/Jun/17/glm-52/#atom-everything">https://simonwillison.net/2026/Jun/17/glm-52/#atom-everything</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SpaceX IPO 前，中国投资者秘密入股，其中一家与解放军承包商存在关联</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/information-technology/2026/06/before-spacex-ipo-investors-in-china-secretly-acquired-stakes/">https://arstechnica.com/information-technology/2026/06/before-spacex-ipo-investors-in-china-secretly-acquired-stakes/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Bernie Sanders 提出 7 万亿美元 AI 财富基金方案，拟让美国公众掌控 AI 行业</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/tech-policy/2026/06/bernie-sanders-unveils-7-trillion-plan-to-give-americans-control-of-ai-industry/">https://arstechnica.com/tech-policy/2026/06/bernie-sanders-unveils-7-trillion-plan-to-give-americans-control-of-ai-industry/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">具身大脑公司穹彻智能完成数亿元新融资，上交 AI 基金跟投，着力「工程稳定性」转向</span>
+      <span class="source">36氪 · <a href="https://36kr.com/p/3856708724315400?f=rss">https://36kr.com/p/3856708724315400?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">美国监管首次大规模提速 AI 数据中心电网接入，同步试图遏制电费上涨</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-18/us-to-fast-track-grid-connections-for-ai-data-centers">https://www.bloomberg.com/news/articles/2026-06-18/us-to-fast-track-grid-connections-for-ai-data-centers</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">穹彻智能数亿元融资：具身大脑采用真实+仿真并行数据训练，强调「工程稳定性」转向</span>
+      <div class="why">具身智能基础模型直接竞品；真实+仿真并行数据策略与 LeapsCora sim-data 生成路径高度重叠</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3856708724315400?f=rss">https://36kr.com/p/3856708724315400?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">蔚来向 18 款车型推送跨平台世界模型，自研推理引擎部署时间从 1-2 周压至 1-2 天</span>
+      <div class="why">「世界模型（World Model）」是 LeapsCora 强关注主题；跨硬件平台推理 infra 策略对 sim-to-real 迁移有直接参考价值</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3858329994875908?f=rss">https://36kr.com/p/3858329994875908?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">菜鸟攀爬机器人通过 618 大考，未来 4 个月全球新交付 4 座大型仓库</span>
+      <div class="why">商用仓储机器人大规模落地里程碑，机器人产业规模化动态</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3858015526704129?f=rss">https://36kr.com/p/3858015526704129?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Meta 与 Crusoe 达成新 AI 算力协议，扩充数据中心基础设施</span>
+      <div class="why">上游算力供应链信号</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-18/meta-strikes-new-ai-computing-deals-with-data-center-firm-crusoe">https://www.bloomberg.com/news/articles/2026-06-18/meta-strikes-new-ai-computing-deals-with-data-center-firm-crusoe</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">美国监管快速审批 AI 数据中心电网接入，上游基础设施扩张提速</span>
+      <div class="why">算力基础设施扩张信号，影响 GPU 算力可及性</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-18/us-to-fast-track-grid-connections-for-ai-data-centers">https://www.bloomberg.com/news/articles/2026-06-18/us-to-fast-track-grid-connections-for-ai-data-centers</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+  <div class="nav">
+    <a href="./index.html">← 归档</a>
+  </div>
+  <div>Morning Cafe · 个人非商业晨报 · 2026-06-18T23:24:31.382185+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
