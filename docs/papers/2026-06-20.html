@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-20</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-20</h1>
+  <div class="meta">60 篇候选 · 精读 3 · 速览 27 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+  <div class="lens-callout">
+    
+    <div class="group-label">🔥 直接相关精读 (3 篇)</div>
+    <ul>
+      
+      <li><strong>Slow Brain, Fast Planner: Latency-Resilient VLM-Augmented Urban Navigation</strong> — MetaUrban 团队把 VLM 高层场景理解接入户外人行道导航，推进 outdoor nav 的实时决策与 sim-to-real — <a href="http://arxiv.org/abs/2606.20458">arXiv</a></li>
+      
+      <li><strong>Monocular 3D Occupancy Perception for Robots on Sidewalks via Hybrid 2D-3D Learning</strong> — 人行道感知 + Sidewalk3D 数据集，填充城市级场景感知/重建研究点 — <a href="http://arxiv.org/abs/2606.19122">arXiv</a></li>
+      
+      <li><strong>SWAP: Symmetric Equivariant World-Model for Agile Robot Parkour</strong> — 对称等变先验 + zero-shot 户外迁移，参考户外四足运动控制 — <a href="http://arxiv.org/abs/2606.19928">arXiv</a></li>
+      
+    </ul>
+    
+    
+    <div class="group-label">📚 值得扫一眼 (5 篇)</div>
+    <ul>
+      
+      <li><strong>World Engine: Towards the Era of Post-Training for Autonomous Driving</strong> — 从真实日志重建可交互驾驶环境并外推长尾，video2sim 思路对城市仿真有借鉴 — <a href="http://arxiv.org/abs/2606.19836">arXiv</a></li>
+      
+      <li><strong>Scaling Self-Play for End-to-End Driving</strong> — 高吞吐像素级驾驶自博弈模拟器，户外端到端策略训练参考 — <a href="http://arxiv.org/abs/2606.19641">arXiv</a></li>
+      
+      <li><strong>FrozenDrive: Zero-Shot Text-Guided Driving Scene Generation and Data Augmentation with Parameter-Free Frozen Diffusion Model</strong> — 零样本文本引导驾驶场景生成与数据增强 — <a href="http://arxiv.org/abs/2606.20110">arXiv</a></li>
+      
+      <li><strong>DF3DV-1K: A Large-Scale Dataset and Benchmark for Distractor-Free Novel View Synthesis</strong> — 大规模室内外无干扰物 NVS 数据集与 benchmark — <a href="https://arxiv.org/abs/2604.13416">arXiv</a></li>
+      
+      <li><strong>Geometry-Preserving in 3D Gaussian Splatting for LiDAR-Camera Extrinsic Calibration</strong> — 保几何的 LiDAR-相机标定，街景重建可用 — <a href="http://arxiv.org/abs/2606.20103">arXiv</a></li>
+      
+    </ul>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🔥</span>
+    <h2>强相关精读 (3 篇)</h2>
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.20458">Slow Brain, Fast Planner: Latency-Resilient VLM-Augmented Urban Navigation</a></div>
+    <div class="meta">
+      arXiv cs.RO · 2026-06-18 · Zhenghao Peng et al.
+      <span class="score">19 (14+5)</span>
+    </div>
+    <div class="reason">MetaUrban team; VLM-augmented outdoor sidewalk robot navigation, core to urban nav</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">针对人行道导航中的“轨迹打分鸿沟”——anchor-based planner 能实时生成候选轨迹，但打分函数常在困难场景选错，导致机器人冲向草坪/行人/逆行，即便候选集中已有更好轨迹。本文不走端到端 VLA 替换，而提出 VLM-Planner 接口：用 VLM 从 planner 候选集里选一个索引，再与 planner 原始输出融合。由于 VLM 每次查询要 1–3s、无法直接驱动 5–20Hz 控制环，作者贡献了一个 training-free、抗延迟的轨迹级融合层，靠几何相似度+指数衰减把“过期”的 VLM 选择转成实时打分。在约 2,000 个真实困难场景上 VLM 选择比 planner 最佳选择降低 30% ADE；仿真中延迟到 5s 仍保持 &gt;80% 成功率，并在校园人行道实机验证。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对标 MetaUrban：同团队把 VLM 高层场景理解引入户外人行道导航，对 outdoor robot navigation 的实时决策与 sim-to-real 这一研究点有直接推进价值；抗延迟轨迹融合思路可借鉴到城市导航 benchmark 的 baseline 设计。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19122">Monocular 3D Occupancy Perception for Robots on Sidewalks via Hybrid 2D-3D Learning</a></div>
+    <div class="meta">
+      arXiv cs.RO · 2026-06-17 · Yukai Ma et al.
+      <span class="score">14 (10+4)</span>
+    </div>
+    <div class="reason">3D occupancy for sidewalk mobile robots, directly outdoor urban perception/nav</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">面向人行道上的送货机器人/电动轮椅，提出 WalkOCC——一个混合 ray-marching 的单目 3D 占据感知框架。现有占据学习多为车载自动驾驶设计、依赖昂贵的 LiDAR-RGB 配对密集 3D 监督，难以刻画人行道特性。WalkOCC 把 LiDAR-RGB 配对数据的几何 grounding 与大规模无配对单目图像的可扩展学习耦合：从配对序列引导伪占据监督，并在 2D-only 数据上联合学习图像级表征，无需昂贵 3D 标注即可稳定优化、提升泛化。在路缘、排水沟等精细城市结构分割与跨环境/跨本体迁移上一致优于自监督图像 baseline。同时发布 Sidewalk3D——多地点多时段、带 3D 语义占据标注的大规模人行道感知数据集。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对城市级户外机器人感知/场景重建研究点有填充价值，Sidewalk3D 数据集与单目占据方案为城市级场景感知 benchmark 提供可对标的数据与评测设计；与 MetaUrban 同团队脉络，可作户外导航环境的感知层参考。</div></div>
+    
+  </div>
+  
+  <div class="paper">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19928">SWAP: Symmetric Equivariant World-Model for Agile Robot Parkour</a></div>
+    <div class="meta">
+      arXiv cs.RO · 2026-06-18 · Kaixin Lan et al.
+      <span class="score">10 (6+4)</span>
+    </div>
+    <div class="reason">Quadruped parkour world model with outdoor transfer, matches robot roster</div>
+    <div class="field"><span class="field-label">TL;DR</span><div class="field-body">提出 SWAP——端到端等变对称世界模型，把左右对称性直接嵌入 world model 与 actor-critic 网络，避免纯数据驱动的 latent world model 把对称交互冗余地编码成独立模式，从而提升 latent 空间对下游策略的效率。实机测试中四足机器人跨越 2.13m 缺口、攀上 1.63m 平台，刷新四足 parkour 记录；对未见镜像地形展现稳健几何泛化，并能 zero-shot 迁移到多样户外环境。表明对称等变是推动 learned legged locomotion 物理极限的有效结构先验。</div></div>
+    <div class="field"><span class="field-label">跟我们的接口</span><div class="field-body">对四足在户外/复杂地形的运动控制与 sim-to-real 迁移这一研究点有参考价值，其对称等变结构先验与 zero-shot 户外迁移结果可借鉴到城市户外四足导航的策略设计。</div></div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📚</span>
+    <h2>弱相关速览 (27 篇)</h2>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.20103">Geometry-Preserving in 3D Gaussian Splatting for LiDAR-Camera Extrinsic Calibration</a></div>
+    <div class="meta">arXiv cs.CV · Kyoleen Kwak et al. <span class="score">9</span></div>
+    <div class="field"><div class="field-body">用 3DGS 做无标定物的 LiDAR-相机外参标定，通过聚合多视角 LiDAR 深度监督并阻断光度梯度更新高斯空间参数来保持度量几何，在驾驶数据集上优于现有 targetless 方法。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.20562">MemoryWAM: Efficient World Action Modeling with Persistent Memory</a></div>
+    <div class="meta">arXiv cs.RO · Sizhe Yang et al. <span class="score">8</span></div>
+    <div class="field"><div class="field-body">面向长程、依赖记忆的机器人操作的世界动作模型，用近期帧+事件锚点帧+压缩 gist token 混合记忆设计降低推理延迟与显存，优于强 VLA/WAM baseline；偏室内操作。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.20531">VisDom: Sparse Novel View Synthesis with Visible Domain Constraint</a></div>
+    <div class="meta">arXiv cs.CV · Mariia Gladkova et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">稀疏视角 NVS 的 learning-free 几何约束，用至少 K 视角可见域过滤 visual hull，集成进 NeRF/GS 提升稀疏重建质量；对象级而非街景。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19874">MMD-SLAM: Structure-Enhanced Multi-Meta Gaussian Distribution-Guided Visual SLAM</a></div>
+    <div class="meta">arXiv cs.RO · Fan Zhu et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">基于 Atlanta World 假设的结构增强 3DGS 视觉 SLAM，点线融合+多元高斯表征提升跟踪与建图，ScanNet ATE RMSE 降 48.56%；通用室内场景。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19253">OneCanvas: 3D Scene Understanding via Panoramic Reprojection</a></div>
+    <div class="meta">arXiv cs.RO · Bartłomiej Baranowski et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">把多视角 patch 特征 unproject 到单张全景等距画布上做 3D 场景理解，免几何编码器，SQA3D/VSI-Bench 上 SOTA 且训练算力低一个数量级。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.20110">FrozenDrive: Zero-Shot Text-Guided Driving Scene Generation and Data Augmentation with Parameter-Free Frozen Diffusion Model</a></div>
+    <div class="meta">arXiv cs.CV · Yuhwan Jeong et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">参数无关的冻结扩散模型做零样本文本引导驾驶场景生成与数据增强，保留预训练知识实现多视角/时序一致，nuScenes 上夜间雨天增强显著提升自动驾驶性能。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.20083">Holo-World: Unified Camera, Object and Weather Control for Video World Model</a></div>
+    <div class="meta">arXiv cs.CV · Xiangchen Yin et al. <span class="score">7</span></div>
+    <div class="field"><div class="field-body">统一相机/物体/天气控制的视频世界模型，从单张图出发按控制信号生成视频并可迁移目标天气状态，优于 video-to-video 天气编辑 baseline。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19586">One Demo is Worth a Thousand Trajectories: Action-View Augmentation for Visuomotor Policies</a></div>
+    <div class="meta">arXiv cs.RO · Chuer Pan et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">用适配 fisheye 的高斯泼溅做视觉运动策略的动作-视角数据增强，从单条真实演示生成物理可行轨迹与新视角渲染，提升操作成功率；室内操作。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.18702">UniTemp: Unlocking Video Generation in Any Temporal Order via Bidirectional Distillation</a></div>
+    <div class="meta">arXiv cs.CV · Lin Zhang et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">双向蒸馏框架训练支持任意时间方向（前向/后向/插帧）的自回归视频生成，用 blockwise anchor latent 解决因果 VAE 后向不连续；纯视频生成。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.18623">Intrinsic 4D Gaussian Segmentation from Scene Cues</a></div>
+    <div class="meta">arXiv cs.CV · Hasan Yazar et al. <span class="score">6</span></div>
+    <div class="field"><div class="field-body">免训练免 mask 的 4D 高斯分割，从高斯自身的外观/朝向/形变轨迹等线索建亲和图+Leiden 社区检测，Neu3D 达 0.746 mIoU 且比 mask 监督快 12.5×。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19656">DF-ExpEnse: Diffusion Filtered Exploration for Sample Efficient Finetuning</a></div>
+    <div class="meta">arXiv cs.RO · Calvin Luo et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">用扩散过滤探索提升在线经验收集质量、增加微调样本效率，借生成式策略多模态性构造候选集并用 critic 集成选动作；操作/运动任务。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.18646">A Scalable Embodied Intelligence Platform for Seamless Real-to-Sim-to-Real Transfer of Household Mobile Manipulation Tasks</a></div>
+    <div class="meta">arXiv cs.RO · Kui Yang et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">可扩展的 real-to-sim-to-real 家用移动操作平台 BestMan，含自动场景生成、仿真技能学习与硬件无关中间件；室内家庭操作。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19495">LooseControlVideo: Directorial Video Control using Spatial Blocking</a></div>
+    <div class="meta">arXiv cs.CV · Shariq Farooq Bhat et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">用稀疏有向 3D box 作分镜代理实现文生视频的 3D 空间编排，微调 Wan 2.2，在 nuScenes 等上轨迹误差降 1.2–3×。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19316">NeuMesh++: Towards Versatile and Efficient Volumetric Editing with Disentangled Neural Mesh-based Implicit Field</a></div>
+    <div class="meta">arXiv cs.CV · Chong Bao et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">基于网格的解耦神经隐式场表征，在顶点上编码几何/纹理/语义码实现高效全面的体素编辑（几何/纹理/语义引导）；通用场景编辑。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="https://arxiv.org/abs/2604.13416">DF3DV-1K: A Large-Scale Dataset and Benchmark for Distractor-Free Novel View Synthesis</a></div>
+    <div class="meta">HF Daily Papers · Cheng-You Lu et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">大规模无干扰物 NVS 数据集与 benchmark，1,048 个场景含干净/杂乱图像对、覆盖室内外，评测 9 种 distractor-free 辐射场方法 + 3DGS。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19836">World Engine: Towards the Era of Post-Training for Autonomous Driving</a></div>
+    <div class="meta">arXiv cs.RO · Tianyu Li et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">自动驾驶后训练生成框架，从真实日志重建高保真交互环境并外推安全攸关变体，用 RL 后训练对齐安全约束，nuPlan 上显著降低长尾失败。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19641">Scaling Self-Play for End-to-End Driving</a></div>
+    <div class="meta">arXiv cs.RO · Luke Rowe et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">像素级自博弈训练端到端驾驶，提出高吞吐 Gigapixel 模拟器（5 万 agent 步/秒），用 self-play DAgger 从特权 RL teacher 蒸馏，HUGSIM/NAVSIM-v2 上有竞争力。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.18883">ZiMPedance: Impedance-Aware ZMP Modeling and Control for Payload Carrying with Quadruped Robots</a></div>
+    <div class="meta">arXiv cs.RO · Giovanni B. Dessy et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">含被动载荷接口动力学的扩展 ZMP 建模与 MPC 控制，用于四足负载运输，仿真中稳定性违规降 10×，硬件实验 2kg 负载下稳定行走。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.20515">S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence</a></div>
+    <div class="meta">arXiv cs.CV · Yalun Dai et al. <span class="score">5</span></div>
+    <div class="field"><div class="field-body">空间工具使用的 agentic 范式，把空间推理建模为时空证据累积，VLM 作语义 planner 调用空间工具，训练-free 提升多视角/视频空间推理，SFT 得 S-Agent-8B。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.20426">TaCauchy: An Extensible FEM Framework for Vision-Based Tactile Simulation</a></div>
+    <div class="meta">arXiv cs.RO · Hengfei Zhao et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">集成进 Isaac Sim 的可扩展 FEM 框架，为视觉触觉仿真直接计算 Cauchy 应力场提供物理 ground truth，60 并行环境 555 FPS；触觉操作。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19998">Tri-Info: Generalizable, Interpretable Failure Prediction for VLA Models via Information Theory</a></div>
+    <div class="meta">arXiv cs.RO · Jinghan Yang et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">基于信息论的 VLA 失败预测，用动作多样性/时序一致/状态耦合三信号，跨架构/环境/sim-to-real 无需重训迁移，真实任务 83% 准确率。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19776">Occ-VLM: Occupancy Grounded Vision Language Model for Indoor Scene Understanding</a></div>
+    <div class="meta">arXiv cs.CV · Jianing Li et al. <span class="score">4</span></div>
+    <div class="field"><div class="field-body">仅用 posed RGB 与单个 2D 编码器的 3D 场景理解 VLM，重建 3D 占据作几何先验关联前景 token，室内占据预测 SOTA、3D VQA 与 3D 输入 VLM 持平。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.20491">Fast Human Attention Prediction for Fixation-guided Active Perception in Autonomous Navigation</a></div>
+    <div class="meta">arXiv cs.RO · Fatma Youssef Mohammed et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">用液态神经网络+MobileNetV3 的轻量扫描路径预测（0.61 GFLOPs），集成进 RL 主动相机控制实现注视引导感知，航空机器人实机验证。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.19531">ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?</a></div>
+    <div class="meta">arXiv cs.RO · Yuyang Zhang et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">质疑世界动作模型是否需要视频生成，提出用预训练图像编辑模型做机器人动作预测，FLOPs 降至 1/6、延迟 1/4，优于视频版 WAM。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.18772">HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations</a></div>
+    <div class="meta">arXiv cs.RO · Zehui Zhao et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">从人类演示学习带主动感知的人形 loco-manipulation，扩展 UMI 加 egocentric 感知+流形约束控制器，Unitree G1 五任务平均 85% 成功率。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.18625">SRL: Combining SLIP Model and Reinforcement Learning for Agile Robotic Jumping</a></div>
+    <div class="meta">arXiv cs.RO · Xiaowen Hu et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">结合 SLIP 模型与 RL 的敏捷机器人跳跃，SLIP 前馈+RL 实时反馈，比 baseline 更稳更快，双足/四足台阶跳跃与 sim-to-real 验证。</div></div>
+  </div>
+  
+  <div class="paper skim">
+    <div class="title"><a href="http://arxiv.org/abs/2606.20455">PCFootprint: A Large-Scale Dataset and Benchmark for Vectorized Building Footprint Extraction from Aerial LiDAR Point Clouds</a></div>
+    <div class="meta">arXiv cs.CV · Haoyuan Shen et al. <span class="score">3</span></div>
+    <div class="field"><div class="field-body">首个从机载 LiDAR 点云提取矢量化建筑足迹的大规模数据集（3.3 万 tile，覆盖城乡），含跨域测试集并建立 benchmark；遥感方向，无 sim/robot 落点。</div></div>
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📖</span>
+    <h2>期刊新刊</h2>
+  </div>
+  
+  <div class="journal-group">
+    <h3>Journal of Field Robotics</h3>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70265?af=R">Heavy‐UUV Docking System for a Fixed Seabed Station Based on Differential Optical‐Guidance Beacons</a></div>
+      <div class="meta">Kai Sun et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">基于差分光学引导信标的重型 UUV 海底固定站对接系统。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70275?af=R">Design and Verification of a Multi‐Feature Wind Field Generation Device Based on Array‐Type Rotors</a></div>
+      <div class="meta">Wenqing Zhang et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">基于阵列式旋翼的多特征风场生成装置设计与验证。</div></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-20T02:20:47.172988+00:00
+</footer>
+
+</div>
+</body>
+</html>
