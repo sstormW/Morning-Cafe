@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-22 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-22</h1>
+  <div class="meta">12 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">DeepSeek 敲定首轮超 510 亿元外部融资</span>
+      <span class="source">钛媒体 · <a href="https://www.tmtpost.com/8035376.html">https://www.tmtpost.com/8035376.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">美国叫停 Anthropic 最强模型 Fable 5 与 Mythos 5</span>
+      <span class="source">钛媒体 · <a href="https://www.tmtpost.com/8035376.html">https://www.tmtpost.com/8035376.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">2026 年具身智能融资已快超去年全年，超半数流入机器人「大脑」层</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/06/437198.html">https://www.qbitai.com/2026/06/437198.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SpaceX 换股收购 AI 编程独角兽 Cursor</span>
+      <span class="source">钛媒体 · <a href="https://www.tmtpost.com/8035376.html">https://www.tmtpost.com/8035376.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">GPT-5.6 在即，大模型进入闭源受控与本地开源「双轨制」时代</span>
+      <span class="source">钛媒体 · <a href="https://www.tmtpost.com/8035108.html">https://www.tmtpost.com/8035108.html</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">2026年具身智能融资接近去年全年，超半数流入机器人「大脑」层</span>
+      <div class="why">lens 强关注「机器人公司 IPO/大额融资/重要合作」；具身赛道资金爆发直接反映 LeapsCora 所在训练数据与仿真平台市场的估值热度</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/437198.html">https://www.qbitai.com/2026/06/437198.html</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Güdel TMV/TMF 系统在 Automate 2026 展示，重型磨削机器人增加垂直 + 水平两自由度</span>
+      <div class="why">工业机器人展会操控类新品动态，与具身训练环境生态相邻；非 lens 重点厂商</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/gudel-to-showcase-grinding-beyond-stationary-robots-integrated-vertical-horizontal-motion-automate/">https://www.therobotreport.com/gudel-to-showcase-grinding-beyond-stationary-robots-integrated-vertical-horizontal-motion-automate/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">GPT-5.6倒计时：放弃单一API幻想，算力迭代再快也敌不过一纸合规</div>
+    
+    <ul class="article-points">
+      
+      <li>AI大模型基座正步入「闭源受控」与「本地开源」双轨制时代，合规与可用性已超越纯技术指标成为企业选型核心考量。</li>
+      
+      <li>GPT-5.6 上线在即，Anthropic Fable 5/Mythos 5 被叫停事件印证：单一 API 供应商策略面临常态化断供风险，企业须加速底层模型解耦。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8035108.html">https://www.tmtpost.com/8035108.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 04:35 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">具身赛道现状素描：脑子灵，模型好，不是百亿，就是独角</div>
+    
+    <ul class="article-points">
+      
+      <li>2026 年上半年具身智能融资规模已接近 2025 年全年总量，行业进入密集爆发期。</li>
+      
+      <li>超过一半的资金流入机器人「大脑」（感知与决策软件栈），而非硬件本体，体现市场对智能层价值的高度认可。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/437198.html">https://www.qbitai.com/2026/06/437198.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 09:18 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Güdel to show grinding beyond stationary robots with vertical, horizontal motion at Automate 2026</div>
+    
+    <ul class="article-points">
+      
+      <li>Güdel will showcase its TMV and TMF systems at Automate 2026, adding vertical and horizontal motion axes to heavy-duty robotic grinding — enabling coverage of larger workpieces without fixed repositioning.</li>
+      
+      <li>The two new degrees of freedom address a long-standing limitation of stationary grinders and expand Güdel&#39;s robotic reach into more complex industrial applications.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/gudel-to-showcase-grinding-beyond-stationary-robots-integrated-vertical-horizontal-motion-automate/">https://www.therobotreport.com/gudel-to-showcase-grinding-beyond-stationary-robots-integrated-vertical-horizontal-motion-automate/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 12:30 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">7 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Temporary Cloudflare Accounts for AI agents</div>
+    
+    <ul class="article-points">
+      
+      <li>Cloudflare now allows deploying Workers projects without an account via `npx wrangler deploy --temporary`; the ephemeral project stays live for 60 minutes before auto-deletion.</li>
+      
+      <li>Simon Willison tested the feature using GPT-5.5 xhigh in Codex Desktop to build an HTTP redirect-following tool, noting the AI agent branding is incidental — the feature is useful for any developer needing instant, zero-friction deployment.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything">https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 22:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">When the Trump administration cracks down on Anthropic, who benefits?</div>
+    
+    <ul class="article-points">
+      
+      <li>The TechCrunch Equity podcast examined the Trump administration&#39;s latest moves against Anthropic — including the ban on Fable 5 and Mythos 5 — and explored which AI companies stand to gain from the regulatory pressure.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/21/when-the-trump-administration-cracks-down-on-anthropic-who-benefits/">https://techcrunch.com/2026/06/21/when-the-trump-administration-cracks-down-on-anthropic-who-benefits/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 15:28 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Beyond Siri: Here are the practical AI features coming to your iPhone in iOS 27</div>
+    
+    <ul class="article-points">
+      
+      <li>Siri&#39;s AI overhaul grabbed WWDC headlines, but iOS 27 embeds a broader range of practical AI capabilities across the OS — beyond the assistant itself.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/21/beyond-siri-here-are-the-practical-ai-features-coming-to-your-iphone-in-ios-27/">https://techcrunch.com/2026/06/21/beyond-siri-here-are-the-practical-ai-features-coming-to-your-iphone-in-ios-27/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 14:40 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">28 Tips to Take Your ChatGPT Prompts to the Next Level</div>
+    
+    <ul class="article-points">
+      
+      <li>Wired outlines 28 prompt engineering techniques for ChatGPT, covering role assignment, chain-of-thought prompting, output formatting, and iteration strategies to get more precise results.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Wired</span>
+      <span class="sep">·</span>
+      <a href="https://www.wired.com/story/28-tips-to-take-your-chatgpt-prompts-to-the-next-level/">https://www.wired.com/story/28-tips-to-take-your-chatgpt-prompts-to-the-next-level/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 10:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">【数智周报】DeepSeek敲定首轮超510亿元外部融资；SpaceX换股收购AI编程独角兽Cursor；美国叫停Anthropic最强模型Fable 5和Mythos 5</div>
+    
+    <ul class="article-points">
+      
+      <li>钛媒体数智周报（6月15–20日）：DeepSeek 敲定首轮超 510 亿元外部融资；SpaceX 换股收购 AI 编程独角兽 Cursor；美国叫停 Anthropic Fable 5 与 Mythos 5 两款旗舰模型；字节豆包日收入不足百万，Seedance 毛利率达 70%；AMD 收购内存优化企业 MEXT。</li>
+      
+      <li>DeepSeek 此轮融资规模使其跻身全球顶级 AI 独角兽行列；Anthropic 模型被叫停与「双轨制大模型」趋势互相印证，断供风险已从理论上升为现实。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8035376.html">https://www.tmtpost.com/8035376.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 10:11 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">豆包收费，能赚多少钱？</div>
+    
+    <ul class="article-points">
+      
+      <li>字节豆包当前日收入不足百万元，但其低价补贴策略持续迫使竞争对手维持高额烧钱节奏，形成「不靠 AI 赚钱、让别人没法停止烧钱」的竞争压制逻辑。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8035153.html">https://www.tmtpost.com/8035153.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 09:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Plaud软件年化收入破1亿美元，硬件明星开始软件叙事</div>
+    
+    <ul class="article-points">
+      
+      <li>AI 录音硬件公司 Plaud 软件年化收入突破 1 亿美元，正从消费硬件向企业级软件基础设施转型。</li>
+      
+      <li>Plaud 的「三角模型」叙事（消费硬件 → 软件 → 企业级 SaaS）反映新一代全球化科技公司在硬件天花板下的路径选择。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8034874.html">https://www.tmtpost.com/8034874.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 05:22 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Amazon Advances Prime Day by One Month Amid AI Shift</div>
+    
+    <ul class="article-points">
+      
+      <li>Amazon moved its annual Prime Day sales event one month earlier this year, aiming to capture consumer spending as discretionary dollars tighten and AI increasingly shapes shopping behavior.</li>
+      
+      <li>Bloomberg Intelligence senior e-commerce analyst Poonam Goyal highlighted the strategic importance of the timing shift in an interview on Bloomberg This Weekend.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-21/amazon-advances-prime-day-by-one-month-amid-ai-shift-video">https://www.bloomberg.com/news/videos/2026-06-21/amazon-advances-prime-day-by-one-month-amid-ai-shift-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 13:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Ubisoft co-founder Claude Guillemot dies in plane crash</div>
+    
+    <ul class="article-points">
+      
+      <li>Claude Guillemot, who co-founded Ubisoft alongside his four brothers, died in a plane crash at age 69.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/21/ubisoft-co-founder-claude-guillemot-dies-in-plane-crash/">https://techcrunch.com/2026/06/21/ubisoft-co-founder-claude-guillemot-dies-in-plane-crash/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-21 18:34 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-22.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-21T22:40:04.537623+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
