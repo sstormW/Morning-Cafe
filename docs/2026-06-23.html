@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>晨报 · 2026-06-23 · Morning Cafe</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="晨报 · 2026-06-23｜LeapsCora 视角">
+<meta property="og:description" content="Top 5 首条：Oracle 过去 12 个月裁员 21,000 人，公司明确称 AI 替代了部分岗位，规模超出此前公开数字 ｜ LeapsCora 直接相关：清华 Spatial-TTT（2B 参数）在动态世界中持续更新空间记忆，MindCube-Tiny 准确率 76...">
+<meta property="og:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-23.png">
+<meta property="og:url" content="https://sstormw.github.io/Morning-Cafe/2026-06-23.html">
+<meta property="og:site_name" content="Morning Cafe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="晨报 · 2026-06-23｜LeapsCora 视角">
+<meta name="twitter:description" content="Top 5 首条：Oracle 过去 12 个月裁员 21,000 人，公司明确称 AI 替代了部分岗位，规模超出此前公开数字 ｜ LeapsCora 直接相关：清华 Spatial-TTT（2B 参数）在动态世界中持续更新空间记忆，MindCube-Tiny 准确率 76...">
+<meta name="twitter:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-23.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 14px; }
+
+.section { margin-top: 40px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+.top5 .source a:hover { text-decoration: underline; }
+
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title {
+  font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink);
+}
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .nav { margin-bottom: 8px; }
+.footer .nav a { margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 28px 18px 50px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">☕ Morning Cafe</div>
+  <h1>晨报 · 2026-06-23</h1>
+  <div class="meta">36 条来源 · 抓取窗口 24h · LeapsCora 视角</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">Oracle 过去 12 个月裁员 21,000 人，公司明确称 AI 替代了部分岗位，规模超出此前公开数字</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-22/oracle-layoffs-fueled-by-ai-reduces-workforce-by-21-000">https://www.bloomberg.com/news/articles/2026-06-22/oracle-layoffs-fueled-by-ai-reduces-workforce-by-21-000</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Qualcomm 接近以约 $4B 收购 AI 芯片创企 Modular，交易进入深度谈判阶段</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-22/qualcomm-is-said-to-near-deal-for-ai-chip-startup-modular">https://www.bloomberg.com/news/articles/2026-06-22/qualcomm-is-said-to-near-deal-for-ai-chip-startup-modular</a></span>
+    </li>
+    
+    <li>
+      <span class="title">清华 Spatial-TTT 仅 2B 参数在空间智能 benchmark 上超越 GPT-5 与 Gemini-3-pro，入选 ECCV 2026</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/06/437235.html">https://www.qbitai.com/2026/06/437235.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Kennedy Space Center 被指未准备好迎接超重型火箭时代，SpaceX 计划 Starship 每 8 天从该基地发射一次</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/space/2026/06/report-kennedy-space-center-not-ready-for-era-of-super-heavy-rockets/">https://arstechnica.com/space/2026/06/report-kennedy-space-center-not-ready-for-era-of-super-heavy-rockets/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Bear Robotics 收购英国人形机器人公司 Kinisi Robotics，整合 KR1 机器人及 Bristol 工程团队的 Physical AI 能力</span>
+      <span class="source">The Robot Report · <a href="https://www.therobotreport.com/bear-robotics-acquires-kinisi-robotics-to-boost-its-physical-ai-capabilities/">https://www.therobotreport.com/bear-robotics-acquires-kinisi-robotics-to-boost-its-physical-ai-capabilities/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">清华 Spatial-TTT（2B 参数）在动态世界中持续更新空间记忆，MindCube-Tiny 准确率 76.2%，超 Gemini-3-pro 12 个百分点，入选 ECCV 2026</span>
+      <div class="why">空间智能强关注主题——动态场景持续学习与空间状态维护，与 LeapsCora 城市动态场景理解需求直接对齐</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/437235.html">https://www.qbitai.com/2026/06/437235.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">映界科技获千万元种子轮，专注具身机器人「视觉空间感知系统」，目标成为世界模型时代基础设施层</span>
+      <div class="why">空间智能 + 具身训练基础设施——提供从传感器原始数据到统一空间感知输出的完整方案，弥合开放场景落地缺口，与 LeapsCora 感知层定位直接相关</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3864071269569540?f=rss">https://36kr.com/p/3864071269569540?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">NVIDIA 发布 Halos 机器人全栈安全系统，连接 AI 算力、系统软件、传感器数据与安全应用</span>
+      <div class="why">Isaac Lab / Cosmos / NVIDIA 上游生态新组件，影响 LeapsCora 训练栈的安全与部署依赖</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/nvidia-releases-halos-a-full-stack-safety-system-for-robotics/">https://www.therobotreport.com/nvidia-releases-halos-a-full-stack-safety-system-for-robotics/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Bear Robotics 收购 Kinisi Robotics KR1 人形机器人及 Physical AI 团队</span>
+      <div class="why">机器人公司重要收购——人形赛道整合加速，Physical AI 能力集中信号</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/bear-robotics-acquires-kinisi-robotics-to-boost-its-physical-ai-capabilities/">https://www.therobotreport.com/bear-robotics-acquires-kinisi-robotics-to-boost-its-physical-ai-capabilities/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">FORT + NVIDIA 联合发布 Outside-In Safety 蓝图，用外部传感器阵列监控自主机器人</span>
+      <div class="why">NVIDIA 机器人安全生态扩展，与 Halos 互补，上游平台动态</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/fort-and-nvidia-launch-ai-driven-outside-in-safety-blueprint/">https://www.therobotreport.com/fort-and-nvidia-launch-ai-driven-outside-in-safety-blueprint/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Eclipse Automation 推出 RealitySync 仿真平台，允许制造商在工厂建成前进行虚拟预演</span>
+      <div class="why">工厂数字孪生仿真，LeapsCora 城市仿真相邻赛道</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/eclipse-automation-launches-realitysync-simulation-platform/">https://www.therobotreport.com/eclipse-automation-launches-realitysync-simulation-platform/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Cobot Proxie Gen 2 新增 autotasking 与移动操作能力，无需人工干预即可自主创建任务</span>
+      <div class="why">移动操作机器人赛道新品节奏信号</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/cobots-proxie-gen-2-robot-adds-autotasking-mobile-manipulation/">https://www.therobotreport.com/cobots-proxie-gen-2-robot-adds-autotasking-mobile-manipulation/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Qualcomm 接近以约 $4B 收购 AI 芯片创企 Modular</span>
+      <div class="why">上游 AI 芯片供应链整合信号，影响算力成本与可用性</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-22/qualcomm-is-said-to-near-deal-for-ai-chip-startup-modular">https://www.bloomberg.com/news/articles/2026-06-22/qualcomm-is-said-to-near-deal-for-ai-chip-startup-modular</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+  <div class="nav">
+    <a href="./index.html">← 归档</a>
+  </div>
+  <div>Morning Cafe · 个人非商业晨报 · 2026-06-22T22:59:01.780352+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
