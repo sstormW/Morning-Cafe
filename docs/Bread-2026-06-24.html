@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-24 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-24</h1>
+  <div class="meta">35 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">豆包2.1发布，Agent自主运行18小时完成芯片设计代码，编程能力比肩Opus 4.7</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/06/437503.html">https://www.qbitai.com/2026/06/437503.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Anthropic客户起诉美国政府，限制外国人访问Fable AI等先进模型引发法律挑战</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-23/anthropic-customer-sues-us-over-losing-access-to-fable-ai-model">https://www.bloomberg.com/news/articles/2026-06-23/anthropic-customer-sues-us-over-losing-access-to-fable-ai-model</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Oracle全财年裁员2.1万含AI取代岗位，同时债务驱动AI数据中心大举投资</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments/">https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SpaceX Starfall：新业务构想——通过轨道实现全球货运</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/space/2026/06/with-starfall-spacex-eyes-an-edge-in-global-cargo-delivery-from-orbit/">https://arstechnica.com/space/2026/06/with-starfall-spacex-eyes-an-edge-in-global-cargo-delivery-from-orbit/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Menlo Ventures以$7.5亿Anthropic赌注为基础完成$30亿新基金募集</span>
+      <span class="source">TechCrunch · <a href="https://techcrunch.com/2026/06/23/after-betting-the-firm-on-anthropic-menlo-ventures-raises-victorious-3b-fund/">https://techcrunch.com/2026/06/23/after-betting-the-firm-on-anthropic-menlo-ventures-raises-victorious-3b-fund/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">正行创新完成近亿美元天使轮，以「数据—模型—基础设施」路径切入物理智能赛道</span>
+      <div class="why">物理智能基础设施赛道新融资信号，与 LeapsCora 具身训练数据/仿真平台赛道直接重叠</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/437694.html">https://www.qbitai.com/2026/06/437694.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Physical AI 2.0 needs physical state recovery as its missing core capability</span>
+      <div class="why">直接指向具身训练范式设计，physical state recovery（本体感知/状态恢复）是 LeapsCora 仿真环境训练有效性的核心假设</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/why-physical-ai-2-0-needs-reality-check/">https://www.therobotreport.com/why-physical-ai-2-0-needs-reality-check/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">OriginFlow：非侵入式运动神经接口为具身智能机器人提供物理世界交互基础设施（蓝驰创投加持）</span>
+      <div class="why">同赛道新创（具身智能机器人物理交互基础设施路线），创始人生于 2001 年、清华博士在读，需持续跟踪</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3865630193030145?f=rss">https://36kr.com/p/3865630193030145?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">NVIDIA Vera Rubin NVL4超算平台Q4起供货，单系统超7 exaflops AI算力</span>
+      <div class="why">上游 NVIDIA 算力平台更新，影响 Isaac Lab / Cosmos 训练栈的未来算力基础</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3865513055540481?f=rss">https://36kr.com/p/3865513055540481?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Vention collaborates with FANUC and Universal Robots on software-defined automation</span>
+      <div class="why">工业机器人生态软件定义自动化新动向，上游合作伙伴格局信号</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/vention-collaborates-with-fanuc-universal-robots-software-defined-automation/">https://www.therobotreport.com/vention-collaborates-with-fanuc-universal-robots-software-defined-automation/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">8 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OPFS + Pyodide test harness</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison built a browser playground using Claude Code to test OPFS (Origin Private File System) integration with Datasette Lite, which runs Python via Pyodide/WebAssembly entirely in-browser.</li>
+      
+      <li>Goal: enable persistent SQLite file editing directly in the browser without a server, tested across different browsers.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/23/opfs-pyodide/#atom-everything">https://simonwillison.net/2026/Jun/23/opfs-pyodide/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 18:58 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">云计算一哥，让小鹏、Kimi和猎豹都爽了一把</div>
+    
+    <ul class="article-points">
+      
+      <li>量子位报道 Agentic AI 爆发拐点已至，某头部云计算平台成为小鹏汽车、Kimi、猎豹移动等主流 AI 产品的关键 Agentic AI 基础设施支撑方。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/437672.html">https://www.qbitai.com/2026/06/437672.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 13:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">刚刚，豆包2.1发布！Agent自己跑18个小时搞定芯片设计代码</div>
+    
+    <ul class="article-points">
+      
+      <li>字节跳动豆包 2.1 正式发布，Agent 自主运行 18 小时完成芯片设计代码任务，编程能力基准比肩 Claude Opus 4.7。</li>
+      
+      <li>这是国产大模型在 agent 长时自主执行任务上的最新里程碑，尤其聚焦专业级代码生成能力。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/437503.html">https://www.qbitai.com/2026/06/437503.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 13:37 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Is Learning to Read the Room</div>
+    
+    <ul class="article-points">
+      
+      <li>Researchers are developing AI systems that go beyond binary emotion labels to parse nuanced cues — posture, voice wavering, hesitation — and contextualize emotional signals within conversations.</li>
+      
+      <li>Current emotion AI trained only on gross categories misses subtle stress indicators; newer multimodal systems target high-stakes settings like HR performance reviews.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">IEEE Spectrum</span>
+      <span class="sep">·</span>
+      <a href="https://spectrum.ieee.org/emotion-ai-context">https://spectrum.ieee.org/emotion-ai-context</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 12:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Porting the Moebius 0.2B image inpainting model to run in the browser with Claude Code</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison ported Moebius, a 0.2B lightweight image inpainting model, from PyTorch/CUDA to run entirely in-browser using WebGPU, with Claude Code doing the heavy lifting on the port.</li>
+      
+      <li>The live demo at simonw.github.io/moebius-web/ delivers claimed 10B-level inpainting quality from a fully client-side 0.2B model.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/22/porting-moebius/#atom-everything">https://simonwillison.net/2026/Jun/22/porting-moebius/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-22 23:43 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Build real agentic apps using CUGA: two dozen working examples on a lightweight harness</div>
+    
+    <ul class="article-points">
+      
+      <li>IBM Research published CUGA, a lightweight agentic application harness with 24 working examples covering diverse real-world agentic scenarios.</li>
+      
+      <li>Targets developers moving beyond demos to production-grade agentic implementations.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Hugging Face Blog</span>
+      <span class="sep">·</span>
+      <a href="https://huggingface.co/blog/ibm-research/cuga-apps">https://huggingface.co/blog/ibm-research/cuga-apps</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 12:51 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">氪星晚报｜索尼集团计划近三十年来首次发行美元债券；甲骨文上财年裁员约2.1万；豆包发布2.1 Pro模型</div>
+    
+    <ul class="article-points">
+      
+      <li>英伟达发布 Vera Rubin 超算平台：结合 Rubin GPU 与 Vera CPU，单系统超过 7 exaflops AI 算力、最高 144 GPU/机架密度，戴尔、HPE、Supermicro 等将跟进推出高密度超算系统，预计 Q4 起供货。</li>
+      
+      <li>三星 HBM4 芯片推出四个月销售额突破 10 亿美元；豆包 2.1 Pro 模型同步发布。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3865513055540481?f=rss">https://36kr.com/p/3865513055540481?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 08:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Shipping huggingface_hub every week with AI, open tools, and a human in the loop</div>
+    
+    <ul class="article-points">
+      
+      <li>Hugging Face shares their weekly release workflow for the huggingface_hub library, combining AI-assisted tooling with open CI pipelines and maintained human review oversight.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Hugging Face Blog</span>
+      <span class="sep">·</span>
+      <a href="https://huggingface.co/blog/huggingface-hub-release-ci">https://huggingface.co/blog/huggingface-hub-release-ci</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 00:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">正行创新完成近亿美元天使轮融资，正大集团、华勤技术等多家上市企业联合加持</div>
+    
+    <ul class="article-points">
+      
+      <li>正行创新完成近亿美元天使轮融资，正大集团、华勤技术等多家 A 股上市企业联合加持。</li>
+      
+      <li>公司以「数据—模型—基础设施」系统性协同路径切入物理智能（Physical Intelligence）赛道。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/437694.html">https://www.qbitai.com/2026/06/437694.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 13:54 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Vention collaborates with FANUC and Universal Robots on software-defined automation</div>
+    
+    <ul class="article-points">
+      
+      <li>Vention is partnering with FANUC and Universal Robots to advance software-defined automation, aiming to simplify the design and deployment of industrial and collaborative robots for manufacturers.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/vention-collaborates-with-fanuc-universal-robots-software-defined-automation/">https://www.therobotreport.com/vention-collaborates-with-fanuc-universal-robots-software-defined-automation/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 19:49 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">CreateMe partners with Avalo and Laguna Fabrics to bring resilience to apparel supply chains</div>
+    
+    <ul class="article-points">
+      
+      <li>CreateMe&#39;s robotic apparel manufacturing platform is partnering with Avalo (material science) and Laguna Fabrics to demonstrate faster, more localized garment production with enhanced supply chain resilience.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/createme-partners-with-avalo-and-laguna-fabrics-to-bring-resilience-to-apparel-supply-chains/">https://www.therobotreport.com/createme-partners-with-avalo-and-laguna-fabrics-to-bring-resilience-to-apparel-supply-chains/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 17:09 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Why physical AI 2.0 needs a reality check</div>
+    
+    <ul class="article-points">
+      
+      <li>A columnist argues that while vision and language are central to physical AI, physical state recovery — sensing and recovering a robot&#39;s physical state — is the missing foundational layer for reliable real-world robot interaction.</li>
+      
+      <li>The piece challenges physical AI 2.0 hype for underweighting proprioception and physical feedback loops relative to perception-only approaches.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/why-physical-ai-2-0-needs-reality-check/">https://www.therobotreport.com/why-physical-ai-2-0-needs-reality-check/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 12:31 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla claims driver &#39;manually overrode self-driving&#39; in deadly Texas crash</div>
+    
+    <ul class="article-points">
+      
+      <li>Tesla AI head Ashok Elluswamy stated the driver of the fatal Katy, Texas Model 3 crash manually overrode self-driving by pressing the accelerator all the way, pushing back on claims that FSD caused the incident.</li>
+      
+      <li>A Model 3 under Full Self-Driving barreled into a home killing a 76-year-old woman; liability hinges on the disputed account of who was in control at the moment of impact.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/transportation/955153/tesla-full-self-driving-texas-crash">https://www.theverge.com/transportation/955153/tesla-full-self-driving-texas-crash</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 19:11 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla admits FSD was on in fatal Texas crash, blames driver for &#39;overriding&#39; it</div>
+    
+    <ul class="article-points">
+      
+      <li>Tesla confirmed FSD was engaged when a Model 3 left a Katy, Texas residential road and crashed fatally — but claims the driver pressed the accelerator to 100%, triggering a system override.</li>
+      
+      <li>The incident spotlights the liability ambiguity of pedal misapplication while a vehicle is under Full Self-Driving.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/06/23/tesla-fsd-katy-crash-driver-pedal/">https://electrek.co/2026/06/23/tesla-fsd-katy-crash-driver-pedal/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 15:04 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">With Starfall, SpaceX eyes an edge in global cargo delivery from orbit</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX is developing Starfall, a new orbital cargo delivery service aimed at transporting goods globally through space at high speed.</li>
+      
+      <li>The initiative would leverage SpaceX&#39;s orbital infrastructure to compete with surface and air freight for time-critical commercial payloads.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/space/2026/06/with-starfall-spacex-eyes-an-edge-in-global-cargo-delivery-from-orbit/">https://arstechnica.com/space/2026/06/with-starfall-spacex-eyes-an-edge-in-global-cargo-delivery-from-orbit/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 05:25 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">18 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Anthropic Customer Sues US Over Losing Access to Fable AI Model</div>
+    
+    <ul class="article-points">
+      
+      <li>An AI startup using Anthropic&#39;s models sued the US government over an order requiring Anthropic to keep its most advanced AI — including the Fable model — out of the hands of foreign nationals.</li>
+      
+      <li>The lawsuit challenges the government&#39;s authority to restrict enterprise customers&#39; access to frontier AI by nationality.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-23/anthropic-customer-sues-us-over-losing-access-to-fable-ai-model">https://www.bloomberg.com/news/articles/2026-06-23/anthropic-customer-sues-us-over-losing-access-to-fable-ai-model</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 21:22 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Cerebras Drops After 2026 Sales Outlook Disappoints Investors</div>
+    
+    <ul class="article-points">
+      
+      <li>Cerebras Systems shares fell ~10% in after-hours trading after the recently-public AI chipmaker&#39;s 2026 annual sales forecast came in below investor expectations for capturing AI data center market share.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-23/cerebras-projects-2026-sales-that-leave-investors-wanting-more">https://www.bloomberg.com/news/articles/2026-06-23/cerebras-projects-2026-sales-that-leave-investors-wanting-more</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 21:05 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Boom Sees Investors Shift From Japan&#39;s Value to Growth Stocks</div>
+    
+    <ul class="article-points">
+      
+      <li>Japan&#39;s equity market, long considered a value play, is attracting growth investors as AI-linked firms have risen to dominate market-cap rankings, surpassing traditional manufacturers and telecoms giants.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-23/ai-boom-sees-investors-shift-from-japan-s-value-to-growth-stocks">https://www.bloomberg.com/news/articles/2026-06-23/ai-boom-sees-investors-shift-from-japan-s-value-to-growth-stocks</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 21:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Top Energy Fund Likes Japan Stocks That Power AI Efficiently</div>
+    
+    <ul class="article-points">
+      
+      <li>One of the world&#39;s best-performing energy funds is adding Japanese companies focused on data center power efficiency to its top holdings, betting on the energy infrastructure layer of the AI buildout.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-23/top-energy-fund-likes-japan-stocks-that-power-ai-efficiently">https://www.bloomberg.com/news/articles/2026-06-23/top-energy-fund-likes-japan-stocks-that-power-ai-efficiently</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 21:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Benefiting SF Real Estate: JPM&#39;s Asset Mgt.&#39;s Tredway</div>
+    
+    <ul class="article-points">
+      
+      <li>JPMorgan Asset Management&#39;s Global Real Estate Head Chad Tredway highlighted that the AI cycle is creating real estate opportunities in San Francisco — not through direct data center investment, but in surrounding supporting infrastructure.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-23/ai-benefiting-sf-real-estate-jpm-s-asset-mgt-s-tredway-video">https://www.bloomberg.com/news/videos/2026-06-23/ai-benefiting-sf-real-estate-jpm-s-asset-mgt-s-tredway-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 20:48 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Oracle&#39;s 21,000 layoffs help drive its debt-fueled AI investments</div>
+    
+    <ul class="article-points">
+      
+      <li>Oracle&#39;s annual filing confirmed ~21,000 layoffs in the fiscal year, explicitly citing AI as a driver of headcount reductions, while simultaneously spending billions on AI data center infrastructure funded by debt.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments/">https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 20:17 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">US Chip Stocks Plunge as AI Selloff Ripples Across From Asia</div>
+    
+    <ul class="article-points">
+      
+      <li>A global selloff in chipmakers dragged US tech indexes sharply lower as investors doubted the sustainability of the AI-fueled tech rally; the wave spread from Asian markets.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-23/chip-stocks-sink-as-ai-selloff-ripples-across-from-asia-video">https://www.bloomberg.com/news/videos/2026-06-23/chip-stocks-sink-as-ai-selloff-ripples-across-from-asia-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 20:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Startup Hadrian Has Discussed New Funding at $7.5 Billion Value</div>
+    
+    <ul class="article-points">
+      
+      <li>AI-powered factory startup Hadrian has been in discussions for new funding at a $7.5 billion valuation; the company operates AI-driven manufacturing facilities designed to accelerate industrial production.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-23/startup-hadrian-has-discussed-new-funding-at-7-5-billion-value">https://www.bloomberg.com/news/articles/2026-06-23/startup-hadrian-has-discussed-new-funding-at-7-5-billion-value</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 19:51 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">PNC&#39;s Agati Sees Healthy Reset After Tech Rally</div>
+    
+    <ul class="article-points">
+      
+      <li>PNC Asset Management Group CIO Amanda Agati characterized the US tech selloff as a healthy reset after an extraordinary run, suggesting it reflects normalization rather than a structural break.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-06-23/pnc-s-agati-sees-healthy-reset-after-tech-rally-video">https://www.bloomberg.com/news/videos/2026-06-23/pnc-s-agati-sees-healthy-reset-after-tech-rally-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 17:49 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How to burst the AI bubble: Strike at its roots</div>
+    
+    <ul class="article-points">
+      
+      <li>Sci-fi author and tech journalist Cory Doctorow discusses his new book 「The Reverse Centaur&#39;s Guide to Life After AI」, examining structural vulnerabilities in the current AI buildout and what could pop the bubble.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/gadgets/2026/06/how-to-burst-the-ai-bubble-strike-at-its-roots/">https://arstechnica.com/gadgets/2026/06/how-to-burst-the-ai-bubble-strike-at-its-roots/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 12:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Growing Crisis for America&#39;s Child Abuse Investigators</div>
+    
+    <ul class="article-points">
+      
+      <li>The proliferation of AI-generated child sexual abuse material is overwhelming law enforcement; investigators are not receiving adequate mental health support to cope with the rising volume of material to review.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/features/2026-ai-mental-health-crisis-law-enforcement/">https://www.bloomberg.com/features/2026-ai-mental-health-crisis-law-enforcement/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 09:45 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Hollywood is bending the knee to OpenAI</div>
+    
+    <ul class="article-points">
+      
+      <li>Netflix, A24, Focus Features, and Warner Bros. Clockwork all reportedly passed on distributing Artificial, Luca Guadagnino&#39;s biographical drama about Sam Altman; Neon and Mubi remain interested.</li>
+      
+      <li>The widespread studio reluctance signals Hollywood&#39;s complex stance toward OpenAI amid ongoing content licensing disputes.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/entertainment/954899/luca-guadagnino-artificial-sam-altman-amazon-a24-neon-mubi-chatgpt">https://www.theverge.com/entertainment/954899/luca-guadagnino-artificial-sam-altman-amazon-a24-neon-mubi-chatgpt</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 22:03 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Superhuman acquires AI detection startup GPTZero</div>
+    
+    <ul class="article-points">
+      
+      <li>Email productivity company Superhuman acquired GPTZero, an AI-generated content detection startup, adding detection capabilities alongside an existing Grammarly AI detection tool integration.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/23/superhuman-acquires-ai-detection-startup-gptzero/">https://techcrunch.com/2026/06/23/superhuman-acquires-ai-detection-startup-gptzero/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 21:48 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">After betting the firm on Anthropic, Menlo Ventures raises victorious $3B fund</div>
+    
+    <ul class="article-points">
+      
+      <li>Menlo Ventures closed a $3 billion new fund, largely on the strength of a gutsy $750 million investment in Anthropic in 2024 that cemented the firm&#39;s reputation as a leading AI-focused VC.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/23/after-betting-the-firm-on-anthropic-menlo-ventures-raises-victorious-3b-fund/">https://techcrunch.com/2026/06/23/after-betting-the-firm-on-anthropic-menlo-ventures-raises-victorious-3b-fund/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 19:49 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">2连板长飞光纤：全球光纤光缆行业处于上行周期，但部分产品的价格波动幅度存在不确定性</div>
+    
+    <ul class="article-points">
+      
+      <li>长飞光纤公告，由于国内外算力基础设施建设持续加速，全球光纤光缆行业处于上行周期，AI 数据中心对相关光纤光缆需求大幅攀升。</li>
+      
+      <li>公司提醒投资者注意风险：部分产品价格波动幅度存在不确定性，需结合市场环境综合判断对业绩影响。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3865678288131332?f=rss">https://36kr.com/newsflashes/3865678288131332?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 11:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">圆桌论坛：比共识更早一步 AI 创投的真实棋局 | 2026WAVES</div>
+    
+    <ul class="article-points">
+      
+      <li>36氪 WAVES 2026 圆桌汇聚蓝驰创投（投了理想汽车、月之暗面、智元机器人、Genspark）管理合伙人朱天宇与 OriginFlow 创始人秦深涛，探讨非共识早期 AI 投资判断。</li>
+      
+      <li>OriginFlow 以非侵入式运动神经接口为具身智能机器人提供物理世界交互基础设施，创始人生于 2001 年、清华博士在读。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3865630193030145?f=rss">https://36kr.com/p/3865630193030145?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 10:43 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">WAVES 2026：盛夏的这场讨论，留下了创投圈值得反复回看的观点</div>
+    
+    <ul class="article-points">
+      
+      <li>36氪 WAVES 2026 大会（6 月 16-17 日，广州番禺）汇聚 AI、硬科技、出海、医疗等赛道顶级投资人与创业者，留下了大量关于 AI 创投与产业创新的核心判断。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3865596826768643?f=rss">https://36kr.com/p/3865596826768643?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 10:09 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">有智青年挑战赛暨全国AI+场景应用大赛决赛收官！在WAVES 2026的舞台上，挖掘中国下一代AI独角</div>
+    
+    <ul class="article-points">
+      
+      <li>36氪主办的「有智青年挑战赛暨全国AI+场景应用大赛」决赛在 WAVES 2026 期间收官，300 余参赛项目中 15 支队伍入围决赛，涵盖 AI 智能体、具身智能硬件、轻量化创业等赛道。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3865480064504835?f=rss">https://36kr.com/p/3865480064504835?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-23 08:16 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-24.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-23T22:42:57.709710+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
