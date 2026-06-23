@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Paper Brief · 2026-06-23</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #1e40af;
+  --deep: #b45309;
+  --skim: #4b5563;
+  --journal: #047857;
+  --space: #6d28d9;
+  --link: #2563eb;
+  --code-bg: #f3f4f6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.masthead .brand {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+.masthead .private-note {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; padding: 2px 8px; border-radius: 3px;
+  background: #fef3c7; color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.section { margin-top: 36px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 20px; }
+.section-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.section-head .tag { margin-left: auto; font-size: 11px; color: var(--ink-light); letter-spacing: 1.5px; text-transform: uppercase; }
+
+.lens-callout {
+  background: #fbf7f1; border-left: 4px solid var(--deep);
+  padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lens-callout h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+.lens-callout .group-label { font-weight: 700; margin: 10px 0 6px; font-size: 14px; color: var(--ink); }
+.lens-callout ul { margin: 0; padding-left: 20px; }
+.lens-callout li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+.lens-callout a { color: var(--link); text-decoration: none; }
+
+.paper {
+  margin-bottom: 22px; padding: 14px 16px;
+  border-left: 3px solid var(--deep);
+  background: #fdfcf8; border-radius: 0 4px 4px 0;
+}
+.paper.skim { border-left-color: var(--skim); background: #fafaf9; }
+.paper.journal { border-left-color: var(--journal); background: #f0fdf4; }
+.paper.space { border-left-color: var(--space); background: #f5f3ff; }
+.paper .title { font-weight: 600; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
+.paper .title a { color: var(--ink); text-decoration: none; }
+.paper .title a:hover { color: var(--link); text-decoration: underline; }
+.paper .meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.paper .meta .score {
+  display: inline-block; padding: 1px 8px; border-radius: 10px;
+  background: var(--ink); color: #fff; font-weight: 600; margin-left: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+}
+.paper .reason {
+  font-size: 12px; color: var(--ink-light); margin-bottom: 8px;
+  font-style: italic;
+}
+.paper .field { margin: 6px 0; font-size: 14px; }
+.paper .field-label { font-weight: 600; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.paper .field-body { margin-top: 2px; }
+.paper.skim .field { font-size: 13px; }
+.paper.skim .field-label { display: none; }
+
+.journal-group { margin-bottom: 18px; }
+.journal-group h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 700;
+  color: var(--journal); padding-bottom: 4px;
+  border-bottom: 1px dashed #a7f3d0;
+}
+
+.failed { font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-light); text-align: center;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 24px 16px 40px; }
+  .masthead h1 { font-size: 26px; }
+  .section-head h2 { font-size: 17px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">📄 Paper Brief</div>
+  <h1>论文日报 · 2026-06-23</h1>
+  <div class="meta">5 篇候选 · 精读 0 · 速览 0 · 窗口 72h</div>
+  <span class="private-note">⌫ 私链 · noindex · 不进归档页</span>
+</header>
+
+
+
+
+
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📖</span>
+    <h2>期刊新刊</h2>
+  </div>
+  
+  <div class="journal-group">
+    <h3>Journal of Field Robotics</h3>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70282?af=R">Research on the Application of SSG‐RRT Path Planning Algorithm Integrated With Dynamic Obstacle Avoidance in Wheeled Picking Robot</a></div>
+      <div class="meta">Lina Wang et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">面向轮式采摘机器人的 SSG‐RRT 路径规划与动态避障，属农业场景、无仿真训练接口。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70270?af=R">Chassis Pose Kinematic Model and Control for Terrestrial Mobile Robots With Active Flippers</a></div>
+      <div class="meta">Filipe Rocha et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">带主动摆臂地面移动机器人的底盘位姿运动学建模与控制，无城市/仿真关联。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70271?af=R">Research on the Design and Experiment for Obstacle‐Crossing Capability of a Wheeled‐Claw Deformable Mobile Platform With Large Expansion Ratio</a></div>
+      <div class="meta">Qingkai Meng et al. <span class="score">1</span></div>
+      <div class="field"><div class="field-body">大伸展比轮‐爪变形移动平台的越障能力设计与实验，机构本体研究、无仿真落点。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70276?af=R">Motion Control and Experimental Verification of a Continuum Aerial Manipulator for Power Grid Maintenance Operations</a></div>
+      <div class="meta">Yongzheng Zhang et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">面向电网维护的连续体空中作业机械臂运动控制与实验验证，与城市仿真无关。</div></div>
+    </div>
+    
+    <div class="paper journal">
+      <div class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/rob.70272?af=R">Design and Testing of a Minimal Configuration Underwater Micro‐Glider: Automating Lake and Reservoir Monitoring</a></div>
+      <div class="meta">James M Rand et al. <span class="score">-2</span></div>
+      <div class="field"><div class="field-body">极简构型水下微型滑翔机用于湖库自动化监测，主题离题。</div></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+
+
+
+<footer class="footer">
+  Paper Brief · 私人研究跟踪 · 2026-06-23T00:31:09.120849+00:00
+</footer>
+
+</div>
+</body>
+</html>
