@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>晨报 · 2026-06-26 · Morning Cafe</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="晨报 · 2026-06-26｜LeapsCora 视角">
+<meta property="og:description" content="Top 5 首条：Alibaba 动用 25,000 账号对 Claude 发起 2880 万次交换式克隆攻击，Anthropic 要求追究 ｜ LeapsCora 直接相关：RoboScience 发布 Visics VLOA 通用具身大模型：跨本体/跨物体/跨任务泛化，...">
+<meta property="og:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-26.png">
+<meta property="og:url" content="https://sstormw.github.io/Morning-Cafe/2026-06-26.html">
+<meta property="og:site_name" content="Morning Cafe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="晨报 · 2026-06-26｜LeapsCora 视角">
+<meta name="twitter:description" content="Top 5 首条：Alibaba 动用 25,000 账号对 Claude 发起 2880 万次交换式克隆攻击，Anthropic 要求追究 ｜ LeapsCora 直接相关：RoboScience 发布 Visics VLOA 通用具身大模型：跨本体/跨物体/跨任务泛化，...">
+<meta name="twitter:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-26.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 14px; }
+
+.section { margin-top: 40px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+.top5 .source a:hover { text-decoration: underline; }
+
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title {
+  font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink);
+}
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .nav { margin-bottom: 8px; }
+.footer .nav a { margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 28px 18px 50px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">☕ Morning Cafe</div>
+  <h1>晨报 · 2026-06-26</h1>
+  <div class="meta">38 条来源 · 抓取窗口 24h · LeapsCora 视角</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">Alibaba 动用 25,000 账号对 Claude 发起 2880 万次交换式克隆攻击，Anthropic 要求追究</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/tech-policy/2026/06/anthropic-claims-alibaba-defied-trump-to-attack-claude-and-steal-capabilities/">https://arstechnica.com/tech-policy/2026/06/anthropic-claims-alibaba-defied-trump-to-attack-claude-and-steal-capabilities/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Trump 政府要求 OpenAI 分阶段放出 GPT-5.6，仅向小范围用户开放预览</span>
+      <span class="source">The Verge · <a href="https://www.theverge.com/ai-artificial-intelligence/957372/openai-will-delay-gpt-5-6-after-trump-administration-request">https://www.theverge.com/ai-artificial-intelligence/957372/openai-will-delay-gpt-5-6-after-trump-administration-request</a></span>
+    </li>
+    
+    <li>
+      <span class="title">RoboScience 发布 Visics 通用具身大模型（VLOA 架构），首次实现跨本体/跨物体/跨任务泛化</span>
+      <span class="source">36氪 · <a href="https://36kr.com/p/3868276479710466?f=rss">https://36kr.com/p/3868276479710466?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Micron AI 营收预测爆表；Qualcomm 预计数据中心芯片业务下财年营收数十亿美元</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-25/bloomberg-tech-6-25-2026-video">https://www.bloomberg.com/news/videos/2026-06-25/bloomberg-tech-6-25-2026-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Momenta 率先冲刺 IPO，AI 司机收入 3 年涨 42 倍，世界模型赛道商业化提速</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/06/438179.html">https://www.qbitai.com/2026/06/438179.html</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">RoboScience 发布 Visics VLOA 通用具身大模型：跨本体/跨物体/跨任务泛化，Object Trajectory 作为基础表征单元</span>
+      <div class="why">具身智能训练数据/泛化范式；VLOA 是对「具身基础表征单元」问题的直接回应，与 LeapsCora 训练环境设计路线高度相关</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3868276479710466?f=rss">https://36kr.com/p/3868276479710466?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">WAVES2026 具身圆桌：投资人与商业化前端从业者对机器人落地节奏判断分歧明显</span>
+      <div class="why">机器人公司产业商业化动态，含深朴智能、穹明智能、擎天租等直接生态玩家</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3867998907667462?f=rss">https://36kr.com/p/3867998907667462?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Momenta 冲刺 IPO，世界模型混战加剧</span>
+      <div class="why">空间智能/世界模型是 lens 强关注主题；自驾世界模型商业化路径对城市仿真赛道有参考价值</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/06/438179.html">https://www.qbitai.com/2026/06/438179.html</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">苹果：AI 数据中心快速扩张导致内存价格前所未有大幅上涨</span>
+      <div class="why">上游内存/存储供应链波动信号</div>
+      <div class="source">36氪 · <a href="https://36kr.com/newsflashes/3868586020066566?f=rss">https://36kr.com/newsflashes/3868586020066566?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Micron AI 预测爆表 + Qualcomm 数据中心芯片数十亿美元目标</span>
+      <div class="why">上游 HBM/算力供应链信号，影响训练基础设施成本</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-06-25/bloomberg-tech-6-25-2026-video">https://www.bloomberg.com/news/videos/2026-06-25/bloomberg-tech-6-25-2026-video</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+  <div class="nav">
+    <a href="./index.html">← 归档</a>
+  </div>
+  <div>Morning Cafe · 个人非商业晨报 · 2026-06-25T22:53:48.704457+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
