@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>晨报 · 2026-06-27 · Morning Cafe</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="晨报 · 2026-06-27｜LeapsCora 视角">
+<meta property="og:description" content="Top 5 首条：OpenAI 发布 GPT-5.6 系列（Sol/Terra/Luna）并在美国政府要求下率先限量预览 ｜ LeapsCora 直接相关：General Intuition 融资 3.2 亿美元，用游戏视频（含嵌入 action label）批量训练机器人">
+<meta property="og:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-27.png">
+<meta property="og:url" content="https://sstormw.github.io/Morning-Cafe/2026-06-27.html">
+<meta property="og:site_name" content="Morning Cafe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="晨报 · 2026-06-27｜LeapsCora 视角">
+<meta name="twitter:description" content="Top 5 首条：OpenAI 发布 GPT-5.6 系列（Sol/Terra/Luna）并在美国政府要求下率先限量预览 ｜ LeapsCora 直接相关：General Intuition 融资 3.2 亿美元，用游戏视频（含嵌入 action label）批量训练机器人">
+<meta name="twitter:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-06-27.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 14px; }
+
+.section { margin-top: 40px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+.top5 .source a:hover { text-decoration: underline; }
+
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title {
+  font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink);
+}
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .nav { margin-bottom: 8px; }
+.footer .nav a { margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 28px 18px 50px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">☕ Morning Cafe</div>
+  <h1>晨报 · 2026-06-27</h1>
+  <div class="meta">38 条来源 · 抓取窗口 24h · LeapsCora 视角</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">OpenAI 发布 GPT-5.6 系列（Sol/Terra/Luna）并在美国政府要求下率先限量预览</span>
+      <span class="source">Simon Willison · <a href="https://simonwillison.net/2026/Jun/26/openai/#atom-everything">https://simonwillison.net/2026/Jun/26/openai/#atom-everything</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Anthropic 与 Trump 政府谈判解除其顶级 AI 模型出口限制</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-26/anthropic-moves-toward-deal-with-us-to-lift-curbs-on-ai-models">https://www.bloomberg.com/news/articles/2026-06-26/anthropic-moves-toward-deal-with-us-to-lift-curbs-on-ai-models</a></span>
+    </li>
+    
+    <li>
+      <span class="title">General Intuition 融资 3.2 亿美元，用视频游戏数据训练机器人</span>
+      <span class="source">The Robot Report · <a href="https://www.therobotreport.com/general-intuition-raises-320m-uses-video-game-data-train-robots/">https://www.therobotreport.com/general-intuition-raises-320m-uses-video-game-data-train-robots/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Rocket Lab 成功发射 Synspective 第 10 颗雷达成像卫星</span>
+      <span class="source">SpaceNews · <a href="https://spacenews.com/rocket-lab-launches-10th-synspective-satellite/">https://spacenews.com/rocket-lab-launches-10th-synspective-satellite/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Tesla 悄然就首起 FSD 行人死亡案和解，联邦调查覆盖 320 万辆车</span>
+      <span class="source">Electrek · <a href="https://electrek.co/2026/06/26/tesla-fsd-pedestrian-death-settlement/">https://electrek.co/2026/06/26/tesla-fsd-pedestrian-death-settlement/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">General Intuition 融资 3.2 亿美元，用游戏视频（含嵌入 action label）批量训练机器人</span>
+      <div class="why">具身智能训练数据 — 游戏场景合成数据 + action 标注直接替代真实采集，与 LeapsCora sim-generated data 方向高度对标</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/general-intuition-raises-320m-uses-video-game-data-train-robots/">https://www.therobotreport.com/general-intuition-raises-320m-uses-video-game-data-train-robots/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">念象科技完成近千万元天使轮，建设面向具身智能 / 物理 AI / 世界模型训练的大规模 sEMG 手部运动数据集</span>
+      <div class="why">具身智能训练数据 — 手部操作数据集是 embodied policy 训练关键缺口；创始人王译曾任智元机器人研发总监，供给侧与 LeapsCora 上游训练数据需求直接对接</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3867943030395913?f=rss">https://36kr.com/p/3867943030395913?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">张亚勤：AIR 孵化公司在具身智能仿真等方向估值合计 1500 亿，但提醒「降温」</span>
+      <div class="why">具身智能仿真投资热度 context — AIR 布局方向含自动驾驶/具身智能仿真/工业能效 AI，产业政策信号</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3866837793952769?f=rss">https://36kr.com/p/3866837793952769?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">IEEE Video Friday：Tangent Robotics 机械手、MIT CSAIL 机器人夹爪最新视频合辑</span>
+      <div class="why">具身机器人操控通用动态，含 IROS 2026、Actuate 2026 等会议日历</div>
+      <div class="source">IEEE Spectrum Robotics · <a href="https://spectrum.ieee.org/video-friday-robot-grippers">https://spectrum.ieee.org/video-friday-robot-grippers</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Orbbec 在 Automate 2026 展出 AI 增强工业级 3D 视觉系统</span>
+      <div class="why">工业机器人 3D 感知硬件动态，自动化场景对标</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/orbbec-shows-ai-powered-vision-systems-automate-2026/">https://www.therobotreport.com/orbbec-shows-ai-powered-vision-systems-automate-2026/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+  <div class="nav">
+    <a href="./index.html">← 归档</a>
+  </div>
+  <div>Morning Cafe · 个人非商业晨报 · 2026-06-26T22:40:41.467661+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
