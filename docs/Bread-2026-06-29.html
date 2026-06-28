@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-06-29 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-06-29</h1>
+  <div class="meta">18 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">AI filmmakers claim up to 90% cost reduction in animation production</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/newsletters/2026-06-28/animation-s-ai-reckoning-filmmakers-say-they-can-make-movies-for-90-less">https://www.bloomberg.com/news/newsletters/2026-06-28/animation-s-ai-reckoning-filmmakers-say-they-can-make-movies-for-90-less</a></span>
+    </li>
+    
+    <li>
+      <span class="title">AGIBOT rolls out its 15,000th wheeled semi-humanoid robot, a major embodied AI deployment milestone</span>
+      <span class="source">The Robot Report · <a href="https://www.therobotreport.com/agibot-produces-15000th-robot-marking-milestone-embodied-ai-deployment/">https://www.therobotreport.com/agibot-produces-15000th-robot-marking-milestone-embodied-ai-deployment/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Firmus Technologies partners with Nvidia to build Indonesia data center, targeting $30B in committed offtake agreements</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-28/ai-startup-firmus-to-build-indonesia-data-center-with-nvidia">https://www.bloomberg.com/news/articles/2026-06-28/ai-startup-firmus-to-build-indonesia-data-center-with-nvidia</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Google places compute-capacity limits on Meta&#39;s access to Gemini AI models</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-28/google-caps-meta-s-use-of-gemini-ai-financial-times-reports">https://www.bloomberg.com/news/articles/2026-06-28/google-caps-meta-s-use-of-gemini-ai-financial-times-reports</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Austria lobbies EU to host Anthropic as US tightens access curbs on advanced AI</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs">https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">AGIBOT 产出第 15,000 台轮式半人形机器人，具身 AI 批量部署达到新里程碑</span>
+      <div class="why">商用轮式机器人量产/部署节奏——与「商用轮式」赛道直接对位，亦是具身 AI 大规模落地的市场规模信号</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/agibot-produces-15000th-robot-marking-milestone-embodied-ai-deployment/">https://www.therobotreport.com/agibot-produces-15000th-robot-marking-milestone-embodied-ai-deployment/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Micron 被华尔街视为「下一个 Nvidia」，AI 内存芯片需求持续走高</span>
+      <div class="why">上游 HBM/内存芯片供应链信号，间接影响机器人训练算力成本</div>
+      <div class="source">TechCrunch · <a href="https://techcrunch.com/2026/06/28/why-wall-street-thinks-us-memory-maker-micron-is-the-next-nvidia/">https://techcrunch.com/2026/06/28/why-wall-street-thinks-us-memory-maker-micron-is-the-next-nvidia/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Firmus + Nvidia 在印尼合建数据中心，第一期承接协议达 $30B</span>
+      <div class="why">上游 GPU/算力供应链新动态，大规模数据中心部署加速</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-06-28/ai-startup-firmus-to-build-indonesia-data-center-with-nvidia">https://www.bloomberg.com/news/articles/2026-06-28/ai-startup-firmus-to-build-indonesia-data-center-with-nvidia</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Quoting Jon Udell</div>
+    
+    <ul class="article-points">
+      
+      <li>Jon Udell argues the framing of 「human in the loop」 cedes authority to machines; the better model is 「our loop」 — human-led workflows that invite agents in as team members.</li>
+      
+      <li>The core claim: agentic software development should remain reviewable and collaborative, not a black box that takes prompts and emits features.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jun/28/jon-udell/#atom-everything">https://simonwillison.net/2026/Jun/28/jon-udell/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 21:57 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">抱抱脸模型TOP榜，我现在只服yuxinlu1</div>
+    
+    <ul class="article-points">
+      
+      <li>个人开发者 yuxinlu1 的模型在 Hugging Face 开放模型排行榜中跻身前列，在一众大厂模型中脱颖而出。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/06/439603.html">https://www.qbitai.com/2026/06/439603.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 13:55 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">China&#39;s Z.ai claims it can match Mythos on cybersecurity</div>
+    
+    <ul class="article-points">
+      
+      <li>Zhipu AI released GLM-5.2 as an open-weight model; researchers claim it matches Mythos in bug-finding and cybersecurity benchmarks, though it still lags Anthropic and OpenAI in general tasks.</li>
+      
+      <li>The release signals a meaningful narrowing of the capability gap between Chinese and US frontier models in specialized security domains.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/958804/chinas-z-ai-glm-52-mythos-cybersecurity">https://www.theverge.com/ai-artificial-intelligence/958804/chinas-z-ai-glm-52-mythos-cybersecurity</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 21:42 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AGIBOT produces 15,000th robot, marking a milestone in embodied AI deployment</div>
+    
+    <ul class="article-points">
+      
+      <li>AGIBOT has rolled out its 15,000th wheeled semi-humanoid robot, marking the transition of embodied AI from development and production into broad-scale deployment.</li>
+      
+      <li>The milestone highlights the accelerating commercialization of semi-humanoid form factors beyond laboratory settings.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/agibot-produces-15000th-robot-marking-milestone-embodied-ai-deployment/">https://www.therobotreport.com/agibot-produces-15000th-robot-marking-milestone-embodied-ai-deployment/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 09:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">TechCrunch Mobility: All eyes on Tesla FSD</div>
+    
+    <ul class="article-points">
+      
+      <li>TechCrunch Mobility&#39;s latest roundup focuses on Tesla&#39;s Full Self-Driving (FSD) developments and the accelerating integration of AI across transportation.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/28/techcrunch-mobility-all-eyes-on-tesla-fsd/">https://techcrunch.com/2026/06/28/techcrunch-mobility-all-eyes-on-tesla-fsd/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 16:05 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">13 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Animation&#39;s AI Reckoning: Filmmakers Say They Can Make Movies for 90% Less</div>
+    
+    <ul class="article-points">
+      
+      <li>Some animation filmmakers claim AI can reduce production costs by up to 90%, fundamentally reshaping the economics of film production.</li>
+      
+      <li>The industry is split: some see AI as a quality enhancer, others primarily as a cost-cutting tool, raising questions about creative employment.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/newsletters/2026-06-28/animation-s-ai-reckoning-filmmakers-say-they-can-make-movies-for-90-less">https://www.bloomberg.com/news/newsletters/2026-06-28/animation-s-ai-reckoning-filmmakers-say-they-can-make-movies-for-90-less</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 22:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Startup Firmus to Build Indonesia Data Center With Nvidia</div>
+    
+    <ul class="article-points">
+      
+      <li>Australian AI infrastructure firm Firmus Technologies will build its first data center in Indonesia in partnership with Nvidia, with expected committed offtake agreements of up to $30 billion over its first six years.</li>
+      
+      <li>The deal underscores Southeast Asia&#39;s growing role in global AI compute expansion and Nvidia&#39;s strategy to anchor regional infrastructure partnerships.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-28/ai-startup-firmus-to-build-indonesia-data-center-with-nvidia">https://www.bloomberg.com/news/articles/2026-06-28/ai-startup-firmus-to-build-indonesia-data-center-with-nvidia</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 14:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple&#39;s Sweeping Price Increases Bring Home the Costs of the AI Era</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple has implemented broad price hikes tied to escalating AI-era hardware demands, spanning its M6/M7 chip lineup and MacBook Pro; the report also covers the latest in the smart glasses competition.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/newsletters/2026-06-28/apple-s-sweeping-price-hikes-bring-the-ai-era-home-m6-m7-touch-macbook-pro">https://www.bloomberg.com/news/newsletters/2026-06-28/apple-s-sweeping-price-hikes-bring-the-ai-era-home-m6-m7-touch-macbook-pro</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 14:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Austria Lobbies EU to Host Anthropic After US Access Curbs</div>
+    
+    <ul class="article-points">
+      
+      <li>Austria is actively lobbying the EU to establish Anthropic within its borders as a countermeasure to US efforts restricting foreign access to advanced AI models.</li>
+      
+      <li>The move reflects growing European anxiety about dependency on US AI providers amid tightening export controls.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs">https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 12:29 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Europe&#39;s Hunt for AI Stocks Leads to Power Suppliers and Banks</div>
+    
+    <ul class="article-points">
+      
+      <li>European investors are seeking AI exposure through power utilities and banks as direct AI stocks become increasingly expensive.</li>
+      
+      <li>The trend reflects spillover demand into AI-enabling infrastructure — particularly energy — as primary AI plays grow pricier.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-28/europe-s-hunt-for-ai-stocks-leads-to-power-suppliers-and-banks">https://www.bloomberg.com/news/articles/2026-06-28/europe-s-hunt-for-ai-stocks-leads-to-power-suppliers-and-banks</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 11:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Google Caps Meta&#39;s Use of Gemini AI, Financial Times Reports</div>
+    
+    <ul class="article-points">
+      
+      <li>Google has placed limits on Meta&#39;s access to Gemini AI models because it could not provide the computing capacity Meta required, according to the Financial Times.</li>
+      
+      <li>The cap highlights the upstream compute bottleneck constraining even large enterprise Gemini customers.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-28/google-caps-meta-s-use-of-gemini-ai-financial-times-reports">https://www.bloomberg.com/news/articles/2026-06-28/google-caps-meta-s-use-of-gemini-ai-financial-times-reports</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 09:02 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Bust Risks Ripple Effects From Growth to Credit, BIS Says</div>
+    
+    <ul class="article-points">
+      
+      <li>The Bank for International Settlements (BIS) flagged an AI bust, inflation, and fiscal stress as among the most alarming current threats to global prosperity.</li>
+      
+      <li>BIS warns that an AI market correction could generate broad ripple effects across economic growth and credit markets globally.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-28/ai-bust-risks-ripple-effects-from-growth-to-credit-bis-says">https://www.bloomberg.com/news/articles/2026-06-28/ai-bust-risks-ripple-effects-from-growth-to-credit-bis-says</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 09:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI Hires Uber&#39;s Prabhjeet Singh to Lead India Operations</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI appointed Prabhjeet Singh — formerly Uber&#39;s India and South Asia President — as managing director for India, deepening its investment in one of its fastest-growing markets.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-28/openai-hires-uber-s-prabhjeet-singh-to-lead-india-operations">https://www.bloomberg.com/news/articles/2026-06-28/openai-hires-uber-s-prabhjeet-singh-to-lead-india-operations</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 07:27 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Fever Powers HK Share Sales Through Hurdles to Five-Year High</div>
+    
+    <ul class="article-points">
+      
+      <li>Hong Kong share sales surged to a five-year high in H1 2026, with AI boom enthusiasm overcoming sluggish equity markets and regulatory headwinds.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-28/ai-fever-powers-hk-share-sales-through-hurdles-to-five-year-high">https://www.bloomberg.com/news/articles/2026-06-28/ai-fever-powers-hk-share-sales-through-hurdles-to-five-year-high</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 00:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Suno launches Spark incubator program to feed independent artists to its AI machine</div>
+    
+    <ul class="article-points">
+      
+      <li>Suno launched Spark, an incubator for unsigned independent artists offering grants, mentorship, and marketing support — part of its ambition to become a streaming destination beyond AI-generated music.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/958801/suno-launches-spark-incubator-program-to-feed-independent-artists-to-its-ai-machine">https://www.theverge.com/ai-artificial-intelligence/958801/suno-launches-spark-incubator-program-to-feed-independent-artists-to-its-ai-machine</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 20:27 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Ford rehires &#39;gray beard&#39; engineers after AI falls short</div>
+    
+    <ul class="article-points">
+      
+      <li>Ford reversed course and rehired experienced engineers after finding that AI alone could not produce high-quality automotive products.</li>
+      
+      <li>The admission — 「mistakenly we thought that by just introducing artificial intelligence that would produce a high-quality product」 — is a notable signal about AI&#39;s current limits in complex manufacturing.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short/">https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 19:05 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Why Wall Street thinks US memory maker Micron is the next Nvidia</div>
+    
+    <ul class="article-points">
+      
+      <li>Wall Street investors are increasingly bullish on Micron, betting that AI-driven memory chip demand could generate returns comparable to Nvidia&#39;s.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/06/28/why-wall-street-thinks-us-memory-maker-micron-is-the-next-nvidia/">https://techcrunch.com/2026/06/28/why-wall-street-thinks-us-memory-maker-micron-is-the-next-nvidia/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 15:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How AI helped the FBI investigate the White House Correspondents&#39; Dinner attack</div>
+    
+    <ul class="article-points">
+      
+      <li>Digital forensics firm Exterro says the FBI used its AI-powered platform in the urgent investigation of the attempted assassination at the White House Correspondents Dinner.</li>
+      
+      <li>The case illustrates law enforcement&#39;s growing reliance on AI to process large volumes of digital evidence, including in cold cases and missing persons investigations.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Axios</span>
+      <span class="sep">·</span>
+      <a href="https://www.axios.com/2026/06/28/ai-fbi-whcd-attack-investigation">https://www.axios.com/2026/06/28/ai-fbi-whcd-attack-investigation</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-06-28 12:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-06-29.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-06-28T22:33:20.070481+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
