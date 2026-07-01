@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>晨报 · 2026-07-02 · Morning Cafe</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="晨报 · 2026-07-02｜LeapsCora 视角">
+<meta property="og:description" content="Top 5 首条：美国取消对 Anthropic Fable 5 的出口管制，但 Mythos 5 仍限制对外访问 ｜ LeapsCora 直接相关：清华系初创（前英伟达 Vision &amp; Robotics 研究员李一鸣）完成数亿元种子轮，聚焦「世界模型」赛道">
+<meta property="og:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-07-02.png">
+<meta property="og:url" content="https://sstormw.github.io/Morning-Cafe/2026-07-02.html">
+<meta property="og:site_name" content="Morning Cafe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="晨报 · 2026-07-02｜LeapsCora 视角">
+<meta name="twitter:description" content="Top 5 首条：美国取消对 Anthropic Fable 5 的出口管制，但 Mythos 5 仍限制对外访问 ｜ LeapsCora 直接相关：清华系初创（前英伟达 Vision &amp; Robotics 研究员李一鸣）完成数亿元种子轮，聚焦「世界模型」赛道">
+<meta name="twitter:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-07-02.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 14px; }
+
+.section { margin-top: 40px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+.top5 .source a:hover { text-decoration: underline; }
+
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title {
+  font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink);
+}
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .nav { margin-bottom: 8px; }
+.footer .nav a { margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 28px 18px 50px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">☕ Morning Cafe</div>
+  <h1>晨报 · 2026-07-02</h1>
+  <div class="meta">38 条来源 · 抓取窗口 24h · LeapsCora 视角</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">美国取消对 Anthropic Fable 5 的出口管制，但 Mythos 5 仍限制对外访问</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/tech-policy/2026/07/after-spooking-trump-into-safety-testing-anthropic-ai-models-get-global-release/">https://arstechnica.com/tech-policy/2026/07/after-spooking-trump-into-safety-testing-anthropic-ai-models-get-global-release/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">National Grid 宣布 17.5 亿美元投资 AI 电力企业 Jouleant</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-07-01/national-grid-s-big-bet-on-us-ai-power-firm-video">https://www.bloomberg.com/news/videos/2026-07-01/national-grid-s-big-bet-on-us-ai-power-firm-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">NASA 称赞 Blue Origin 事故后进展，同时宣布月球基地合同</span>
+      <span class="source">Payload Space · <a href="https://payloadspace.com/nasa-praises-blue-origins-mishap-progress-announces-moon-base-contracts/">https://payloadspace.com/nasa-praises-blue-origins-mishap-progress-announces-moon-base-contracts/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">中国「循环世界模型」论文 LoopWM 登顶 Hugging Face 热榜，参数效率提升最高 100 倍</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/07/441225.html">https://www.qbitai.com/2026/07/441225.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">人形机器人公司 Apptronik 发布 Apollo 2 及配套数据训练基地</span>
+      <span class="source">The Robot Report · <a href="https://www.therobotreport.com/apptronik-unveils-apollo-2-flagship-data-collection-training-facility/">https://www.therobotreport.com/apptronik-unveils-apollo-2-flagship-data-collection-training-facility/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">清华系初创（前英伟达 Vision &amp; Robotics 研究员李一鸣）完成数亿元种子轮，聚焦「世界模型」赛道</span>
+      <div class="why">空间智能/世界模型强关注主题，Physical AI 定位与 Urban Scene Engine 直接对标</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3877109751803904?f=rss">https://36kr.com/p/3877109751803904?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">LoopWM 论文登顶 Hugging Face，参数效率提升 100 倍</span>
+      <div class="why">世界模型强关注主题，循环推理范式对具身训练/仿真效率有参考价值</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/441225.html">https://www.qbitai.com/2026/07/441225.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Apptronik 发布 Apollo 2 + 数据采集训练基地</span>
+      <div class="why">人形机器人重要合作/训练数据平台，对标「机器人公司大额融资/重要合作」关注项</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/apptronik-unveils-apollo-2-flagship-data-collection-training-facility/">https://www.therobotreport.com/apptronik-unveils-apollo-2-flagship-data-collection-training-facility/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">The Robot Report：2026 年 6 月机器人十大进展（人形机器人上市、量产里程碑）</span>
+      <div class="why">机器人行业整体动态月度综述，产业趋势 context</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/top-10-robotic-stories-june-2026/">https://www.therobotreport.com/top-10-robotic-stories-june-2026/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">机器人可靠性/耐用化设计趋势</span>
+      <div class="why">机器人工程化/可靠性趋势，产业 context</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/in-robotics-ruggedization-is-no-longer-optional/">https://www.therobotreport.com/in-robotics-ruggedization-is-no-longer-optional/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">清华系「灵动芯光」硅光子芯片完成数千万元融资，瞄准 AI 算力传输瓶颈</span>
+      <div class="why">上游 AI 算力/芯片互联供应链信号</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3877057215393793?f=rss">https://36kr.com/p/3877057215393793?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Om AI联汇发布 VLX，面向物理世界的端侧流式多模态模型</span>
+      <div class="why">物理世界 AI 端侧模型，具身智能相邻趋势</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/441124.html">https://www.qbitai.com/2026/07/441124.html</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+  <div class="nav">
+    <a href="./index.html">← 归档</a>
+  </div>
+  <div>Morning Cafe · 个人非商业晨报 · 2026-07-01T22:45:37.529274+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
