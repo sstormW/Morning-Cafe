@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-07-06 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-07-06</h1>
+  <div class="meta">16 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">富士康（Hon Hai）季度销售额同比暴涨40%，超预期，AI需求持续走强</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-05/nvidia-supplier-hon-hai-reports-surging-sales-on-solid-ai-demand">https://www.bloomberg.com/news/articles/2026-07-05/nvidia-supplier-hon-hai-reports-surging-sales-on-solid-ai-demand</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Meta考虑推出Meta Compute，出租GPU算力、托管第三方模型创收，缓解千亿美元资本开支压力</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/07/443339.html">https://www.qbitai.com/2026/07/443339.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">LeCun团队与AMI推出AdaJEPA，让世界模型实现测试时持续学习，PointMaze成功率从53.3%提升至78.7%</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/07/442964.html">https://www.qbitai.com/2026/07/442964.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Humanoid公司KinetIQ Ascend强化学习方案实现99.9%人类级操作可靠度</span>
+      <span class="source">The Robot Report · <a href="https://www.therobotreport.com/humanoid-announces-kinetiq-ascend-reinforcement-learning-approach/">https://www.therobotreport.com/humanoid-announces-kinetiq-ascend-reinforcement-learning-approach/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">港大马毅教授团队「忆生科技」获数亿元天使轮融资，打造机器人记忆系统</span>
+      <span class="source">36氪 · <a href="https://36kr.com/p/3882365879005186?f=rss">https://36kr.com/p/3882365879005186?f=rss</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">LeCun团队AdaJEPA让世界模型学会测试时持续学习</span>
+      <div class="why">强关注主题「世界模型」，测试时自适应学习范式直接影响仿真训练方法论</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/442964.html">https://www.qbitai.com/2026/07/442964.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">忆生科技（马毅团队）数亿元融资，机器人记忆系统</span>
+      <div class="why">具身智能训练数据/「大脑+小脑」系统，国内具身智能创业强相关</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3882365879005186?f=rss">https://36kr.com/p/3882365879005186?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">光象科技（清华车辆学院）具身智能创业，物理原生基座模型路线</span>
+      <div class="why">中国高校孵化具身智能创业，物理世界模型路线与训练环境方向相邻</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3882364132077577?f=rss">https://36kr.com/p/3882364132077577?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">影智XBOT咖啡机器人两轮数亿融资</span>
+      <div class="why">具身机器人商业化落地案例，垂类机器人融资动态关注范畴</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3882361033322755?f=rss">https://36kr.com/p/3882361033322755?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Humanoid公司KinetIQ Ascend RL实现99.9%操作可靠度</span>
+      <div class="why">机器人RL训练效果进展，直接关联具身智能训练数据强关注主题</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/humanoid-announces-kinetiq-ascend-reinforcement-learning-approach/">https://www.therobotreport.com/humanoid-announces-kinetiq-ascend-reinforcement-learning-approach/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Meta考虑推出Meta Compute，出租GPU算力</span>
+      <div class="why">上游GPU/算力供应链信号，影响仿真训练算力可得性</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/443339.html">https://www.qbitai.com/2026/07/443339.html</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">刚刚，LeCun团队让世界模型学会持续学习！</div>
+    
+    <ul class="article-points">
+      
+      <li>纽约大学联合LeCun初创AMI推出AdaJEPA，是JEPA系列最新成果，突破世界模型「训练后冻结」的做法，通过「规划-执行-观测-更新-再规划」闭环实现测试时自适应学习。</li>
+      
+      <li>PushObj未见过形状任务成功率翻倍，PointMaze布局测试中GD规划成功率从53.3%提升至78.7%，每次更新仅增加0.01-0.03秒延迟。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/442964.html">https://www.qbitai.com/2026/07/442964.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 06:52 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">别争了！香农老婆，才是世界上第一个大语言模型</div>
+    
+    <ul class="article-points">
+      
+      <li>70年前，克劳德·香农就为妻子打造了一套端侧私人定制的「大语言模型」雏形。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/443241.html">https://www.qbitai.com/2026/07/443241.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 03:51 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">sqlite-utils 4.0rc2, mostly written by Claude Fable (for about $149.25)</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison used Claude Fable, via Claude Code for web on his iPhone, to do a final pre-release review of sqlite-utils 4.0, aiming to catch breaking changes before shipping the stable version.</li>
+      
+      <li>The whole review effort cost about $149.25 in Max subscription usage, done just before Fable&#39;s removal from the Max plan.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything">https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 01:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">sqlite-utils 4.0rc2</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison released sqlite-utils 4.0rc2, pointing back to his post on the Claude Fable-assisted final review.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jul/5/sqlite-utils/#atom-everything">https://simonwillison.net/2026/Jul/5/sqlite-utils/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 00:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Better Models: Worse Tools</div>
+    
+    <ul class="article-points">
+      
+      <li>Armin found that newer Claude models, including Opus 4.8 (not just smaller models like Haiku), sometimes call Pi&#39;s edit tool with extra, invented fields in the nested edits[] array, causing schema rejection.</li>
+      
+      <li>The edits are usually correct in substance, but malformed tool-call arguments force retries — and the problem is getting worse with newer models, not better.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jul/4/better-models-worse-tools/#atom-everything">https://simonwillison.net/2026/Jul/4/better-models-worse-tools/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-04 22:53 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Humanoid says KinetIQ Ascend reinforcement learning approaches human-level dexterity</div>
+    
+    <ul class="article-points">
+      
+      <li>Humanoid&#39;s KinetIQ Ascend reinforcement-learning approach reportedly reaches 99.9% manipulation reliability at human speed or beyond for industrial tasks.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/humanoid-announces-kinetiq-ascend-reinforcement-learning-approach/">https://www.therobotreport.com/humanoid-announces-kinetiq-ascend-reinforcement-learning-approach/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 12:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">硬氪首发 | 港大教授成立的忆生科技获数亿天使轮融资，致力于为机器人造一套记忆系统</div>
+    
+    <ul class="article-points">
+      
+      <li>「忆生科技」（TranscEngram）完成数亿元天使轮融资，投资方包括中生制药、浦东创投、张江科投等产业与国资平台，致力于用「感知-预测-交互」闭环构建机器人「大脑+小脑」统一系统。</li>
+      
+      <li>公司由香港大学计算与数据科学学院创始院长马毅教授（计算机视觉马尔奖得主）联合高盛华、杨言超教授于2023年9月创立，并与Emmanuel Candes、Yann LeCun等学者保持合作。</li>
+      
+      <li>资金将投向可解释具身控制大模型、多模态人形动作交互数据训练管线，以及深圳前海、上海张江研发中心建设。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3882365879005186?f=rss">https://36kr.com/p/3882365879005186?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 06:27 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">硬氪首发 | 清华车辆学院师兄弟创业具身智能，已完成数亿元天使融资，将落地汽车产业</div>
+    
+    <ul class="article-points">
+      
+      <li>具身智能公司「光象科技」完成累计数亿元天使轮融资，由珠海科技产业集团、兴证资本、松禾资本等投资，成立于2025年4月，由清华大学车辆与运载学院与人工智能学院联合孵化。</li>
+      
+      <li>创始人张涛曾任高德空间感知引擎负责人，联合创始人李升波是强化学习与自动驾驶领域专家；公司选择区别于主流VLA和视频预测式世界模型的技术路线，资金将用于物理原生基座模型研发及工业场景商业化交付。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3882364132077577?f=rss">https://36kr.com/p/3882364132077577?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 06:25 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">硬氪首发 | 小米前高管唐沐创业咖啡机器人，完成数亿融资，林斌、黎万强投过</div>
+    
+    <ul class="article-points">
+      
+      <li>通用餐饮具身机器人公司「影智XBOT」连续完成数亿元两轮融资，A轮2亿元由香港简坤资本GPTX出资，B轮3-5亿元人民币由多支政府基金、美元基金参与。</li>
+      
+      <li>创始人唐沐为小米生态链前副总裁、曾主导小米路由器/小爱音箱等产品，公司采用「一脑多形」的XOS 3.0具身操作系统架构，聚焦商场咖啡机器人这一垂直场景实现快速商业化。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3882361033322755?f=rss">https://36kr.com/p/3882361033322755?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 06:23 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">7 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Millennial Samsung Union Leader&#39;s $26 Billion Bonus Victory Turns to Bitterness</div>
+    
+    <ul class="article-points">
+      
+      <li>A new generation of tech workers finds itself divided by the AI boom, moving away from old-school labor ideology even after winning a $26 billion bonus deal.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/features/2026-07-05/samsung-s-ai-bonus-deal-a-short-lived-victory-for-millennial-union-leader">https://www.bloomberg.com/news/features/2026-07-05/samsung-s-ai-bonus-deal-a-short-lived-victory-for-millennial-union-leader</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 22:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Meta也来卖铲子了！小扎：模型可以慢，GPU必须赚</div>
+    
+    <ul class="article-points">
+      
+      <li>Meta正考虑推出Meta Compute服务，将其AI基础设施开放给外部客户，已在云和数据中心签下超过5GW容量，计划通过出租GPU、托管第三方模型（如Claude）、提供模型API等方式创收。</li>
+      
+      <li>据分析，仅需拿出200MW算力对外提供，年收入即可达100亿美元；这一转向反映Meta 2026年资本开支指引高达1250-1450亿美元但模型研发进度缓慢，需靠算力变现缓解财务压力。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/443339.html">https://www.qbitai.com/2026/07/443339.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 14:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Infuriating Google commercial imagines the founding fathers embracing AI</div>
+    
+    <ul class="article-points">
+      
+      <li>A new Google Workspace commercial imagines the US founding fathers using Google&#39;s collaboration tools and Gemini to draft the Declaration of Independence in 1776.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/961468/google-ai-commercial-founding-fathers-declaration-of-independence">https://www.theverge.com/ai-artificial-intelligence/961468/google-ai-commercial-founding-fathers-declaration-of-independence</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 14:23 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Semiconductor Stocks Slide Amid AI Spending Concerns</div>
+    
+    <ul class="article-points">
+      
+      <li>Semiconductor stocks came under pressure as investors question whether the rapid pace of AI infrastructure spending can be sustained beyond 2026, despite continued commitments from major tech companies.</li>
+      
+      <li>Bloomberg&#39;s Mike Shepard noted SK Hynix&#39;s planned US ADR debut will give American investors easier access to a leading AI memory-chip supplier while helping fund its expansion.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-05/semiconductor-stocks-slide-amid-ai-spending-concerns-video">https://www.bloomberg.com/news/videos/2026-07-05/semiconductor-stocks-slide-amid-ai-spending-concerns-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 12:25 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Almost 90 new unicorns have been minted so far this year — here they are</div>
+    
+    <ul class="article-points">
+      
+      <li>With AI igniting an investor frenzy, almost 90 new startups have reached unicorn status so far this year, with more achieving the milestone every month.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/07/05/almost-40-new-unicorns-have-been-minted-so-far-this-year-here-they-are/">https://techcrunch.com/2026/07/05/almost-40-new-unicorns-have-been-minted-so-far-this-year-here-they-are/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 12:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Nvidia Supplier Hon Hai&#39;s Sales Beat on Continued AI Demand</div>
+    
+    <ul class="article-points">
+      
+      <li>Nvidia&#39;s server assembly partner Hon Hai Precision Industry reported a bigger-than-expected 40% jump in quarterly sales, with AI demand continuing to grow.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-05/nvidia-supplier-hon-hai-reports-surging-sales-on-solid-ai-demand">https://www.bloomberg.com/news/articles/2026-07-05/nvidia-supplier-hon-hai-reports-surging-sales-on-solid-ai-demand</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 07:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI 越记住你，越可能&#34;带着偏见理解你&#34;</div>
+    
+    <ul class="article-points">
+      
+      <li>钛媒体分析AI个性化记忆功能带来的认知代价：从「信息茧房」演变为「人格茧房」，AI对用户的长期记忆可能强化对其固有认知偏见。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8053185.html">https://www.tmtpost.com/8053185.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-05 09:28 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-07-06.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-07-05T22:28:10.166732+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
