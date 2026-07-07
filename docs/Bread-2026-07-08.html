@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-07-08 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-07-08</h1>
+  <div class="meta">35 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">Meta发布Muse，其Superintelligence Labs部门首款AI图像生成模型，已上线Meta AI App、Instagram、WhatsApp</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-07/meta-debuts-new-ai-image-generation-model-inside-chatbot-instagram">https://www.bloomberg.com/news/articles/2026-07-07/meta-debuts-new-ai-image-generation-model-inside-chatbot-instagram</a></span>
+    </li>
+    
+    <li>
+      <span class="title">微软为降低AI成本，开始在Excel、Outlook等产品中用自研模型替换OpenAI、Anthropic</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps">https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps</a></span>
+    </li>
+    
+    <li>
+      <span class="title">面对美国出口管制，DeepSeek计划自研芯片以减少对英伟达、华为的依赖</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/ai/2026/07/facing-us-export-controls-chinas-deepseek-plans-to-make-its-own-chips/">https://arstechnica.com/ai/2026/07/facing-us-export-controls-chinas-deepseek-plans-to-make-its-own-chips/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SpaceX Transporter-17拼车任务将81个载荷送入轨道，含首颗商业核动力卫星</span>
+      <span class="source">Payload Space · <a href="https://payloadspace.com/transporter-17-sends-the-first-commercial-nuclear-sat-to-orbit/">https://payloadspace.com/transporter-17-sends-the-first-commercial-nuclear-sat-to-orbit/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">蚂蚁灵波发布空间感知模型LingBot-Depth 2.0，机器人视觉迎来新突破</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/07/445184.html">https://www.qbitai.com/2026/07/445184.html</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">蚂蚁灵波空间感知模型LingBot-Depth 2.0正式发布</span>
+      <div class="why">强关注主题「空间智能」+「具身智能训练数据」，机器人视觉/空间感知模型直接相关</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/445184.html">https://www.qbitai.com/2026/07/445184.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">HIVE获1500万美元融资，打造工业物理AI</span>
+      <div class="why">机器人公司大额融资，物理AI/工业自主机器人赛道</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/hive-brings-in-15m-to-build-physical-ai-for-industrial-machines/">https://www.therobotreport.com/hive-brings-in-15m-to-build-physical-ai-for-industrial-machines/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Tesollo启动IPO进程，专注人形机器人手部研发</span>
+      <div class="why">机器人公司IPO，人形机器人零部件供应链动态</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/tesollo-initiates-ipo-process-developing-humanoid-hands/">https://www.therobotreport.com/tesollo-initiates-ipo-process-developing-humanoid-hands/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">顶尖机器人研究者与创业者探讨AI如何推动通用机器人自主性</span>
+      <div class="why">城市具身智能/机器人自主性行业趋势，与LeapsCora训练环境目标直接相关</div>
+      <div class="source">Ars Technica · <a href="https://arstechnica.com/features/2026/07/robot-workers-rising-how-ai-may-drive-general-purpose-autonomy-in-robotics/">https://arstechnica.com/features/2026/07/robot-workers-rising-how-ai-may-drive-general-purpose-autonomy-in-robotics/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">DeepSeek计划自研芯片应对出口管制</span>
+      <div class="why">上游GPU/芯片供应链信号</div>
+      <div class="source">Ars Technica · <a href="https://arstechnica.com/ai/2026/07/facing-us-export-controls-chinas-deepseek-plans-to-make-its-own-chips/">https://arstechnica.com/ai/2026/07/facing-us-export-controls-chinas-deepseek-plans-to-make-its-own-chips/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">AI芯片抛售席卷全球市场</span>
+      <div class="why">算力/芯片市场波动信号</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-07-07/bloomberg-tech-7-07-2026-video">https://www.bloomberg.com/news/videos/2026-07-07/bloomberg-tech-7-07-2026-video</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">ABB Robotics F712自主叉车集成vSLAM导航</span>
+      <div class="why">相邻机器人视觉导航技术动态（工业场景，与LeapsCora导航训练方向相邻）</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/abb-robotics-includes-vslam-navigation-f712-autonomous-forklift/">https://www.therobotreport.com/abb-robotics-includes-vslam-navigation-f712-autonomous-forklift/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Solstice以145亿美元收购Element Solutions，布局半导体材料与AI数据中心冷却</span>
+      <div class="why">上游算力供应链（芯片材料/数据中心冷却）并购信号</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-07-07/solstice-buys-element-solutions-video">https://www.bloomberg.com/news/videos/2026-07-07/solstice-buys-element-solutions-video</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">8 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Meta Debuts New AI Image-Generation Model Inside Chatbot, Instagram</div>
+    
+    <ul class="article-points">
+      
+      <li>Meta Platforms debuted a new image-generation AI model, marking its first such release since it began rebuilding its AI lab under Chief AI Officer Alexandr Wang a year ago, after spending billions on the effort.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-07/meta-debuts-new-ai-image-generation-model-inside-chatbot-instagram">https://www.bloomberg.com/news/articles/2026-07-07/meta-debuts-new-ai-image-generation-model-inside-chatbot-instagram</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 18:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">github-code Web Component</div>
+    
+    <ul class="article-points">
+      
+      <li>Simon Willison built &#34;github-code,&#34; an experimental Web Component using GPT-5.5 that embeds code from GitHub via a custom &lt;github-code&gt; tag.</li>
+      
+      <li>It converts a GitHub blob URL into the corresponding raw.githubusercontent.com URL, fetches it, and renders the specified line range with line numbers (no syntax highlighting yet).</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jul/7/github-code-component/#atom-everything">https://simonwillison.net/2026/Jul/7/github-code-component/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 16:18 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">让Skill&#34;有图可依&#34;：openJiuwen首发多模态Skill范式Skill-Omni</div>
+    
+    <ul class="article-points">
+      
+      <li>openJiuwen首次发布多模态Skill范式Skill-Omni，让Skill系统从纯文字说明书升级为多模态经验库。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/445229.html">https://www.qbitai.com/2026/07/445229.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 05:03 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Meta rolls out Muse, a new AI image generator</div>
+    
+    <ul class="article-points">
+      
+      <li>Meta rolled out Muse, a new AI image-generation model aimed at use cases including advertising, home decorating, and creator tools.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/">https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 22:18 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Meta&#39;s new Muse Image model can pull other Instagram users into AI photos</div>
+    
+    <ul class="article-points">
+      
+      <li>Meta launched Muse Image, the first AI image-generation model built by its Superintelligence Labs division, now powering image tools in the Meta AI app, Instagram, and WhatsApp.</li>
+      
+      <li>The model is coming soon to Facebook and Messenger as part of the broader Muse family of AI tools.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/tech/962485/meta-muse-image-ai-model-instagram">https://www.theverge.com/tech/962485/meta-muse-image-ai-model-instagram</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 20:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Anthropic is launching Claude Cowork on mobile and web</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic&#39;s Claude Cowork platform is now available on mobile and web for the first time, having previously been limited to the Claude desktop app on macOS and Windows.</li>
+      
+      <li>The expanded access rolls out first to Max subscribers, with other plan tiers to follow in the coming weeks.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/961978/anthropic-claude-cowork-mobile-web">https://www.theverge.com/ai-artificial-intelligence/961978/anthropic-claude-cowork-mobile-web</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 17:46 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">揭秘字节 Seedance：全球 AI 的第二个好生意 | 深氪</div>
+    
+    <ul class="article-points">
+      
+      <li>字节Seed研究员曾妍在Seedance 2.0立项时坚持将模型参数量做到200B以上，尽管团队内部一度倾向先训100B级别以保守用算力资源。</li>
+      
+      <li>在高管协调资源、Seed负责人吴永辉与视觉多模态生成负责人周畅最终拍板支持后，Seedance 2.0的大参数量+充足训练数据路线被证明是正确的。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3885177884078083?f=rss">https://36kr.com/p/3885177884078083?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 07:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">&#34;龙虾&#34;为什么这么火？OpenClaw登顶GitHub后，AI Agent时代真的来了？</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenClaw（外号「龙虾」）以25.2万星标超越Meta的React，登顶GitHub开源项目历史第一，官方还发文嘲讽Meta「我们在迭代创新，而你只在办会议」。</li>
+      
+      <li>文章指出OpenClaw并非聊天机器人，而是一款开源、本地优先、可自托管的自主AI代理与自动化平台，靠自然语言指令驱动。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3885061350617350?f=rss">https://36kr.com/p/3885061350617350?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 06:23 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How AI could enable autonomous robot workers in workplaces—and maybe homes</div>
+    
+    <ul class="article-points">
+      
+      <li>Top robotics researchers and founders weigh in on how general-purpose robot autonomy is evolving toward workplace—and eventually home—deployment.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/features/2026/07/robot-workers-rising-how-ai-may-drive-general-purpose-autonomy-in-robotics/">https://arstechnica.com/features/2026/07/robot-workers-rising-how-ai-may-drive-general-purpose-autonomy-in-robotics/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 11:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">机器人视觉迎来新突破！蚂蚁灵波空间感知模型LingBot-Depth 2.0正式发布</div>
+    
+    <ul class="article-points">
+      
+      <li>蚂蚁灵波正式发布空间感知模型LingBot-Depth 2.0，被称为机器人视觉领域的新突破。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/445184.html">https://www.qbitai.com/2026/07/445184.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 03:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">ABB Robotics includes vSLAM navigation in F712 autonomous forklift</div>
+    
+    <ul class="article-points">
+      
+      <li>ABB Robotics&#39; Flexley Stacy F712 autonomous forklift now uses vSLAM vision-based navigation, works alongside other robots, and meets industry safety standards.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/abb-robotics-includes-vslam-navigation-f712-autonomous-forklift/">https://www.therobotreport.com/abb-robotics-includes-vslam-navigation-f712-autonomous-forklift/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 20:24 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesollo initiates IPO process while developing humanoid hands</div>
+    
+    <ul class="article-points">
+      
+      <li>Tesollo, a South Korean robotic hand specialist developing humanoid hands, has officially begun preparations for an IPO.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/tesollo-initiates-ipo-process-developing-humanoid-hands/">https://www.therobotreport.com/tesollo-initiates-ipo-process-developing-humanoid-hands/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 13:17 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">HIVE brings in $15M to build physical AI for industrial machines</div>
+    
+    <ul class="article-points">
+      
+      <li>HIVE raised $15 million to build physical AI for industrial machines, having already deployed its technology autonomously across multiple sites in Scandinavia.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/hive-brings-in-15m-to-build-physical-ai-for-industrial-machines/">https://www.therobotreport.com/hive-brings-in-15m-to-build-physical-ai-for-industrial-machines/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 06:55 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Bullish on SpaceX Long Term: ERShares&#39; Shulman</div>
+    
+    <ul class="article-points">
+      
+      <li>ERShares Founder &amp; CIO Joel Shulman says SpaceX&#39;s addition to the Nasdaq 100 is setting a price floor for the stock as broker coverage begins.</li>
+      
+      <li>ERShares&#39; XOVR ETF holds approximately $246 million in SpaceX exposure.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-07/bullish-on-spacex-long-term-ershares-shulman-video">https://www.bloomberg.com/news/videos/2026-07-07/bullish-on-spacex-long-term-ershares-shulman-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 18:24 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apolink makes contact with first relay satellite</div>
+    
+    <ul class="article-points">
+      
+      <li>Apolink made contact with its first satellite after it launched on SpaceX&#39;s July 7 rideshare mission, clearing the way for a data-relay demonstration under a novel experimental FCC license.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/apolink-makes-contact-with-first-relay-satellite/">https://spacenews.com/apolink-makes-contact-with-first-relay-satellite/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 18:11 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX launches Transporter-17 amid concerns about rideshare program&#39;s future</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX launched Transporter-17, the latest in its rideshare mission series, on July 7, even as a rival company executive described industry concerns about the program&#39;s future as reaching &#34;panic&#34; levels.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/spacex-launches-transporter-17-amid-concerns-about-rideshare-programs-future/">https://spacenews.com/spacex-launches-transporter-17-amid-concerns-about-rideshare-programs-future/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 15:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SpaceX satellite wins test Pentagon&#39;s commitment to competition</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX&#39;s dominance in satellite wins for proliferated military networks is drawing congressional scrutiny as the Pentagon races to deploy the systems.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/spacexs-wins-test-pentagons-commitment-to-competition/">https://spacenews.com/spacexs-wins-test-pentagons-commitment-to-competition/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 11:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Transporter-17 Sends the First Commercial Nuclear Sat to Orbit</div>
+    
+    <ul class="article-points">
+      
+      <li>SpaceX&#39;s Transporter-17 rideshare mission lifted off from Vandenberg Space Force Base at 3:12am, carrying 81 payloads to low Earth orbit, including the first commercial nuclear satellite.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Payload Space</span>
+      <span class="sep">·</span>
+      <a href="https://payloadspace.com/transporter-17-sends-the-first-commercial-nuclear-sat-to-orbit/">https://payloadspace.com/transporter-17-sends-the-first-commercial-nuclear-sat-to-orbit/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 12:46 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">15 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">TeraWulf CEO Excited About Anthropic Data Center Agreement</div>
+    
+    <ul class="article-points">
+      
+      <li>TeraWulf CEO Paul Prager called the company&#39;s new 20-year lease agreement with Anthropic a major vote of confidence in its AI infrastructure strategy.</li>
+      
+      <li>Prager outlined plans for a purpose-built AI campus at TeraWulf&#39;s Kentucky site tied to the long-term partnership.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-07/terawulf-ceo-on-anthropic-data-center-agreement-video">https://www.bloomberg.com/news/videos/2026-07-07/terawulf-ceo-on-anthropic-data-center-agreement-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 21:07 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Market Strategist Highlights High Earnings Expectations Amid AI Sector Concentration</div>
+    
+    <ul class="article-points">
+      
+      <li>JPMorgan Asset Management&#39;s Jordan Jackson noted S&amp;P 500 earnings growth is projected at over 20% this quarter, but excluding the technology sector that estimate falls to around 11%.</li>
+      
+      <li>He called elevated market expectations and AI sector concentration a key risk heading into earnings season.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-07/market-strategist-highlights-high-earnings-expectations-video">https://www.bloomberg.com/news/videos/2026-07-07/market-strategist-highlights-high-earnings-expectations-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 20:20 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">BC Eyes Legal Action Against OpenAI in Wake of Mass Shooting</div>
+    
+    <ul class="article-points">
+      
+      <li>British Columbia is exploring legal action against OpenAI over its failure to alert authorities to threats made on ChatGPT before the February mass shooting in Tumbler Ridge.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-07/bc-eyes-legal-action-against-openai-in-wake-of-mass-shooting">https://www.bloomberg.com/news/articles/2026-07-07/bc-eyes-legal-action-against-openai-in-wake-of-mass-shooting</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 18:48 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Chip Selloff Spreads Across Global Markets | Bloomberg Tech 7/07/2026</div>
+    
+    <ul class="article-points">
+      
+      <li>Samsung&#39;s quarterly profit surged on memory demand, but that wasn&#39;t enough to satisfy investors amid a broader AI chip selloff.</li>
+      
+      <li>Separately, Amazon is seeking to raise at least $25 billion in bonds to fund AI infrastructure spending, and SpaceX joined the Nasdaq 100 Index.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-07/bloomberg-tech-7-07-2026-video">https://www.bloomberg.com/news/videos/2026-07-07/bloomberg-tech-7-07-2026-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 18:28 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Amazon Fuels AI Debt Boom With Another Bond Sale</div>
+    
+    <ul class="article-points">
+      
+      <li>Amazon is seeking to raise at least $25 billion in a US dollar bond sale, its latest jumbo debt offering to fund AI infrastructure spending.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-07/amazon-fuels-ai-debt-boom-with-another-bond-sale-video">https://www.bloomberg.com/news/videos/2026-07-07/amazon-fuels-ai-debt-boom-with-another-bond-sale-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 18:25 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Microsoft Replaces OpenAI, Anthropic With Own AI in Some Apps</div>
+    
+    <ul class="article-points">
+      
+      <li>Microsoft has begun replacing OpenAI and Anthropic models with its own AI in products like Excel and Outlook as it looks to cut AI costs.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps">https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 16:19 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Facing US export controls, China&#39;s DeepSeek plans to make its own chips</div>
+    
+    <ul class="article-points">
+      
+      <li>DeepSeek plans to develop its own chips in response to US export controls, aiming to reduce dependency on both Nvidia and Huawei, though the effort is still in early stages.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/07/facing-us-export-controls-chinas-deepseek-plans-to-make-its-own-chips/">https://arstechnica.com/ai/2026/07/facing-us-export-controls-chinas-deepseek-plans-to-make-its-own-chips/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 16:14 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Fuels Record M&amp;A Boom</div>
+    
+    <ul class="article-points">
+      
+      <li>Jones Day&#39;s Robert Profusek says record M&amp;A volumes are being driven by AI, abundant capital, and a more deal-friendly regulatory environment.</li>
+      
+      <li>He warns AI valuations are reaching unprecedented levels, raising doubts about how long today&#39;s deal boom can last, while private equity stays on the sidelines due to high seller expectations.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-07/ai-fuels-record-m-a-boom-video">https://www.bloomberg.com/news/videos/2026-07-07/ai-fuels-record-m-a-boom-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 15:58 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Solstice Buys Element Solutions</div>
+    
+    <ul class="article-points">
+      
+      <li>Element Solutions CEO Ben Gliklich said Solstice&#39;s $14.5 billion takeover offer was too compelling to pass up, with the combined company aiming to be a bigger player in semiconductor materials and AI data-center cooling.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-07/solstice-buys-element-solutions-video">https://www.bloomberg.com/news/videos/2026-07-07/solstice-buys-element-solutions-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 15:56 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Download: your stake in OpenAI, and the Treasury&#39;s AI warning</div>
+    
+    <ul class="article-points">
+      
+      <li>Sam Altman&#39;s proposal for Americans to share in AI-generated wealth is back in the spotlight, with reports he&#39;s discussing giving families a $300 stake in OpenAI.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/07/07/1140197/the-download-your-openai-stake-treasury-ai-warning/">https://www.technologyreview.com/2026/07/07/1140197/the-download-your-openai-stake-treasury-ai-warning/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 12:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Amazon&#39;s New Bonds Get Cooler Reception as AI Debt Floods Market</div>
+    
+    <ul class="article-points">
+      
+      <li>Amazon&#39;s latest bond sale is getting a cooler investor reception than its record-breaking sale earlier this year, as AI-related debt floods the market.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-07/amazon-returns-to-us-bond-market-to-fund-ai-infrastructure-build">https://www.bloomberg.com/news/articles/2026-07-07/amazon-returns-to-us-bond-market-to-fund-ai-infrastructure-build</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 12:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The foundational elements of AI architecture that IT leaders need to scale</div>
+    
+    <ul class="article-points">
+      
+      <li>As organizations move toward agentic AI systems, IT leaders face growing risk in deciding which architecture investments will still be valuable six months out.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/07/07/1139413/the-foundational-elements-of-ai-architecture-that-it-leaders-need-to-scale/">https://www.technologyreview.com/2026/07/07/1139413/the-foundational-elements-of-ai-architecture-that-it-leaders-need-to-scale/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 11:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Meta Now Lets Anyone Use Your Instagram Photos in AI Images—Unless You Opt Out</div>
+    
+    <ul class="article-points">
+      
+      <li>As part of the Muse Image model rollout, Instagram users with public accounts must actively opt out to prevent others from generating AI images using their photos.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Wired</span>
+      <span class="sep">·</span>
+      <a href="https://www.wired.com/story/meta-now-lets-anyone-use-your-instagram-photos-in-ai-images-unless-you-opt-out/">https://www.wired.com/story/meta-now-lets-anyone-use-your-instagram-photos-in-ai-images-unless-you-opt-out/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 21:59 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">用AI&#34;复刻&#34;人类细胞、预判药效，「华源智因」获千万级人民币种子轮融资｜36氪首发</div>
+    
+    <ul class="article-points">
+      
+      <li>AI虚拟细胞企业华源智因完成千万级人民币种子轮融资，由水木创投领投，资金将用于多模态测序底层技术迭代及团队扩充。</li>
+      
+      <li>公司CEO杜润诗毕业于加州大学洛杉矶分校，CTO王艺璇为香港中文大学博士生，曾在百图生科搭建xTrimoSC Perturb模型，首席AI科学家为港中文助理教授李煜。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3883943959621634?f=rss">https://36kr.com/p/3883943959621634?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 01:05 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot</div>
+    
+    <ul class="article-points">
+      
+      <li>Hugging Face and SkyPilot introduced zero-egress storage that lets AI workloads run on any cloud while data stays stored on Hugging Face.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Hugging Face Blog</span>
+      <span class="sep">·</span>
+      <a href="https://huggingface.co/blog/skypilot-hf-storage">https://huggingface.co/blog/skypilot-hf-storage</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 00:00 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">sqlite-utils 4.0rc4</div>
+    
+    <ul class="article-points">
+      
+      <li>sqlite-utils 4.0rc4 is the last release candidate before the 4.0 stable release, mainly implementing feedback from a detailed review by Claude Fable 5.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jul/7/sqlite-utils-2/#atom-everything">https://simonwillison.net/2026/Jul/7/sqlite-utils-2/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 05:36 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The &#39;G-Wagen of golf carts&#39; could be the ideal second car</div>
+    
+    <ul class="article-points">
+      
+      <li>Lisbon-based EV startup Amble is launching an electric buggy that skips the industry&#39;s usual focus on 0-60 times and range anxiety — and has no self-driving features.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/transportation/962187/amble-golf-cart-moon-buggy-ev-design-price-specs">https://www.theverge.com/transportation/962187/amble-golf-cart-moon-buggy-ev-design-price-specs</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-07 17:52 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-07-08.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-07-07T22:34:53.376981+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
