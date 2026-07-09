@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>晨报 · 2026-07-10 · Morning Cafe</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="晨报 · 2026-07-10｜LeapsCora 视角">
+<meta property="og:description" content="Top 5 首条：OpenAI 发布 GPT-5.6 家族（Luna/Terra/Sol），定价激进主打长时程 agentic 能力 ｜ LeapsCora 直接相关：全球首个具身专属 MoE 视频模型开源">
+<meta property="og:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-07-10.png">
+<meta property="og:url" content="https://sstormw.github.io/Morning-Cafe/2026-07-10.html">
+<meta property="og:site_name" content="Morning Cafe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="晨报 · 2026-07-10｜LeapsCora 视角">
+<meta name="twitter:description" content="Top 5 首条：OpenAI 发布 GPT-5.6 家族（Luna/Terra/Sol），定价激进主打长时程 agentic 能力 ｜ LeapsCora 直接相关：全球首个具身专属 MoE 视频模型开源">
+<meta name="twitter:image" content="https://sstormw.github.io/Morning-Cafe/img/2026-07-10.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --line: #e5e5e5;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px 60px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 14px; }
+
+.section { margin-top: 40px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+.top5 .source a:hover { text-decoration: underline; }
+
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title {
+  font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink);
+}
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .nav { margin-bottom: 8px; }
+.footer .nav a { margin: 0 8px; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 28px 18px 50px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">☕ Morning Cafe</div>
+  <h1>晨报 · 2026-07-10</h1>
+  <div class="meta">46 条来源 · 抓取窗口 24h · LeapsCora 视角</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">OpenAI 发布 GPT-5.6 家族（Luna/Terra/Sol），定价激进主打长时程 agentic 能力</span>
+      <span class="source">Simon Willison · <a href="https://simonwillison.net/2026/Jul/9/gpt-5-6/#atom-everything">https://simonwillison.net/2026/Jul/9/gpt-5-6/#atom-everything</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Blue Origin 寻求 100 亿美元外部融资，估值达 1300 亿美元</span>
+      <span class="source">Payload Space · <a href="https://payloadspace.com/blue-origin-seeks-10b-at-130b-valuation-reporting-shows/">https://payloadspace.com/blue-origin-seeks-10b-at-130b-valuation-reporting-shows/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">自动驾驶公司 Momenta 港股上市首日市值 700 亿港元，量产搭载车辆市占率超 60%</span>
+      <span class="source">36氪 · <a href="https://36kr.com/p/3888180493318921?f=rss">https://36kr.com/p/3888180493318921?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">全球首个具身专属 MoE 视频模型开源，剑指机器人大脑</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/07/446568.html">https://www.qbitai.com/2026/07/446568.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">前美联储主席伯南克加入 Anthropic 监督信托机构</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-07-09/ex-fed-chairman-bernanke-joins-anthropic-oversight-trust-video">https://www.bloomberg.com/news/videos/2026-07-09/ex-fed-chairman-bernanke-joins-anthropic-oversight-trust-video</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">全球首个具身专属 MoE 视频模型开源</span>
+      <div class="why">具身智能训练数据/机器人大脑生成路线，直接命中「具身智能训练数据」强关注主题</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/446568.html">https://www.qbitai.com/2026/07/446568.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">蚂蚁灵波开源 LingBot-World 2.0，世界模型首次小时级生成</span>
+      <div class="why">命中「空间智能」强关注主题，对标 World Labs / Genie 类世界模型工作</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/446548.html">https://www.qbitai.com/2026/07/446548.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">NVIDIA 与 Hugging Face 为 LeRobot 带来新模型和框架</span>
+      <div class="why">Nvidia/Isaac 生态强关注项，LeRobot 更新直接影响具身训练数据栈</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/nvidia-hugging-face-bring-new-models-frameworks-lerobot/">https://www.therobotreport.com/nvidia-hugging-face-bring-new-models-frameworks-lerobot/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">量化派物理AI 转向物理世界基础模型路线</span>
+      <div class="why">物理世界基础模型路线，与具身智能训练数据来源相关</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/446435.html">https://www.qbitai.com/2026/07/446435.html</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">SK Hynix 美股上市认购火爆，Micron 加码 2500 亿美元美国产能</span>
+      <div class="why">上游存储/算力供应链信号，影响 GPU 及算力成本</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-07-09/bloomberg-tech-7-09-2026-video">https://www.bloomberg.com/news/videos/2026-07-09/bloomberg-tech-7-09-2026-video</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">昇视唯盛完成数亿元 B 轮融资，切入工业焊接具身智能</span>
+      <div class="why">具身智能机器人融资动态，虽非 roster 内四足/轮式但反映行业投融资热度</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3887871679347208?f=rss">https://36kr.com/p/3887871679347208?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">2026 中国股权投资机构名册：具身智能 2025 年吸纳超 656 亿元融资</span>
+      <div class="why">具身智能行业融资大盘点，可作为 BP/融资叙事参考</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3888289009678854?f=rss">https://36kr.com/p/3888289009678854?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+  <div class="nav">
+    <a href="./index.html">← 归档</a>
+  </div>
+  <div>Morning Cafe · 个人非商业晨报 · 2026-07-09T22:47:32.146563+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
