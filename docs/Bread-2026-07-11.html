@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-07-11 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-07-11</h1>
+  <div class="meta">28 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">SK海力士纳斯达克上市募资265亿美元，首日股价大涨13%</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-10/sk-hynix-debut-is-a-bet-that-ai-breaks-boom-and-bust-chip-cycle">https://www.bloomberg.com/news/articles/2026-07-10/sk-hynix-debut-is-a-bet-that-ai-breaks-boom-and-bust-chip-cycle</a></span>
+    </li>
+    
+    <li>
+      <span class="title">苹果起诉OpenAI窃取商业机密，指控其协同前苹果员工套取硬件信息</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-07-10/apple-sues-openai-for-trade-secret-theft-video">https://www.bloomberg.com/news/videos/2026-07-10/apple-sues-openai-for-trade-secret-theft-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">中国首次回收可复用火箭，采用不同于SpaceX的新回收方式</span>
+      <span class="source">Ars Technica · <a href="https://arstechnica.com/space/2026/07/china-recovered-its-first-reusable-rocket-and-showed-a-new-way-to-do-it/">https://arstechnica.com/space/2026/07/china-recovered-its-first-reusable-rocket-and-showed-a-new-way-to-do-it/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">蚂蚁灵波发布全球首个「具身原生」预训练模型LingBot-VA 2.0，双臂任务成功率93.6%</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/07/447627.html">https://www.qbitai.com/2026/07/447627.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Anthropic发现Claude内部隐藏空间，揭示大模型如何思考概念</span>
+      <span class="source">MIT Technology Review · <a href="https://www.technologyreview.com/2026/07/10/1140316/the-download-anthropic-claude-hidden-space-openai-super-app/">https://www.technologyreview.com/2026/07/10/1140316/the-download-anthropic-claude-hidden-space-openai-super-app/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">蚂蚁灵波发布全球首个「具身原生」预训练模型LingBot-VA 2.0，双臂任务成功率93.6%，单GPU可跑150Hz推理</span>
+      <div class="why">具身智能训练数据/机器人 foundation model 强关注主题，因果扩散Transformer+预见式推理架构可作为训练范式参考</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/447627.html">https://www.qbitai.com/2026/07/447627.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">北京他山科技完成数亿元B轮融资，为英伟达全球首家触觉仿真合作伙伴</span>
+      <div class="why">触觉传感/具身训练数据方向，且涉及 Nvidia 生态合作，与强关注主题「具身智能训练数据」直接挂钩</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3889141540370949?f=rss">https://36kr.com/p/3889141540370949?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">深圳AI²Robotics完成7.35亿美元融资，估值28亿美元，专注轮式人形机器人</span>
+      <div class="why">机器人公司大额融资，人形+轮式赛道动态属强关注主题</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/ai%c2%b2-robotics-raises-735m-3b-valuation-wheeled-humanoid-robots/">https://www.therobotreport.com/ai%c2%b2-robotics-raises-735m-3b-valuation-wheeled-humanoid-robots/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">IEEE Spectrum Video Friday：首场11对11人形机器人足球世界杯举行</span>
+      <div class="why">具身智能行业生态一般性动态，非核心竞品但反映人形机器人应用热度</div>
+      <div class="source">IEEE Spectrum Robotics · <a href="https://spectrum.ieee.org/video-friday-robot-world-cup">https://spectrum.ieee.org/video-friday-robot-world-cup</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">XTEND获美国自主导航技术专利</span>
+      <div class="why">机器人自主导航技术相邻方向，非核心竞品但技术路线相关</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/xtend-secures-u-s-patent-autonomous-navigation-technology/">https://www.therobotreport.com/xtend-secures-u-s-patent-autonomous-navigation-technology/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The Download: Claude&#39;s inner workings and OpenAI&#39;s &#34;super app&#34;</div>
+    
+    <ul class="article-points">
+      
+      <li>Anthropic says it has gained the clearest look yet at what happens inside large language models, describing a &#34;hidden space&#34; where Claude works through concepts before responding.</li>
+      
+      <li>The newsletter also covers OpenAI&#39;s push toward a &#34;super app&#34; format for ChatGPT.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/07/10/1140316/the-download-anthropic-claude-hidden-space-openai-super-app/">https://www.technologyreview.com/2026/07/10/1140316/the-download-anthropic-claude-hidden-space-openai-super-app/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 12:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">GPT-5.6一发布，Claude终于舍得重置Fable 5额度了</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI发布GPT-5.6之后，Anthropic随即宣布重置Claude Fable 5模型的可用额度。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/447691.html">https://www.qbitai.com/2026/07/447691.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 09:41 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">6 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Video Friday: A World Cup for Robots</div>
+    
+    <ul class="article-points">
+      
+      <li>This week&#39;s Video Friday roundup highlights the first 11-vs-11 humanoid robot soccer match, featuring two full teams of robots competing.</li>
+      
+      <li>Upcoming robotics events listed include RSS 2026 (Sydney, July 13-17), Humanoids Summit Seoul (Sept 22-23), and IROS 2026 in Pittsburgh (Sept 27-Oct 1).</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">IEEE Spectrum Robotics</span>
+      <span class="sep">·</span>
+      <a href="https://spectrum.ieee.org/video-friday-robot-world-cup">https://spectrum.ieee.org/video-friday-robot-world-cup</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 16:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">全球首个「具身原生」预训练模型发布，从物理世界出发为机器人造大脑！</div>
+    
+    <ul class="article-points">
+      
+      <li>蚂蚁灵波发布全球首个「具身原生」预训练VA基础模型LingBot-VA 2.0，采用因果扩散Transformer、稀疏MoE、语义视觉-动作Tokenizer架构，并引入「预见式推理」异步推理机制。</li>
+      
+      <li>该模型可在单GPU上以150Hz频率推理，双臂任务成功率达93.6%；在RoboTwin 2.0基准测试中，clean/随机化场景成功率分别为93.8%/93.4%，平均93.6%。</li>
+      
+      <li>采用多步预测（MCP）训练后收敛速度比基线快2.3倍，可完成桌面整理、传送带抓取、精细物体操作等复杂任务。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/447627.html">https://www.qbitai.com/2026/07/447627.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 08:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">行业首个具身原生世界动作模型来了！蚂蚁灵波发布LingBot-VA 2.0</div>
+    
+    <ul class="article-points">
+      
+      <li>蚂蚁灵波发布行业首个「具身原生世界动作模型」LingBot-VA 2.0。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/447597.html">https://www.qbitai.com/2026/07/447597.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 03:28 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">XTEND secures U.S. patent for autonomous navigation technology</div>
+    
+    <ul class="article-points">
+      
+      <li>XTEND was granted a U.S. patent for autonomous navigation technology, expanding its IP portfolio.</li>
+      
+      <li>The patent covers autonomous navigation, operator assistance, and mission execution capabilities.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/xtend-secures-u-s-patent-autonomous-navigation-technology/">https://www.therobotreport.com/xtend-secures-u-s-patent-autonomous-navigation-technology/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 21:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI² Robotics raises $735M at $3B valuation for wheeled humanoid robots</div>
+    
+    <ul class="article-points">
+      
+      <li>Shenzhen-based Ai2 Robotics raised $735 million at a $2.8 billion valuation for its wheeled humanoid robots.</li>
+      
+      <li>Backers include state, corporate, and financial investors.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/ai%c2%b2-robotics-raises-735m-3b-valuation-wheeled-humanoid-robots/">https://www.therobotreport.com/ai%c2%b2-robotics-raises-735m-3b-valuation-wheeled-humanoid-robots/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 19:44 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">36氪首发 | 英伟达全球首家触觉仿真合作伙伴再获数亿融资，上半年订单超去年四倍</div>
+    
+    <ul class="article-points">
+      
+      <li>北京他山科技完成B轮融资，金额数亿元，投资方包括均胜电子、太平创新、奥克斯、鹏翎股份、LHCP、洪山资本等，资金将用于触觉传感器及芯片迭代、触觉训练平台建设。</li>
+      
+      <li>公司为英伟达全球首家触觉仿真合作伙伴，上半年订单同比增长超四倍；首席科学家为ARM架构共同发明人Steve Furber。</li>
+      
+      <li>据公司观察，灵巧手中触觉传感器渗透率已从2025年约20%提升至60%以上。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3889141540370949?f=rss">https://36kr.com/p/3889141540370949?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 01:19 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">China recovered its first reusable rocket and showed a new way to do it</div>
+    
+    <ul class="article-points">
+      
+      <li>China successfully recovered its first reusable rocket, demonstrating a recovery method distinct from SpaceX&#39;s approach.</li>
+      
+      <li>An observer noted the effort &#34;clearly&#34; reflects admiration for SpaceX&#39;s work and an attempt to replicate it.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/space/2026/07/china-recovered-its-first-reusable-rocket-and-showed-a-new-way-to-do-it/">https://arstechnica.com/space/2026/07/china-recovered-its-first-reusable-rocket-and-showed-a-new-way-to-do-it/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 21:41 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">ElevationSpace advances work on commercial reentry vehicle</div>
+    
+    <ul class="article-points">
+      
+      <li>Japanese startup ElevationSpace is signing up customers and preparing for its first reentry vehicle mission.</li>
+      
+      <li>The company is closely watching SpaceX&#39;s expansion into the reentry vehicle market.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/elevationspace-advances-work-on-commercial-reentry-vehicle/">https://spacenews.com/elevationspace-advances-work-on-commercial-reentry-vehicle/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 11:25 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">17 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SK Hynix Debut Is a Bet That AI Breaks Boom-and-Bust Chip Cycle</div>
+    
+    <ul class="article-points">
+      
+      <li>SK Hynix completed the largest U.S. public listing by a foreign company in market history.</li>
+      
+      <li>Shares soared 13% on their first day of trading, reflecting bets that AI demand will break the traditional boom-and-bust memory chip cycle.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-10/sk-hynix-debut-is-a-bet-that-ai-breaks-boom-and-bust-chip-cycle">https://www.bloomberg.com/news/articles/2026-07-10/sk-hynix-debut-is-a-bet-that-ai-breaks-boom-and-bust-chip-cycle</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 21:52 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple Sues OpenAI for Trade Secret Theft</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple sued OpenAI for trade secret theft, accusing the AI startup and its hardware chief of a coordinated campaign to steal information about upcoming Apple products.</li>
+      
+      <li>Apple alleges OpenAI encouraged Apple employees to share information, components, drawings, and other materials related to unreleased products.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-10/apple-sues-openai-for-trade-secret-theft-video">https://www.bloomberg.com/news/videos/2026-07-10/apple-sues-openai-for-trade-secret-theft-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 21:04 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple Sues OpenAI for Trade Secret Theft in Blockbuster Case</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple Inc. sued OpenAI for trade secret theft, accusing the company and its hardware chief of a coordinated campaign to obtain information about Apple&#39;s upcoming products.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-10/apple-sues-openai-for-trade-secret-theft-in-blockbuster-case">https://www.bloomberg.com/news/articles/2026-07-10/apple-sues-openai-for-trade-secret-theft-in-blockbuster-case</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 20:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">US Eases Export Curbs on UAE, Opening Door for AI Chip Sales</div>
+    
+    <ul class="article-points">
+      
+      <li>The Trump administration plans to ease export restrictions on the UAE, clearing the way for the Gulf state to buy advanced technologies.</li>
+      
+      <li>The eased curbs include semiconductors needed to support the UAE&#39;s AI ambitions.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-10/us-eases-export-curbs-on-uae-opening-door-for-ai-chip-sales">https://www.bloomberg.com/news/articles/2026-07-10/us-eases-export-curbs-on-uae-opening-door-for-ai-chip-sales</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 16:21 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SK Chairman Chey Tae-won on SK Hynix Debut, AI Demand and US Plans</div>
+    
+    <ul class="article-points">
+      
+      <li>SK Group chairman Chey Tae-won called SK Hynix&#39;s U.S. listing &#34;a dream come true,&#34; after raising $26.5 billion in the largest-ever U.S. debut by a foreign company.</li>
+      
+      <li>He discussed the outlook for AI demand and SK&#39;s US investment plans.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-10/sk-chairman-on-sk-hynix-debut-ai-demand-and-us-plans-video">https://www.bloomberg.com/news/videos/2026-07-10/sk-chairman-on-sk-hynix-debut-ai-demand-and-us-plans-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 16:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Government Action is Crucial for AI Entrepreneurs Says Pelgo CEO</div>
+    
+    <ul class="article-points">
+      
+      <li>AI could reshape jobs for nearly 80 million people across Southeast Asia, according to the International Labour Organization, though there&#39;s little sign of large-scale employment cuts so far.</li>
+      
+      <li>Pelgo CEO Chieh Huang discussed AI&#39;s impact on labor markets and its potential as a tool for displaced workers rather than a pure job eliminator.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-10/gov-action-vital-for-ai-entrepreneurs-says-pelgo-ceo-video">https://www.bloomberg.com/news/videos/2026-07-10/gov-action-vital-for-ai-entrepreneurs-says-pelgo-ceo-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 15:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Bust Fallout Would Be &#39;More Significant&#39; Than Dot-Com, Says George Noble</div>
+    
+    <ul class="article-points">
+      
+      <li>George Noble, Managing Partner of Noble Capital Advisors, said a coming AI-driven market bust would be &#34;more significant&#34; than the dot-com bubble fallout.</li>
+      
+      <li>He noted the stock market rally to new highs has been propelled by very few stocks, echoing dot-com-era concentration.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-10/ai-bust-would-be-worse-than-dot-com-bubble-says-noble-video">https://www.bloomberg.com/news/videos/2026-07-10/ai-bust-would-be-worse-than-dot-com-bubble-says-noble-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 15:05 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Raytheon, Rheinmetall Anchor AI Training Effort for UK Army</div>
+    
+    <ul class="article-points">
+      
+      <li>The UK Ministry of Defense awarded a £2 billion ($2.7 billion) contract for AI-based military training to a Raytheon-led consortium.</li>
+      
+      <li>The consortium includes European defense prime Rheinmetall AG.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-10/raytheon-and-rheinmetall-anchor-ai-training-effort-for-uk-army">https://www.bloomberg.com/news/articles/2026-07-10/raytheon-and-rheinmetall-anchor-ai-training-effort-for-uk-army</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 12:48 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Novogratz Morphs Galaxy Into AI Landlord, One Gigawatt at a Time</div>
+    
+    <ul class="article-points">
+      
+      <li>Mike Novogratz is repositioning Galaxy Digital as an &#34;AI landlord,&#34; building out gigawatt-scale data center capacity.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-10/novogratz-morphs-galaxy-into-ai-landlord-one-gigawatt-at-a-time">https://www.bloomberg.com/news/articles/2026-07-10/novogratz-morphs-galaxy-into-ai-landlord-one-gigawatt-at-a-time</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 12:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Quoting OpenAI</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI clarified that ChatGPT&#39;s new &#34;Work&#34; feature runs web and mobile conversations in the cloud, while the desktop app can also access local files and desktop apps with permission.</li>
+      
+      <li>At launch, cloud Work conversations won&#39;t appear in desktop Work, and desktop Work threads and local files stay on that computer.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jul/10/openai/#atom-everything">https://simonwillison.net/2026/Jul/10/openai/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 01:05 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">JPMorgan Builds AI Agents That Beat 60/40 Model in Backtests</div>
+    
+    <ul class="article-points">
+      
+      <li>JPMorgan Chase is testing whether AI agents can allocate investment money themselves, going beyond stock-picking and risk-management assistance.</li>
+      
+      <li>In backtests, the firm&#39;s AI agents reportedly beat a traditional 60/40 portfolio model.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-09/jpmorgan-builds-ai-agents-that-beat-60-40-portfolio-in-backtests">https://www.bloomberg.com/news/articles/2026-07-09/jpmorgan-builds-ai-agents-that-beat-60-40-portfolio-in-backtests</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-09 23:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple sues OpenAI for allegedly stealing hardware secrets</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple sued OpenAI, alleging engineers stole Apple secrets to advance the AI startup&#39;s hardware plans, uncovering &#34;a pattern of theft&#34; by former Apple employees.</li>
+      
+      <li>The lawsuit also names IO Products, Jony Ive&#39;s hardware startup.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/tech/964350/apple-openai-lawsuit-trade-secrets">https://www.theverge.com/tech/964350/apple-openai-lawsuit-trade-secrets</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 21:36 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple sues OpenAI over alleged trade secret theft</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple alleges the misconduct was directed by OpenAI&#39;s senior leadership, including a long-time former Apple employee.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/">https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 21:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple Is Suing OpenAI for Allegedly Stealing Hardware Secrets</div>
+    
+    <ul class="article-points">
+      
+      <li>Apple claims OpenAI encouraged poached employees to bring over confidential presentations, secret prototypes, and key supplier details.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Wired</span>
+      <span class="sep">·</span>
+      <a href="https://www.wired.com/story/apple-sues-openai-allegedly-stealing-ip-hardware/">https://www.wired.com/story/apple-sues-openai-allegedly-stealing-ip-hardware/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 20:44 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Nvidia&#39;s biggest RAM supplier just had a trillion-dollar debut on Wall Street</div>
+    
+    <ul class="article-points">
+      
+      <li>SK Hynix, one of the world&#39;s biggest RAM suppliers to Nvidia, opened at $170 per share on its Wall Street debut and raised $26.5 billion.</li>
+      
+      <li>The listing surpassed Alibaba&#39;s record as the largest U.S. debut by a foreign company.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/tech/964121/sk-hynix-nvidia-ram-stock-market-debut">https://www.theverge.com/tech/964121/sk-hynix-nvidia-ram-stock-market-debut</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 17:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SK海力士本周五登陆纳斯达克，募资265亿美元跻身大型IPO</div>
+    
+    <ul class="article-points">
+      
+      <li>SK海力士将于本周五登陆纳斯达克，计划通过发行ADR募资约40万亿韩元（约265亿美元）。</li>
+      
+      <li>本次发行1.779亿份ADR，每份定价149美元，1份ADR对应其在韩国首尔交易所上市普通股的十分之一。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3889804779731457?f=rss">https://36kr.com/newsflashes/3889804779731457?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 12:44 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">亿道信息：预计上半年净利润同比增长1442.02%-1792.48%</div>
+    
+    <ul class="article-points">
+      
+      <li>亿道信息公告，预计2026年上半年净利润1.76亿-2.16亿元，同比增长1442.02%-1792.48%。</li>
+      
+      <li>扣非净利润8860万-1.19亿元，同比增长634.15%-889.37%，主要受AIPC、AIOT等「AI+」产品线拉动。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3889749329328647?f=rss">https://36kr.com/newsflashes/3889749329328647?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 11:37 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">8点1氪丨老乡鸡五年五次冲击上市失败；两款燃油车重回销量榜前十；长鑫科技披露招股意向书，预计7月16日发行</div>
+    
+    <ul class="article-points">
+      
+      <li>今日要闻：老乡鸡五年五次冲击上市失败，港交所招股书于7月8日失效；中芯国际市值超越贵州茅台；英伟达将与Hugging Face合作开发机器人开源模型。</li>
+      
+      <li>燃油车丰田凯美瑞、大众朗逸重回6月乘用车零售销量榜前十，零售冠军为特斯拉Model Y（38654辆）。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3889047503354625?f=rss">https://36kr.com/p/3889047503354625?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-09 23:43 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-07-11.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-07-10T22:30:03.407396+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
