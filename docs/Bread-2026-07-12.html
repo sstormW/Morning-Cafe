@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-07-12 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-07-12</h1>
+  <div class="meta">20 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">GPT-5.6 Sol Ultra用700词Prompt驾驭64个子Agent，不到一小时证明了存在半世纪的图论「循环双覆盖猜想」</span>
+      <span class="source">量子位 · <a href="https://www.qbitai.com/2026/07/447873.html">https://www.qbitai.com/2026/07/447873.html</a></span>
+    </li>
+    
+    <li>
+      <span class="title">苹果起诉OpenAI，指控其挖走的前苹果工程师带走硬件商业机密，AI人才与专利战升级</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-07-11/apple-sues-openai-over-ai-talent-fight-video">https://www.bloomberg.com/news/videos/2026-07-11/apple-sues-openai-over-ai-talent-fight-video</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Tesla称Cybercab员工试乘将于Giga Texas「很快」开始，但目前仅限工厂停车场内行驶</span>
+      <span class="source">Electrek · <a href="https://electrek.co/2026/07/11/tesla-cybercab-giga-texas-parking-lot/">https://electrek.co/2026/07/11/tesla-cybercab-giga-texas-parking-lot/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">SoftServe：机器人部署前需要「虚拟健身房」来弥合sim-to-real差距</span>
+      <span class="source">The Robot Report · <a href="https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/">https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">OpenAI安全负责人Johannes Heidecke在公司重组后离职</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-11/openai-safety-head-heidecke-to-leave-firm-after-reshuffle-wired">https://www.bloomberg.com/news/articles/2026-07-11/openai-safety-head-heidecke-to-leave-firm-after-reshuffle-wired</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Why robotics teams need virtual gyms before deployment</span>
+      <div class="why">训练环境/sim-to-real差距直接对应LeapsCora核心产品定位（训练环境+虚拟仿真数据）</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/">https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Are suppliers ready for new robot safety standards?</span>
+      <div class="why">机器人产业标准/合规动态，行业背景信号</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/are-suppliers-ready-for-new-robot-safety-standards/">https://www.therobotreport.com/are-suppliers-ready-for-new-robot-safety-standards/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">How Path Robotics uses AI to optimize robotic welding</span>
+      <div class="why">工业机器人AI应用+机器人学习话题，具身智能生态相邻动态</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/how-path-robotics-uses-ai-optimize-robotic-welding/">https://www.therobotreport.com/how-path-robotics-uses-ai-optimize-robotic-welding/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Apple Sues OpenAI Over AI Talent Fight</span>
+      <div class="why">SK海力士AI内存需求信息，上游算力/存储供应链波动，影响训练侧硬件成本</div>
+      <div class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/videos/2026-07-11/apple-sues-openai-over-ai-talent-fight-video">https://www.bloomberg.com/news/videos/2026-07-11/apple-sues-openai-over-ai-talent-fight-video</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">多家A股公司预计业绩大增，存储、锂矿、有色等头部企业表现亮眼</span>
+      <div class="why">AI需求拉动的上游供应链信号，间接影响算力/硬件成本</div>
+      <div class="source">36氪 · <a href="https://36kr.com/newsflashes/3891019931925001?f=rss">https://36kr.com/newsflashes/3891019931925001?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">GPT-5.6一小时解开50年数学猜想，700词Prompt驾驭64个子Agent</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI研究院发布的GPT-5.6 Sol Ultra版本，用约700词的Prompt驾驭64个子Agent并行工作，不到一小时证明了存在半个世纪的图论难题「循环双覆盖猜想」，生成三页PDF证明。</li>
+      
+      <li>与以往内部特供模型不同，这次使用的是公开可用的模型版本。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/447873.html">https://www.qbitai.com/2026/07/447873.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 05:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">GPT-5.6背后最恐怖的真相，AI已经开始自我进化了</div>
+    
+    <ul class="article-points">
+      
+      <li>钛媒体文章称GPT-5.6背后真正具有历史意义的细节在于AI自我进化：文中提到的模型Luna是由另一模型Sol训练出来的。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8061074.html">https://www.tmtpost.com/8061074.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 09:23 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">智谱CEO唐杰发内部信：“GLM 时刻”和万亿俱乐部之后，什么是更重要的事</div>
+    
+    <ul class="article-points">
+      
+      <li>智谱创始人唐杰在内部信《巨浪已来》中称，智谱不再追求短期应用变现，而是瞄准AGI下一高地：长程任务能力、完全自治的智能体系统、自我进化与极致安全治理。</li>
+      
+      <li>过去半年智谱市值较上市初期涨了10倍，2026年6月跻身「万亿港元俱乐部」。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3891162734689031?f=rss">https://36kr.com/newsflashes/3891162734689031?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 11:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">独家 | 智谱创始人唐杰发内部信：「GLM 时刻」之后，什么是更重要的事</div>
+    
+    <ul class="article-points">
+      
+      <li>智谱市值较半年前上市初期涨10倍，2026年6月跻身万亿港元俱乐部，市值近百度3倍并超小米；7月8日首批股票解禁后股价依然稳住。</li>
+      
+      <li>唐杰将智谱起飞归因于一年前对Coding能力的押注：DeepSeek R1出现标志着Chat范式探索基本结束，智谱转而押注Coding和Reasoning——与Agent共生共荣的能力，如今AI Coding已成AI商业化最近端。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3891132709206784?f=rss">https://36kr.com/p/3891132709206784?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 11:28 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">3 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Are suppliers ready for new robot safety standards?</div>
+    
+    <ul class="article-points">
+      
+      <li>Suppliers well prepared for the standard changes stand to benefit, while underprepared companies risk market-access disruption.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/are-suppliers-ready-for-new-robot-safety-standards/">https://www.therobotreport.com/are-suppliers-ready-for-new-robot-safety-standards/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 13:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Why robotics teams need virtual gyms before deployment</div>
+    
+    <ul class="article-points">
+      
+      <li>SoftServe argues robots need &#34;virtual gyms&#34; to bridge the sim-to-real gap and handle environmental and task variability before real-world deployment.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/">https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 12:36 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How Path Robotics uses AI to optimize robotic welding</div>
+    
+    <ul class="article-points">
+      
+      <li>Path Robotics CEO Andy Lonsberry explains how the company applies AI to robotic welding.</li>
+      
+      <li>UC San Diego professor Michael Yip discusses robot learning.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/how-path-robotics-uses-ai-optimize-robotic-welding/">https://www.therobotreport.com/how-path-robotics-uses-ai-optimize-robotic-welding/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 23:02 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla claims Cybercab driving employees at Giga Texas — in a parking lot</div>
+    
+    <ul class="article-points">
+      
+      <li>Tesla says &#34;Cybercab employee rides at Giga Texas&#34; are &#34;starting soon,&#34; its first stated step toward putting people inside the wheel-less, pedal-less robotaxi.</li>
+      
+      <li>The announcement, spread across two Tesla accounts with roughly 2.9 million combined views, is thinner than it sounds — it&#39;s unclear whether Tesla means a real ride service in Austin or just driving employees around a factory parking lot.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/07/11/tesla-cybercab-giga-texas-parking-lot/">https://electrek.co/2026/07/11/tesla-cybercab-giga-texas-parking-lot/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 20:33 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">10 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Apple Sues OpenAI Over AI Talent Fight</div>
+    
+    <ul class="article-points">
+      
+      <li>Bloomberg&#39;s Ed Ludlow says Apple&#39;s lawsuit against OpenAI reflects an intensifying battle for AI talent and hardware leadership, with Apple alleging former employees improperly took trade secrets as OpenAI expands its device ambitions.</li>
+      
+      <li>He also says SK Hynix expects AI memory demand to outpace supply, plans to increase US investment beyond $35 billion, and sees the next test for the AI boom coming as tech companies report earnings and investors assess whether spending is translating into profits.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-11/apple-sues-openai-over-ai-talent-fight-video">https://www.bloomberg.com/news/videos/2026-07-11/apple-sues-openai-over-ai-talent-fight-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 14:37 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI Engineer&#39;s &#39;LOL&#39; Moment Set Stage for Legal Fight With Apple</div>
+    
+    <ul class="article-points">
+      
+      <li>iPhone engineer Chang Liu quit for a job at OpenAI&#39;s nascent hardware division; Apple says he left with more than just years of experience.</li>
+      
+      <li>The departure became the flashpoint for Apple&#39;s legal fight with OpenAI over alleged trade-secret theft.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-11/openai-engineer-s-lol-moment-set-stage-for-legal-fight-with-apple">https://www.bloomberg.com/news/articles/2026-07-11/openai-engineer-s-lol-moment-set-stage-for-legal-fight-with-apple</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 13:59 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI Safety Head Heidecke to Leave Firm After Reshuffle: Wired</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI head of safety Johannes Heidecke is leaving the artificial intelligence company following a reorganization, according to Wired.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-11/openai-safety-head-heidecke-to-leave-firm-after-reshuffle-wired">https://www.bloomberg.com/news/articles/2026-07-11/openai-safety-head-heidecke-to-leave-firm-after-reshuffle-wired</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 02:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI bets on families as ChatGPT goes deeper into households</div>
+    
+    <ul class="article-points">
+      
+      <li>ChatGPT is hiring a dedicated product manager to build experiences for families, caregivers, and older adults, according to a job posting.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/">https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 14:13 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Found a Root Bug in Linux That Everyone Missed for 15 Years</div>
+    
+    <ul class="article-points">
+      
+      <li>Wired&#39;s weekly security roundup reports AI found a root bug in Linux missed for 15 years.</li>
+      
+      <li>Also covered: the Pentagon is training amateurs to become part of its &#34;hacker army,&#34; and a Flock license-plate-reader error led police to surround a car reviewer.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Wired</span>
+      <span class="sep">·</span>
+      <a href="https://www.wired.com/story/security-news-this-week-ai-found-a-root-bug-in-linux-that-everyone-missed-for-15-years/">https://www.wired.com/story/security-news-this-week-ai-found-a-root-bug-in-linux-that-everyone-missed-for-15-years/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 10:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">欧洲央行的Moulin认为人工智能可能加剧通胀波动</div>
+    
+    <ul class="article-points">
+      
+      <li>欧洲央行管委、法国央行行长Emmanuel Moulin表示，人工智能同时作用于供需两方面变量，对通胀总体影响尤为难以预测，可能加剧通胀波动。</li>
+      
+      <li>他认为AI因资本支出增加短期内可能具通胀效应，但随着生产率提升，长期可能转为抑制通胀。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3890739624540680?f=rss">https://36kr.com/newsflashes/3890739624540680?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 04:52 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI：对其他公司的商业秘密不感兴趣，仍专注于打造创新技术</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI回应苹果就硬件商业机密提起的诉讼，称对其他公司的商业秘密不感兴趣，仍专注于打造创新技术。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3890734361377539?f=rss">https://36kr.com/newsflashes/3890734361377539?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 04:19 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">9点1氪丨“国产存储第一股”长鑫科技公布承销团阵容；SK海力士登陆美股，上市首日大涨近13%；OpenAI推出ChatGPT智能体</div>
+    
+    <ul class="article-points">
+      
+      <li>长鑫科技IPO进入发行倒计时，预计7月16日发行，中金公司、中信建投等6家券商组成承销团，其中多家主承销商同时也是长鑫科技股东。</li>
+      
+      <li>SK海力士7月10日登陆纳斯达克，上市首日大涨近13%，计划通过发行ADR募资约40万亿韩元（约265亿美元），本次发行1.779亿份ADR。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3890553690192384?f=rss">https://36kr.com/p/3890553690192384?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 01:24 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI&#39;s Head of Safety Is Leaving the Company</div>
+    
+    <ul class="article-points">
+      
+      <li>Johannes Heidecke&#39;s departure comes as OpenAI tries to further integrate its research and safety teams.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Wired</span>
+      <span class="sep">·</span>
+      <a href="https://www.wired.com/story/openai-head-of-safety-leaving/">https://www.wired.com/story/openai-head-of-safety-leaving/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 01:07 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Meta removes controversial AI feature on Instagram after backlash</div>
+    
+    <ul class="article-points">
+      
+      <li>Meta pulled the feature after backlash, saying its intent was to provide a useful creative tool while giving people control over whether their public content could be referenced this way.</li>
+      
+      <li>The company acknowledged &#34;this feature missed the mark,&#34; so it&#39;s no longer available.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/">https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-10 23:55 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">💼</span>
+    <h2>硅谷商业</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Why Fox is &#39;the most Disciplined&#39; Media Entertainment Company in the Streaming Era</div>
+    
+    <ul class="article-points">
+      
+      <li>Media veteran Michael Wolf recaps Allen &amp; Company&#39;s Sun Valley Conference and the mega-deals reshaping the entertainment industry.</li>
+      
+      <li>He argues free ad-supported content is the streaming wars&#39; unsung winner, and discusses how AI is changing the value of content.</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/videos/2026-07-11/michael-wolf-on-why-ai-is-changing-the-value-of-content-video">https://www.bloomberg.com/news/videos/2026-07-11/michael-wolf-on-why-ai-is-changing-the-value-of-content-video</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 12:03 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">多家A股公司预计业绩大增，存储、锂矿、有色等头部企业表现亮眼</div>
+    
+    <ul class="article-points">
+      
+      <li>7月10日晚间多家A股公司发布2026年半年度业绩预告，存储、锂电上游资源、有色等赛道头部企业集体交出亮眼成绩单，部分公司上半年净利润实现10倍以上增长。</li>
+      
+      <li>人工智能相关需求增长拉动企业级存储产品需求持续增加，存储芯片价格较上年同期稳步上涨；钨精矿价格上半年同比涨幅超350%，拉动相关上市公司业绩大增。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3891019931925001?f=rss">https://36kr.com/newsflashes/3891019931925001?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-11 09:22 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>parse error: &lt;unknown&gt;:7:2: mismatched tag</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-07-12.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-07-11T22:11:27.376942+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
