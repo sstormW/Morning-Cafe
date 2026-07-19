@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-07-19 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-07-19</h1>
+  <div class="meta">25 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">Alibaba’s Qwen Unveils Preview of Flagship AI Model</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-19/alibaba-s-qwen-unveils-preview-of-flagship-ai-model">https://www.bloomberg.com/news/articles/2026-07-19/alibaba-s-qwen-unveils-preview-of-flagship-ai-model</a></span>
+    </li>
+    
+    <li>
+      <span class="title">China’s Moonshot Plans IPO in Six Months After AI Breakthrough</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-19/china-s-moonshot-plans-ipo-in-six-months-after-ai-breakthrough">https://www.bloomberg.com/news/articles/2026-07-19/china-s-moonshot-plans-ipo-in-six-months-after-ai-breakthrough</a></span>
+    </li>
+    
+    <li>
+      <span class="title">新易盛：上半年净利同比预增78%-103% 受益于人工智能相关算力投资持续增长产品结构优化</span>
+      <span class="source">36氪 · <a href="https://36kr.com/newsflashes/3902322110170761?f=rss">https://36kr.com/newsflashes/3902322110170761?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">一目科技完成超10亿元E轮融资 估值过百亿元</span>
+      <span class="source">36氪 · <a href="https://36kr.com/newsflashes/3902093496813441?f=rss">https://36kr.com/newsflashes/3902093496813441?f=rss</a></span>
+    </li>
+    
+    <li>
+      <span class="title">商汤科技旗舰级SenseNova U1 Pro正式发布</span>
+      <span class="source">36氪 · <a href="https://36kr.com/newsflashes/3902187700766593?f=rss">https://36kr.com/newsflashes/3902187700766593?f=rss</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">一目科技完成超10亿元E轮融资 估值过百亿元</span>
+      <div class="why">具身智能触觉感知材料与芯片投入直接关系我们机器人导航触觉闭环，应跟进其供应链与合作窗口。</div>
+      <div class="source">36氪 · <a href="https://36kr.com/newsflashes/3902093496813441?f=rss">https://36kr.com/newsflashes/3902093496813441?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Palm Garden AI develops Coherence Guard relational decision layer for human-facing robots</span>
+      <div class="why">面向人机交互的关系决策层可补全我们城市服务机器人方案中的社交一致性能力。</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/palm-garden-ai-develops-coherence-guard-relational-decision-layer-human-facing-robots/">https://www.therobotreport.com/palm-garden-ai-develops-coherence-guard-relational-decision-layer-human-facing-robots/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">科氪 | 从生命预警到七诊合参，安顿“双核首发”的技术密码</span>
+      <div class="why">安顿的中医机器人展示多模态感知融合，可借鉴其红外面诊与生理信号数据采集方式。</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3902428274427525?f=rss">https://36kr.com/p/3902428274427525?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">商汤科技旗舰级SenseNova U1 Pro正式发布</span>
+      <div class="why">SenseNova U1 Pro定位长程任务智能体基座，值得评估其与城市仿真任务的兼容性。</div>
+      <div class="source">36氪 · <a href="https://36kr.com/newsflashes/3902187700766593?f=rss">https://36kr.com/newsflashes/3902187700766593?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">不换模型，效果提升104%！上海AI Lab让Harness也能自进化了</span>
+      <div class="why">Harness自进化机制可启发我们在不换模型情况下优化导航智能体性能。</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/454441.html">https://www.qbitai.com/2026/07/454441.html</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">8 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Alibaba’s Qwen Unveils Preview of Flagship AI Model</div>
+    
+    <ul class="article-points">
+      
+      <li>阿里推出千问Qwen3.8 Max预览版，称性能可比肩前沿模型，仅次于Anthropic Fable 5。</li>
+      
+      <li>预览版面向外部开放体验，为后续正式版发布预热。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-19/alibaba-s-qwen-unveils-preview-of-flagship-ai-model">https://www.bloomberg.com/news/articles/2026-07-19/alibaba-s-qwen-unveils-preview-of-flagship-ai-model</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 11:02 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">不换模型，效果提升104%！上海AI Lab让Harness也能自进化了</div>
+    
+    <ul class="article-points">
+      
+      <li>上海AI Lab展示Harness在无需更换模型的前提下，通过自动搜索、验证与迭代实现效果提升104%。</li>
+      
+      <li>该方法强调让工具链本身具备自进化能力。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/454441.html">https://www.qbitai.com/2026/07/454441.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 07:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">WAIC 2026｜从纳米抗体到环肽：分子之心30天两度验证AI底层设计力，筑牢生物经济“多模态新基建”</div>
+    
+    <ul class="article-points">
+      
+      <li>分子之心在WAIC分享从纳米抗体到环肽的成功案例，强调30天内两次验证AI底层设计能力。</li>
+      
+      <li>公司提出以多模态底座打造生物经济「新基建」。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/454423.html">https://www.qbitai.com/2026/07/454423.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 06:40 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Claude Code uses Bun written in Rust now</div>
+    
+    <ul class="article-points">
+      
+      <li>Claude Code v2.1.181及后续版本改用用Rust重写的Bun，使Linux启动速度提升约10%。</li>
+      
+      <li>作者通过本地命令确认可执行文件包含Bun v1.4.0。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/#atom-everything">https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 03:54 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">SQLite Query Explainer</div>
+    
+    <ul class="article-points">
+      
+      <li>作者借助Fable构建SQLite Query Explainer，可在浏览器内通过Pyodide运行SQLite并解释执行计划。</li>
+      
+      <li>工具支持EXPLAIN及EXPLAIN QUERY PLAN，帮助理解查询优化。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jul/18/sqlite-query-explainer/#atom-everything">https://simonwillison.net/2026/Jul/18/sqlite-query-explainer/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-18 17:19 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">阿里最新一代大模型千问3.8将至，正式版预计近期开源</div>
+    
+    <ul class="article-points">
+      
+      <li>千问3.8 Max预览版已上线阿里云Token Plan、Qoder与QoderWork。</li>
+      
+      <li>正式版预计近期推出并开源。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3902296634050437?f=rss">https://36kr.com/newsflashes/3902296634050437?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 08:43 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">中科闻歌WAIC2026发布业界首个全系决策智能产品</div>
+    
+    <ul class="article-points">
+      
+      <li>中科闻歌发布涵盖「基、枢、核、脑、端」的AI决策产品体系，基于DOMA架构贯通数据治理到智能体执行。</li>
+      
+      <li>方案面向企业经营决策与科学发现等场景。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3902288636282757?f=rss">https://36kr.com/newsflashes/3902288636282757?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 08:24 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">商汤科技旗舰级SenseNova U1 Pro正式发布</div>
+    
+    <ul class="article-points">
+      
+      <li>商汤发布SenseNova U1 Pro，将理解、生成与行动统一，定位长程任务的交付级多模态智能体基座。</li>
+      
+      <li>在视觉创作领域深度迭代后，模型具备复杂图片创作能力。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3902187700766593?f=rss">https://36kr.com/newsflashes/3902187700766593?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 06:30 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">科氪 | 从生命预警到七诊合参，安顿“双核首发”的技术密码</div>
+    
+    <ul class="article-points">
+      
+      <li>安顿在WAIC发布我国首个生命预警表标准与七诊合参中医机器人。</li>
+      
+      <li>自研「天回·AI脉诊算法」量化120余个脉象特征，并建立三重置信体系融合中医、西医与个体模型。</li>
+      
+      <li>中医机器人将传统望闻问切扩展为七维同步采集，新增红外面诊等能力。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3902428274427525?f=rss">https://36kr.com/p/3902428274427525?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 10:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">一目科技完成超10亿元E轮融资 估值过百亿元</div>
+    
+    <ul class="article-points">
+      
+      <li>一目科技完成超10亿元E轮融资，估值突破100亿元。</li>
+      
+      <li>资金将用于具身智能触觉感知材料、芯片、算法与模型研发，并支持产线规模化交付。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3902093496813441?f=rss">https://36kr.com/newsflashes/3902093496813441?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 05:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Honda goes all-in on EVs in a multibillion dollar market: commercial lawnmowers</div>
+    
+    <ul class="article-points">
+      
+      <li>本田在商用割草机市场推出全电动自主车型，瞄准数十亿美元级机会。</li>
+      
+      <li>相较乘用车自动驾驶进度，动力设备经销商率先获得这类自主机器。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/07/18/honda-goes-all-in-on-evs-in-a-multibillion-dollar-market-commercial-lawnmowers/">https://electrek.co/2026/07/18/honda-goes-all-in-on-evs-in-a-multibillion-dollar-market-commercial-lawnmowers/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-18 19:56 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Palm Garden AI develops Coherence Guard relational decision layer for human-facing robots</div>
+    
+    <ul class="article-points">
+      
+      <li>Palm Garden AI开发面向人机交互的Coherence Guard关系决策层。</li>
+      
+      <li>该硬件无关的软件栈旨在提升服务型机器人的互动一致性。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/palm-garden-ai-develops-coherence-guard-relational-decision-layer-human-facing-robots/">https://www.therobotreport.com/palm-garden-ai-develops-coherence-guard-relational-decision-layer-human-facing-robots/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-18 12:30 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">13 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">危！GPT-5.6会自动删文件，AI初创老板痛失整台Mac</div>
+    
+    <ul class="article-points">
+      
+      <li>文章提醒GPT-5.6存在自动删除文件的风险，导致一名AI初创公司老板损失整台Mac。</li>
+      
+      <li>报道同时提到黎曼动力发布Rienmann-1.0。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/454689.html">https://www.qbitai.com/2026/07/454689.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 09:39 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">China’s Moonshot Plans IPO in Six Months After AI Breakthrough</div>
+    
+    <ul class="article-points">
+      
+      <li>月之暗面告知投资者计划最早六个月内上市。</li>
+      
+      <li>公司最新模型改变市场对中国AI能力的认知，促使其抓紧资本窗口。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-19/china-s-moonshot-plans-ipo-in-six-months-after-ai-breakthrough">https://www.bloomberg.com/news/articles/2026-07-19/china-s-moonshot-plans-ipo-in-six-months-after-ai-breakthrough</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 05:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Mania Is Eviscerating Global Decision-Making</div>
+    
+    <ul class="article-points">
+      
+      <li>顾问Nik Suresh分享多家大企业被AI风潮裹挟的案例。</li>
+      
+      <li>文章批评依赖排行榜和竞赛的部署方式正在侵蚀组织决策能力。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jul/19/ai-mania/#atom-everything">https://simonwillison.net/2026/Jul/19/ai-mania/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 05:06 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">世界人工智能合作组织未来将重点开展三方面工作</div>
+    
+    <ul class="article-points">
+      
+      <li>29个国家在上海签署成立世界人工智能合作组织的协定。</li>
+      
+      <li>后续将优先推进能力建设合作、供需对接和全球治理体系完善。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3902324507281026?f=rss">https://36kr.com/newsflashes/3902324507281026?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 08:58 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">新易盛：上半年净利同比预增78%-103% 受益于人工智能相关算力投资持续增长产品结构优化</div>
+    
+    <ul class="article-points">
+      
+      <li>新易盛预计上半年净利润70-80亿元，同比增长78%-103%。</li>
+      
+      <li>公司称AI算力投资增长与产品结构优化带动业绩，Q2净利环比最高增长87%。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3902322110170761?f=rss">https://36kr.com/newsflashes/3902322110170761?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 08:55 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">高校花钱查 AI，学生花钱降 AI</div>
+    
+    <ul class="article-points">
+      
+      <li>文章指出高校购买检测服务主要为规避责任，学生付费检测是为证明清白。</li>
+      
+      <li>AI生成内容检测催生新的灰色服务市场。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8070745.html">https://www.tmtpost.com/8070745.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 08:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">长三角人工智能协同投资平台共建签约</div>
+    
+    <ul class="article-points">
+      
+      <li>长三角人工智能协同投资平台在WAIC签约，参与方包括多家区域国资与金融机构。</li>
+      
+      <li>平台旨在统筹资源，推动区域AI产业集群发展。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3902223814150020?f=rss">https://36kr.com/newsflashes/3902223814150020?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 08:16 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">大模型进不了内网之后，企业 AI 的生意才真正开始</div>
+    
+    <ul class="article-points">
+      
+      <li>文章指出企业采购AI服务更关注权限、验收与责任分工。</li>
+      
+      <li>模型价格已大幅下降，但落地仍依赖流程与治理重构。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8070771.html">https://www.tmtpost.com/8070771.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 08:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">【数智周报】孙正义：任何关于AI领域正在形成泡沫的说法都是荒谬的；苹果智能集成阿里、百度AI能力；DeepSeek估值超3500亿元</div>
+    
+    <ul class="article-points">
+      
+      <li>周报涵盖孙正义否认AI泡沫、苹果智能接入阿里与百度能力、DeepSeek估值超3500亿元等。</li>
+      
+      <li>亦提及阶跃星辰智能体手机与昇腾950超节点展示。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8070816.html">https://www.tmtpost.com/8070816.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 06:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI 驾校进入下半场：教练下车之后，谁来重做驾培？</div>
+    
+    <ul class="article-points">
+      
+      <li>文章回顾AI在驾校实训的落地，指出教练下车后驾培流程仍需重构。</li>
+      
+      <li>未来重点在课程体系与责任划分的再设计。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8066867.html">https://www.tmtpost.com/8066867.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 05:05 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Databricks估值飙升1880亿美元，CEO：采用中国开源模型是AI成本控制关键一环</div>
+    
+    <ul class="article-points">
+      
+      <li>Databricks最新估值达到1880亿美元。</li>
+      
+      <li>公司强调引入中国开源模型并自建GPU算力是成本控制核心。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">钛媒体</span>
+      <span class="sep">·</span>
+      <a href="https://www.tmtpost.com/8070738.html">https://www.tmtpost.com/8070738.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 05:04 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">“人工智能+防震减灾”行动方案发布</div>
+    
+    <ul class="article-points">
+      
+      <li>中国地震局发布《“人工智能+防震减灾”行动方案（2026—2028年）》。</li>
+      
+      <li>未来三年将构建数据—模型—平台—应用一体化体系，提升预警与监测能力。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3902090005743493?f=rss">https://36kr.com/newsflashes/3902090005743493?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-19 05:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Dave Eggers told OpenAI staff that ChatGPT was ‘silencing an entire generation’</div>
+    
+    <ul class="article-points">
+      
+      <li>Dave Eggers在OpenAI内部分享中批评ChatGPT让整代人失去声音。</li>
+      
+      <li>他质疑公司在推广AI创作时忽视对作家与艺术教育的影响。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/ai-artificial-intelligence/967630/dave-eggers-openai-chatgpt-silencing-an-entire-generation">https://www.theverge.com/ai-artificial-intelligence/967630/dave-eggers-openai-chatgpt-silencing-an-entire-generation</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-18 20:54 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>fetch error after 15.0s: source timed out after 15.0s</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-07-19.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-07-19T11:39:32.992194+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
