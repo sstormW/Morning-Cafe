@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-07-21 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-07-21</h1>
+  <div class="meta">38 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">Oracle Credit Risk Hits Near 18-Year High on AI Debt Load Angst</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-20/oracle-credit-risk-hits-near-18-year-high-on-ai-debt-load-angst">https://www.bloomberg.com/news/articles/2026-07-20/oracle-credit-risk-hits-near-18-year-high-on-ai-debt-load-angst</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Z.AI Completes Giant Data Center With Chinese Chips to Train AI</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-20/z-ai-completes-giant-data-center-with-chinese-chips-to-train-ai">https://www.bloomberg.com/news/articles/2026-07-20/z-ai-completes-giant-data-center-with-chinese-chips-to-train-ai</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Kimi K3: The open-weights escalation</span>
+      <span class="source">Interconnects (Nathan Lambert) · <a href="https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation">https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation</a></span>
+    </li>
+    
+    <li>
+      <span class="title">China’s AI models have Trump’s AI world at war with itself</span>
+      <span class="source">MIT Technology Review · <a href="https://www.technologyreview.com/2026/07/20/1140675/chinas-ai-models-have-trumps-ai-world-at-war-with-itself/">https://www.technologyreview.com/2026/07/20/1140675/chinas-ai-models-have-trumps-ai-world-at-war-with-itself/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Tesla remote operator crashed a ‘Robotaxi’ in Houston, NHTSA data shows</span>
+      <span class="source">Electrek · <a href="https://electrek.co/2026/07/20/tesla-robotaxi-remote-operator-crash-houston/">https://electrek.co/2026/07/20/tesla-robotaxi-remote-operator-crash-houston/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">光轮智能与西门子正式达成合作</span>
+      <div class="why">光轮智能的 SimFoundry 三位一体仿真平台与西门子工业软件打通，加速将物理模型与工艺知识转化为机器人可复用的仿真能力，直接对标我们城市级仿真数据底座的价值主张。</div>
+      <div class="source">36氪 · <a href="https://36kr.com/newsflashes/3903949369329280?f=rss">https://36kr.com/newsflashes/3903949369329280?f=rss</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">AGIBOT unveils four embodied AI products for real-world operations at WAIC</span>
+      <div class="why">AGIBOT 在 WAIC 展示多场景实际部署的具身 AI 产品线，强调将仿真训练成果转化为可重复执行的工作流，是我们评估城市导航 demo 成熟度的重要对照样本。</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/agibot-unveils-four-embodied-ai-products-real-world-operations-waic/">https://www.therobotreport.com/agibot-unveils-four-embodied-ai-products-real-world-operations-waic/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Building robots for unpredictable, infrastructure-free environments</span>
+      <div class="why">文章总结在缺乏固定基础设施的户外环境打造机器人系统的工程要点，为我们完善琶洲开放街区仿真要素提供参考。</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/building-robots-for-unpredictable-infrastructure-free-environments/">https://www.therobotreport.com/building-robots-for-unpredictable-infrastructure-free-environments/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">谁还在卷参数？WAIC2026全是能干活的实体AI！</span>
+      <div class="why">报道指出 WAIC 焦点从模型规模转向具身智能在真实产业流程中的交付，印证我们强调的 real-to-sim-to-real 价值与城市场景落地趋势。</div>
+      <div class="source">36氪 · <a href="https://36kr.com/p/3903383663478403?f=rss">https://36kr.com/p/3903383663478403?f=rss</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">9 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">China’s AI models have Trump’s AI world at war with itself</div>
+    
+    <ul class="article-points">
+      
+      <li>多名特朗普现任与前任 AI 顾问在社交媒体上抨击美国头部 AI 公司，反映其团队在如何应对中国模型问题上存在严重分歧。</li>
+      
+      <li>文章关注此冲突如何撕裂政府内部的 AI 战略阵线。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/07/20/1140675/chinas-ai-models-have-trumps-ai-world-at-war-with-itself/">https://www.technologyreview.com/2026/07/20/1140675/chinas-ai-models-have-trumps-ai-world-at-war-with-itself/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 18:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Kimi K3: The open-weights escalation</div>
+    
+    <ul class="article-points">
+      
+      <li>作者讨论月之暗面的 Kimi K3 开源权重带来的全球连锁反应，认为其加剧了开放模型竞赛。</li>
+      
+      <li>文章聚焦这一举措对生态位与地缘政治的潜在影响。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Interconnects (Nathan Lambert)</span>
+      <span class="sep">·</span>
+      <a href="https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation">https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 15:48 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Chinese AI Sensation Moonshot’s Gamble on Big Models Pays Off</div>
+    
+    <ul class="article-points">
+      
+      <li>WAIC 现场观众涌向月之暗面展台，忽略阿里、腾讯等巨头，显示其押注大模型的关注度。</li>
+      
+      <li>报道强调这家初创的爆红如何重塑国内 AI 舞台。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-20/chinese-ai-sensation-moonshot-s-gamble-on-big-models-pays-off">https://www.bloomberg.com/news/articles/2026-07-20/chinese-ai-sensation-moonshot-s-gamble-on-big-models-pays-off</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 13:14 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Moonshot’s Kimi AI Model Sets Off Anxiety in the US</div>
+    
+    <ul class="article-points">
+      
+      <li>月之暗面发布 Kimi K3 后在美国引发激烈争论，凸显其对硅谷既有认知的冲击。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/newsletters/2026-07-20/moonshot-s-kimi-ai-model-sets-off-anxiety-in-the-us">https://www.bloomberg.com/news/newsletters/2026-07-20/moonshot-s-kimi-ai-model-sets-off-anxiety-in-the-us</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 11:02 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">不同模型厂同一家Agentic Infra，AGI时代的地基终于浮出水面</div>
+    
+    <ul class="article-points">
+      
+      <li>文章指出多家模型厂商正在共用同一套 Agentic 基础设施，强调其在 AGI 时代中的底层地位。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/455805.html">https://www.qbitai.com/2026/07/455805.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 10:33 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Moonshot AI’s Kimi K3 Stuns Investors, Challenges Anthropic, OpenAI Lead</div>
+    
+    <ul class="article-points">
+      
+      <li>报道称 Kimi K3 的表现迫使硅谷重新评估长期假设，视其为对 OpenAI 与 Anthropic 的直接挑战。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/newsletters/2026-07-20/moonshot-ai-s-kimi-k3-stuns-investors-challenges-anthropic-openai-lead">https://www.bloomberg.com/news/newsletters/2026-07-20/moonshot-ai-s-kimi-k3-stuns-investors-challenges-anthropic-openai-lead</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 10:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">启鸣达人首发《世界模型驱动的教育AGI白皮书》| WAIC 2026</div>
+    
+    <ul class="article-points">
+      
+      <li>启鸣达人在 WAIC 2026 发布《世界模型驱动的教育 AGI 白皮书》，试图从理论探索走向体系化落地。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/455730.html">https://www.qbitai.com/2026/07/455730.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 09:21 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Moonshot’s Kimi K3 May Be More About Memory Than Compute</div>
+    
+    <ul class="article-points">
+      
+      <li>报道对比 DeepSeek R1 事件，称 Kimi K3 引发的市场恐慌集中在算力需求可能低于预期。</li>
+      
+      <li>文章指出模型的长上下文记忆能力才是核心卖点。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-20/moonshot-s-kimi-k3-may-be-more-about-memory-than-compute">https://www.bloomberg.com/news/articles/2026-07-20/moonshot-s-kimi-k3-may-be-more-about-memory-than-compute</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 04:50 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">腾讯云ADP 4.0海外版发布，要把企业级智能体带到全球市场 | 最前线</div>
+    
+    <ul class="article-points">
+      
+      <li>腾讯云在 WAIC 推出智能体开发平台 ADP 4.0 海外版，强化跨区域触达、交互、多模型接入与 SaaS 集成。</li>
+      
+      <li>平台实现 Agent 与 Workflow 的双向互调，瞄准企业级智能体治理需求。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3901396207584902?f=rss">https://36kr.com/p/3901396207584902?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 01:30 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">8 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">国家具身智能应用中试基地发布首个合作世界模型 魔芯科技MoWorld 3D正式亮相</div>
+    
+    <ul class="article-points">
+      
+      <li>国家具身智能应用中试基地发布首个合作世界模型，魔芯科技 MoWorld 3D 正式亮相。</li>
+      
+      <li>报道聚焦该平台在具身智能领域的示范意义。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/455517.html">https://www.qbitai.com/2026/07/455517.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 08:44 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Building robots for unpredictable, infrastructure-free environments</div>
+    
+    <ul class="article-points">
+      
+      <li>文章强调要让机器人在缺乏基础设施的恶劣户外环境中可靠运行，需要重视系统的鲁棒性与自主能力。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/building-robots-for-unpredictable-infrastructure-free-environments/">https://www.therobotreport.com/building-robots-for-unpredictable-infrastructure-free-environments/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 18:39 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">BrainCo demonstrates brain-controlled robot AI platform</div>
+    
+    <ul class="article-points">
+      
+      <li>BrainCo 展示思维控制机器人平台，演示机械臂完成抓杯、取苹果等精细动作。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/brainco-demonstrates-brain-controlled-robot-ai-platform/">https://www.therobotreport.com/brainco-demonstrates-brain-controlled-robot-ai-platform/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 18:14 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Boston Dynamics to discuss the art behind human-robot interaction</div>
+    
+    <ul class="article-points">
+      
+      <li>Boston Dynamics 将在网络研讨会分享安全人机交互的设计考量。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/boston-dynamics-discuss-art-behind-human-robot-interaction/">https://www.therobotreport.com/boston-dynamics-discuss-art-behind-human-robot-interaction/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 17:53 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AGIBOT unveils four embodied AI products for real-world operations at WAIC</div>
+    
+    <ul class="article-points">
+      
+      <li>AGIBOT 在 WAIC 展示四款具身 AI 产品，强调已在工业部署中形成可重复的工作流。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/agibot-unveils-four-embodied-ai-products-real-world-operations-waic/">https://www.therobotreport.com/agibot-unveils-four-embodied-ai-products-real-world-operations-waic/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 15:18 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">光轮智能与西门子正式达成合作</div>
+    
+    <ul class="article-points">
+      
+      <li>双方将在 WAIC 达成的合作中，把物理模型、工程参数与工艺知识转化为机器人可调用的仿真能力。</li>
+      
+      <li>合作意在贯通训练、评测与真实部署，为复杂工业场景提供全栈物理 AI 基础设施。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3903949369329280?f=rss">https://36kr.com/newsflashes/3903949369329280?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 12:30 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">硬氪首发 | 一台80cm高的毛绒人形机器人，配一套面向未来的自研OS系统</div>
+    
+    <ul class="article-points">
+      
+      <li>青心意创推出 80cm 毛绒人形机器人 Amoo，配备全套传感器与自研 OS，用于情绪识别与交互。</li>
+      
+      <li>CTO 曾俊强调机器人在算力受限下需兼顾动作、语音与人机耦合设计。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3903761449617027?f=rss">https://36kr.com/p/3903761449617027?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 09:12 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">谁还在卷参数？WAIC2026全是能干活的实体AI！</div>
+    
+    <ul class="article-points">
+      
+      <li>报道称 WAIC 2026 焦点从模型参数转向具身智能在真实产业流程中的价值交付。</li>
+      
+      <li>文章总结智能体、空间智能与基础设施如何合力推动实体 AI 落地。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3903383663478403?f=rss">https://36kr.com/p/3903383663478403?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 02:49 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">2 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla ‘Full Self-Driving’ got me a speeding ticket, and Tesla killed the fix</div>
+    
+    <ul class="article-points">
+      
+      <li>作者在启用 Tesla FSD 标准模式时被带到 78km/h，超出限速 50km/h 后当场收罚单。</li>
+      
+      <li>文章称 Tesla 此前提供的速度限制修正选项已被取消。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/07/20/tesla-fsd-speeding-ticket-removed-speed-setting/">https://electrek.co/2026/07/20/tesla-fsd-speeding-ticket-removed-speed-setting/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 20:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla remote operator crashed a ‘Robotaxi’ in Houston, NHTSA data shows</div>
+    
+    <ul class="article-points">
+      
+      <li>特斯拉向 NHTSA 报告称，一名远程操作员将 Robotaxi 开进树桩，造成碰撞。</li>
+      
+      <li>这是特斯拉首次在官方报告中将事故明确标注为远程操作导致。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/07/20/tesla-robotaxi-remote-operator-crash-houston/">https://electrek.co/2026/07/20/tesla-robotaxi-remote-operator-crash-houston/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 13:15 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">11 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Oracle Credit Risk Hits Near 18-Year High on AI Debt Load Angst</div>
+    
+    <ul class="article-points">
+      
+      <li>保护甲骨文债务的成本升至近 18 年新高，现有债券遭抛售。</li>
+      
+      <li>市场担忧公司在 AI 上的巨额投入能否产生回报。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-20/oracle-credit-risk-hits-near-18-year-high-on-ai-debt-load-angst">https://www.bloomberg.com/news/articles/2026-07-20/oracle-credit-risk-hits-near-18-year-high-on-ai-debt-load-angst</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 21:58 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Z.AI Completes Giant Data Center With Chinese Chips to Train AI</div>
+    
+    <ul class="article-points">
+      
+      <li>Z.AI 完成仅使用国产芯片的超大数据中心建设。</li>
+      
+      <li>此举被视为北京替代受限 Nvidia 芯片、推进未来 AI 研发的重要步骤。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-20/z-ai-completes-giant-data-center-with-chinese-chips-to-train-ai">https://www.bloomberg.com/news/articles/2026-07-20/z-ai-completes-giant-data-center-with-chinese-chips-to-train-ai</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 15:02 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Google Shares Gain on Report of Chip to Boost AI Efficiency</div>
+    
+    <ul class="article-points">
+      
+      <li>有报道称谷歌开发面向 Gemini 的服务器芯片以提升效率，激励股价上涨。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-20/google-plans-new-chip-to-boost-ai-efficiency-information-says">https://www.bloomberg.com/news/articles/2026-07-20/google-plans-new-chip-to-boost-ai-efficiency-information-says</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 13:22 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">ChatGPT, Claude Infiltrate Dating Apps by Helping Singles Flirt With Matches</div>
+    
+    <ul class="article-points">
+      
+      <li>单身用户将与匹配对象聊天外包给 ChatGPT 与 Claude，改变浪漫关系的开端方式。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/features/2026-07-20/chatgpt-claude-infiltrate-dating-apps-by-helping-singles-flirt-with-matches">https://www.bloomberg.com/news/features/2026-07-20/chatgpt-claude-infiltrate-dating-apps-by-helping-singles-flirt-with-matches</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 10:15 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI is more likely than humans to form biases when hiring</div>
+    
+    <ul class="article-points">
+      
+      <li>研究表明在筛选求职者时，AI 相比人类更易形成偏见。</li>
+      
+      <li>文章提醒企业审视依赖 LLM 进行招聘的公平性。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">MIT Technology Review</span>
+      <span class="sep">·</span>
+      <a href="https://www.technologyreview.com/2026/07/20/1140655/ai-biases-hiring-humans/">https://www.technologyreview.com/2026/07/20/1140655/ai-biases-hiring-humans/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 08:39 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Moonshot Is Creating New Winners and Losers in the AI Trade</div>
+    
+    <ul class="article-points">
+      
+      <li>月之暗面意外发布新模型后，投资者被迫重估全球科技行情的关键假设。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-20/moonshot-ai-is-creating-new-winners-and-losers-in-the-ai-trade">https://www.bloomberg.com/news/articles/2026-07-20/moonshot-ai-is-creating-new-winners-and-losers-in-the-ai-trade</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 08:34 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Is ‘New Engine’ Keeping Chinese Economy From Harder Landing</div>
+    
+    <ul class="article-points">
+      
+      <li>全球建设 AI 基础设施的热潮，使该领域成为中国经济低迷阶段的增长亮点。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-20/ai-is-new-engine-keeping-chinese-economy-from-harder-landing">https://www.bloomberg.com/news/articles/2026-07-20/ai-is-new-engine-keeping-chinese-economy-from-harder-landing</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 07:25 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Quoting Sam Altman</div>
+    
+    <ul class="article-points">
+      
+      <li>文章引用马斯克诉 Altman 案披露的邮件，Sam Altman 提议发布可在消费硬件本地运行、相当于 GPT-3 能力的模型。</li>
+      
+      <li>邮件称提前发布将抑制其他团队推出类似级别模型并阻碍新竞品融资。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Simon Willison</span>
+      <span class="sep">·</span>
+      <a href="https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything">https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 03:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Trump’s latest AI czar has already resigned</div>
+    
+    <ul class="article-points">
+      
+      <li>美国 CAISI 主任职位再次出现空缺，自 David Sacks 离任后呈现“旋转门”。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/">https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 22:21 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Here are the 30,000 songs Sony is suing Udio’s AI music generator over</div>
+    
+    <ul class="article-points">
+      
+      <li>索尼音乐在纽约法院起诉 Udio，指控其 AI 音乐生成器侵权超 3 万首歌曲。</li>
+      
+      <li>诉状涵盖从《Hound Dog》到《Say My Name》等作品。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Verge</span>
+      <span class="sep">·</span>
+      <a href="https://www.theverge.com/tech/968375/sony-udio-lawsuit-songs-ai-copyright">https://www.theverge.com/tech/968375/sony-udio-lawsuit-songs-ai-copyright</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 22:19 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">曝零一万物启动新一轮融资，拟2027年申请IPO</div>
+    
+    <ul class="article-points">
+      
+      <li>李开复创立的零一万物正推进新一轮融资，并计划 2027 年申请 IPO。</li>
+      
+      <li>公司正在逐步解除离岸控股架构，为海外上市做准备。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3903968879511169?f=rss">https://36kr.com/newsflashes/3903968879511169?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-20 12:45 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>fetch error after 15.0s: source timed out after 15.0s</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-07-21.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-07-20T22:27:48.020895+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
