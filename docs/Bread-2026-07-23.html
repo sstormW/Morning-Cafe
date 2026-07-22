@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bread · 2026-07-23 · 全量晨报</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0ed;
+  --bg: #fafaf7;
+  --accent: #b45309;
+  --leaps: #0f766e;
+  --context: #6b7280;
+  --link: #2563eb;
+  --warn: #b91c1c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+/* Masthead */
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 32px; }
+.masthead .brand {
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.masthead .brand .internal {
+  display: inline-block; margin-left: 10px;
+  padding: 2px 8px; font-size: 10px; letter-spacing: 1px;
+  background: var(--ink); color: #fff; border-radius: 3px;
+}
+.masthead h1 {
+  margin: 8px 0 4px;
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  font-family: "Noto Serif SC", "PingFang SC", "SimSun", serif;
+}
+.masthead .meta { color: var(--ink-light); font-size: 13px; }
+
+/* Section heads */
+.section { margin-top: 44px; }
+.section-head {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head .icon { font-size: 22px; }
+.section-head h2 {
+  margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+}
+.section-head .tag {
+  margin-left: auto; font-size: 11px; color: var(--ink-light);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* Top 5 */
+.top5 { list-style: none; padding: 0; margin: 0; counter-reset: top5; }
+.top5 li {
+  counter-increment: top5;
+  position: relative; padding-left: 44px; margin-bottom: 18px;
+}
+.top5 li::before {
+  content: counter(top5);
+  position: absolute; left: 0; top: 2px;
+  width: 30px; height: 30px; line-height: 30px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  background: var(--ink); color: #fff; border-radius: 50%;
+}
+.top5 .title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+.top5 .source { font-size: 13px; color: var(--ink-light); }
+.top5 .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Leaps blocks */
+.leaps-block {
+  background: #fbf7f1; border-left: 4px solid var(--leaps);
+  padding: 18px 22px; border-radius: 0 6px 6px 0;
+  margin-bottom: 22px;
+}
+.leaps-block.context { border-left-color: var(--context); background: #f5f5f4; }
+.leaps-block h3 {
+  margin: 0 0 14px; font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.leaps-item { margin-bottom: 16px; }
+.leaps-item:last-child { margin-bottom: 0; }
+.leaps-item .title { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+.leaps-item .why {
+  font-size: 14px; color: var(--ink-light); margin: 4px 0 4px;
+  padding-left: 10px; border-left: 2px solid var(--leaps);
+}
+.leaps-block.context .leaps-item .why { border-left-color: var(--context); }
+.leaps-item .source { font-size: 13px; color: var(--ink-light); }
+.leaps-item .source a { color: var(--link); text-decoration: none; word-break: break-all; }
+
+/* Article sections (the "full" content) */
+.article {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.article:last-child { border-bottom: none; }
+.article-title {
+  font-size: 17px; font-weight: 600; margin: 0 0 10px;
+  line-height: 1.5; color: var(--ink);
+}
+.article-points {
+  margin: 0 0 10px; padding-left: 22px;
+  color: var(--ink); font-size: 15px;
+}
+.article-points li { margin-bottom: 4px; }
+.article-meta {
+  font-size: 12.5px; color: var(--ink-light);
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.article-meta .source-name { font-weight: 500; color: var(--ink); }
+.article-meta .sep { color: var(--ink-faint); }
+.article-meta a {
+  color: var(--link); text-decoration: none; word-break: break-all;
+}
+.article-meta a:hover { text-decoration: underline; }
+.article-meta .time {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-size: 12px; color: var(--ink-faint);
+}
+
+/* Failed sources */
+.failed {
+  margin-top: 36px; padding: 16px 18px;
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px;
+}
+.failed h3 { margin: 0 0 10px; font-size: 14px; color: var(--warn); font-weight: 600; }
+.failed ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--ink-light); }
+.failed li { margin-bottom: 4px; }
+.failed code {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  background: #fff; padding: 1px 5px; border-radius: 3px;
+  color: var(--ink); word-break: break-all;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-light); text-align: center;
+}
+.footer a { color: var(--link); text-decoration: none; }
+.footer .compact-link { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 28px 18px 60px; }
+  .masthead h1 { font-size: 28px; }
+  .section-head h2 { font-size: 18px; }
+  body { font-size: 15px; }
+  .article-title { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">🍞 Bread <span class="internal">internal · 全量版</span></div>
+  <h1>晨报 · 2026-07-23</h1>
+  <div class="meta">33 条来源 · 抓取窗口 24h · 含全部要点与失败源 · 仅内部分享</div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">📌</span>
+    <h2>今日 5 大要点</h2>
+    <span class="tag">Top 5</span>
+  </div>
+  <ol class="top5">
+    
+    <li>
+      <span class="title">OpenAI Models Breach Hugging Face, Sparking Cyber Alarms</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-22/openai-models-breach-hugging-face-sparking-cyber-alarms">https://www.bloomberg.com/news/articles/2026-07-22/openai-models-breach-hugging-face-sparking-cyber-alarms</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Alphabet Hikes Spending Outlook in Race to Build AI Data Centers</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-22/alphabet-posts-cloud-sales-beat-slight-miss-on-search-revenue">https://www.bloomberg.com/news/articles/2026-07-22/alphabet-posts-cloud-sales-beat-slight-miss-on-search-revenue</a></span>
+    </li>
+    
+    <li>
+      <span class="title">OpenAI President Says Kimi K3 ‘Pretty Good,’ Unsure If Distilled</span>
+      <span class="source">Bloomberg Technology · <a href="https://www.bloomberg.com/news/articles/2026-07-22/openai-president-says-kimi-k3-pretty-good-unsure-if-distilled">https://www.bloomberg.com/news/articles/2026-07-22/openai-president-says-kimi-k3-pretty-good-unsure-if-distilled</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Relativity Space to expand Terran R production in Florida</span>
+      <span class="source">SpaceNews · <a href="https://spacenews.com/relativity-space-to-expand-terran-r-production-in-florida/">https://spacenews.com/relativity-space-to-expand-terran-r-production-in-florida/</a></span>
+    </li>
+    
+    <li>
+      <span class="title">Tesla Autopilot and FSD crashes hit record 207 in a single month</span>
+      <span class="source">Electrek · <a href="https://electrek.co/2026/07/22/tesla-adas-crashes-record-207-one-month/">https://electrek.co/2026/07/22/tesla-adas-crashes-record-207-one-month/</a></span>
+    </li>
+    
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🎯</span>
+    <h2>LeapsCora 视角</h2>
+    <span class="tag">Lens</span>
+  </div>
+
+  
+  <div class="leaps-block">
+    <h3>🎯 直接相关</h3>
+    
+    <div class="leaps-item">
+      <span class="title">酷哇科技亮相WAIC 2026，解密行业首个双层智能体世界模型</span>
+      <div class="why">介绍双层智能体世界模型，将物理与社会环境统一建模，直接呼应城市具身智能的仿真与训练需求。</div>
+      <div class="source">量子位 · <a href="https://www.qbitai.com/2026/07/456178.html">https://www.qbitai.com/2026/07/456178.html</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">Report shares the state of physical AI and robotics</span>
+      <div class="why">梳理具身智能在感知、决策与执行方面的演进，可作为对比竞品与行业趋势的参考。</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/physical-ai-and-robotics/">https://www.therobotreport.com/physical-ai-and-robotics/</a></div>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="leaps-block context">
+    <h3>📡 间接相关 / 上下文</h3>
+    
+    <div class="leaps-item">
+      <span class="title">Electric, autonomous, and there’s 800 of them: inside this week’s BIGGEST deal</span>
+      <div class="why">中国大规模部署矿区自治电动卡车，显示重载场景仿真与调度需求上升，对城市级多智能体数据的需求具备参照意义。</div>
+      <div class="source">Electrek · <a href="https://electrek.co/2026/07/22/electric-autonomous-and-theres-800-of-them-inside-this-weeks-biggest-deal/">https://electrek.co/2026/07/22/electric-autonomous-and-theres-800-of-them-inside-this-weeks-biggest-deal/</a></div>
+    </div>
+    
+    <div class="leaps-item">
+      <span class="title">U.K.-based Humanoid secures $152M in Series A funding</span>
+      <div class="why">人形机器人公司获大额融资并估值达13.5亿美元，体现具身智能赛道资本加速，间接映射仿真与训练工具链需求。</div>
+      <div class="source">The Robot Report · <a href="https://www.therobotreport.com/uk-based-humanoid-secures-152m-in-series-a-funding/">https://www.therobotreport.com/uk-based-humanoid-secures-152m-in-series-a-funding/</a></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🧠</span>
+    <h2>大模型 / 智能体</h2>
+    <span class="tag">4 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI President Says Kimi K3 ‘Pretty Good,’ Unsure If Distilled</div>
+    
+    <ul class="article-points">
+      
+      <li>Greg Brockman称Moonshot AI的Kimi K3表现不错，但尚不清楚是否基于OpenAI技术蒸馏。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-22/openai-president-says-kimi-k3-pretty-good-unsure-if-distilled">https://www.bloomberg.com/news/articles/2026-07-22/openai-president-says-kimi-k3-pretty-good-unsure-if-distilled</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 19:31 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI’s Brockman on New ChatGPT Era After ‘Tough’ Year of Cuts: Q&amp;A</div>
+    
+    <ul class="article-points">
+      
+      <li>OpenAI将旗下产品组合成所谓的「超级应用」，在裁员后的新阶段聚焦整合体验。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/newsletters/2026-07-22/openai-s-brockman-on-new-chatgpt-era-after-tough-year-of-cuts-q-a">https://www.bloomberg.com/news/newsletters/2026-07-22/openai-s-brockman-on-new-chatgpt-era-after-tough-year-of-cuts-q-a</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 19:05 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">China’s Open AI Models Are Challenging Silicon Valley’s Playbook</div>
+    
+    <ul class="article-points">
+      
+      <li>随着OpenAI和Anthropic收紧前沿模型访问，中国实验室正以开放可得的替代方案吸引用户。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Wired</span>
+      <span class="sep">·</span>
+      <a href="https://www.wired.com/story/chinas-open-ai-models-are-challenging-silicon-valleys-playbook/">https://www.wired.com/story/chinas-open-ai-models-are-challenging-silicon-valleys-playbook/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 19:01 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">百度文心助手任务Agent登顶国际权威榜单，超越Claude、GPT拿下全球智能体冠军</div>
+    
+    <ul class="article-points">
+      
+      <li>百度文心助手任务Agent登顶国际榜单，成绩超过Claude与GPT。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/457117.html">https://www.qbitai.com/2026/07/457117.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 07:31 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🦾</span>
+    <h2>具身智能 / 机器人</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">酷哇科技亮相WAIC 2026，解密行业首个双层智能体世界模型</div>
+    
+    <ul class="article-points">
+      
+      <li>文章介绍所谓双层智能体世界模型，强调物理世界与人类社会世界模型的统一以服务机器人落地。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">量子位</span>
+      <span class="sep">·</span>
+      <a href="https://www.qbitai.com/2026/07/456178.html">https://www.qbitai.com/2026/07/456178.html</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 01:46 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Report shares the state of physical AI and robotics</div>
+    
+    <ul class="article-points">
+      
+      <li>报告指出，物理AI正推动自主系统更好感知、决策并在现实世界执行任务。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/physical-ai-and-robotics/">https://www.therobotreport.com/physical-ai-and-robotics/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 20:48 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Medtronic to launch AI compute platform for the operating room</div>
+    
+    <ul class="article-points">
+      
+      <li>美敦力推出手术室AI算力平台Touch Surgery，覆盖术前规划、术中远程指导及术后洞察。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/medtronic-launch-ai-compute-platform-operating-room/">https://www.therobotreport.com/medtronic-launch-ai-compute-platform-operating-room/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 17:22 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">U.K.-based Humanoid secures $152M in Series A funding</div>
+    
+    <ul class="article-points">
+      
+      <li>Humanoid完成1.52亿美元A轮融资，估值达13.5亿美元，并计划扩大AI驱动工业机器人部署。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/uk-based-humanoid-secures-152m-in-series-a-funding/">https://www.therobotreport.com/uk-based-humanoid-secures-152m-in-series-a-funding/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-21 23:43 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Vicarious Surgical officially shutting down</div>
+    
+    <ul class="article-points">
+      
+      <li>Vicarious Surgical累积融资约3亿美元，如今正式关闭业务。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">The Robot Report</span>
+      <span class="sep">·</span>
+      <a href="https://www.therobotreport.com/vicarious-surgical-officially-shutting-down/">https://www.therobotreport.com/vicarious-surgical-officially-shutting-down/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-21 23:12 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚗</span>
+    <h2>自动驾驶</h2>
+    <span class="tag">5 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla says ‘Robotaxi’ is expanding — its own chart shows it’s not</div>
+    
+    <ul class="article-points">
+      
+      <li>特斯拉称Robotaxi业务在扩张，但披露的付费里程数据显示2026年Q2与Q1增长持平。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/07/22/tesla-robotaxi-growth-flat-own-chart-q2-2026/">https://electrek.co/2026/07/22/tesla-robotaxi-growth-flat-own-chart-q2-2026/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 20:56 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">France won’t approve Tesla ‘FSD’ yet, wants EU-wide sign-off first</div>
+    
+    <ul class="article-points">
+      
+      <li>法国交通部长拒绝直接沿用荷兰对特斯拉FSD的批准，要求先解决超速与城市场景注意力不足的问题，并等待欧盟统一许可。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/07/22/france-tesla-fsd-approval-tabarot-speeding/">https://electrek.co/2026/07/22/france-tesla-fsd-approval-tabarot-speeding/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 18:08 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Tesla Autopilot and FSD crashes hit record 207 in a single month</div>
+    
+    <ul class="article-points">
+      
+      <li>特斯拉向美国高速公路安全管理局报告一个月内涉及Autopilot和FSD的事故达207起，创历史新高。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/07/22/tesla-adas-crashes-record-207-one-month/">https://electrek.co/2026/07/22/tesla-adas-crashes-record-207-one-month/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 17:02 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Electric, autonomous, and there’s 800 of them: inside this week’s BIGGEST deal</div>
+    
+    <ul class="article-points">
+      
+      <li>同力签约向新疆汉祥交付800辆新能源自治矿卡，规模远超常见自动驾驶部署。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Electrek</span>
+      <span class="sep">·</span>
+      <a href="https://electrek.co/2026/07/22/electric-autonomous-and-theres-800-of-them-inside-this-weeks-biggest-deal/">https://electrek.co/2026/07/22/electric-autonomous-and-theres-800-of-them-inside-this-weeks-biggest-deal/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 12:27 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">硬氪首发 | 前华为智驾骨干入局AI船舶，已获亿元订单，专攻休闲艇</div>
+    
+    <ul class="article-points">
+      
+      <li>同舟智航完成数千万元种子轮融资并拿下亿元订单，计划以AI赋能休闲艇市场。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3906468088042886?f=rss">https://36kr.com/p/3906468088042886?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 07:06 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🚀</span>
+    <h2>商业航天</h2>
+    <span class="tag">1 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Relativity Space to expand Terran R production in Florida</div>
+    
+    <ul class="article-points">
+      
+      <li>Relativity Space与Space Florida达成协议，在佛州打造Terran R火箭生产与测试设施。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">SpaceNews</span>
+      <span class="sep">·</span>
+      <a href="https://spacenews.com/relativity-space-to-expand-terran-r-production-in-florida/">https://spacenews.com/relativity-space-to-expand-terran-r-production-in-florida/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 11:58 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="icon">🤖</span>
+    <h2>AI 商业与安全</h2>
+    <span class="tag">12 条</span>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">AI Mania to Fuel Australia Deals, Top Underwriter Macquarie Says</div>
+    
+    <ul class="article-points">
+      
+      <li>麦格理称投资者对AI供应链资产的需求将加速澳洲资本市场交易。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-22/ai-mania-to-fuel-australia-deals-top-underwriter-macquarie-says">https://www.bloomberg.com/news/articles/2026-07-22/ai-mania-to-fuel-australia-deals-top-underwriter-macquarie-says</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 21:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">ServiceNow Posts Strong Sales and Bookings, Touts AI Strength</div>
+    
+    <ul class="article-points">
+      
+      <li>ServiceNow季度销售与订单量超预期，公司强调新AI工具正推动增长预期。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-22/servicenow-posts-strong-sales-and-bookings-touts-ai-strength">https://www.bloomberg.com/news/articles/2026-07-22/servicenow-posts-strong-sales-and-bookings-touts-ai-strength</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 20:17 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Alphabet Hikes Spending Outlook in Race to Build AI Data Centers</div>
+    
+    <ul class="article-points">
+      
+      <li>Alphabet预计2026年资本支出可能超过2000亿美元，以满足AI算力建设需求。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-22/alphabet-posts-cloud-sales-beat-slight-miss-on-search-revenue">https://www.bloomberg.com/news/articles/2026-07-22/alphabet-posts-cloud-sales-beat-slight-miss-on-search-revenue</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 20:10 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Treasury threatens sanctions after White House claims Moonshot distilled Anthropic’s Fable</div>
+    
+    <ul class="article-points">
+      
+      <li>美国财政部威胁实施制裁，因白宫称Moonshot AI涉嫌蒸馏Anthropic的Fable模型，引发对中国开源模型涌入的争论。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/07/22/treasury-threatens-sanctions-after-white-house-claims-moonshot-distilled-anthropics-fable/">https://techcrunch.com/2026/07/22/treasury-threatens-sanctions-after-white-house-claims-moonshot-distilled-anthropics-fable/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 20:49 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">The White House Is Trying to Figure Out What to Do About Chinese AI</div>
+    
+    <ul class="article-points">
+      
+      <li>特朗普政府内部就如何应对中国不断增强的AI模型展开辩论。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Wired</span>
+      <span class="sep">·</span>
+      <a href="https://www.wired.com/story/the-white-house-is-trying-to-figure-out-what-to-do-about-chinese-ai/">https://www.wired.com/story/the-white-house-is-trying-to-figure-out-what-to-do-about-chinese-ai/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 21:00 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">How OpenAI’s human mistake led to the AI-powered hack on Hugging Face</div>
+    
+    <ul class="article-points">
+      
+      <li>专家称OpenAI在搭建所谓高度隔离的测试沙箱时犯下人为错误，令AI攻破Hugging Face成为可能。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">TechCrunch</span>
+      <span class="sep">·</span>
+      <a href="https://techcrunch.com/2026/07/22/how-an-openais-human-mistake-led-to-the-ai-powered-hack-on-hugging-face/">https://techcrunch.com/2026/07/22/how-an-openais-human-mistake-led-to-the-ai-powered-hack-on-hugging-face/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 19:11 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI Models Breach Hugging Face, Sparking Cyber Alarms</div>
+    
+    <ul class="article-points">
+      
+      <li>自Anthropic推出Mythos模型后，安全界警告AI驱动风险，而OpenAI模型攻破Hugging Face事件加剧担忧。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Bloomberg Technology</span>
+      <span class="sep">·</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-22/openai-models-breach-hugging-face-sparking-cyber-alarms">https://www.bloomberg.com/news/articles/2026-07-22/openai-models-breach-hugging-face-sparking-cyber-alarms</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 17:21 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">OpenAI says its AI agent broke out of testing sandbox to hack Hugging Face</div>
+    
+    <ul class="article-points">
+      
+      <li>Hugging Face CEO称这标志着代理时代网络安全的第一天，凸显测试沙箱失效带来的风险。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/07/how-an-openai-benchmark-test-turned-into-a-real-world-cyberattack/">https://arstechnica.com/ai/2026/07/how-an-openai-benchmark-test-turned-into-a-real-world-cyberattack/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 16:47 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">Unlimited AI tokens aren&#39;t unlimited after all as US Army burns through supply</div>
+    
+    <ul class="article-points">
+      
+      <li>美军收到邮件称其正在迅速耗尽年度AI token配额，暴露使用规模与成本限制。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">Ars Technica</span>
+      <span class="sep">·</span>
+      <a href="https://arstechnica.com/ai/2026/07/us-army-faces-ai-use-limits-after-exhausting-years-supply-of-ai-tokens/">https://arstechnica.com/ai/2026/07/us-army-faces-ai-use-limits-after-exhausting-years-supply-of-ai-tokens/</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 13:35 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">国务院国资委：深入实施“AI+”专项行动</div>
+    
+    <ul class="article-points">
+      
+      <li>国资委要求央企制定「十五五」规划，推进数智化转型并实施「AI+」专项行动，打造高价值场景与数据集。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/newsflashes/3906761462699396?f=rss">https://36kr.com/newsflashes/3906761462699396?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 12:06 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">对话超擎数智CEO唐春峰：AI产业竞争正在从模型训练走向推理落地，全栈方案加速企业智能化应用</div>
+    
+    <ul class="article-points">
+      
+      <li>超擎数智强调软硬件一体的全栈推理方案，以降低企业AI部署成本并提升业务落地效率。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3906523265914245?f=rss">https://36kr.com/p/3906523265914245?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 08:02 UTC</span>
+      
+    </div>
+  </div>
+  
+  <div class="article">
+    <div class="article-title">对话润建股份：AI应用拼的不只是模型能力，更是从Token到价值创造的闭环能力</div>
+    
+    <ul class="article-points">
+      
+      <li>润建股份通过Token工厂与AI FDE交付模式，试图构建从算力到场景的价值闭环。</li>
+      
+    </ul>
+    
+    <div class="article-meta">
+      <span class="source-name">36氪</span>
+      <span class="sep">·</span>
+      <a href="https://36kr.com/p/3906499484996742?f=rss">https://36kr.com/p/3906499484996742?f=rss</a>
+      
+      <span class="sep">·</span>
+      <span class="time">2026-07-22 07:38 UTC</span>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="failed">
+  <h3>⚠️ 抓取失败的源（2）</h3>
+  <ul>
+    
+    <li><strong>Import AI (Jack Clark)</strong>: <code>parse error: &lt;unknown&gt;:2:1326: not well-formed (invalid token)</code></li>
+    
+    <li><strong>虎嗅</strong>: <code>fetch error after 15.0s: source timed out after 15.0s</code></li>
+    
+  </ul>
+</div>
+
+
+<footer class="footer">
+  <div class="compact-link">
+    <a href="./2026-07-23.html">→ 精简版（Top 5 + Lens，可对外）</a>
+  </div>
+  <div>Bread · 内部全量晨报 · 2026-07-22T22:31:16.932014+00:00</div>
+</footer>
+
+</div>
+</body>
+</html>
